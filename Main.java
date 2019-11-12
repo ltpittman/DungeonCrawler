@@ -2,6 +2,10 @@ import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 class Main{
 	public static void main(String args[]) throws InputMismatchException{
 		Inventory playerInventory;
@@ -19,9 +23,21 @@ class Main{
 		Item item2 = ItemGenerator.generate();
 		Item item3 = ItemGenerator.generate();
 		Item item4 = ItemGenerator.generate();
+		Item item5 = ItemGenerator.generate();
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
+
+		//Here is where we will upload the saved game if the user say yes.
+		//####################################################
+		//System.out.print("\nLoad Game...? Y/N");
+		//String loadGameAnswer = in.next().toUpperCase();
+		//if(loadGameAnswer.equals('Y'){
+		//	System.out.println("What is the name of the file you want to load? ");
+		//	String answer = in.next();
+		//	System.out.println("[Loading saved game...]");
+
+
 
 		System.out.print("[Username] What is your username? ");
 		String userName = in.next();
@@ -40,7 +56,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4, enemy1, enemy2, enemy3);
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 		world.printWorld();
 
 		char input;
@@ -66,7 +82,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						world.moveMonster(enemy3);
 					}
-					world.fillWorld(player, item1, item2, item3, item4, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					world.goDown(player);
@@ -79,7 +95,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						world.moveMonster(enemy3);
 					}
-					world.fillWorld(player, item1, item2, item3, item4, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 					break;
 				case'J':
@@ -94,7 +110,7 @@ class Main{
 						world.moveMonster(enemy3);
 					}
 
-					world.fillWorld(player, item1, item2, item3, item4, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					world.goRight(player);
@@ -108,7 +124,7 @@ class Main{
 						world.moveMonster(enemy3);
 					}
 
-					world.fillWorld(player, item1, item2, item3, item4, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'P':
 					world.printCommands();

@@ -17,7 +17,7 @@ class World{
 		world = new String[rows][columns];
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Enemy enemy1, Enemy enemy2, Enemy enemy3){
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 
 		//Fill the 2D array.
 		for(int i = 0; i < rows; i++){
@@ -35,6 +35,7 @@ class World{
 		world[item2.y][item2.x] = "$";
 		world[item3.y][item3.x] = "$";
 		world[item4.y][item4.x] = "$";
+		world[item5.y][item5.x] = "S";
 		
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
@@ -100,6 +101,19 @@ class World{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
 			}
 		}
+		if (player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
+			System.out.println("[Attention!] You just came across: " + item5.getName());
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+			Scanner scan = new Scanner(System.in);
+			String input = scan.next().toUpperCase();
+			if (input.equals("Y")){
+				player.inventory.addItem(item5);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+
 		//Here is where the player and enemy will fight if they land on the same area.
 		if (player.y == enemy1.y && player.x == enemy1.x){
 			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
