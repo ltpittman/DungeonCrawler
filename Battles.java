@@ -1,3 +1,4 @@
+import java.util.Scanner;
 /*In this class we have the methods for when a character and an enemy attack
  * each other. There are four methods, attack, playerWins, playerLoses, and
  * playerDeath.
@@ -38,46 +39,64 @@ class Battles{
 		System.out.println();
 
 		while(healthEnemy > 0){
-			difference = strengthArmor - strengthEnemy;
-			if (difference < 0){
-				healthPlayer = healthPlayer + difference;
-			} 
-			else{
-				healthPlayer = healthPlayer;
+
+			if(healthPlayer > 0){
+				System.out.println("What would you like to do?");
+				System.out.println("1. Attack the monster!");
+				System.out.println("2. Run away!");
+				System.out.print("[Answer}");
+
+				Scanner in = new Scanner(System.in);
+				int answer = in.nextInt();
+
+				if(answer == 1){
+					difference = strengthArmor - strengthEnemy;
+					if (difference < 0){
+						healthPlayer = healthPlayer + difference;
+					} 
+					else{
+						healthPlayer = healthPlayer;
+					}
+
+					healthEnemy = healthEnemy - strengthPlayer;
+
+					player.setHealth(healthPlayer);
+					enemy.setHealth(healthEnemy);
+
+					if(healthPlayer <= 0){
+						playerLoses();
+					}
+
+					System.out.println("\nThe " + enemyName + " attacked you with a damage of " + strengthEnemy + "...");
+					System.out.println("Your health is now " + healthPlayer + "/100.\n");
+					System.out.println("You attack the " + enemyName + " with a damage of " + strengthPlayer + "!");
+
+
+					//If the enemy's health is less than 1, then the player defeated the monster.
+					if(healthEnemy < 1){
+						System.out.println("The enemy's health has reached 0/100.");
+						System.out.println("You have defeated the monster!");
+						//Subtract one from the numberMonster variable. 
+						numberMonster = numberMonster - 1;
+					}
+					else{
+						System.out.println("The enemy's health is now " + healthEnemy + "/100.\n");
+					}
+
+					//If the player's health is less than 1, the player loses and the game exits.
+					if(healthPlayer < 1){
+						System.out.println("You have been defeated... Restart the game to play again!");
+						playerLoses();
+					}
+					//If there are no monsters left, then the player wins.
+					if(numberMonster == 0){
+						playerWins();
+					}
+				}
+				else{
+					break;
+				}
 			}
-
-			healthEnemy = healthEnemy - strengthPlayer;
-
-			player.setHealth(healthPlayer);
-			enemy.setHealth(healthEnemy);
-			if(healthPlayer <= 0){
-				playerLoses();
-			}
-
-			System.out.println("The " + enemyName + " attacked you with a damage of " + strengthEnemy + "...");
-			System.out.println("Your health is now " + healthPlayer + "/100.");
-			System.out.println("You attack the " + enemyName + " with a damage of " + strengthPlayer + "!");
-		}
-
-		//If the enemy's health is less than 1, then the player defeated the monster.
-		if(healthEnemy < 1){
-			System.out.println("The enemy's health has reached 0/100.");
-			System.out.println("You have defeated the monster!");
-			//Subtract one from the numberMonster variable. 
-			numberMonster = numberMonster - 1;
-		}
-		else{
-			System.out.println("The enemy's health is now " + healthEnemy + "/100.");
-		}
-
-		//If the player's health is less than 1, the player loses and the game exits.
-		if(healthPlayer < 1){
-			System.out.println("You have been defeated... Restart the game to play again!");
-			playerLoses();
-		}
-		//If there are no monsters left, then the player wins.
-		if(numberMonster == 0){
-			playerWins();
 		}
 	}
 	//In this method we determine if the player has lost the game. We do this by looking at the player's health.
