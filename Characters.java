@@ -1,17 +1,20 @@
 class Characters{
-	Player player;
-	Enemy enemy;
-	Inventory inventory;
-
-	String name;
-	int health;
-	int weaponStrength;
-	int armorStrength;
-	Item equippedWeapon;
-	Item equippedArmor;
+	
+	private String name;
+	private int health;
+	private int weaponStrength;
+	private int armorStrength;
+	private Item equippedWeapon;
+	private Item equippedArmor;
 	public int x;
 	public int y;
 
+	//constuctor with basic character qualities
+	protected Character (String name, int health){
+		this.name = name;
+		this.health = health'
+	}
+	
 	String getName(){
 		return this.name;
 	}

@@ -5,7 +5,7 @@ class Rooms{
 	public Enemy enemy;
 	Battles battle = new Battles();
 
-	Rooms(){
+	Rooms(int rows, int columns){
 		this.rows = rows;
 		this.columns = columns;
 		rooms = new String[rows][columns];

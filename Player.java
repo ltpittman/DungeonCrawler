@@ -1,4 +1,4 @@
-class Player{
+class Player extends Character{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -12,8 +12,8 @@ class Player{
 
 	//Constructor
 	public Player(String name, int health){
-		this.name = name;
-		this.health = health;
+		super(name);
+		super(health);
 		this.weaponStrength = weaponStrength;
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);

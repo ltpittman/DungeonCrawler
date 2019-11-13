@@ -1,4 +1,4 @@
-class Enemy{
+class Enemy extends Characters{
 	//Instance variables.
 	public World world;
 	private MonsterType type;
@@ -11,9 +11,9 @@ class Enemy{
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
 	public Enemy(MonsterType type, String name, int health, int damage, int x, int y){ 
+		super(name);
+		super(health);
 		this.type = type;
-		this.name = name;
-		this.health = health;
 		this.damage = damage;
 		this.x = x; //8
 		this.y = y; //15
