@@ -141,6 +141,7 @@ public void printWorld(){
 	}
 }
 //Method to have the player go up.
+/*
 public boolean goUp(Player player){
 	if((player.y - 1) == 0){
 		System.out.println("[You can't go up in that direction.]");
@@ -152,6 +153,7 @@ public boolean goUp(Player player){
 		return true;
 	}
 }
+
 //Method to have the player go down.
 public boolean goDown(Player player){
 	if((player.y + 1) == 17){
@@ -186,7 +188,8 @@ public boolean goRight(Player player){
 		player.x += 1;
 		return true;
 	}
-}
+}*/
+/*
 //Method for moving the monsters.
 public boolean moveMonster(Enemy move){
 
@@ -236,7 +239,7 @@ public boolean moveMonster(Enemy move){
 	else{
 		return false;
 	}
-}
+}*/
 //Method to print the commands to the user.
 void printCommands(){
 	System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");

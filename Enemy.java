@@ -1,18 +1,21 @@
+import java.util.Random;
+
 class Enemy extends Characters{
 	//Instance variables.
-	public World world;
-	private MonsterType type;
-	private String name;
 	private int health;
+	private String name;
+	private MonsterType type;
 	private int damage;
 	public int x;
 	public int y;
+	public World world;
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(MonsterType type, String name, int health, int damage, int x, int y){ 
-		super(name);
-		super(health);
+	public Enemy(String name, int health){ 
+		super(name,health);
+		//this.name = name;
+		//this.health = health;	
 		this.type = type;
 		this.damage = damage;
 		this.x = x; //8
@@ -46,6 +49,57 @@ class Enemy extends Characters{
 	int getEnemyY(){
 		return this.y;
 	}
+	//Adding the movement method for the Enemy class.
+	public boolean move(Enemy move){
+		Random random = new Random();
+		int mm = random.nextInt(4);
+
+		//Have the monster go right.
+		if(mm == 0){
+			if(move.x + 1 == 35){
+				return false;
+			}
+			else{
+				move.x += 1;
+				return true;
+			}
+		}
+		//Have the monster go left.
+		else if(mm == 1){
+			if(move.x - 1 == 0){
+				return false;
+			}
+			else{
+				move.x -= 1;
+				return true;
+			}
+		}
+		//Have the monster go up.
+		else if(mm == 2){
+			if(move.y - 1 == 0){
+				return false;
+			}
+			else{
+				move.y -= 1;
+				return true;
+			}
+		}
+		//Have the monster go down.
+		else if(mm == 3){
+			if(move.y + 1 == 17){
+				return false;
+			}
+			else{
+				move.y += 1;
+				return true;
+			}
+		}
+		else{
+			return false;
+		}
+	}
+//*******************************************************************************
+
 	boolean monsterIsAlive(){
 		if(health > 0){
 			return true;

@@ -1,4 +1,4 @@
-class Player extends Character{
+class Player extends Characters{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -12,8 +12,8 @@ class Player extends Character{
 
 	//Constructor
 	public Player(String name, int health){
-		super(name);
-		super(health);
+		super(name, health); //this.name = name;
+	//	this.health = health;
 		this.weaponStrength = weaponStrength;
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
@@ -62,6 +62,45 @@ class Player extends Character{
 	public void getPlayerLocation(){
 		System.out.println("Location: " + getPlayerY() + "," + getPlayerX());
 	}
+	//Adding the movment method from the world class. This is share the same name in the Enemy class.
+	public boolean move(Player player){
+		//Have the player go up.
+		if((player.y - 1) == 0){
+			System.out.println("[You can't go up in that direction.]");
+			return false;
+		}
+		else{
+			player.y -= 1;
+		}
+		//Have the player go down.
+		if((player.y + 1) == 17){
+			System.out.println("[You can go left in that direction.]");
+			return false;
+		}
+		else{
+			player.y += 1;
+			return true;
+		}
+		//Have the player go left.
+		if((player.x - 1) == 0){
+			System.out.println("[You can't go left in that direction.]");
+			return false;
+		}
+		else{
+			player.x -= 1;
+			return true;
+		}
+		//Have the player go right.
+		if((player.x + 1) == 35){
+			System.out.println("[You can't go right in that direction.]");
+			return false;
+		}
+		else{
+			player.x += 1;
+			return true;
+		}
+	}
+	//**********************************************************************
 	//This method prints the player's name and health.
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");

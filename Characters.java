@@ -2,6 +2,7 @@ class Characters{
 	
 	private String name;
 	private int health;
+	Inventory inventory;
 	private int weaponStrength;
 	private int armorStrength;
 	private Item equippedWeapon;
@@ -10,11 +11,10 @@ class Characters{
 	public int y;
 
 	//constuctor with basic character qualities
-	protected Character (String name, int health){
+	protected Characters(String name, int health){
 		this.name = name;
-		this.health = health'
+		this.health = health;
 	}
-	
 	String getName(){
 		return this.name;
 	}
@@ -24,12 +24,12 @@ class Characters{
 	public void setHealth(int num){
 		this.health = num;
 	}
-	Item getEquippedArmor(){
-		return inventory.getEquippedArmor;
-	}
-	Item get EquippedWeapon(){
-		return inventory.getEquippedWeapon;
-	}
+	//Item getEquippedArmor(){
+	//	return inventory.getEquippedArmor;
+	//}
+	//Item getEquippedWeapon(){
+	//	return inventory.getEquippedWeapon;
+	//}
 	int getArmorStrength(){
 		armorStrength = equippedArmor.getStrength();
 		return armorStrength;
@@ -47,5 +47,5 @@ class Characters{
 	public void getLocation(){
 		System.out.println("Location: " + getPostionX() + "," + getPositionY());
 	}
-
+}
 
