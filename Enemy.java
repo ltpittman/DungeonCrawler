@@ -50,11 +50,10 @@ class Enemy extends Characters{
 		return this.y;
 	}
 	//Adding the movement method for the Enemy class.
-	public boolean move(Enemy move){
+	//Have the monster go right.
+	public boolean goRight(Enemy move){
 		Random random = new Random();
 		int mm = random.nextInt(4);
-
-		//Have the monster go right.
 		if(mm == 0){
 			if(move.x + 1 == 35){
 				return false;
@@ -64,8 +63,14 @@ class Enemy extends Characters{
 				return true;
 			}
 		}
-		//Have the monster go left.
-		else if(mm == 1){
+		return false;
+	}
+	//#####
+	public boolean move(Enemy move){
+		Random random = new Random();
+		int mm = random.nextInt(4);
+	
+		if(mm == 1){
 			if(move.x - 1 == 0){
 				return false;
 			}
@@ -74,7 +79,6 @@ class Enemy extends Characters{
 				return true;
 			}
 		}
-		//Have the monster go up.
 		else if(mm == 2){
 			if(move.y - 1 == 0){
 				return false;
@@ -84,7 +88,6 @@ class Enemy extends Characters{
 				return true;
 			}
 		}
-		//Have the monster go down.
 		else if(mm == 3){
 			if(move.y + 1 == 17){
 				return false;
@@ -97,8 +100,9 @@ class Enemy extends Characters{
 		else{
 			return false;
 		}
+		
 	}
-//*******************************************************************************
+	//*******************************************************************************
 
 	boolean monsterIsAlive(){
 		if(health > 0){
@@ -124,5 +128,5 @@ class Enemy extends Characters{
 			return false;
 		}
 	}
-}
+	}
 

@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Player extends Characters{
 	//Private instance variables.
 	private String name;
@@ -63,41 +65,55 @@ class Player extends Characters{
 		System.out.println("Location: " + getPlayerY() + "," + getPlayerX());
 	}
 	//Adding the movment method from the world class. This is share the same name in the Enemy class.
-	public boolean move(Player player){
+	public boolean move(Player player){ //, String input){
+		Scanner in = new Scanner(System.in);
+		String input = in.next().toUpperCase();
 		//Have the player go up.
-		if((player.y - 1) == 0){
-			System.out.println("[You can't go up in that direction.]");
-			return false;
-		}
-		else{
-			player.y -= 1;
+		if(input.equals("H")){
+			if((player.y - 1) == 0){
+				System.out.println("[You can't go up in that direction.]");
+				return false;
+			}
+			else{
+				player.y -= 1;
+				return true;
+			}
 		}
 		//Have the player go down.
-		if((player.y + 1) == 17){
-			System.out.println("[You can go left in that direction.]");
-			return false;
-		}
-		else{
-			player.y += 1;
-			return true;
+		else if(input.equals("L")){
+			if((player.y + 1) == 17){
+				System.out.println("[You can go left in that direction.]");
+				return false;
+			}
+			else{
+				player.y += 1;
+				return true;
+			}
 		}
 		//Have the player go left.
-		if((player.x - 1) == 0){
-			System.out.println("[You can't go left in that direction.]");
-			return false;
-		}
-		else{
-			player.x -= 1;
-			return true;
+		else if(input.equals("J")){
+			if((player.x - 1) == 0){
+				System.out.println("[You can't go left in that direction.]");
+				return false;
+			}
+			else{
+				player.x -= 1;
+				return true;
+			}
 		}
 		//Have the player go right.
-		if((player.x + 1) == 35){
-			System.out.println("[You can't go right in that direction.]");
-			return false;
+		else if(input.equals("K")){
+			if((player.x + 1) == 35){
+				System.out.println("[You can't go right in that direction.]");
+				return false;
+			}
+			else{
+				player.x += 1;
+				return true;
+			}
 		}
 		else{
-			player.x += 1;
-			return true;
+			return false;
 		}
 	}
 	//**********************************************************************
