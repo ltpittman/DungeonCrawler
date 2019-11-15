@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.io.PrintWriter;
 
 class Enemy extends Characters{
 	//Instance variables.
@@ -92,5 +93,15 @@ class Enemy extends Characters{
 			return false;
 		}
 	}
+	//Method to save the information about the enemy
+	public void persist (PrintWriter pw){
+		pw.println(name);
+		pw.println(type);
+		pw.println(x + " " + y);
+		pw.println(health);
+		pw.println(damage);
+	}
+	
+
 	}
 
