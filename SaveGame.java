@@ -1,5 +1,8 @@
 /*This class is used to load and save a game.*/
 
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 class SaveGame{
 	Player player;
 	Enemy enemy;
@@ -39,12 +42,19 @@ class SaveGame{
 
 	World world;
 	Rooms rooms;
-
+*/
 	//Method to save the game.
 	void persist(PrintWriter pw){
+		pw.println(playerName);
+		pw.println(playerX + " " + playerY);
+		pw.println(playerHealth);
+		pw.println(equippedArmor);
+		pw.println(equippedWeapon);
+		pw.println(armorStrength);
+		pw.println(weaponStrength);
+		
 
-	}
-*/	
+	}	
 
 
 
