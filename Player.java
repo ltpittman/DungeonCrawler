@@ -22,6 +22,14 @@ class Player extends Characters{
 		this.x = 17;
 		this.y = 8;
 	}
+	//Method to get the name of the player.
+	String getName(){
+		return name;
+	}
+	//Method to get the health of the player.
+	int getHealth(){
+		return health;
+	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
@@ -42,6 +50,14 @@ class Player extends Characters{
 	}
 	public void getPlayerLocation(){
 		System.out.println("Location: " + this.y + "," + this.x);
+	}
+	//Method to get the player's y coordinate
+	int getPlayerY(){
+		return y;
+	}
+	//Method to get the player's x coordinate
+	int getPlayerX(){
+		return x;
 	}
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	public boolean move(){
