@@ -14,26 +14,13 @@ class Player extends Characters{
 
 	//Constructor
 	public Player(String name, int health){
-		super(name, health); //this.name = name;
-	//	this.health = health;
+		super(name, health); 
 		this.weaponStrength = weaponStrength;
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
 		this.x = 17;
 		this.y = 8;
-	}
-	//Method to get the name of the player.
-	String getName(){
-		return this.name;
-	}
-	//Method to get the health of the player.
-	int getHealth(){
-		return this.health;
-	}
-	//Method to set the health of the player.
-	public void setHealth(int num){
-		this.health = num;
 	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
@@ -53,62 +40,54 @@ class Player extends Characters{
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
 	}
-	//Get the position from the X-axis for the player. *getter method*
-	public int getPlayerX(){
-		return this.x;
-	}
-	//Get the position from the Y-axis for the player. *getter method*
-	public int getPlayerY(){
-		return this.y;
-	}
 	public void getPlayerLocation(){
-		System.out.println("Location: " + getPlayerY() + "," + getPlayerX());
+		System.out.println("Location: " + this.y + "," + this.x);
 	}
-	//Adding the movment method from the world class. This is share the same name in the Enemy class.
-	public boolean move(Player player){ //, String input){
+	//Adding the movement method from the world class. This is share the same name in the Enemy class.
+	public boolean move(){
 		Scanner in = new Scanner(System.in);
 		String input = in.next().toUpperCase();
 		//Have the player go up.
 		if(input.equals("H")){
-			if((player.y - 1) == 0){
+			if((y - 1) == 0){
 				System.out.println("[You can't go up in that direction.]");
 				return false;
 			}
 			else{
-				player.y -= 1;
+				y -= 1;
 				return true;
 			}
 		}
 		//Have the player go down.
 		else if(input.equals("L")){
-			if((player.y + 1) == 17){
+			if((y + 1) == 17){
 				System.out.println("[You can go left in that direction.]");
 				return false;
 			}
 			else{
-				player.y += 1;
+				y += 1;
 				return true;
 			}
 		}
 		//Have the player go left.
 		else if(input.equals("J")){
-			if((player.x - 1) == 0){
+			if((x - 1) == 0){
 				System.out.println("[You can't go left in that direction.]");
 				return false;
 			}
 			else{
-				player.x -= 1;
+				x -= 1;
 				return true;
 			}
 		}
 		//Have the player go right.
 		else if(input.equals("K")){
-			if((player.x + 1) == 35){
+			if((x + 1) == 35){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
 			}
 			else{
-				player.x += 1;
+				x += 1;
 				return true;
 			}
 		}

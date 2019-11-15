@@ -72,56 +72,57 @@ class Main{
 
 			switch(input){
 				case'H':
-					world.move(player); //goUp(player);
+					player.move();
+					//world.move(player); //goUp(player);
 					if (enemy1.enemyDead(enemy1) == false){
-						world.move(enemy1);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy2.enemyDead(enemy2) == false){
-						world.move(enemy2);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy3.enemyDead(enemy3) == false){
-						world.move(enemy3);
+						enemy1.move(); //world.move(enemy1);
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
-					world.move(player); //goUp(player);
+					player.move();
 					if (enemy1.enemyDead(enemy1) == false){
-						world.move(enemy1);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy2.enemyDead(enemy2) == false){
-						world.move(enemy2);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy3.enemyDead(enemy3) == false){
-						world.move(enemy3);
+						enemy1.move(); //world.move(enemy1);
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 					break;
 				case'J':
-					world.move(player); //goUp(player);
+					player.move();
 					if (enemy1.enemyDead(enemy1) == false){
-						world.move(enemy1);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy2.enemyDead(enemy2) == false){
-						world.move(enemy2);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy3.enemyDead(enemy3) == false){
-						world.move(enemy3);
+						enemy1.move(); //world.move(enemy1);
 					}
 
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
-					world.move(player); //goUp(player);
+					player.move();
 					if (enemy1.enemyDead(enemy1) == false){
-						world.move(enemy1);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy2.enemyDead(enemy2) == false){
-						world.move(enemy2);
+						enemy1.move(); //world.move(enemy1);
 					}
 					if (enemy3.enemyDead(enemy3) == false){
-						world.move(enemy3);
+						enemy1.move(); //world.move(enemy1);
 					}
 
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
