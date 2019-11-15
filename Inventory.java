@@ -30,6 +30,7 @@ class Inventory{
 		equippedArmor = leatherArmor;
 		equippedWeapon = ironDagger;
 	}
+
 	//This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
 	void printOtherStats(){
 		System.out.println("Total Weight: " + totalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");

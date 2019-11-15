@@ -28,6 +28,7 @@ class SaveGame{
 	playerY = player.getPlayerY();
 	playerX = player.getPlayerX();
 	
+	//	
 	}
 	/*
 		, playerName, playerHealth;
@@ -54,7 +55,9 @@ class SaveGame{
 		pw.println(weaponStrength);
 		
 
-	}	
+	}
+
+		
 
 
 

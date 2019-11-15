@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 class Player extends Characters{
 	//Private instance variables.
@@ -119,4 +120,16 @@ class Player extends Characters{
 	public String toString(){
 		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
 	}
+	//Method for saving the data for the character
+	public void persist(PrintWriter pw){
+		pw.println(name);
+		pw.println(x + " " + y);
+		pw.println(health);
+		pw.println(weaponStrength);
+		pw.println(armorStrength);
+		pw.println(equippedWeapon);
+		pw.println(equippedArmor);
+	}
+
+
 }
