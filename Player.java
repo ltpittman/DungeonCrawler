@@ -20,17 +20,17 @@ class Player extends Characters{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = 17;
-		this.y = 8;
+		this.x = 12;
+		this.y = 9;
 	}
 	//Method to get the name of the player.
-	String getName(){
-		return name;
-	}
+	//String getName(){
+	//	return this.name;//or return name;
+	//}
 	//Method to get the health of the player.
-	int getHealth(){
-		return health;
-	}
+	//int getHealth(){
+	//	return this.health;// or return health;
+//	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
@@ -53,13 +53,13 @@ class Player extends Characters{
 		System.out.println("Location: " + this.y + "," + this.x);
 	}
 	//Method to get the player's y coordinate
-	int getPlayerY(){
-		return y;
-	}
+//	int getPlayerY(){
+//		return y;
+//	}
 	//Method to get the player's x coordinate
-	int getPlayerX(){
-		return x;
-	}
+//	int getPlayerX(){
+//		return x;
+//	}
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	public boolean move(){
 		Scanner in = new Scanner(System.in);
@@ -77,7 +77,7 @@ class Player extends Characters{
 		}
 		//Have the player go down.
 		else if(input.equals("L")){
-			if((y + 1) == 17){
+			if((y + 1) == 20){
 				System.out.println("[You can go left in that direction.]");
 				return false;
 			}
@@ -99,7 +99,7 @@ class Player extends Characters{
 		}
 		//Have the player go right.
 		else if(input.equals("K")){
-			if((x + 1) == 35){
+			if((x + 1) == 25){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
 			}

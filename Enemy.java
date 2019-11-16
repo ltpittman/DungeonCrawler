@@ -13,10 +13,8 @@ class Enemy extends Characters{
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(String name, int health){ 
+	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){ 
 		super(name,health);
-		//this.name = name;
-		//this.health = health;	
 		this.type = type;
 		this.damage = damage;
 		this.x = x;
@@ -37,7 +35,7 @@ class Enemy extends Characters{
 		int mm = random.nextInt(4);
 
 		if(mm == 0){
-			if(x + 1 == 35){
+			if(x + 1 == 23){
 				return false;
 			}
 			else{
@@ -64,7 +62,7 @@ class Enemy extends Characters{
 			}
 		}
 		else if(mm == 3){
-			if(y + 1 == 17){
+			if(y + 1 == 18){
 				return false;
 			}
 			else{

@@ -4,11 +4,6 @@ abstract class Characters{
 	private int health;
 	public int x;
 	public int y;
-//	Inventory inventory;
-//	private int weaponStrength;
-//	private int armorStrength;
-//	private Item equippedWeapon;
-//	private Item equippedArmor;
 
 	//constuctor with basic character qualities
 	protected Characters(String name, int health){

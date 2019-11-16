@@ -28,17 +28,6 @@ class Main{
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
 
-		//Here is where we will upload the saved game if the user say yes.
-		//####################################################
-		//System.out.print("\nLoad Game...? Y/N");
-		//String loadGameAnswer = in.next().toUpperCase();
-		//if(loadGameAnswer.equals('Y'){
-		//	System.out.println("What is the name of the file you want to load? ");
-		//	String answer = in.next();
-		//	System.out.println("[Loading saved game...]");
-
-
-
 		System.out.print("[Username] What is your username? ");
 		String userName = in.next();
 
@@ -57,7 +46,7 @@ class Main{
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
-		world.printWorld();
+		//world.printWorld();
 
 		char input;
 
@@ -148,7 +137,7 @@ class Main{
 					System.exit(1);
 					break;
 			}
-			world.printWorld();
+			//world.printWorld();
 		}
 		while(input != 'Q');
 	}

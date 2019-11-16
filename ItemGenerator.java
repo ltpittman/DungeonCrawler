@@ -28,17 +28,17 @@ public class ItemGenerator{
 		
 		poss[8] = new Item(ItemType.Armor, "Ebony Armor", 47, 768, 18, 21, 10);	
 		
-		poss[9] = new Item(ItemType.Armor, "Orcish Armor", 52, 486, 20, 22, 12);
+		poss[9] = new Item(ItemType.Armor, "Orcish Armor", 52, 486, 20, 20, 12);
 
 
 
 		poss[10] = new Item(ItemType.Weapon,"Iron Sword", 17, 112, 15, 17, 2);
 		
-		poss[11] = new Item(ItemType.Weapon,"Steel Sword", 24, 120, 20, 28, 9);
+		poss[11] = new Item(ItemType.Weapon,"Steel Sword", 24, 120, 20, 18, 9);
 
-		poss[12] = new Item(ItemType.Weapon, "Steel Dagger", 21, 178, 18, 30, 2);
+		poss[12] = new Item(ItemType.Weapon, "Steel Dagger", 21, 178, 18, 20, 2);
 		
-		poss[13] = new Item(ItemType.Weapon,"Ebony Sword", 32, 520, 22, 20, 1);
+		poss[13] = new Item(ItemType.Weapon,"Ebony Sword", 32, 520, 22, 13, 1);
 		
 		poss[14] = new Item(ItemType.Weapon,"Ebony Dagger", 28, 345, 20, 10, 9);
 		
