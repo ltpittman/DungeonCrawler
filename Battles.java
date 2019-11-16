@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.PrintWriter;
 /*In this class we have the methods for when a character and an enemy attack
  * each other. There are four methods, attack, playerWins, playerLoses, and
  * playerDeath.
@@ -117,6 +118,10 @@ class Battles{
 		else{
 			return;
 		}
+	}
+
+	public void persist (PrintWriter pw){
+		pw.println(numberMonster);
 	}
 }
 

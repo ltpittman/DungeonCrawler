@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.io.PrintWriter;
 
 class Inventory{
 	//All instance variables will be private!
@@ -256,6 +257,20 @@ class Inventory{
 	//to get the equipped Weapon
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
+	}
+
+	public void persist(PrintWriter pw){
+		pw.println("Inventory");
+		for(Item items : items){
+			pw.println(items.getName());
+			pw.println(items.getType());
+			pw.println(items.getStrength());
+			pw.println(items.getWeight());
+			pw.println(items.getItemX());
+			pw.println(items.getItemY());
+			pw.println("-");
+		}
+		pw.println(".");
 	}
 }
 
