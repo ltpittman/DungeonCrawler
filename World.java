@@ -141,15 +141,24 @@ class World{
             enemy3.enemyDead(enemy3);
         }
 
-        /*
-        if(player.x =="D" || player.y == "D"){
+        //If the player finds the room on the top, then ask if they want to go to that room.
+        if(player.x == 6 && player.y == 1){
         Scanner in = new Scanner(System.in);
-        System.out.println("You just encountered a mysterious entrence! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N");
+        System.out.print("You just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
         String answer = in.next().toUpperCase();
         if(answer.equals("Y")){
-        System.out.println("You move aside the heavy rocks and manage to fit your body through. You begin to explore the area...");
+        	System.out.println("You move aside the heavy rocks and manage to fit your body through...");
+        	}
         }
-        }*/
+	//If the player finds the door on the right side of the room, ask if they want to go to that room.
+	if(player.x == 22 && player.y == 13){
+        System.out.print("You just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
+        Scanner in = new Scanner(System.in);
+        String answer = in.next().toUpperCase();
+        if(answer.equals("Y")){
+        	System.out.println("You move aside the heavy rocks and manage to fit your body through...");
+        }
+        }
 
         System.out.println(Arrays.deepToString(world).replace(",","").replace("[[", "").replace("]]", "").replace("[","").replace("]",""));
     }

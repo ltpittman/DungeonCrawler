@@ -97,7 +97,7 @@ class Player extends Characters{
 		}
 		//Have the player go right.
 		if(input.equals("K")){
-			if((x + 1) == 23){
+			if((x + 1) == 24){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
 			}
