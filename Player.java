@@ -74,7 +74,7 @@ class Player extends Characters{
 			}
 		}
 		//Have the player go down.
-		else if(input.equals("L")){
+		if(input.equals("L")){
 			if((y + 1) == 19){
 				System.out.println("[You can go left in that direction.]");
 				return false;
@@ -85,7 +85,7 @@ class Player extends Characters{
 			}
 		}
 		//Have the player go left.
-		else if(input.equals("J")){
+		if(input.equals("J")){
 			if((x - 1) == 0){
 				System.out.println("[You can't go left in that direction.]");
 				return false;
@@ -96,7 +96,7 @@ class Player extends Characters{
 			}
 		}
 		//Have the player go right.
-		else if(input.equals("K")){
+		if(input.equals("K")){
 			if((x + 1) == 23){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
@@ -105,37 +105,37 @@ class Player extends Characters{
 				x += 1;
 				return true;
 			}
-		}/*
+		}
 		//Print the game commands back to the player.
-		else if(input.equals("P")){
+		if(input.equals("P")){
 			world.printCommands();
 		}
 		//Have the player drop a item from their inventory.
-		else if(input.equals("D")){
+		if(input.equals("D")){
 			inventory.drop(player);
 		}
 		//Print the player's inventory to the user.
-		else if(input.equals("I")){
+		if(input.equals("I")){
 			inventory.print();
 		}
 		//Have the player equip a weapon.
-		else if(input.equals("W")){
+		if(input.equals("W")){
 			inventory.equipWeapon();
 		}
 		//Have the player equip a piece of armor.
-		else if(input.equals("A")){
+		if(input.equals("A")){
 			inventory.equipArmor();
 		}
 		//If the player puts "Q," then quit the game.
-		else if(input.equals("Q")){
+		if(input.equals("Q")){
 			System.exit(1);
 			return false;
 		}
 		//Else return false on any other command.
 		else{
 			return false;
-		}*/
-		return false;
+		}
+	//	return false;
 	}
 	//This method prints the player's name and health.
 	void printInfo(){
