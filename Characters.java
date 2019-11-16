@@ -6,7 +6,7 @@ abstract class Characters{
 	public int y;
 
 	//constuctor with basic character qualities
-	protected Characters(String name, int health){
+	protected Characters(String name, int health){//, int health){
 		this.name = name;
 		this.health = health;
 	}

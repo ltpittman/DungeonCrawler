@@ -14,7 +14,8 @@ class Enemy extends Characters{
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){ 
-		super(name,health);
+		super(name, health);//,health);
+		//this.health = health;
 		this.type = type;
 		this.damage = damage;
 		this.x = x;

@@ -37,7 +37,6 @@ class Main{
 
 		//Print the objective of the game.
 		world.printObjective();			
-		//*****************************************************************************************
 
 		//Print the commands.
 		System.out.println("------------------------------------------------");
@@ -46,101 +45,104 @@ class Main{
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
-		//world.printWorld();
 
-		char input;
+		String input;
 
-		do{
+		System.out.println("------------------------------------------------");
+		player.printInfo();
+		player.getLocation();
+		player.inventory.printOtherStats();
+		System.out.print("[Answer] ");
+		input = in.next().toUpperCase(); 
+		System.out.println("------------------------------------------------");
+
+		if(input.equals("Q")){
+			System.exit(1);
+		}
+
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+		
+		while(input != "Q"){
 			System.out.println("------------------------------------------------");
 			player.printInfo();
-			player.getPlayerLocation();
+			player.getLocation();
 			player.inventory.printOtherStats();
-			System.out.print("[Answer] ");
-			input = in.next().toUpperCase().charAt(0);
 			System.out.println("------------------------------------------------");
+			System.out.print("[Answer] ");
 
-			switch(input){
-				case'H':
-					player.move();
-					//world.move(player); //goUp(player);
-					if (enemy1.enemyDead(enemy1) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy2.enemyDead(enemy2) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy3.enemyDead(enemy3) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					break;
-				case'L':
-					player.move();
-					if (enemy1.enemyDead(enemy1) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy2.enemyDead(enemy2) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy3.enemyDead(enemy3) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+			player.move();
+			world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
-					break;
-				case'J':
-					player.move();
-					if (enemy1.enemyDead(enemy1) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy2.enemyDead(enemy2) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy3.enemyDead(enemy3) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					break;
-				case'K':
-					player.move();
-					if (enemy1.enemyDead(enemy1) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy2.enemyDead(enemy2) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-					if (enemy3.enemyDead(enemy3) == false){
-						enemy1.move(); //world.move(enemy1);
-					}
-
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					break;
-				case'P':
-					world.printCommands();
-					break;
-				case'I':
-					player.inventory.print();
-					break;
-				case'D':
-					player.inventory.drop(player);
-					break;
-				case'W':
-					player.inventory.equipWeapon();
-					break;
-				case'A':
-					player.inventory.equipArmor();
-					break;
-				case'N':
-					break;
-				case'Q':
-					System.exit(1);
-					break;
+			if(input.equals("H")){
+				if (enemy1.enemyDead(enemy1) == false){
+					enemy1.move();
+				}
+				if (enemy2.enemyDead(enemy2) == false){
+					enemy2.move();
+				}
+				if (enemy3.enemyDead(enemy3) == false){
+					enemy3.move();
+				}
+				continue;
 			}
-			//world.printWorld();
+			if(input.equals("L")){
+				if (enemy1.enemyDead(enemy1) == false){
+					enemy1.move();
+				}
+				if (enemy2.enemyDead(enemy2) == false){
+					enemy2.move();
+				}
+				if (enemy3.enemyDead(enemy3) == false){
+					enemy3.move();
+				}
+				continue;
+			}
+			if(input.equals("J")){
+				if (enemy1.enemyDead(enemy1) == false){
+					enemy1.move();
+				}
+				if (enemy2.enemyDead(enemy2) == false){
+					enemy2.move();
+				}
+				if (enemy3.enemyDead(enemy3) == false){
+					enemy3.move();
+				}
+				continue;
+			}
+			if(input.equals("K")){
+				if (enemy1.enemyDead(enemy1) == false){
+					enemy1.move();
+				}
+				if (enemy2.enemyDead(enemy2) == false){
+					enemy2.move();
+				}
+				if (enemy3.enemyDead(enemy3) == false){
+					enemy3.move();
+				}
+				continue;
+			}
+			if(input.equals("P")){
+				world.printCommands();
+			}
+			if(input.equals("I")){
+				player.inventory.print();
+			}
+			if(input.equals("D")){
+				player.inventory.drop(player);
+			}
+			if(input.equals("W")){
+				player.inventory.equipWeapon();
+			}
+			if(input.equals("A")){
+				player.inventory.equipArmor();
+			}
+			//else{
+			//	break;
+			//}
+
 		}
-		while(input != 'Q');
-	}
+		}
+
 }
 
 

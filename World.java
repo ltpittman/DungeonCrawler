@@ -47,7 +47,7 @@ class World{
         world[item2.y][item2.x] = "$";
         world[item3.y][item3.x] = "$";
         world[item4.y][item4.x] = "$";
-        world[item5.y][item5.x] = "S";
+        world[item5.y][item5.x] = "$";
 
         //Monsters.
         if (enemy1.enemyDead(enemy1) == false){
