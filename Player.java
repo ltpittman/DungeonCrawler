@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.io.PrintWriter;
+import java.io.FileReader;
 
 class Player extends Characters{
 	//Private instance variables.
@@ -154,5 +155,18 @@ class Player extends Characters{
 		pw.println(equippedWeapon);
 		pw.println(equippedArmor);
 		pw.println(".");
+	}
+
+	public void restore (String fileName){
+		Scanner a = new Scanner(new FileReader(fileName)){
+			this.name = a.nextLine();
+			this.x = a.nextInt();
+			this.y = a.nextInt();
+			this.health = a.nextInt();
+			this.weaponStrength = a.nextInt();
+			this.armorStrength = a.nextInt();
+			//this.equippedWeapon = a.next();
+			//this.equippedArmor = a.next();
+		}
 	}
 }
