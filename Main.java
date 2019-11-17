@@ -34,6 +34,8 @@ class Main{
 		player = new Player(userName, health);
 
 		World world = new World();
+		Rooms room1 = new Rooms();
+		Rooms room2 = new Rooms();
 
 		//Print the objective of the game.
 		world.printObjective();			
@@ -125,14 +127,44 @@ class Main{
 				case'A':
 					player.inventory.equipArmor();
 					break;
+				case'E':
+						System.out.println("You move aside the heavy rocks to create an opening...");
+						System.out.println("You manage to fit your body through the rocks and enter the room...");
+						room1.fillRoom1();
+					break;
+				case'R':
+					System.out.println("You move aside the heavy rocks to create an opening...");
+					System.out.println("You manage to fit your body through the rocks and enter the room...");
+					room2.fillRoom2(player,item1, item2);
+					switch(input){
+						case'H':
+							player.move();
+							room2.fillRoom2(player,item1,item2);
+							break;
+						case'L':
+							player.move();
+							room2.fillRoom2(player,item1,item2);
+							break;
+						case'J':
+							player.move();
+							room2.fillRoom2(player,item1,item2);
+							break;
+						case'K':
+							player.move();
+							room2.fillRoom2(player,item1,item2);
+							break;
+					}
+					break;
+				case'X':
+					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 				case'Q':
 					System.exit(1);
 					break;
-				}
-			}
-		while(input != 'Q');
-		}
 	}
+}
+while(input != 'Q');
+}
+}
 
 
 

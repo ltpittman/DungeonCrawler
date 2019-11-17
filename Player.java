@@ -25,8 +25,8 @@ class Player extends Characters{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = 12;
-		this.y = 9;
+		this.x = 2;//10;
+		this.y = 4;//9;
 	}
 	//Method to get the name of the player.
 //	String getName(){
@@ -53,6 +53,13 @@ class Player extends Characters{
 	int getWeaponStrength(){
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
+	}
+	//Method to get the player's x-coordinate
+	public int getPositionX(){
+		return this.x;
+	}
+	public int getPostionY(){
+		return this.y;
 	}
 	//Method to print the player's location to the user. Will be displayed in the player's information.
 	public void getLocation(){
@@ -106,36 +113,7 @@ class Player extends Characters{
 				return true;
 			}
 		}
-		//Print the game commands back to the player.
-		if(input.equals("P")){
-			world.printCommands();
-		}
-		//Have the player drop a item from their inventory.
-		if(input.equals("D")){
-			inventory.drop(player);
-		}
-		//Print the player's inventory to the user.
-		if(input.equals("I")){
-			inventory.print();
-		}
-		//Have the player equip a weapon.
-		if(input.equals("W")){
-			inventory.equipWeapon();
-		}
-		//Have the player equip a piece of armor.
-		if(input.equals("A")){
-			inventory.equipArmor();
-		}
-		//If the player puts "Q," then quit the game.
-		if(input.equals("Q")){
-			System.exit(1);
-			return false;
-		}
-		//Else return false on any other command.
-		else{
-			return false;
-		}
-	//	return false;
+		return false;
 	}
 	//This method prints the player's name and health.
 	void printInfo(){
