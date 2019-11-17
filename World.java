@@ -8,6 +8,8 @@ class World{
     public int rows;
     public int columns;
     public Enemy enemy;
+    public Room1 room1;
+    public Room2 room2;
     Battles battle = new Battles();
 
     //Method to create the room.
@@ -142,12 +144,13 @@ class World{
         }
 
         //If the player finds the room on the top, then ask if they want to go to that room.
-        if(player.x == 6 && player.y == 1){
+        if(player.x == 6 && player.y == 2){
         Scanner in = new Scanner(System.in);
         System.out.print("You just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
         String answer = in.next().toUpperCase();
         if(answer.equals("Y")){
         	System.out.println("You move aside the heavy rocks and manage to fit your body through...");
+		room1.fillRoom1();
         	}
         }
 	//If the player finds the door on the right side of the room, ask if they want to go to that room.
