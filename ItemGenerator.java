@@ -40,7 +40,7 @@ public class ItemGenerator{
 		
 		poss[13] = new Item(ItemType.Weapon,"Ebony Sword", 32, 520, 22, 4, 1);
 		
-		poss[14] = new Item(ItemType.Weapon,"Ebony Dagger", 28, 345, 20, 10, 9);
+		poss[14] = new Item(ItemType.Weapon,"Ebony Dagger", 28, 345, 20, 3, 9);
 		
 		poss[15] = new Item(ItemType.Weapon,"Orcish Sword", 30, 336, 25, 11, 11);
 		
