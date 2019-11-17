@@ -14,7 +14,7 @@ class Rooms{
 		this.columns = columns;
 		room1 = new String[rows][columns];
 	}
-	public void fillRoom1(){//Enemy enemy1, Item item1, Item item2, Item item3){
+	public void fillRoom1(Player player){//, Enemy enemy1, Item item1, Item item2, Item item3){
 		String[][] room1 = 
 		{
 			{" #","#","#","#","#","#","#","#","#\n"},
@@ -29,21 +29,24 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","D","#","#","#","#"}
 		};
-		//room1[item1.y][item1.x] = "$";
-		//room1[item2.y][item2.x] = "$";
-		//room1[item3.y][item3.x] = "$";
+		
+		room1[player.y][player.x] = "@";
 
-	//	if (enemy1.enemyDead(enemy1) == false){
-	//		room1[enemy1.y][enemy1.x] = "M";
-	//	}
+	/*	room1[item1.y][item1.x] = "$";
+		room1[item2.y][item2.x] = "$";
+		room1[item3.y][item3.x] = "$";
+
+		if (enemy1.enemyDead(enemy1) == false){
+			room1[enemy1.y][enemy1.x] = "M";
+		}*/
+
+		//Printing out room1 to the screen.
 		System.out.println(Arrays.deepToString(room1).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
 	}
+
+
 	//Fill room 2 for the player.
 	public void fillRoom2(Player player,Item item1,Item item2){
 		String[][] room2 =
@@ -59,6 +62,7 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
 
@@ -66,6 +70,8 @@ class Rooms{
 
 		room2[item1.y][item1.x] = "$";
 		room2[item2.y][item2.x] = "$";
+
+		//Printing out room2 to the screen.
 		System.out.println(Arrays.deepToString(room2).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
 	}
 }

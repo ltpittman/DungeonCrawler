@@ -71,7 +71,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.move();
@@ -127,17 +127,17 @@ class Main{
 				case'A':
 					player.inventory.equipArmor();
 					break;
-				case'E':
-						System.out.println("You move aside the heavy rocks to create an opening...");
-						System.out.println("You manage to fit your body through the rocks and enter the room...");
-						room1.fillRoom1();
-					break;
-				case'R':
-					System.out.println("You move aside the heavy rocks to create an opening...");
-					System.out.println("You manage to fit your body through the rocks and enter the room...");
-					room2.fillRoom2(player,item1, item2);
-					
-					switch(input){
+				//case'E':
+				//		System.out.println("You move aside the heavy rocks to create an opening...");
+				//		System.out.println("You manage to fit your body through the rocks and enter the room...");
+				//		room1.fillRoom1();
+				//	break;
+			//	case'R':
+			//		System.out.println("You move aside the heavy rocks to create an opening...");
+			//		System.out.println("You manage to fit your body through the rocks and enter the room...");
+			//		room2.fillRoom2(player,item1, item2);
+			//		
+			/*		switch(input){
 						case'H':
 							player.move();
 							room2.fillRoom2(player,item1,item2);
@@ -158,7 +158,7 @@ class Main{
 					break;
 				case'X':
 					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
-					break;
+					break;*/
 				case'Q':
 					System.exit(1);
 					break;

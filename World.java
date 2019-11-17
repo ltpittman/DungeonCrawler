@@ -14,8 +14,8 @@ class World{
 
 	//Method to create the room.
 	World(){
-		this.rows = rows; //18
-		this.columns = columns; //36
+		this.rows = rows;
+		this.columns = columns;
 		world = new String[rows][columns];
 	}
 	//Method to fill the world with the players, items, and enemies.
@@ -146,12 +146,27 @@ class World{
 
 		//If the player finds the room on the top, then ask if they want to go to that room.
 		if(player.x == 6 && player.y == 1){
+			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N "); // [Type 'E' to enter...] ");
 			Scanner in = new Scanner(System.in);
-			System.out.println("You just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? [Type 'E' to enter...] ");
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				System.out.println("You push the heavy rocks to the side and fit through...");
+				room1.fillRoom1(player);//, enemy1, item1, item2, item3);
+			}
+			else{
+				System.out.println("You decide to leave the room and explore else where...");
+			}
 		}
+
 		//If the player finds the door on the right side of the room, ask if they want to go to that room.
 		if(player.x == 22 && player.y == 13){
-			System.out.println("You just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? [Type 'R' to enter...] ");
+			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N "); // [Type 'E' to enter...] ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				System.out.println("You push the heavy rocks to the side and fit through...");
+				room2.fillRoom2(player, item1, item2);
+		}
 		}
 
 		System.out.println(Arrays.deepToString(world).replace(",","").replace("[[", "").replace("]]", "").replace("[","").replace("]",""));
