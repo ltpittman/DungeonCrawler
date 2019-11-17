@@ -172,6 +172,16 @@ class World{
 		System.out.println(Arrays.deepToString(world).replace(",","").replace("[[", "").replace("]]", "").replace("[","").replace("]",""));
 
 	}
+	/*
+	public void printWorld(){
+	for(int i = 0; i < world.length; i++){
+		for (int j = 0; j < world[i].length; j++){
+			System.out.println(world[i][j]);
+		}
+		System.out.println();
+	}
+}*/
+
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");

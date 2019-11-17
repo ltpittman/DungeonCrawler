@@ -36,7 +36,7 @@ class Main{
 		World world = new World();
 		Rooms room1 = new Rooms();
 		Rooms room2 = new Rooms();
-
+		
 		//Print the objective of the game.
 		world.printObjective();			
 
@@ -61,7 +61,7 @@ class Main{
 
 			switch(input){
 				case'H':
-					player.move();
+					player.goUp();
 					if (enemy1.enemyDead(enemy1) == false){
 						enemy1.move();
 					}
@@ -74,7 +74,7 @@ class Main{
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
-					player.move();
+					player.goDown();
 					if (enemy1.enemyDead(enemy1) == false){
 						enemy1.move();
 					}
@@ -87,7 +87,7 @@ class Main{
 					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;
 				case'J':
-					player.move();
+					player.goLeft();
 					if (enemy1.enemyDead(enemy1) == false){
 						enemy1.move();
 					}
@@ -100,7 +100,7 @@ class Main{
 					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
-					player.move();
+					player.goRight();
 					if (enemy1.enemyDead(enemy1) == false){
 						enemy1.move();
 					}

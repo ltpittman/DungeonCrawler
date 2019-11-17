@@ -65,6 +65,52 @@ class Player extends Characters{
 	public void getLocation(){
 		System.out.println("Location: " + this.y + "," + this.x);
 	}
+	//############
+	public boolean goUp(){
+			if((y - 1) == 0){
+				System.out.println("[You can't go up in that direction anymore.]");
+				return false;
+			}
+			else{
+				y -= 1;
+				return true;
+			}
+	}
+	public boolean goDown(){
+		if((y + 1) == 17){
+			System.out.println("[You can't go down in that direction anymore.]");
+			return false;
+		}
+		else{
+			y += 1;
+			return true;
+		}	
+	}
+	public boolean goLeft(){
+		if((x - 1) == 0){
+			System.out.println("[You can't go left in that direction anymore.]");
+			return false;
+		}
+		else{
+			x -= 1;
+			return true;
+		}
+	}
+	public boolean goRight(){
+		if((x + 1) == 19){
+			System.out.println("[You can't go right in that direction anymore.]");
+			return false;
+		}
+		else{
+			x += 1;
+			return true;
+		}
+	}
+	//Take out?
+	public boolean move(){
+		return false;
+	}
+	/*
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	public boolean move(){
 		Scanner in = new Scanner(System.in);
@@ -114,7 +160,7 @@ class Player extends Characters{
 			}
 		}
 		return false;
-	}
+	}*/
 	//This method prints the player's name and health.
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
