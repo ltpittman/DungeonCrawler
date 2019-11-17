@@ -153,5 +153,6 @@ class Player extends Characters{
 		pw.println(armorStrength);
 		pw.println(equippedWeapon);
 		pw.println(equippedArmor);
+		pw.println(".");
 	}
 }

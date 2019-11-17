@@ -99,6 +99,7 @@ class Enemy extends Characters{
 		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(damage);
+		pw.println(".");
 	}
 	
 
