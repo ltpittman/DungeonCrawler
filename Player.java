@@ -26,8 +26,8 @@ class Player extends Characters{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = 12;
-		this.y = 9;
+		this.x = 2;//10;
+		this.y = 4;//9;
 	}
 	//Method to get the name of the player.
 //	String getName(){
@@ -55,10 +55,63 @@ class Player extends Characters{
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
 	}
+	//Method to get the player's x-coordinate
+	public int getPositionX(){
+		return this.x;
+	}
+	public int getPostionY(){
+		return this.y;
+	}
 	//Method to print the player's location to the user. Will be displayed in the player's information.
 	public void getLocation(){
 		System.out.println("Location: " + this.y + "," + this.x);
 	}
+	//############
+	public boolean goUp(){
+			if((y - 1) == 0){
+				System.out.println("[You can't go up in that direction anymore.]");
+				return false;
+			}
+			else{
+				y -= 1;
+				return true;
+			}
+	}
+	public boolean goDown(){
+		if((y + 1) == 17){
+			System.out.println("[You can't go down in that direction anymore.]");
+			return false;
+		}
+		else{
+			y += 1;
+			return true;
+		}	
+	}
+	public boolean goLeft(){
+		if((x - 1) == 0){
+			System.out.println("[You can't go left in that direction anymore.]");
+			return false;
+		}
+		else{
+			x -= 1;
+			return true;
+		}
+	}
+	public boolean goRight(){
+		if((x + 1) == 19){
+			System.out.println("[You can't go right in that direction anymore.]");
+			return false;
+		}
+		else{
+			x += 1;
+			return true;
+		}
+	}
+	//Take out?
+	public boolean move(){
+		return false;
+	}
+	/*
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	public boolean move(){
 		Scanner in = new Scanner(System.in);
@@ -76,7 +129,7 @@ class Player extends Characters{
 		}
 		//Have the player go down.
 		if(input.equals("L")){
-			if((y + 1) == 19){
+			if((y + 1) == 17){
 				System.out.println("[You can go left in that direction.]");
 				return false;
 			}
@@ -98,7 +151,7 @@ class Player extends Characters{
 		}
 		//Have the player go right.
 		if(input.equals("K")){
-			if((x + 1) == 24){
+			if((x + 1) == 19){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
 			}
@@ -107,37 +160,8 @@ class Player extends Characters{
 				return true;
 			}
 		}
-		//Print the game commands back to the player.
-		if(input.equals("P")){
-			world.printCommands();
-		}
-		//Have the player drop a item from their inventory.
-		if(input.equals("D")){
-			inventory.drop(player);
-		}
-		//Print the player's inventory to the user.
-		if(input.equals("I")){
-			inventory.print();
-		}
-		//Have the player equip a weapon.
-		if(input.equals("W")){
-			inventory.equipWeapon();
-		}
-		//Have the player equip a piece of armor.
-		if(input.equals("A")){
-			inventory.equipArmor();
-		}
-		//If the player puts "Q," then quit the game.
-		if(input.equals("Q")){
-			System.exit(1);
-			return false;
-		}
-		//Else return false on any other command.
-		else{
-			return false;
-		}
-	//	return false;
-	}
+		return false;
+	}*/
 	//This method prints the player's name and health.
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
