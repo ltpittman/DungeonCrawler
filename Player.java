@@ -82,7 +82,7 @@ class Player extends Characters{
 		}
 		//Have the player go down.
 		if(input.equals("L")){
-			if((y + 1) == 19){
+			if((y + 1) == 17){
 				System.out.println("[You can go left in that direction.]");
 				return false;
 			}
@@ -104,7 +104,7 @@ class Player extends Characters{
 		}
 		//Have the player go right.
 		if(input.equals("K")){
-			if((x + 1) == 24){
+			if((x + 1) == 19){
 				System.out.println("[You can't go right in that direction.]");
 				return false;
 			}
