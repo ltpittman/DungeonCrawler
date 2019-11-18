@@ -171,11 +171,23 @@ class Player extends Characters{
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
-		pw.println(equippedWeapon);
-		pw.println(equippedArmor);
+		pw.println(equippedWeapon.getType());
+		pw.println(equippedWeapon.getName());
+		pw.println(equippedWeapon.getWeight());
+		pw.println(equippedWeapon.getValue());
+		pw.println(equippedWeapon.getStrength());
+		pw.println(equippedWeapon.getItemX());
+		pw.println(equippedWeapon.getItemY());
+		pw.println(equippedArmor.getType());
+		pw.println(equippedArmor.getName());
+		pw.println(equippedArmor.getWeight());
+		pw.println(equippedArmor.getValue());
+		pw.println(equippedArmor.getStrength());
+		pw.println(equippedArmor.getItemX());
+		pw.println(equippedArmor.getItemY());
 		pw.println(".");
 	}
-
+/*
 	public void restore (String fileName){
 		Scanner a = new Scanner(new FileReader(fileName));
 		this.name = a.nextLine();
@@ -185,8 +197,10 @@ class Player extends Characters{
 		this.weaponStrength = a.nextInt();
 		this.armorStrength = a.nextInt();
 		String weapon = a.nextLine();
-		this.equippedWeapon = Item.valueOf(weapon);
+		Item weapon = ItemType.valueOf(weapon);
+		this.equippedWeapon = weapon;
 		String armor = a.nextLine();
-		this.equippedArmor = Item.valueOf(armor);
-		}
+		Item armor =  ItemType.valueOf(armor);
+		this.equippedArmor = armor;
+		}*/
 }
