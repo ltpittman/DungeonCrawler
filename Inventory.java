@@ -253,8 +253,8 @@ class Inventory{
 	//Method to drink a health potion.
 	void drinkHealthPotion(Item healthPotion){
 		ArrayList<Item> healthPotions = new ArrayList<Item>();
+		
 		int count = 0;
-
 		System.out.println("Name Weight Value Strength");
 		for(int i = 0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.HealthPotion){
@@ -267,13 +267,11 @@ class Inventory{
 		System.out.println(count + ".Cancel\n");
 
 		System.out.print("Which health potion do you want to drink?\n[Answer] ");
-		
 		Scanner in = new Scanner(System.in);
 		int userInput = in.nextInt();
 		
 		while(userInput != count){
 			if(userInput == count){
-				System.out.println("You decided to keep your health potion for later...");
 				break;
 			}
 			else if(userInput > count || userInput < 1){
@@ -283,7 +281,7 @@ class Inventory{
 			}
 			else{
 				this.health = 100;
-				items.remove(healthPotion);//healthPotion);
+				items.remove(healthPotion);
 				System.out.println("You drink the health potion and restore your health...");
 				break;
 			}

@@ -22,6 +22,7 @@ abstract class Characters{
 		this.health = num;
 	}
 	//Abstract method to move both the player and the enemy.
+//	abstract public String characterImage();
 	abstract public boolean move();
 	abstract public boolean goUp();
 	abstract public boolean goDown();
@@ -29,7 +30,7 @@ abstract class Characters{
 	abstract public boolean goRight();
 	
 	//Method to get the position of the characters.
-	public int getPostionX(){
+	public int getPositionX(){
 		return this.x;
 	}
 	//Method to get the position of the characters.
@@ -37,7 +38,7 @@ abstract class Characters{
 		return this.y;
 	}
 	public void getLocation(){
-		System.out.println("Location: " + getPostionX() + "," + getPositionY());
+		System.out.println("Location: " + getPositionX() + "," + getPositionY());
 	}
 }
 

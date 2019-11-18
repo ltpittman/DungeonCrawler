@@ -134,7 +134,10 @@ class Main{
 				case'R':
 					player.inventory.drinkHealthPotion(healthPotion);
 					break;
-				//case'E':
+				case'X':
+					room1.fillRoom1(player);
+					continue;
+					//case'E':
 				//		System.out.println("You move aside the heavy rocks to create an opening...");
 				//		System.out.println("You manage to fit your body through the rocks and enter the room...");
 				//		room1.fillRoom1();

@@ -157,7 +157,7 @@ class World{
 				room1.fillRoom1(player);//player);//, enemy1, item1, item2, item3);
 			}
 			else{
-				System.out.println("You decide to leave the room and explore else where...");
+				System.out.println("You decide to stay in the main room and continue to explore...");
 			}
 		}
 
