@@ -1,5 +1,8 @@
 import java.util.Random;
 import java.io.PrintWriter;
+import java.io.FileReader;
+import java.util.Scanner;
+
 
 class Enemy extends Characters{
 	//Instance variables.
@@ -178,7 +181,17 @@ class Enemy extends Characters{
 		pw.println(damage);
 		pw.println(".");
 	}
-	
+
+	public void restore (String fileName) {
+		Scanner a = new Scanner(new FileReader(fileName));
+		name = a.nextLine();
+		//how to take in an enum?
+		type = a.next();
+		x = a.nextInt();
+		y = a.nextInt();
+		health = a.nextInt();
+		damage = a.nextInt();
+	}	
 
 	}
 
