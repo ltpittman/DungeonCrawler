@@ -15,8 +15,10 @@ public class ItemGenerator{
 		poss[2] = new Item(ItemType.Other, "Book", 2, 7, 0, 8, 3);
 		
 		poss[3] = new Item(ItemType.Other, "Silver Cup", 2, 7, 0, 7, 10);
+
+
 		
-		poss[4] = new Item(ItemType.Other, "Bucket", 2, 7, 0, 10, 4);	
+		poss[4] = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 10, 4);	
 		
 
 

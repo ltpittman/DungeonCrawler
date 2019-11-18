@@ -8,19 +8,19 @@ class MonsterGenerator{
 		enemyList = new ArrayList<Enemy>();
 		
 		//Adding monsters to list. --> Name, health, damage, y, x, type.
-		Enemy ghoul = new Enemy("Ghoul", 100, 16, 4, 3, MonsterType.Ghoul);
+		Enemy ghoul = new Enemy("Ghoul", 100, 24, 4, 3, MonsterType.Ghoul);
 		enemyList.add(ghoul);
 
-		Enemy vampire = new Enemy("Vampire", 100, 12, 9, 8, MonsterType.Vampire);
+		Enemy vampire = new Enemy("Vampire", 100, 28, 9, 8, MonsterType.Vampire);
 		enemyList.add(vampire);
 
-		Enemy werewolf = new Enemy("Werewolf", 100, 8, 2, 10, MonsterType.Werewolf);
+		Enemy werewolf = new Enemy("Werewolf", 100, 32, 2, 10, MonsterType.Werewolf);
 		enemyList.add(werewolf);
 
-		Enemy zombie = new Enemy("Zombie", 100, 3, 7, 16, MonsterType.Zombie);
+		Enemy zombie = new Enemy("Zombie", 100, 21, 7, 16, MonsterType.Zombie);
 		enemyList.add(zombie);
 
-		Enemy ghost = new Enemy("Ghost", 100, 15, 10, 12, MonsterType.Ghost);
+		Enemy ghost = new Enemy("Ghost", 100, 26, 10, 12, MonsterType.Ghost);
 		enemyList.add(ghost);
 
 		//Pick a random monster from the arrayList.

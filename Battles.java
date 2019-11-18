@@ -6,6 +6,7 @@ import java.io.FileReader;
  * playerDeath.
  */
 class Battles{
+	World world;
 	Player player;
 	Enemy enemy;	
 	Inventory inventory;
@@ -46,7 +47,7 @@ class Battles{
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
 				System.out.println("2. Run away!");
-				System.out.print("[Answer}");
+				System.out.print("[Answer]");
 
 				Scanner in = new Scanner(System.in);
 				int answer = in.nextInt();
@@ -64,7 +65,7 @@ class Battles{
 
 					player.setHealth(healthPlayer);
 					enemy.setHealth(healthEnemy);
-
+					
 					if(healthPlayer <= 0){
 						playerLoses();
 					}
@@ -72,17 +73,18 @@ class Battles{
 					System.out.println("\nThe " + enemyName + " attacked you with a damage of " + strengthEnemy + "...");
 					System.out.println("Your health is now " + healthPlayer + "/100.\n");
 					System.out.println("You attack the " + enemyName + " with a damage of " + strengthPlayer + "!");
-
-
+					
 					//If the enemy's health is less than 1, then the player defeated the monster.
 					if(healthEnemy < 1){
 						System.out.println("The enemy's health has reached 0/100.");
 						System.out.println("You have defeated the monster!");
 						//Subtract one from the numberMonster variable. 
 						numberMonster = numberMonster - 1;
+						player.setHealth(healthPlayer);
 					}
 					else{
 						System.out.println("The enemy's health is now " + healthEnemy + "/100.\n");
+						player.setHealth(healthPlayer);
 					}
 
 					//If the player's health is less than 1, the player loses and the game exits.

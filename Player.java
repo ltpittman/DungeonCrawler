@@ -17,25 +17,19 @@ class Player extends Characters{
 
 	//Constructor
 	public Player(String name, int health){
-		//super(name);//, health);
 		super(name, health); 
-		//this.name = name;
-		//this.health = health;
+		this.name = name;
+		this.health = health;
 		this.weaponStrength = weaponStrength;
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = 2;//10;
-		this.y = 4;//9;
+		this.x = 10;
+		this.y = 9;
 	}
-	//Method to get the name of the player.
-//	String getName(){
-//		return name;//or return name;
-//	}
-	//Method to get the health of the player.
-//	int getHealth(){
-//		return this.health;// or return health;
-//	}
+	int getHealth(){
+		return this.health;
+	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
