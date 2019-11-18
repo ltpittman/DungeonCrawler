@@ -14,7 +14,7 @@ public class ItemGenerator{
 		
 		poss[2] = new Item(ItemType.Other, "Broom", 8, 15, 0, 3, 4);	
 		
-		poss[3] = new Item(ItemType.Other, "Book", 4, 46, 0, 9, 9);	
+		poss[3] = new Item(ItemType.Other, "Book", 4, 46, 0, 6, 8);	
 		
 		poss[4] = new Item(ItemType.Other, "Broken Sword", 9, 87, 0, 6, 2);	
 		
