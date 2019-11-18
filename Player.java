@@ -107,99 +107,107 @@ class Player extends Characters{
 		}
 	}
 	//Take out?
-	public boolean move(){
-		return false;
+	/*public boolean move(){
+	  return false;
 	}
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	Scanner in = new Scanner(System.in);
 	String input = in.next().toUpperCase();
-//Have the player go up.
-if(input.equals("H")){
-if((y - 1) == 0){
-System.out.println("[You can't go up in that direction.]");
-return false;
+	//Have the player go up.
+	if(input.equals("H")){
+	if((y - 1) == 0){
+	System.out.println("[You can't go up in that direction.]");
+	return false;
+	}
+	else{
+	y -= 1;
+	return true;
+	}
+	}
+	//Have the player go down.
+	if(input.equals("L")){
+	if((y + 1) == 17){
+	System.out.println("[You can go left in that direction.]");
+	return false;
+	}
+	else{
+	y += 1;
+	return true;
+	}
+	}
+	//Have the player go left.
+	if(input.equals("J")){
+	if((x - 1) == 0){
+	System.out.println("[You can't go left in that direction.]");
+	return false;
+	}
+	else{
+	x -= 1;
+	return true;
+	}
+	}
+	//Have the player go right.
+	if(input.equals("K")){
+	if((x + 1) == 19){
+	System.out.println("[You can't go right in that direction.]");
+	return false;
+	}
+	else{
+	x += 1;
+	return true;
+	}
+	}
+	return false;*/
+
+	//This method prints the player's name and health.
+	void printInfo(){
+		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
+	}
+	public String toString(){
+		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
+	}
+	//Method for saving the data for the character
+	public void persist(PrintWriter pw){
+		pw.println(name);
+		pw.println(x + " " + y);
+		pw.println(health);
+		pw.println(weaponStrength);
+		pw.println(armorStrength);
+		pw.println(equippedWeapon.getType());
+		pw.println(equippedWeapon.getName());
+		pw.println(equippedWeapon.getWeight());
+		pw.println(equippedWeapon.getValue());
+		pw.println(equippedWeapon.getStrength());
+		pw.println(equippedWeapon.getItemX());
+		pw.println(equippedWeapon.getItemY());
+		pw.println(equippedArmor.getType());
+		pw.println(equippedArmor.getName());
+		pw.println(equippedArmor.getWeight());
+		pw.println(equippedArmor.getValue());
+		pw.println(equippedArmor.getStrength());
+		pw.println(equippedArmor.getItemX());
+		pw.println(equippedArmor.getItemY());
+		pw.println(".");
+	}
+
+	public void restore (String fileName){
+		Scanner a = new Scanner(new FileReader(fileName));
+		this.name = a.nextLine();
+		this.x = a.nextInt();
+		this.y = a.nextInt();
+		this.health = a.nextInt();
+		this.weaponStrength = a.nextInt();
+		this.armorStrength = a.nextInt();
+		String typeItem = a.nextLine();
+		ItemType type = ItemType.valueOf(typeItem);
+		String name = a.nextLine();
+		int weight = a.nextInt();
+		int value = a.nextInt();
+		int stren = a.nextInt();
+		int x = a.nextInt();
+		int y = a.nextInt();
+		this.equippedWeapon = new Item(type, name, weight, value, stren, x, y);
+		//this.equippedArmor = a.next();
+	}
 }
-else{
-y -= 1;
-return true;
-}
-}
-//Have the player go down.
-if(input.equals("L")){
-if((y + 1) == 17){
-System.out.println("[You can go left in that direction.]");
-return false;
-}
-else{
-y += 1;
-return true;
-}
-}
-//Have the player go left.
-if(input.equals("J")){
-if((x - 1) == 0){
-System.out.println("[You can't go left in that direction.]");
-return false;
-}
-else{
-x -= 1;
-return true;
-}
-}
-//Have the player go right.
-if(input.equals("K")){
-if((x + 1) == 19){
-System.out.println("[You can't go right in that direction.]");
-return false;
-}
-else{
-x += 1;
-return true;
-}
-}
-return false;
-}*/
-//This method prints the player's name and health.
-void printInfo(){
-	System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
-}
-public String toString(){
-	return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
-}
-//Method for saving the data for the character
- public void persist(PrintWriter pw){
-                pw.println(name);
-                pw.println(x + " " + y);
-                pw.println(health);
-                pw.println(weaponStrength);
-                pw.println(armorStrength);
-                pw.println(equippedWeapon.getType());
-                pw.println(equippedWeapon.getName());
-                pw.println(equippedWeapon.getWeight());
-                pw.println(equippedWeapon.getValue());
-                pw.println(equippedWeapon.getStrength());
-                pw.println(equippedWeapon.getItemX());
-                pw.println(equippedWeapon.getItemY());
-                pw.println(equippedArmor.getType());
-                pw.println(equippedArmor.getName());
-                pw.println(equippedArmor.getWeight());
-                pw.println(equippedArmor.getValue());
-                pw.println(equippedArmor.getStrength());
-                pw.println(equippedArmor.getItemX());
-                pw.println(equippedArmor.getItemY());
-                pw.println(".");
-        }
-/*
-   public void restore (String fileName){
-   Scanner a = new Scanner(new FileReader(fileName)){
-   this.name = a.nextLine();
-   this.x = a.nextInt();
-   this.y = a.nextInt();
-   this.health = a.nextInt();
-   this.weaponStrength = a.nextInt();
-   this.armorStrength = a.nextInt();
-//this.equippedWeapon = a.next();
-//this.equippedArmor = a.next();
-   }
-   }*/
-}
+
