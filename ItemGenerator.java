@@ -10,15 +10,13 @@ public class ItemGenerator{
 	 	//Item type, Item name, weight, value, strength, x , and y.	
 		poss[0] = new Item(ItemType.Other, "Vase", 5, 4, 0, 1, 9);
 		
-		poss[1] = new Item(ItemType.Other, "Broom", 3, 4, 0, 3, 5);
+		poss[1] = new Item(ItemType.Other, "Silver Cup", 2, 7, 0, 7, 10);
 		
-		poss[2] = new Item(ItemType.Other, "Book", 2, 7, 0, 8, 3);
+		poss[2] = new Item(ItemType.Other, "Broom", 8, 15, 0, 3, 4);	
 		
-		poss[3] = new Item(ItemType.Other, "Silver Cup", 2, 7, 0, 7, 10);
-
-
+		poss[3] = new Item(ItemType.Other, "Book", 4, 46, 0, 9, 9);	
 		
-		poss[4] = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 10, 4);	
+		poss[4] = new Item(ItemType.Other, "Broken Sword", 9, 87, 0, 6, 2);	
 		
 
 
