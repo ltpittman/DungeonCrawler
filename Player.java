@@ -28,9 +28,9 @@ class Player extends Characters{
 		this.x = 10;
 		this.y = 9;
 	}
-	int getHealth(){
-		return this.health;
-	}
+//	int getHealth(){
+//		return this.health;
+//	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
