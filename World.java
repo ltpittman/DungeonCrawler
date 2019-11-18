@@ -8,8 +8,12 @@ class World{
 	public int rows;
 	public int columns;
 	public Enemy enemy;
+	public Player player;
 	public Rooms room1;
 	public Rooms room2;
+	Inventory inventory;
+	Item item;
+
 	Battles battle = new Battles();
 
 	//Method to create the room.
@@ -49,7 +53,6 @@ class World{
 		world[item3.y][item3.x] = "$";
 		world[item4.y][item4.x] = "$";
 		world[item5.y][item5.x] = "$";
-
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
 			world[enemy1.y][enemy1.x] = "M";
@@ -151,7 +154,7 @@ class World{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room1.fillRoom1();//player);//, enemy1, item1, item2, item3);
+				room1.fillRoom1(player);//player);//, enemy1, item1, item2, item3);
 			}
 			else{
 				System.out.println("You decide to leave the room and explore else where...");
@@ -173,15 +176,14 @@ class World{
 
 	}
 	/*
-	public void printWorld(){
-	for(int i = 0; i < world.length; i++){
-		for (int j = 0; j < world[i].length; j++){
-			System.out.println(world[i][j]);
-		}
-		System.out.println();
-	}
-}*/
-
+	   public void printWorld(){
+	   for(int i = 0; i < world.length; i++){
+	   for (int j = 0; j < world[i].length; j++){
+	   System.out.println(world[i][j]);
+	   }
+	   System.out.println();
+	   }
+	   }*/
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'R' to drink a health potion.\nPress 'P' to print the commands to read again.");

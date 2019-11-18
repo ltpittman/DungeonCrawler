@@ -18,6 +18,8 @@ public class ItemGenerator{
 		
 		poss[4] = new Item(ItemType.Other, "Broken Sword", 9, 87, 0, 6, 2);	
 		
+		//poss[0] = new Item(ItemType.HealthPotion, "Health Potion", 5, 25, 100, 1, 9);
+		
 
 
 		poss[5] = new Item(ItemType.Armor, "Hunting Armor", 26, 146, 12, 5, 6);

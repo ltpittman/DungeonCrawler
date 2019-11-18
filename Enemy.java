@@ -181,7 +181,7 @@ class Enemy extends Characters{
 		pw.println(damage);
 		pw.println(".");
 	}
-
+/*
 	public void restore (String fileName) {
 		Scanner a = new Scanner(new FileReader(fileName));
 		name = a.nextLine();
@@ -192,6 +192,6 @@ class Enemy extends Characters{
 		health = a.nextInt();
 		damage = a.nextInt();
 	}	
-
+*/
 	}
 

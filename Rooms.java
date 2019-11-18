@@ -14,7 +14,7 @@ class Rooms{
 		this.columns = columns;
 		room1 = new String[rows][columns];
 	}
-	public void fillRoom1(){//Player player){//, Enemy enemy1, Item item1, Item item2, Item item3){
+	public void fillRoom1(Player player){//Player player){//, Enemy enemy1, Item item1, Item item2, Item item3){
 		String[][] room1 = 
 		{
 			{" #","#","#","#","#","#","#","#","#\n"},
@@ -32,7 +32,7 @@ class Rooms{
 			{"#","#","#","#","D","#","#","#","#"}
 		};
 		
-		//room1[player.y][player.x] = "@";
+		room1[player.y][player.x] = "@";
 
 	/*	room1[item1.y][item1.x] = "$";
 		room1[item2.y][item2.x] = "$";

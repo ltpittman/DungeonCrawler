@@ -39,7 +39,7 @@ class Battles{
 		System.out.println();
 		System.out.println("[Player Health] " + healthPlayer + " pts.");
 		System.out.println("[Player Strength] " + strengthArmor + " pts.");
-		System.out.println("[Enemy Health] " + strengthEnemy + " pts.");
+		System.out.println("[Enemy Health] " + healthEnemy + " pts.");
 		System.out.println();
 
 		while(healthEnemy > 0){
@@ -47,8 +47,13 @@ class Battles{
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
-				System.out.println("2. Run away!");
-				System.out.println("3. Drink health potion!");
+				if(player.inventory.equals(healthPotion)){
+					System.out.println("2. Drink health potion!");
+					System.out.println("3. Run away!");
+				}
+				else{
+					System.out.println("2. Run away!");
+				}
 				System.out.print("[Answer]");
 
 				Scanner in = new Scanner(System.in);
@@ -82,11 +87,11 @@ class Battles{
 						System.out.println("You have defeated the monster!");
 						//Subtract one from the numberMonster variable. 
 						numberMonster = numberMonster - 1;
-						player.setHealth(healthPlayer);
+						//player.setHealth(healthPlayer);
 					}
 					else{
 						System.out.println("The enemy's health is now " + healthEnemy + "/100.\n");
-						player.setHealth(healthPlayer);
+						//player.setHealth(healthPlayer);
 					}
 
 					//If the player's health is less than 1, the player loses and the game exits.
@@ -99,8 +104,13 @@ class Battles{
 						playerWins();
 					}
 				}
-				else if(answer == 3){
-					player.drinkHealthPotion(healthPotion);
+				else if(answer == 2){
+					if(player.inventory.equals(healthPotion)){
+						player.inventory.drinkHealthPotion(healthPotion);
+					}
+					else{
+						System.out.println("You have no health potions to drink!");
+					}
 				}
 				else{
 					break;

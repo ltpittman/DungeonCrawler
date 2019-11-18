@@ -252,19 +252,40 @@ class Inventory{
 	}
 	//Method to drink a health potion.
 	void drinkHealthPotion(Item healthPotion){
+		ArrayList<Item> healthPotions = new ArrayList<Item>();
+		int count = 0;
+
+		System.out.println("Name Weight Value Strength");
 		for(int i = 0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.HealthPotion){
-				System.out.print("You have a health potion in your inventory.\nDo you want to drink this to restore your health? Y/N ");
-				Scanner in = new Scanner(System.in);
-				String input = in.next().toUpperCase();
-				if(input.equals("Y")){
-					this.health = 100;
-					items.remove(healthPotion);
-					System.out.println("You drink the health potion and restore your health...");
-				}
-				else{
-					System.out.println("You decide to hold on to your health potion for longer...");
-				}
+				count++;
+				healthPotions.add(items.get(i));
+				System.out.println(count + ". " + items.get(i));
+			}
+		}
+		count++;
+		System.out.println(count + ".Cancel\n");
+
+		System.out.print("Which health potion do you want to drink?\n[Answer] ");
+		
+		Scanner in = new Scanner(System.in);
+		int userInput = in.nextInt();
+		
+		while(userInput != count){
+			if(userInput == count){
+				System.out.println("You decided to keep your health potion for later...");
+				break;
+			}
+			else if(userInput > count || userInput < 1){
+				System.out.println("Please enter a valid number.\n[Answer] ");
+				userInput = in.nextInt();
+				continue;
+			}
+			else{
+				this.health = 100;
+				items.remove(healthPotion);//healthPotion);
+				System.out.println("You drink the health potion and restore your health...");
+				break;
 			}
 		}
 	}
