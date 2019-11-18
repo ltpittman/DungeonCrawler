@@ -250,14 +250,34 @@ class Inventory{
 			}
 		}
 	}
-	//to get the equipped Armor
+	//Method to drink a health potion.
+	void drinkHealthPotion(Item healthPotion){
+		for(int i = 0; i < items.size(); i++){
+			if(items.get(i).getType() == ItemType.HealthPotion){
+				System.out.print("You have a health potion in your inventory.\nDo you want to drink this to restore your health? Y/N ");
+				Scanner in = new Scanner(System.in);
+				String input = in.next().toUpperCase();
+				if(input.equals("Y")){
+					this.health = 100;
+					items.remove(healthPotion);
+					System.out.println("You drink the health potion and restore your health...");
+				}
+				else{
+					System.out.println("You decide to hold on to your health potion for longer...");
+				}
+			}
+		}
+	}
+
+	//To get the equipped Armor.
 	Item getEquippedArmor(){
 		return this.equippedArmor;
 	}
-	//to get the equipped Weapon
+	//To get the equipped Weapon.
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
 	}
+	
 
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");

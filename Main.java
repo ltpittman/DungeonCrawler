@@ -32,6 +32,10 @@ class Main{
 		String userName = in.next();
 
 		player = new Player(userName, health);
+	
+		//The player starts out with one health potion. 	
+		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
+		player.inventory.addItem(healthPotion);
 
 		World world = new World();
 		Rooms room1 = new Rooms();
@@ -126,6 +130,9 @@ class Main{
 					break;
 				case'A':
 					player.inventory.equipArmor();
+					break;
+				case'R':
+					player.inventory.drinkHealthPotion(healthPotion);
 					break;
 				//case'E':
 				//		System.out.println("You move aside the heavy rocks to create an opening...");

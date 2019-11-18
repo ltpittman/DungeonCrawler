@@ -36,64 +36,64 @@ class Enemy extends Characters{
 	/*
 	//###Adding this to try out.
 	public boolean goUp(){
-		int mm = 1;
-		if(mm == 1){
-			if(x - 1 == 0){
-				return false;
-			}
-			else{
-				y -= 1;
-				return true;
-			}
-		}
-		else{
-			return false;
-		}
+	int mm = 1;
+	if(mm == 1){
+	if(x - 1 == 0){
+	return false;
+	}
+	else{
+	y -= 1;
+	return true;
+	}
+	}
+	else{
+	return false;
+	}
 	}
 	public boolean goDown(){
-		int mm = 2;
-		if(mm == 2){
-			if(y + 1 == 15){
-				return false;
-			}
-			else{
-				y += 1;
-				return true;
-			}
-		}
-		else{
-			return false;
-		}
+	int mm = 2;
+	if(mm == 2){
+	if(y + 1 == 15){
+	return false;
+	}
+	else{
+	y += 1;
+	return true;
+	}
+	}
+	else{
+	return false;
+	}
 	}
 	public boolean goLeft(){
-		int mm = 3;
-		if(mm == 3){
-			if(x - 1 == 0){
-				return false;
-			}
-			else{
-				x -= 1;
-				return true;
-			}
-		}
-		else{
-			return false;
-		}
+	int mm = 3;
+	if(mm == 3){
+	if(x - 1 == 0){
+	return false;
+	}
+	else{
+	x -= 1;
+	return true;
+	}
+	}
+	else{
+	return false;
+	}
 	}
 	public boolean goRight(){
-		int mm = 4;
-		if(mm == 4){
-			if(x + 1 == 15){
-				return false;
-			}
-			else{
-				x += 1;
-				return true;
-			}
-		} 
-		else{
-			return false;
-		}
+	int mm = 4;
+	if(mm == 4){
+	if(x + 1 == 15){
+	return false;
+	}
+	else{
+	x += 1;
+	return true;
+	}
+	} 
+	else{
+	return false;
+	}
 	}
 	*/
 	public boolean goRight(){
@@ -115,7 +115,7 @@ class Enemy extends Characters{
 		int mm = random.nextInt(4);
 
 		if(mm == 0){
-			if(x + 1 == 23){
+			if(x + 1 == 22){
 				return false;
 			}
 			else{
@@ -186,7 +186,7 @@ class Enemy extends Characters{
 		Scanner a = new Scanner(new FileReader(fileName));
 		name = a.nextLine();
 		//how to take in an enum?
-		type = a.next();
+		type = a.next();  
 		x = a.nextInt();
 		y = a.nextInt();
 		health = a.nextInt();
