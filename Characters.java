@@ -22,7 +22,7 @@ abstract class Characters{
 		this.health = num;
 	}
 	//Abstract method to move both the player and the enemy.
-//	abstract public String characterImage();
+	//abstract public String getCharacterImage();
 	abstract public boolean move();
 	abstract public boolean goUp();
 	abstract public boolean goDown();
