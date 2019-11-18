@@ -163,6 +163,7 @@ class Player extends Characters{
 	public String toString(){
 		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
 	}
+
 	//Method for saving the data for the character
 	public void persist(PrintWriter pw){
 		pw.println(name);
@@ -176,15 +177,16 @@ class Player extends Characters{
 	}
 
 	public void restore (String fileName){
-		Scanner a = new Scanner(new FileReader(fileName)){
-			this.name = a.nextLine();
-			this.x = a.nextInt();
-			this.y = a.nextInt();
-			this.health = a.nextInt();
-			this.weaponStrength = a.nextInt();
-			this.armorStrength = a.nextInt();
-			//this.equippedWeapon = a.next();
-			//this.equippedArmor = a.next();
+		Scanner a = new Scanner(new FileReader(fileName));
+		this.name = a.nextLine();
+		this.x = a.nextInt();
+		this.y = a.nextInt();
+		this.health = a.nextInt();
+		this.weaponStrength = a.nextInt();
+		this.armorStrength = a.nextInt();
+		String weapon = a.nextLine();
+		this.equippedWeapon = Item.valueOf(weapon);
+		String armor = a.nextLine();
+		this.equippedArmor = Item.valueOf(armor);
 		}
-	}
 }

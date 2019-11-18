@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 class Enemy extends Characters{
 	//Instance variables.
-	private int health;
-	private String name;
-	private MonsterType type;
-	private int damage;
-	public int x;
-	public int y;
+	private int health = 0;
+	private String name = " ";
+	private MonsterType type = "Vampire";
+	private int damage = 0;
+	public int x = 0;
+	public int y = 0;
 	public World world;
 
 	//Constructor for the enemy.
@@ -185,8 +185,8 @@ class Enemy extends Characters{
 	public void restore (String fileName) {
 		Scanner a = new Scanner(new FileReader(fileName));
 		name = a.nextLine();
-		//how to take in an enum?
-		type = a.next();  
+		String t = a.nextLine();
+		type = MonsterType.valueOf(t);
 		x = a.nextInt();
 		y = a.nextInt();
 		health = a.nextInt();
