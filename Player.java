@@ -207,7 +207,15 @@ class Player extends Characters{
 		int x = a.nextInt();
 		int y = a.nextInt();
 		this.equippedWeapon = new Item(type, name, weight, value, stren, x, y);
-		//this.equippedArmor = a.next();
+		String typeitemB = a.nextLine();
+		ItemType typeB = ItemType.valueOf(typeitemB);
+		String nameB = a.nextLine();
+		int weightB = a.nextInt();
+		int valueB = a.nextInt();
+		int strenB = a.nextInt();
+		int xB = a.nextInt();
+		int yB = a.nextInt();
+		this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
 	}
 }
 

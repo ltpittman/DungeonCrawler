@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 class Enemy extends Characters{
 	//Instance variables.
-	private int health = 0;
-	private String name = " ";
-	private MonsterType type = "Vampire";
-	private int damage = 0;
-	public int x = 0;
-	public int y = 0;
+	private int health;
+	private String name;
+	private MonsterType type;
+	private int damage;
+	public int x;
+	public int y;
 	public World world;
 
 	//Constructor for the enemy.
@@ -184,17 +184,18 @@ class Enemy extends Characters{
 		pw.println(damage);
 		pw.println(".");
 	}
-/*
+
 	public void restore (String fileName) {
 		Scanner a = new Scanner(new FileReader(fileName));
-		name = a.nextLine();
+		this.name = a.nextLine();
 		String t = a.nextLine();
-		type = MonsterType.valueOf(t);
-		x = a.nextInt();
-		y = a.nextInt();
-		health = a.nextInt();
-		damage = a.nextInt();
+		MonsterType type = MonsterType.valueOf(t);
+		this.type = type;
+		this.x = a.nextInt();
+		this.y = a.nextInt();
+		this.health = a.nextInt();
+		this.damage = a.nextInt();
 	}	
-*/
+
 	}
 
