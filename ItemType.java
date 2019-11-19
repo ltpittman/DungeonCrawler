@@ -1,7 +1,7 @@
 enum ItemType{
 	Weapon,
 	Armor,
-	HealthPotion,
+//	HealthPotion,
 	Other
 }
 

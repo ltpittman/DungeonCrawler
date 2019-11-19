@@ -32,7 +32,7 @@ class Rooms{
 			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#"}
 		};
 		
-		room1[player.y][player.x] = player.characterImage();
+		room1[player.y][player.x] = "@";
 
 	/*	room1[item1.y][item1.x] = "$";
 		room1[item2.y][item2.x] = "$";

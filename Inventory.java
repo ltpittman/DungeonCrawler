@@ -251,6 +251,7 @@ class Inventory{
 		}
 	}
 	//Method to drink a health potion.
+	/*
 	void drinkHealthPotion(Item healthPotion){
 		ArrayList<Item> healthPotions = new ArrayList<Item>();
 		
@@ -286,7 +287,7 @@ class Inventory{
 				break;
 			}
 		}
-	}
+	}*/
 
 	//To get the equipped Armor.
 	Item getEquippedArmor(){

@@ -27,7 +27,7 @@ class World{
 
 		String[][] world = 
 		{
-			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
+			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
@@ -172,18 +172,25 @@ class World{
 			}
 		}
 
-		System.out.println(Arrays.deepToString(world).replace(",","").replace("[[", "").replace("]]", "").replace("[","").replace("]",""));
+		//	System.out.println(Arrays.deepToString(world).replace(",","").replace("[[", "").replace("]]", "").replace("[","").replace("]",""));
 
-	}
-	/*
-	   public void printWorld(){
-	   for(int i = 0; i < world.length; i++){
-	   for (int j = 0; j < world[i].length; j++){
-	   System.out.println(world[i][j]);
-	   }
-	   System.out.println();
-	   }
-	   }*/
+		// public void printWorld(){
+		for(int i = 0; i < world.length; i++){
+			for (int j = 0; j < world[i].length; j++){
+				System.out.print(world[i][j]);
+			}
+			}
+		System.out.println();
+		}
+/*
+	public void printWorld(){
+		for(int i = 0; i < world.length; i++){
+			for (int j = 0; j < world[i].length; j++){
+				System.out.print(world[i][j]);
+			}
+			}
+		System.out.println();
+	}*/
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'R' to drink a health potion.\nPress 'P' to print the commands to read again.");
@@ -192,4 +199,4 @@ class World{
 	void printObjective(){
 		System.out.println("\n[Welcome to Dungeon Crawler!]...\n   The overall objective of the game is to fight all the monsters that you encounter and make it out of the dungeon alive. To begin, your health will start at 100/100 pts. You will have three items in your inventory: a sword, a piece of armor, and a health potion. While out searching for monsters, you have the option to pick up random items, whether it is a piece of armor, a weapon, etc.\n    You may switch your weapon and armor for something different that you find anytime. When it comes to fighting the monsters, it's all about luck. If you win a battle against a monster, you will be able to continue exploring the area and fight any more monsters you come across. But if luck is not on your side, then you have a chance to restore your health back to 100 pts. by drinking the health potion located in your inventory. However, it should be noted that you are only given one health potion so use it wisely! If you are able to kill all the monsters in the dungeon, then you have won the game! [Good luck!]"); 
 	}
-}
+	}

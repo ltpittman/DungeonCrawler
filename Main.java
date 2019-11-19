@@ -34,8 +34,8 @@ class Main{
 		player = new Player(userName, health);
 	
 		//The player starts out with one health potion. 	
-		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
-		player.inventory.addItem(healthPotion);
+	//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
+	//	player.inventory.addItem(healthPotion);
 
 		World world = new World();
 		Rooms room1 = new Rooms();
@@ -131,9 +131,9 @@ class Main{
 				case'A':
 					player.inventory.equipArmor();
 					break;
-				case'R':
-					player.inventory.drinkHealthPotion(healthPotion);
-					break;
+			//	case'R':
+			//		player.inventory.drinkHealthPotion(healthPotion);
+			//		break;
 				case'X':
 					room1.fillRoom1(player);
 					continue;
