@@ -48,11 +48,21 @@ class MainRoom{
 		*/
 
 		//Items.
-		mainRoom[item1.y][item1.x] = "$";
+		if (player.inventory.inInventory(item1) == false){
+			mainRoom[item1.y][item1.x] = "$";
+		}
+		if (player.inventory.inInventory(item2) == false){
 		mainRoom[item2.y][item2.x] = "$";
+		}
+		if (player.inventory.inInventory(item3) == false){
 		mainRoom[item3.y][item3.x] = "$";
+		}
+		if (player.inventory.inInventory(item4) == false){
 		mainRoom[item4.y][item4.x] = "$";
+		}
+		if (player.inventory.inInventory(item5) == false){
 		mainRoom[item5.y][item5.x] = "$";
+		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
 			mainRoom[enemy1.y][enemy1.x] = "M";
