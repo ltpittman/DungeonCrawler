@@ -145,7 +145,7 @@ class Battles{
 
 	public void restor (String fileName) throws Exception {
 		Scanner a = new Scanner(new FileReader(fileName));
-		numberMonster = a.nextInt();
+		this.numberMonster = a.nextInt();
 	}
 }
 
