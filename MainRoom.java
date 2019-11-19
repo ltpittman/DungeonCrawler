@@ -9,6 +9,7 @@ class MainRoom{
 	public int columns;
 	public Enemy enemy;
 	public Player player;
+	public Rooms mainRoom
 	public Rooms room1;
 	public Rooms room2;
 	Inventory inventory;
@@ -19,11 +20,11 @@ class MainRoom{
 	MainRoom(){
 		this.rows = rows;
 		this.columns = columns;
-		mainRoom = new String[rows][columns];
+		this.mainRoom = mainRoom;//new String[rows][columns];
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillMainRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-
+		/*
 		String[][] mainRoom = 
 		{
 			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -45,6 +46,7 @@ class MainRoom{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
+		*/
 
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
@@ -163,7 +165,7 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room1.fillRoom1(player);//player);//, enemy1, item1, item2, item3);
+				room1.printRoom1();//player);//, enemy1, item1, item2, item3);
 			}
 			else{
 				System.out.println("You decide to stay in the main room and continue to explore...");
@@ -177,17 +179,17 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room2.fillRoom2();//player, item1, item2);
+				room2.printRoom2();//player, item1, item2);
 			}
 		}
 
 
-		for(int i = 0; i < mainRoom.length; i++){
-			for (int j = 0; j < mainRoom[i].length; j++){
-				System.out.print(mainRoom[i][j] + " ");
-			}
-		}
-		System.out.println();
+	//	for(int i = 0; i < mainRoom.length; i++){
+	//		for (int j = 0; j < mainRoom[i].length; j++){
+	//			System.out.print(mainRoom[i][j] + " ");
+	//		}
+	//	}
+	//	System.out.println();
 	}
 /*
 	public void printWorld(){
