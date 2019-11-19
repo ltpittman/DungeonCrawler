@@ -7,75 +7,63 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	public Rooms room;
-//	public Rooms room1;
-//	public Rooms room2;
 	Inventory inventory;
 
 	Battles battle = new Battles();
 
 	//Method to create the room.
 	World(){
-		//this.rows = rows;
-		//this.columns = columns;
-		this.world = world;// new String[rows][columns];//world;//new String[rows][columns];
-		this.room = room;
+		this.world = world;
+		this.room1 = new Rooms(17, 19);
+		this.room2 = new Rooms(12, 19);
+		this.room3 = new Rooms(12, 13);
+
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-		room.printMainRoom();	
-		/*
-		String[][] mainRoom = 
-		{
-			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","D\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#",}
-		};
-		*/
-
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+		//Set the main Room to null.
+		Room mainRoom = null;
+		//If room is equal to one, then make the mainRoom equal to room1.
+		if(room == 1){
+			mainRoom = room1;
+		}
+		//If room is equal to two, then make the mainRoom equal to room2.
+		else if(room ==2){
+			mainRoom = room2;
+		}
+		//If room is equal to three, then make the mainRoom equal to room3.
+		else if(rom ==3){
+			mainRoom = room3;
+		}
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			world[item1.y][item1.x] = "$";
+			mainRoom[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-			world[item2.y][item2.x] = "$";
+			mainRoom[item2.y][item2.x] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-			world[item3.y][item3.x] = "$";
+			mainRoom[item3.y][item3.x] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-			world[item4.y][item4.x] = "$";
+			mainRoom[item4.y][item4.x] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-			world[item5.y][item5.x] = "$";
+			mainRoom[item5.y][item5.x] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
-			world[enemy1.y][enemy1.x] = "M";
+			mainRoom[enemy1.y][enemy1.x] = "M";
 		}
 		if (enemy2.enemyDead(enemy2) == false){
-			world[enemy2.y][enemy2.x] = "M";
+			mainRoom[enemy2.y][enemy2.x] = "M";
 		}
 		if (enemy3.enemyDead(enemy3) == false){
-			world[enemy3.y][enemy3.x] = "M";
+			mainRoom[enemy3.y][enemy3.x] = "M";
 		}
 
 		//Player.
-		world[player.y][player.x] = "@";
+		mainRoom[player.y][player.x] = "@";
 
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){

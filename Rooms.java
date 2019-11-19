@@ -4,13 +4,11 @@ class Rooms{
 	public String[][] mainRoom;
 	public String[][] room1;
 	public String[][] room2;
+	public int rows;
+	public int columns;
 
-	Rooms(){
-		this.mainRoom = mainRoom;
-		this.room1 = room1;
-		this.room2 = room2;
-	}
-	/*Rooms(){
+	//The constructor.	
+	Rooms(int rows; int columns){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; i < columns; j++){
 				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
@@ -21,7 +19,7 @@ class Rooms{
 				}
 			}
 		}
-	}*/
+	}/*
 	public void printMainRoom(){
 
 		String[][] mainRoom = 
@@ -105,5 +103,5 @@ class Rooms{
 		}
 		System.out.println();
 
-	}
+	}*/
 }
