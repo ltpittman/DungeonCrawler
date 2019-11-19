@@ -11,9 +11,10 @@ class Player extends Characters{// throws FileNotFoundException{
 	private int armorStrength;
 	private Item equippedWeapon;
 	private Item equippedArmor;
+	Inventory inventory;
 	public int x;
 	public int y;
-	Inventory inventory;
+	public String[][] room;
 
 	//Constructor
 	public Player(String name, int health){
