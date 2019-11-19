@@ -12,7 +12,7 @@ class Player extends Characters{// throws FileNotFoundException{
 	private Item equippedWeapon;
 	private Item equippedArmor;
 	Inventory inventory;
-	public Rooms room;
+	public World world;
 	public int x;
 	public int y;
 
