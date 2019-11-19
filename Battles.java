@@ -12,7 +12,7 @@ class Battles{
 	Inventory inventory;
 	Item equippedArmor;
 	Item equippedWeapon;
-	Item healthPotion;
+//	Item healthPotion;
 
 	private int numberMonster = 3;
 	private static int healthEnemy;
@@ -47,13 +47,13 @@ class Battles{
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
-				if(player.inventory.equals(healthPotion)){
-					System.out.println("2. Drink health potion!");
+				//if(player.inventory.equals(healthPotion)){
+				//	System.out.println("2. Drink health potion!");
 					System.out.println("3. Run away!");
-				}
-				else{
-					System.out.println("2. Run away!");
-				}
+			//	}
+			//	else{
+			//		System.out.println("2. Run away!");
+			//	}
 				System.out.print("[Answer]");
 
 				Scanner in = new Scanner(System.in);
@@ -103,14 +103,13 @@ class Battles{
 					if(numberMonster == 0){
 						playerWins();
 					}
-				}
-				else if(answer == 2){
-					if(player.inventory.equals(healthPotion)){
-						player.inventory.drinkHealthPotion(healthPotion);
-					}
-					else{
-						System.out.println("You have no health potions to drink!");
-					}
+			//	else if(answer == 2){
+			//		if(player.inventory.equals(healthPotion)){
+			//			player.inventory.drinkHealthPotion(healthPotion);
+			//		}
+			//		else{
+			//			System.out.println("You have no health potions to drink!");
+			//		}
 				}
 				else{
 					break;

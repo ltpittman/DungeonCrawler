@@ -32,7 +32,7 @@ class Rooms{
 			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#"}
 		};
 		
-		room1[player.y][player.x] = player.characterImage();
+		room1[player.y][player.x] = "@";
 
 	/*	room1[item1.y][item1.x] = "$";
 		room1[item2.y][item2.x] = "$";
@@ -43,7 +43,14 @@ class Rooms{
 		}*/
 
 		//Printing out room1 to the screen.
-		System.out.println(Arrays.deepToString(room1).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
+		//System.out.println(Arrays.deepToString(room1).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
+		for(int i = 0; i < room1.length; i++){
+			for(int j = 0; i < room1[i].length; j++){
+				System.out.print(room1[i][j] + " ");
+			}
+		}
+		System.out.println();
+
 	}
 
 
