@@ -7,7 +7,6 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	Inventory inventory;
-//	public String[][] world;
 	public Rooms room1;
 	public Rooms room2;
 	public Rooms room3;
@@ -23,6 +22,7 @@ class World{
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+		
 		//Set the mainRoom to null.
 		Rooms mainRoom = null;
 		//If room is equal to one, then make the mainRoom equal to room1.

@@ -21,14 +21,6 @@ abstract class Characters{
 	public void setHealth(int num){
 		this.health = num;
 	}
-	//Abstract method to move both the player and the enemy.
-	//abstract public String getCharacterImage();
-	abstract public boolean move();
-	abstract public boolean goUp();
-	abstract public boolean goDown();
-	abstract public boolean goLeft();
-	abstract public boolean goRight();
-	
 	//Method to get the position of the characters.
 	public int getPositionX(){
 		return this.x;
