@@ -4,22 +4,16 @@ class Rooms{
 	public String[][] mainRoom;
 	public String[][] room1;
 	public String[][] room2;
-//	public int rows;
-//	public int columns;
-	public Player player;
-	public Enemy enemy;
-	Battles battle = new Battles();
+	//public Player player;
+ 	//public Enemy enemy;
 
 	Rooms(){
-//		this.rows = rows;
-//		this.columns = columns;
 		this.mainRoom = mainRoom;
 		this.room1 = room1;
 		this.room2 = room2;
-		//s.this.playerSpot = [6][11];
 	}
-	public void printMainRoom(){
-		
+	public void printRoom(){
+
 		String[][] mainRoom = 
 		{
 			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -42,15 +36,6 @@ class Rooms{
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#"},
 		};
 
-		for(int i = 0; i < mainRoom.length; i++){
-			for(int j = 0; i < mainRoom[i].length; j++){
-				System.out.print(mainRoom[i][j] + " ");
-			}
-		}
-		System.out.println();
-
-	}
-	public void printRoom1(){//Player player){//, Enemy enemy1, Item item1, Item item2, Item item3){
 		String[][] room1 = 
 		{
 			{" #","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -67,31 +52,7 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#"}
 		};
-		
-		room1[player.y][player.x] = "@";
 
-	/*	room1[item1.y][item1.x] = "$";
-		room1[item2.y][item2.x] = "$";
-		room1[item3.y][item3.x] = "$";
-
-		if (enemy1.enemyDead(enemy1) == false){
-			room1[enemy1.y][enemy1.x] = "M";
-		}*/
-
-		//Printing out room1 to the screen.
-		for(int i = 0; i < room1.length; i++){
-			for(int j = 0; i < room1[i].length; j++){
-				System.out.print(room1[i][j] + " ");
-			}
-		}
-		System.out.println();
-
-	}
-
-
-	//Fill room 2 for the player.
-	public void printRoom2(){//Player player,Item item1,Item item2){
-		
 		String[][] room2 =
 		{
 			{" #","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -109,17 +70,5 @@ class Rooms{
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
 
-		//room2[player.y][player.x] = "@";
-
-		//room2[item1.y][item1.x] = "$";
-		//room2[item2.y][item2.x] = "$";
-
-		//Printing out room2 to the screen.
-		for(int i = 0; i < room2.length; i++){
-			for(int j = 0; i < room2[i].length; j++){
-				System.out.print(room2[i][j] + " ");
-			}
-			}
-		System.out.println();
 	}
 }
