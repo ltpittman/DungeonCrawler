@@ -12,7 +12,6 @@ class MainRoom{
 	public Rooms room1;
 	public Rooms room2;
 	Inventory inventory;
-	Item item;
 
 	Battles battle = new Battles();
 
