@@ -38,8 +38,6 @@ class Main{
 	//	player.inventory.addItem(healthPotion);
 
 		World world = new World();
-		//Rooms room1 = new Rooms();
-		//Rooms room2 = new Rooms();
 		
 		//Print the objective of the game.
 		world.printObjective();			

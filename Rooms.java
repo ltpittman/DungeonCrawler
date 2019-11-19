@@ -18,6 +18,9 @@ class Rooms{
 			}
 		}
 	}
+	public String[][] getRoom(){
+		return this.room;
+	}
 	public void printRandomDoor(){
 
 
@@ -109,4 +112,3 @@ class Rooms{
 		System.out.println();
 
 	}*/
-}

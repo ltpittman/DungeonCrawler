@@ -7,65 +7,63 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	Inventory inventory;
+//	public String[][] world;
 	public Rooms room1;
 	public Rooms room2;
 	public Rooms room3;
 
 	Battles battle = new Battles();
 
-	//Method to create the room.
 	World(){
-		this.world = world;
-		this.room1 = new Rooms(17, 19);
-		this.room2 = new Rooms(12, 19);
-		this.room3 = new Rooms(12, 13);
+		//world = new String[rows][columns];
+		this.room1 = new Rooms(17,19);
+		this.room2 = new Rooms(12,18);
+		this.room3 = new Rooms(12,13);
 
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
-		//Set the main Room to null.
+		//Set the mainRoom to null.
 		Rooms mainRoom = null;
 		//If room is equal to one, then make the mainRoom equal to room1.
 		if(room == 1){
 			mainRoom = room1;
 		}
-		//If room is equal to two, then make the mainRoom equal to room2.
-		else if(room ==2){
+		else if(room == 2){
 			mainRoom = room2;
 		}
-		//If room is equal to three, then make the mainRoom equal to room3.
-		else if(room ==3){
+		else if(room == 3){
 			mainRoom = room3;
 		}
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			mainRoom[item1.y][item1.x] = "$";
+			mainRoom.getRoom()[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-			mainRoom[item2.y][item2.x] = "$";
+			mainRoom.getRoom()[item2.y][item2.x] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-			mainRoom[item3.y][item3.x] = "$";
+			mainRoom.getRoom()[item3.y][item3.x] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-			mainRoom[item4.y][item4.x] = "$";
+			mainRoom.getRoom()[item4.y][item4.x] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-			mainRoom[item5.y][item5.x] = "$";
+			mainRoom.getRoom()[item5.y][item5.x] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
-			mainRoom[enemy1.y][enemy1.x] = "M";
+			mainRoom.getRoom()[enemy1.y][enemy1.x] = "M";
 		}
 		if (enemy2.enemyDead(enemy2) == false){
-			mainRoom[enemy2.y][enemy2.x] = "M";
+			mainRoom.getRoom()[enemy2.y][enemy2.x] = "M";
 		}
 		if (enemy3.enemyDead(enemy3) == false){
-			mainRoom[enemy3.y][enemy3.x] = "M";
+			mainRoom.getRoom()[enemy3.y][enemy3.x] = "M";
 		}
 
 		//Player.
-		mainRoom[player.y][player.x] = "@";
+		mainRoom.getRoom()[player.y][player.x] = "@";
 
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
@@ -171,14 +169,6 @@ class World{
 				//room2.printRoom2();//player, item1, item2);
 			}
 		}
-
-
-	//	for(int i = 0; i < mainRoom.length; i++){
-	//		for (int j = 0; j < mainRoom[i].length; j++){
-	//			System.out.print(mainRoom[i][j] + " ");
-	//		}
-	//	}
-	//	System.out.println();
 	}
 	//Method to print the commands to the user.
 	void printCommands(){
