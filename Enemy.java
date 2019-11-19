@@ -13,7 +13,7 @@ class Enemy extends Characters{
 	private int damage;
 	public int x;
 	public int y;
-	public World world;
+	public MainRoom mainRoom;
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
