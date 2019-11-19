@@ -1,8 +1,9 @@
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 
-class Player extends Characters{
+class Player extends Characters{// throws FileNotFoundException{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -107,9 +108,10 @@ class Player extends Characters{
 		}
 	}
 	//Take out?
-	/*public boolean move(){
+	public boolean move(){
 	  return false;
 	}
+	/*
 	//Adding the movement method from the world class. This is share the same name in the Enemy class.
 	Scanner in = new Scanner(System.in);
 	String input = in.next().toUpperCase();
@@ -166,6 +168,7 @@ class Player extends Characters{
 	public String toString(){
 		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
 	}
+	
 	//Method for saving the data for the character
 	public void persist(PrintWriter pw){
 		pw.println(name);
@@ -191,6 +194,7 @@ class Player extends Characters{
 	}
 
 	public void restore (String fileName){
+		try{
 		Scanner a = new Scanner(new FileReader(fileName));
 		this.name = a.nextLine();
 		this.x = a.nextInt();
@@ -216,6 +220,10 @@ class Player extends Characters{
 		int xB = a.nextInt();
 		int yB = a.nextInt();
 		this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
+		}
+		catch(FileNotFoundException e){
+			System.out.println("Could not find anything.");
+		}
 	}
 }
 

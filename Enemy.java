@@ -2,6 +2,7 @@ import java.util.Random;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 
 
 class Enemy extends Characters{
@@ -186,6 +187,7 @@ class Enemy extends Characters{
 	}
 
 	public void restore (String fileName) {
+		try{
 		Scanner a = new Scanner(new FileReader(fileName));
 		this.name = a.nextLine();
 		String t = a.nextLine();
@@ -195,6 +197,10 @@ class Enemy extends Characters{
 		this.y = a.nextInt();
 		this.health = a.nextInt();
 		this.damage = a.nextInt();
+		}
+		catch(FileNotFoundException e){
+			System.out.println("Could not find anything.");
+		}
 	}	
 
 	}
