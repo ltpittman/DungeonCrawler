@@ -6,8 +6,10 @@ import java.util.Random;
 class World{
 	public Enemy enemy;
 	public Player player;
-	public Rooms room;
 	Inventory inventory;
+	public Rooms room1;
+	public Rooms room2;
+	public Rooms room3;
 
 	Battles battle = new Battles();
 
@@ -22,7 +24,7 @@ class World{
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 		//Set the main Room to null.
-		Room mainRoom = null;
+		Rooms mainRoom = null;
 		//If room is equal to one, then make the mainRoom equal to room1.
 		if(room == 1){
 			mainRoom = room1;
@@ -32,7 +34,7 @@ class World{
 			mainRoom = room2;
 		}
 		//If room is equal to three, then make the mainRoom equal to room3.
-		else if(rom ==3){
+		else if(room ==3){
 			mainRoom = room3;
 		}
 		//Items.

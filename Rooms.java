@@ -1,14 +1,12 @@
 import java.util.Arrays;
 
 class Rooms{
-	public String[][] mainRoom;
-	public String[][] room1;
-	public String[][] room2;
+	public String[][] room;
 	public int rows;
 	public int columns;
 
 	//The constructor.	
-	Rooms(int rows; int columns){
+	Rooms(int rows, int columns){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; i < columns; j++){
 				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
@@ -19,6 +17,13 @@ class Rooms{
 				}
 			}
 		}
+	}
+	public void printRandomDoor(){
+
+
+		
+	}
+		
 	}/* Ignore this below.
 	public void printMainRoom(){
 
