@@ -4,15 +4,25 @@ class Rooms{
 	public String[][] mainRoom;
 	public String[][] room1;
 	public String[][] room2;
-	//public Player player;
- 	//public Enemy enemy;
 
 	Rooms(){
 		this.mainRoom = mainRoom;
 		this.room1 = room1;
 		this.room2 = room2;
 	}
-	public void printRoom(){
+	/*Rooms(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; i < columns; j++){
+				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
+					room[i][j] = "#";
+				}
+				else{
+					room[i][j] = ".";
+				}
+			}
+		}
+	}*/
+	public void printMainRoom(){
 
 		String[][] mainRoom = 
 		{
@@ -35,6 +45,15 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#"},
 		};
+		for(int i = 0; i < mainRoom.length; i++){
+			for(int j = 0; j < mainRoom[i].length; j++){
+				System.out.println(mainRoom[i][j] + " ");
+			}
+		}
+		System.out.println();
+
+	}
+	public void printRoom1(){
 
 		String[][] room1 = 
 		{
@@ -52,6 +71,16 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#"}
 		};
+		for(int i = 0; i < room1.length; i++){
+			for(int j = 0; j < room1[i].length; j++){
+				System.out.println(room1[i][j] + " ");
+			}
+		}
+		System.out.println();
+
+
+	}
+	public void printRoom2(){
 
 		String[][] room2 =
 		{
@@ -69,6 +98,12 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
+		for(int i = 0; i < room2.length; i++){
+			for(int j = 0; j < room2[i].length; j++){
+				System.out.println(room2[i][j] + " ");
+			}
+		}
+		System.out.println();
 
 	}
 }
