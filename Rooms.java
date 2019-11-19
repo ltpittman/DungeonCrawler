@@ -19,7 +19,7 @@ class Rooms{
 				}
 			}
 		}
-	}/*
+	}/* Ignore this below.
 	public void printMainRoom(){
 
 		String[][] mainRoom = 
