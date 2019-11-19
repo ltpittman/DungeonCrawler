@@ -19,11 +19,11 @@ class MainRoom{
 	MainRoom(){
 		this.rows = rows;
 		this.columns = columns;
-		mainRoom = new String[rows][columns];
+		this.mainRoom = mainRoom;//new String[rows][columns];
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillMainRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-
+		/*
 		String[][] mainRoom = 
 		{
 			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -45,6 +45,7 @@ class MainRoom{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
+		*/
 
 		//Items.
 		mainRoom[item1.y][item1.x] = "$";
