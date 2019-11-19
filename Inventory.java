@@ -37,6 +37,17 @@ class Inventory{
 		System.out.println("Total Weight: " + totalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
 	}
 
+	//Method to check if item is in inventory to not display on map
+	public boolean inInventory(Item item){
+		if (items.contains(item)){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
 	//Method to add a item.
 	public boolean addItem(Item item){
 		//Get weight of item you want to add.
@@ -252,42 +263,42 @@ class Inventory{
 	}
 	//Method to drink a health potion.
 	/*
-	void drinkHealthPotion(Item healthPotion){
-		ArrayList<Item> healthPotions = new ArrayList<Item>();
-		
-		int count = 0;
-		System.out.println("Name Weight Value Strength");
-		for(int i = 0; i < items.size(); i++){
-			if(items.get(i).getType() == ItemType.HealthPotion){
-				count++;
-				healthPotions.add(items.get(i));
-				System.out.println(count + ". " + items.get(i));
-			}
-		}
-		count++;
-		System.out.println(count + ".Cancel\n");
+	   void drinkHealthPotion(Item healthPotion){
+	   ArrayList<Item> healthPotions = new ArrayList<Item>();
 
-		System.out.print("Which health potion do you want to drink?\n[Answer] ");
-		Scanner in = new Scanner(System.in);
-		int userInput = in.nextInt();
-		
-		while(userInput != count){
-			if(userInput == count){
-				break;
-			}
-			else if(userInput > count || userInput < 1){
-				System.out.println("Please enter a valid number.\n[Answer] ");
-				userInput = in.nextInt();
-				continue;
-			}
-			else{
-				this.health = 100;
-				items.remove(healthPotion);
-				System.out.println("You drink the health potion and restore your health...");
-				break;
-			}
-		}
-	}*/
+	   int count = 0;
+	   System.out.println("Name Weight Value Strength");
+	   for(int i = 0; i < items.size(); i++){
+	   if(items.get(i).getType() == ItemType.HealthPotion){
+	   count++;
+	   healthPotions.add(items.get(i));
+	   System.out.println(count + ". " + items.get(i));
+	   }
+	   }
+	   count++;
+	   System.out.println(count + ".Cancel\n");
+
+	   System.out.print("Which health potion do you want to drink?\n[Answer] ");
+	   Scanner in = new Scanner(System.in);
+	   int userInput = in.nextInt();
+
+	   while(userInput != count){
+	   if(userInput == count){
+	   break;
+	   }
+	   else if(userInput > count || userInput < 1){
+	   System.out.println("Please enter a valid number.\n[Answer] ");
+	   userInput = in.nextInt();
+	   continue;
+	   }
+	   else{
+	   this.health = 100;
+	   items.remove(healthPotion);
+	   System.out.println("You drink the health potion and restore your health...");
+	   break;
+	   }
+	   }
+	   }*/
 
 	//To get the equipped Armor.
 	Item getEquippedArmor(){
@@ -297,7 +308,7 @@ class Inventory{
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
 	}
-	
+
 
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");
