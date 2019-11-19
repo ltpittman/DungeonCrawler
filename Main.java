@@ -50,20 +50,20 @@ class Main{
 	//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
 	//	player.inventory.addItem(healthPotion);
 
-		MainRoom mainRoom = new MainRoom();
-		Rooms room1 = new Rooms();
-		Rooms room2 = new Rooms();
+		World world = new World();
+		//Rooms room1 = new Rooms();
+		//Rooms room2 = new Rooms();
 		
 		//Print the objective of the game.
-		mainRoom.printObjective();			
+		world.printObjective();			
 
 		//Print the commands.
 		System.out.println("------------------------------------------------");
-		mainRoom.printCommands();
+		world.printCommands();
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		mainRoom.fillMainRoom(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 
 		char input;
 
@@ -88,7 +88,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					mainRoom.fillMainRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.goDown();
@@ -101,7 +101,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					mainRoom.fillMainRoom(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;
 				case'J':
 					player.goLeft();
@@ -114,7 +114,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					mainRoom.fillMainRoom(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					player.goRight();
@@ -127,10 +127,10 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					mainRoom.fillMainRoom(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;
 				case'P':
-					mainRoom.printCommands();
+					world.printCommands();
 					break;
 				case'I':
 					player.inventory.print();
@@ -147,9 +147,6 @@ class Main{
 			//	case'R':
 			//		player.inventory.drinkHealthPotion(healthPotion);
 			//		break;
-				case'X':
-					room1.fillRoom1(player);
-					continue;
 					//case'E':
 				//		System.out.println("You move aside the heavy rocks to create an opening...");
 				//		System.out.println("You manage to fit your body through the rocks and enter the room...");

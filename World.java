@@ -3,55 +3,56 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 
-class MainRoom{
-	public String[][] mainRoom;
-	public int rows;
-	public int columns;
+class World{
 	public Enemy enemy;
 	public Player player;
+	Inventory inventory;
 	public Rooms room1;
 	public Rooms room2;
-	Inventory inventory;
+	public Rooms room3;
 
 	Battles battle = new Battles();
 
 	//Method to create the room.
-	MainRoom(){
-		this.rows = rows;
-		this.columns = columns;
-		mainRoom = new String[rows][columns];
+	World(){
+		this.world = world;
+		this.room1 = new Rooms(17, 19);
+		this.room2 = new Rooms(12, 19);
+		this.room3 = new Rooms(12, 13);
+
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillMainRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-
-		String[][] mainRoom = 
-		{
-			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","D\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#",}
-		};
-
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+		//Set the main Room to null.
+		Rooms mainRoom = null;
+		//If room is equal to one, then make the mainRoom equal to room1.
+		if(room == 1){
+			mainRoom = room1;
+		}
+		//If room is equal to two, then make the mainRoom equal to room2.
+		else if(room ==2){
+			mainRoom = room2;
+		}
+		//If room is equal to three, then make the mainRoom equal to room3.
+		else if(room ==3){
+			mainRoom = room3;
+		}
 		//Items.
-		mainRoom[item1.y][item1.x] = "$";
-		mainRoom[item2.y][item2.x] = "$";
-		mainRoom[item3.y][item3.x] = "$";
-		mainRoom[item4.y][item4.x] = "$";
-		mainRoom[item5.y][item5.x] = "$";
+		if (player.inventory.inInventory(item1) == false){
+			mainRoom[item1.y][item1.x] = "$";
+		}
+		if (player.inventory.inInventory(item2) == false){
+			mainRoom[item2.y][item2.x] = "$";
+		}
+		if (player.inventory.inInventory(item3) == false){
+			mainRoom[item3.y][item3.x] = "$";
+		}
+		if (player.inventory.inInventory(item4) == false){
+			mainRoom[item4.y][item4.x] = "$";
+		}
+		if (player.inventory.inInventory(item5) == false){
+			mainRoom[item5.y][item5.x] = "$";
+		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
 			mainRoom[enemy1.y][enemy1.x] = "M";
@@ -153,7 +154,7 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room1.fillRoom1(player);//player);//, enemy1, item1, item2, item3);
+				//room1.printRoom1();//player);//, enemy1, item1, item2, item3);
 			}
 			else{
 				System.out.println("You decide to stay in the main room and continue to explore...");
@@ -167,27 +168,18 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room2.fillRoom2();//player, item1, item2);
+				//room2.printRoom2();//player, item1, item2);
 			}
 		}
 
 
-		for(int i = 0; i < mainRoom.length; i++){
-			for (int j = 0; j < mainRoom[i].length; j++){
-				System.out.print(mainRoom[i][j] + " ");
-			}
-		}
-		System.out.println();
+	//	for(int i = 0; i < mainRoom.length; i++){
+	//		for (int j = 0; j < mainRoom[i].length; j++){
+	//			System.out.print(mainRoom[i][j] + " ");
+	//		}
+	//	}
+	//	System.out.println();
 	}
-/*
-	public void printWorld(){
-		for(int i = 0; i < world.length; i++){
-			for (int j = 0; j < world[i].length; j++){
-				System.out.print(world[i][j]);
-			}
-			}
-		System.out.println();
-	}*/
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");

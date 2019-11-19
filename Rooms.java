@@ -1,20 +1,63 @@
 import java.util.Arrays;
 
 class Rooms{
-	public String[][] room1;
-	public String[][] room2;
+	public String[][] room;
 	public int rows;
 	public int columns;
-	public Player player;
-	public Enemy enemy;
-	Battles battle = new Battles();
 
-	Rooms(){
-		this.rows = rows;
-		this.columns = columns;
-		room1 = new String[rows][columns];
+	//The constructor.	
+	Rooms(int rows, int columns){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; i < columns; j++){
+				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
+					room[i][j] = "#";
+				}
+				else{
+					room[i][j] = ".";
+				}
+			}
+		}
 	}
-	public void fillRoom1(Player player){//Player player){//, Enemy enemy1, Item item1, Item item2, Item item3){
+	public void printRandomDoor(){
+
+
+		
+	}
+		
+	}/* Ignore this below.
+	public void printMainRoom(){
+
+		String[][] mainRoom = 
+		{
+			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","D\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
+			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#"},
+		};
+		for(int i = 0; i < mainRoom.length; i++){
+			for(int j = 0; j < mainRoom[i].length; j++){
+				System.out.println(mainRoom[i][j] + " ");
+			}
+		}
+		System.out.println();
+
+	}
+	public void printRoom1(){
+
 		String[][] room1 = 
 		{
 			{" #","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -31,31 +74,17 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#"}
 		};
-		
-		room1[player.y][player.x] = "@";
-
-	/*	room1[item1.y][item1.x] = "$";
-		room1[item2.y][item2.x] = "$";
-		room1[item3.y][item3.x] = "$";
-
-		if (enemy1.enemyDead(enemy1) == false){
-			room1[enemy1.y][enemy1.x] = "M";
-		}*/
-
-		//Printing out room1 to the screen.
-		//System.out.println(Arrays.deepToString(room1).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
 		for(int i = 0; i < room1.length; i++){
-			for(int j = 0; i < room1[i].length; j++){
-				System.out.print(room1[i][j] + " ");
+			for(int j = 0; j < room1[i].length; j++){
+				System.out.println(room1[i][j] + " ");
 			}
 		}
 		System.out.println();
 
+
 	}
+	public void printRoom2(){
 
-
-	//Fill room 2 for the player.
-	public void fillRoom2(){//Player player,Item item1,Item item2){
 		String[][] room2 =
 		{
 			{" #","#","#","#","#","#","#","#","#","#","#","#","#\n"},
@@ -72,13 +101,12 @@ class Rooms{
 			{"#",".",".",".",".",".",".",".",".",".",".",".","#\n"},
 			{"#","#","#","#","#","#","#","#","#","#","#","#","#",}
 		};
+		for(int i = 0; i < room2.length; i++){
+			for(int j = 0; j < room2[i].length; j++){
+				System.out.println(room2[i][j] + " ");
+			}
+		}
+		System.out.println();
 
-		//room2[player.y][player.x] = "@";
-
-		//room2[item1.y][item1.x] = "$";
-		//room2[item2.y][item2.x] = "$";
-
-		//Printing out room2 to the screen.
-		System.out.println(Arrays.deepToString(room2).replace(",","").replace("[[","").replace("]]","").replace("[","").replace("]",""));
-	}
+	}*/
 }
