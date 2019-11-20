@@ -1,4 +1,7 @@
 //Class for Item
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.FileReader;
 class Item{
 	//Create the instance variables.
 	private ItemType type;
@@ -47,18 +50,38 @@ class Item{
 	public int getItemY(){
 		return this.y;
 	}
-	//boolean stillOnMap(){
-	//	if(){
-	//		return true;
-	//	}
-	//	else{
-	//		return false;
-	//	}
-	//}
 	//Method to print out the statements with toString()
 	public String toString(){
 		return(this.name + ": " + this.weight + ", " + this.value + ", " + this.strength);
 	}
+	//To save the data into a file
+	public void persist (PrintWriter pw){
+		pw.println(type);
+		pw.println(name);
+		pw.println(weight);
+		pw.println(value);
+		pw.println(strength);
+		pw.println(x);
+		pw.println(y);
+	}
+
+	public void restore (String fileName){
+		try{
+			Scanner a = new Scanner(new FileReader(fileName));
+			String t = a.nextLine();
+			ItemType type = ItemType.valueOf(t);
+			int weight = a.nextInt();
+			int value = a.nextInt();
+			int strength = a.nextInt();
+			int x = a.nextInt();
+			int y = a.nextInt();
+			Item item = new Item (type, name, weight, value, strength, x, y);
+		} catch (FileNotFoundException e){
+			System.out.println("Could not find file.");
+		
+		}}
+
+
 }
 
 

@@ -21,7 +21,10 @@ abstract class Characters{
 	public void setHealth(int num){
 		this.health = num;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> a61a8303f3264c46012ba89960ce96fb92029f89
 	//Method to get the position of the characters.
 	public int getPositionX(){
 		return this.x;

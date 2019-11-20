@@ -1,82 +1,74 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Random;
 
-class MainRoom{
-	public String[][] mainRoom;
-	public int rows;
-	public int columns;
+class World{
 	public Enemy enemy;
 	public Player player;
-	public Rooms mainRoom
+	Inventory inventory;
 	public Rooms room1;
 	public Rooms room2;
-	Inventory inventory;
-
+	public Rooms room3;
+	public int currentRoom;
 	Battles battle = new Battles();
+	//store the rooms into variables
 
-	//Method to create the room.
-	MainRoom(){
-		this.rows = rows;
-		this.columns = columns;
-		this.mainRoom = mainRoom;//new String[rows][columns];
+	World(){
+		//Setting the dimensions to the rooms.
+		this.room1 = new Rooms(18,23);
+		this.room2 = new Rooms(12,18);
+		this.room3 = new Rooms(12,13);
+
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillMainRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-		/*
-		String[][] mainRoom = 
-		{
-			{" #","#","#","#","#","#","D","#","#","#","#","#","#","#","#","#","#","#","#","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","D\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","#\n"},
-			{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#","#",}
-		};
-		*/
-
+	//the "int num" is to change from room to room. 
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+		
+		//Set the mainRoom to null.
+		//Rooms mainRoom = null;
+		//If room is equal to one, then make the mainRoom equal to room1.
+		if(room == 1){
+		//	mainRoom = room1;
+			currentRoom = 1;
+		}
+		else if(room == 2){
+			//mainRoom = room2;
+			currentRoom = 2;
+		}
+		else if(room == 3){
+			//mainRoom = room3;
+			currentRoom = 3;
+		}
+		
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			mainRoom[item1.y][item1.x] = "$";
+			mainRoom.getRoom()[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-		mainRoom[item2.y][item2.x] = "$";
+			mainRoom.getRoom()[item2.y][item2.x] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-		mainRoom[item3.y][item3.x] = "$";
+			mainRoom.getRoom()[item3.y][item3.x] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-		mainRoom[item4.y][item4.x] = "$";
+			mainRoom.getRoom()[item4.y][item4.x] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-		mainRoom[item5.y][item5.x] = "$";
+			mainRoom.getRoom()[item5.y][item5.x] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
-			mainRoom[enemy1.y][enemy1.x] = "M";
+			mainRoom.getRoom()[enemy1.y][enemy1.x] = "M";
 		}
 		if (enemy2.enemyDead(enemy2) == false){
-			mainRoom[enemy2.y][enemy2.x] = "M";
+			mainRoom.getRoom()[enemy2.y][enemy2.x] = "M";
 		}
 		if (enemy3.enemyDead(enemy3) == false){
-			mainRoom[enemy3.y][enemy3.x] = "M";
+			mainRoom.getRoom()[enemy3.y][enemy3.x] = "M";
 		}
 
 		//Player.
-		mainRoom[player.y][player.x] = "@";
+		mainRoom.getRoom()[player.y][player.x] = "@";
 
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
@@ -165,7 +157,7 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room1.printRoom1();//player);//, enemy1, item1, item2, item3);
+				//room1.printRoom1();//player);//, enemy1, item1, item2, item3);
 			}
 			else{
 				System.out.println("You decide to stay in the main room and continue to explore...");
@@ -179,27 +171,40 @@ class MainRoom{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				System.out.println("You push the heavy rocks to the side and fit through...");
-				room2.printRoom2();//player, item1, item2);
+				//room2.printRoom2();//player, item1, item2);
 			}
 		}
-
-
-	//	for(int i = 0; i < mainRoom.length; i++){
-	//		for (int j = 0; j < mainRoom[i].length; j++){
-	//			System.out.print(mainRoom[i][j] + " ");
-	//		}
-	//	}
-	//	System.out.println();
 	}
-/*
+	
 	public void printWorld(){
-		for(int i = 0; i < world.length; i++){
-			for (int j = 0; j < world[i].length; j++){
-				System.out.print(world[i][j]);
+		//Print the first world if the current world if equal to 1.
+		if(currentRoom == 1){
+			for(int i = 0; i < room1; i++){
+				for(int j = 0; j < room1.length; j++){
+					System.out.println(room1[i][j] + " ");
+				}
 			}
+			System.out.println();
+		}
+		//Print the second world if the current world is equal to 2.
+		else if (currentRoom == 2){
+			for(int i = 0; i < room2; i++){
+				for(int j = 0; j < room2.length; j++){
+					System.out.println(room2[i][j] + " ");
+				}
 			}
-		System.out.println();
-	}*/
+			System.out.println();
+		}
+		//Print the third world if the current world is equal to 3.
+		else if(currentRoom == 3){
+			for(int i = 0; i < room; i++){
+				for(int j = 0; i < room[i].length; j++){
+					System.out.println(room[i][j] + " ");
+					}
+				}
+			System.out.println();
+		}
+	}
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");

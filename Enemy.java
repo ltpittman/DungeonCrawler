@@ -13,17 +13,19 @@ class Enemy extends Characters{
 	private int damage;
 	public int x;
 	public int y;
-	public MainRoom mainRoom;
+	private boolean isDead;
+	public World world;
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){ 
+	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){//, boolean isDead){ 
 		super(name, health);//,health);
 		//this.health = health;
 		this.type = type;
 		this.damage = damage;
 		this.x = x;
 		this.y = y;
+		//this.isDead = isDead;
 	}
 //	public String characterImage(){
 //		return "M";
@@ -36,82 +38,16 @@ class Enemy extends Characters{
 	int getDamage(){
 		return this.damage;
 	}
-
 	/*
-	//###Adding this to try out.
-	public boolean goUp(){
-	int mm = 1;
-	if(mm == 1){
-	if(x - 1 == 0){
-	return false;
+	//to determine if the enemy is dead
+	boolean getIsDead(){
+		return this.isDead;
 	}
-	else{
-	y -= 1;
-	return true;
-	}
-	}
-	else{
-	return false;
-	}
-	}
-	public boolean goDown(){
-	int mm = 2;
-	if(mm == 2){
-	if(y + 1 == 15){
-	return false;
-	}
-	else{
-	y += 1;
-	return true;
-	}
-	}
-	else{
-	return false;
-	}
-	}
-	public boolean goLeft(){
-	int mm = 3;
-	if(mm == 3){
-	if(x - 1 == 0){
-	return false;
-	}
-	else{
-	x -= 1;
-	return true;
-	}
-	}
-	else{
-	return false;
-	}
-	}
-	public boolean goRight(){
-	int mm = 4;
-	if(mm == 4){
-	if(x + 1 == 15){
-	return false;
-	}
-	else{
-	x += 1;
-	return true;
-	}
-	} 
-	else{
-	return false;
-	}
+	//to set the is dead
+	public void boolean setIsDead(boolean isDead){
+		this.isDead = isDead;
 	}
 	*/
-	public boolean goRight(){
-		return false;
-	}
-	public boolean goLeft(){
-		return false;
-	}
-	public boolean goUp(){
-		return false;
-	}
-	public boolean goDown(){
-		return false;
-	}
 	//Adding the movement method for the Enemy class.
 	public boolean move(){
 
@@ -183,6 +119,7 @@ class Enemy extends Characters{
 		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(damage);
+		pw.println(isDead);
 		pw.println(".");
 	}
 
@@ -197,6 +134,7 @@ class Enemy extends Characters{
 		this.y = a.nextInt();
 		this.health = a.nextInt();
 		this.damage = a.nextInt();
+		this.isDead = a.nextBoolean();
 		}
 		catch(FileNotFoundException e){
 			System.out.println("Could not find anything.");
