@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.Random;
 
 class World{
 	public Enemy enemy;
@@ -10,8 +9,9 @@ class World{
 	public Rooms room1;
 	public Rooms room2;
 	public Rooms room3;
-
+	public int currentRoom;
 	Battles battle = new Battles();
+	//store the rooms into variables
 
 	World(){
 		//Setting the dimensions to the rooms.
@@ -22,23 +22,24 @@ class World{
 	}
 	//Method to fill the world with the players, items, and enemies.
 	//the "int num" is to change from room to room. 
-	public void fillWorld(int room){//Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 		
 		//Set the mainRoom to null.
-		Rooms mainRoom = null;
+		//Rooms mainRoom = null;
 		//If room is equal to one, then make the mainRoom equal to room1.
 		if(room == 1){
-			mainRoom = room1;
+		//	mainRoom = room1;
+			currentRoom = 1;
 		}
 		else if(room == 2){
-			mainRoom = room2;
+			//mainRoom = room2;
+			currentRoom = 2;
 		}
 		else if(room == 3){
-			mainRoom = room3;
+			//mainRoom = room3;
+			currentRoom = 3;
 		}
-		//
-
-		/*
+		
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
 			mainRoom.getRoom()[item1.y][item1.x] = "$";
@@ -172,13 +173,37 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 				//room2.printRoom2();//player, item1, item2);
 			}
-		}*/
-	//	for(int i = 0; i < room.length; i++){
-	//		for(int j = 0; i < room[i].length; j++){
-	//			System.out.println(room1[i][j] + " ");
-	//		}
-	//	}
-	//	System.out.println();
+		}
+	}
+	
+	public void printWorld(){
+		//Print the first world if the current world if equal to 1.
+		if(currentRoom == 1){
+			for(int i = 0; i < room1; i++){
+				for(int j = 0; j < room1.length; j++){
+					System.out.println(room1[i][j] + " ");
+				}
+			}
+			System.out.println();
+		}
+		//Print the second world if the current world is equal to 2.
+		else if (currentRoom == 2){
+			for(int i = 0; i < room2; i++){
+				for(int j = 0; j < room2.length; j++){
+					System.out.println(room2[i][j] + " ");
+				}
+			}
+			System.out.println();
+		}
+		//Print the third world if the current world is equal to 3.
+		else if(currentRoom == 3){
+			for(int i = 0; i < room; i++){
+				for(int j = 0; i < room[i].length; j++){
+					System.out.println(room[i][j] + " ");
+					}
+				}
+			System.out.println();
+		}
 	}
 	//Method to print the commands to the user.
 	void printCommands(){

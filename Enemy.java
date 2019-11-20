@@ -18,14 +18,14 @@ class Enemy extends Characters{
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
+	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){//, boolean isDead){ 
 		super(name, health);//,health);
 		//this.health = health;
 		this.type = type;
 		this.damage = damage;
 		this.x = x;
 		this.y = y;
-		this.isDead = isDead;
+		//this.isDead = isDead;
 	}
 //	public String characterImage(){
 //		return "M";
@@ -38,6 +38,7 @@ class Enemy extends Characters{
 	int getDamage(){
 		return this.damage;
 	}
+	/*
 	//to determine if the enemy is dead
 	boolean getIsDead(){
 		return this.isDead;
@@ -46,6 +47,7 @@ class Enemy extends Characters{
 	public boolean setIsDead(boolean isDead){
 		return isDead;
 	}
+	*/
 	//Adding the movement method for the Enemy class.
 	public boolean move(){
 
