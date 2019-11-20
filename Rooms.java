@@ -6,15 +6,17 @@ class Rooms{
 	public int rows;
 	public int columns;
 
-	//The constructor.	
-	public Rooms(int rows, int columns){
+	//The constructor.
+	//The parameters will come from the World class constructor. AKA the rooms and their length and width.
+	//While the rows and colums are instance variable above. Set the instance variables to the constructor parameters.
+	public Rooms(int roomLength, int roomWidth){
 	
-		this.rows = rows;
-		this.columns = columns;
+		this.rows = roomLength;
+		this.columns = roomWidth;
 		room = new String[rows][columns];
 		
-		for(int i = 20; i < rows; i++){
-			for(int j = 20; i < columns; j++){
+		for(int i = roomLength; i < rows; i++){
+			for(int j = roomWidth; i < columns; j++){
 				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
 					room[i][j] = "#";
 				}

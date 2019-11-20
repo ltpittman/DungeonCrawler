@@ -14,7 +14,7 @@ class World{
 	Battles battle = new Battles();
 
 	World(){
-		this.room1 = new Rooms(20,20);
+		this.room1 = new Rooms(18,23);
 		this.room2 = new Rooms(12,18);
 		this.room3 = new Rooms(12,13);
 
