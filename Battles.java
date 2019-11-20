@@ -87,6 +87,8 @@ class Battles{
 						System.out.println("You have defeated the monster!");
 						//Subtract one from the numberMonster variable. 
 						numberMonster = numberMonster - 1;
+						boolean dead = false;
+						enemy.setIsDead(dead);
 						//player.setHealth(healthPlayer);
 					}
 					else{
@@ -137,14 +139,6 @@ class Battles{
 		}
 	}
 
-	public void persist (PrintWriter pw){
-		pw.println(numberMonster);
-		pw.println(".");
-	}
 
-	public void restor (String fileName) throws Exception {
-		Scanner a = new Scanner(new FileReader(fileName));
-		numberMonster = a.nextInt();
-	}
 }
 

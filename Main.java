@@ -1,12 +1,15 @@
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.File;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
 class Main{
+
 	public static void main(String args[]) throws InputMismatchException{
 		Inventory playerInventory;
 		Player player;
@@ -32,10 +35,10 @@ class Main{
 		String userName = in.next();
 
 		player = new Player(userName, health);
-	
+
 		//The player starts out with one health potion. 	
-	//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
-	//	player.inventory.addItem(healthPotion);
+		//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
+		//	player.inventory.addItem(healthPotion);
 
 		World world = new World();	
 		World room1 = new World();
@@ -133,50 +136,68 @@ class Main{
 				case'A':
 					player.inventory.equipArmor();
 					break;
-			//	case'R':
-			//		player.inventory.drinkHealthPotion(healthPotion);
-			//		break;
+					//	case'R':
+					//		player.inventory.drinkHealthPotion(healthPotion);
+					//		break;
 					//case'E':
-				//		System.out.println("You move aside the heavy rocks to create an opening...");
-				//		System.out.println("You manage to fit your body through the rocks and enter the room...");
-				//		room1.fillRoom1();
-				//	break;
-			//	case'R':
-			//		System.out.println("You move aside the heavy rocks to create an opening...");
-			//		System.out.println("You manage to fit your body through the rocks and enter the room...");
-			//		room2.fillRoom2(player,item1, item2);
-			//		
-			/*		switch(input){
-						case'H':
+					//		System.out.println("You move aside the heavy rocks to create an opening...");
+					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
+					//		room1.fillRoom1();
+					//	break;
+					//	case'R':
+					//		System.out.println("You move aside the heavy rocks to create an opening...");
+					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
+					//		room2.fillRoom2(player,item1, item2);
+					//		
+					/*		switch(input){
+							case'H':
 							player.move();
 							room2.fillRoom2(player,item1,item2);
 							break;
-						case'L':
+							case'L':
 							player.move();
 							room2.fillRoom2(player,item1,item2);
 							break;
-						case'J':
+							case'J':
 							player.move();
 							room2.fillRoom2(player,item1,item2);
 							break;
-						case'K':
+							case'K':
 							player.move();
 							room2.fillRoom2(player,item1,item2);
 							break;
 					}
 					break;
-				case'X':
+					case'X':
 					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 					break;*/
 				case'Q':
+					File file = new File("info.txt");
+					PrintWriter pw = new PrintWriter (file);
+					System.out.println("Would you like to save the game?(yes/no)");
+					String ans = in.next();
+					if (ans.equals("yes")) {
+						player.persist(pw);
+						enemy1.persist(pw);
+						enemy2.persist(pw);
+						enemy3.persist(pw);
+						item1.persist(pw);
+						item2.persist(pw);
+						item3.persist(pw);
+						item4.persist(pw);
+						item5.persist(pw);
+						playerInventory.persist(pw);
+						
+					//	Battles.persist(pw);
+					}else if (ans.equals("no")){
+						break;
+					}
 					System.exit(1);
 					break;
+			}
+		}
+		while(input != 'Q');
 	}
-}
-while(input != 'Q');
-}
-	//public void persist
-
 
 }
 

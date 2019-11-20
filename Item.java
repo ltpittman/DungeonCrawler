@@ -1,4 +1,5 @@
 //Class for Item
+import java.io.PrintWriter;
 class Item{
 	//Create the instance variables.
 	private ItemType type;
@@ -59,6 +60,17 @@ class Item{
 	public String toString(){
 		return(this.name + ": " + this.weight + ", " + this.value + ", " + this.strength);
 	}
+	//To save the data into a file
+	public void persist (PrintWriter pw){
+		pw.println(type);
+		pw.println(name);
+		pw.println(weight);
+		pw.println(value);
+		pw.println(strength);
+		pw.println(x);
+		pw.println(y);
+	}
+
 }
 
 
