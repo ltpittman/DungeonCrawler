@@ -55,7 +55,7 @@ class Main{
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		room1.fillWorld(1);//player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
-		room1.printRoom();
+		//room1.printRoom();
 
 		char input;
 
@@ -149,28 +149,6 @@ class Main{
 					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
 					//		room2.fillRoom2(player,item1, item2);
 					//		
-					/*		switch(input){
-							case'H':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'L':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'J':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'K':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-					}
-					break;
-					case'X':
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
-					break;*/
 				case'Q':
 					File file = new File("info.txt");
 					PrintWriter pw = new PrintWriter (file);
@@ -189,7 +167,8 @@ class Main{
 						playerInventory.persist(pw);
 						
 					//	Battles.persist(pw);
-					}else if (ans.equals("no")){
+					}
+					else if (ans.equals("no")){
 						break;
 					}
 					System.exit(1);
