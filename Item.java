@@ -48,14 +48,6 @@ class Item{
 	public int getItemY(){
 		return this.y;
 	}
-	//boolean stillOnMap(){
-	//	if(){
-	//		return true;
-	//	}
-	//	else{
-	//		return false;
-	//	}
-	//}
 	//Method to print out the statements with toString()
 	public String toString(){
 		return(this.name + ": " + this.weight + ", " + this.value + ", " + this.strength);
