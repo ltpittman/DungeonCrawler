@@ -13,7 +13,7 @@ class Room1{
 	public int columns;
 
 	//The constructor.
-	public Room1(String filename){
+	public Room1(String fileName){
 
 		this.rows = rows;
 		this.columns = columns;
@@ -25,7 +25,7 @@ class Room1{
 
 			for(int i = 0; i < rows; i++){
 				String l = in.nextLine();
-				for(int j = 0; i < l.length(); j++){
+				for(int j = 0; j < l.length(); j++){
 					room[i][j] = l.charAt(j);
 				}
 			}
