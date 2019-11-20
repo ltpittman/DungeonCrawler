@@ -43,8 +43,8 @@ class Enemy extends Characters{
 		return this.isDead;
 	}
 	//to set the is dead
-	public boolean setIsDead(boolean isDead){
-		return isDead;
+	public void boolean setIsDead(boolean isDead){
+		this.isDead = isDead;
 	}
 	//Adding the movement method for the Enemy class.
 	public boolean move(){

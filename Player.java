@@ -174,7 +174,7 @@ class Player extends Characters{// throws FileNotFoundException{
 			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
 		}
 		catch(FileNotFoundException e){
-			System.out.println("Could not find anything.");
+			System.out.println("Could not find file.");
 		}
 	}
 }

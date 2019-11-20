@@ -1,5 +1,7 @@
 //Class for Item
 import java.io.PrintWriter;
+import java.util.Scanner;
+import java.io.FileReader;
 class Item{
 	//Create the instance variables.
 	private ItemType type;
@@ -70,6 +72,23 @@ class Item{
 		pw.println(x);
 		pw.println(y);
 	}
+
+	public void restore (String fileName){
+		try{
+			Scanner a = new Scanner(new FileReader(fileName));
+			String t = a.nextLine();
+			ItemType type = ItemType.valueOf(t);
+			int weight = a.nextInt();
+			int value = a.nextInt();
+			int strength = a.nextInt();
+			int x = a.nextInt();
+			int y = a.nextInt();
+			Item item = new Item (type, name, weight, value, strength, x, y);
+		} catch (FileNotFoundException e){
+			System.out.println("Could not find file.");
+		
+		}}
+
 
 }
 
