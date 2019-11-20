@@ -1,10 +1,11 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
 
 class Room1{
 	//Instance variables.
- 	public String[][] room1;
+ 	public char[][] room;
 	public int rows;
 	public int columns;
 
@@ -13,19 +14,24 @@ class Room1{
 		
 		this.rows = rows;
 		this.columns = columns;
-		room1 = new String[rows][columns];
+		room = new char[rows][columns];
 
+		try{
 		FileInputStream room1 = new FileInputStream("Room1.txt");
 		Scanner in = new Scanner(room1);
 		
 		for(int i = 0; i < rows; i++){
-			String l = room1.nextLine();
-			for(int j = 0; i < room1.length(); j++){
-				room[i][j] = room1.charAt(j);
+			String l = in.nextLine();
+			for(int j = 0; i < l.length(); j++){
+				room[i][j] = l.charAt(j);
 			}
 		}
+		in.close();
+		}
+		catch(FileNotFoundException e){
+			System.out.println("File not found.");
+		}
 
-	room1.close();
 	}
 
 }
