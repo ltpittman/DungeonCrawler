@@ -312,13 +312,8 @@ class Inventory{
 
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");
-		for(Item items : items){
-			pw.println(items.getName());
-			pw.println(items.getType());
-			pw.println(items.getStrength());
-			pw.println(items.getWeight());
-			pw.println(items.getItemX());
-			pw.println(items.getItemY());
+		for(Item it : items){
+			it.persist(pw);
 			pw.println("-");
 		}
 		pw.println(".");

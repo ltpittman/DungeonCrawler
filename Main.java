@@ -10,16 +10,6 @@ import java.io.PrintWriter;
 
 class Main{
 
-/*
-	private Enemy enemy1;
-	private Enemy enemy2;
-	private Enemy enemy3;
-	private Item item1;
-	private Item item2;
-	private Item item3;
-	private Item item4;
-	private Item item5;
-*/
 	public static void main(String args[]) throws InputMismatchException{
 		Inventory playerInventory;
 		Player player;
@@ -188,9 +178,18 @@ class Main{
 					System.out.println("Would you like to save the game?(yes/no)");
 					String ans = in.next();
 					if (ans.equals("yes")) {
-						Player.persist(pw);
-						Enemy.persist(pw);
-						Battles.persist(pw);
+						player.persist(pw);
+						enemy1.persist(pw);
+						enemy2.persist(pw);
+						enemy3.persist(pw);
+						item1.persist(pw);
+						item2.persist(pw);
+						item3.persist(pw);
+						item4.persist(pw);
+						item5.persist(pw);
+						playerInventory.persist(pw);
+						
+					//	Battles.persist(pw);
 					}else if (ans.equals("no")){
 						break;
 					}
@@ -200,70 +199,6 @@ class Main{
 		}
 		while(input != 'Q');
 	}
-/*	public void persist (PrintWriter pw) {
-		pw.println(enemy1.getName());
-		pw.println(enemy1.typeOfMonster());
-		pw.println(enemy1.getPositionX());
-		pw.println(enemy1.getPositionY());
-		pw.println(enemy1.getHealth());
-		pw.println(enemy1.getDamage());
-
-		pw.println(enemy2.getName());
-		pw.println(enemy2.typeOfMonster());
-		pw.println(enemy2.getPositionX());
-		pw.println(enemy2.getPositionY());
-		pw.println(enemy2.getHealth());
-		pw.println(enemy2.getDamage());
-
-		pw.println(enemy3.getName());
-		pw.println(enemy3.typeOfMonster());
-		pw.println(enemy3.getPositionX());
-		pw.println(enemy3.getPositionY());
-		pw.println(enemy3.getHealth());
-		pw.println(enemy3.getDamage());
-
-		pw.println(item1.getType());
-		pw.println(item1.getName());
-		pw.println(item1.getWeight());
-		pw.println(item1.getValue());
-		pw.println(item1.getStrength());
-		pw.println(item1.getItemX());
-		pw.println(item1.getItemY());
-
-		pw.println(item2.getType());
-		pw.println(item2.getName());
-		pw.println(item2.getWeight());
-		pw.println(item2.getValue());
-		pw.println(item2.getStrength());
-		pw.println(item2.getItemX());
-		pw.println(item2.getItemY());
-
-		pw.println(item3.getType());
-		pw.println(item3.getName());
-		pw.println(item3.getWeight());
-		pw.println(item3.getValue());
-		pw.println(item3.getStrength());
-		pw.println(item3.getItemX());
-		pw.println(item3.getItemY());
-
-		pw.println(item4.getType());
-		pw.println(item4.getName());
-		pw.println(item4.getWeight());
-		pw.println(item4.getValue());
-		pw.println(item4.getStrength());
-		pw.println(item4.getItemX());
-		pw.println(item4.getItemY());
-
-		pw.println(item5.getType());
-		pw.println(item5.getName());
-		pw.println(item5.getWeight());
-		pw.println(item5.getValue());
-		pw.println(item5.getStrength());
-		pw.println(item5.getItemX());
-		pw.println(item5.getItemY());
-	}
-*/
-
 
 }
 
