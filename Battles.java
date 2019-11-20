@@ -88,7 +88,7 @@ class Battles{
 						//Subtract one from the numberMonster variable. 
 						numberMonster = numberMonster - 1;
 						boolean dead = false;
-						enemy.setIsDead(dead);
+						//enemy.setIsDead(dead);
 						//player.setHealth(healthPlayer);
 					}
 					else{

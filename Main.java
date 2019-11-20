@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
-		Inventory playerInventory;
+		//Inventory playerInventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
@@ -31,20 +31,19 @@ class Main{
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
 
-		System.out.print("[Username] What is your username? ");
+		System.out.print("[Name] What is your name? ");
 		String userName = in.next();
 
 		player = new Player(userName, health);
 
 		//The player starts out with one health potion. 	
-		//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
-		//	player.inventory.addItem(healthPotion);
+		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
+		//player.inventory.addItem(healthPotion);
 
 		World world = new World();	
-		World room1 = new World();
-		World room2 = new World();
-		World room3 = new World(); 
-
+		//World room1 = new World();
+		//Rooms room2 = new Rooms();
+		//Rooms room3 = new Rooms(); 
 		
 		//Print the objective of the game.
 		world.printObjective();			
@@ -53,10 +52,10 @@ class Main{
 		System.out.println("------------------------------------------------");
 		world.printCommands();
 		System.out.println("------------------------------------------------");
-
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		room1.fillWorld(1);//player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
-		room1.printWorld();
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+		world.printWorld();
+		//room1.printRoom();
 
 		char input;
 
@@ -150,34 +149,13 @@ class Main{
 					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
 					//		room2.fillRoom2(player,item1, item2);
 					//		
-					/*		switch(input){
-							case'H':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'L':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'J':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-							case'K':
-							player.move();
-							room2.fillRoom2(player,item1,item2);
-							break;
-					}
-					break;
-					case'X':
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
-					break;*/
 				case'Q':
+					try{
 					File file = new File("info.txt");
 					PrintWriter pw = new PrintWriter (file);
-					System.out.println("Would you like to save the game?(yes/no)");
-					String ans = in.next();
-					if (ans.equals("yes")) {
+					System.out.print("Would you like to save the game? Y/N ");
+					String ans = in.next().toUpperCase();
+					if (ans.equals("Y")) {
 						player.persist(pw);
 						enemy1.persist(pw);
 						enemy2.persist(pw);
@@ -187,11 +165,15 @@ class Main{
 						item3.persist(pw);
 						item4.persist(pw);
 						item5.persist(pw);
-						playerInventory.persist(pw);
+						player.inventory.persist(pw);
 						
 					//	Battles.persist(pw);
-					}else if (ans.equals("no")){
+					}
+					else if (ans.equals("N")){
 						break;
+					}}
+					catch(FileNotFoundException e){
+						System.out.println("Could not find anything.");
 					}
 					System.exit(1);
 					break;
