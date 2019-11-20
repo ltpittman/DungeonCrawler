@@ -14,6 +14,7 @@ class World{
 	Battles battle = new Battles();
 
 	World(){
+		//Setting the dimensions to the rooms.
 		this.room1 = new Rooms(18,23);
 		this.room2 = new Rooms(12,18);
 		this.room3 = new Rooms(12,13);
@@ -35,11 +36,7 @@ class World{
 		else if(room == 3){
 			mainRoom = room3;
 		}
-	//	for(int i = 0; i < room1; i++){
-	//		for(int j = 0; j < room1[i].length; j++){
-	//			System.out.println(room1[i][j] + " ");
-	//		}
-//	}
+		//
 
 		/*
 		//Items.

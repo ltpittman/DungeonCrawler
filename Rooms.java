@@ -13,8 +13,10 @@ class Rooms{
 	
 		this.rows = roomLength;
 		this.columns = roomWidth;
+		//Setting the room array to hold the rows and columns.
 		room = new String[rows][columns];
 		
+		//For loop to create the rooms.
 		for(int i = roomLength; i < rows; i++){
 			for(int j = roomWidth; i < columns; j++){
 				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
@@ -31,9 +33,9 @@ class Rooms{
 	public String[][] getRoom(){
 		return this.room;
 	}
-	public void printWorld(){
-		for(int i = 0; i < rows; i++){
-			for(int j = 0; j < columns; j++){
+	public void printRoom(){
+		for(int i = 0; i < rows; i++){//room.length; i++){
+			for(int j = 0; j < columns; j++){//room[i].length; j++){
 				System.out.print(room[i][j]);
 			}
 			System.out.println();
