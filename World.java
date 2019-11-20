@@ -14,14 +14,14 @@ class World{
 	Battles battle = new Battles();
 
 	World(){
-		//world = new String[rows][columns];
-		this.room1 = new Rooms(17,19);
+		this.room1 = new Rooms(20,20);
 		this.room2 = new Rooms(12,18);
 		this.room3 = new Rooms(12,13);
 
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
+	//the "int num" is to change from room to room. 
+	public void fillWorld(int room){//Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 		
 		//Set the mainRoom to null.
 		Rooms mainRoom = null;
@@ -35,6 +35,13 @@ class World{
 		else if(room == 3){
 			mainRoom = room3;
 		}
+	//	for(int i = 0; i < room1; i++){
+	//		for(int j = 0; j < room1[i].length; j++){
+	//			System.out.println(room1[i][j] + " ");
+	//		}
+//	}
+
+		/*
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
 			mainRoom.getRoom()[item1.y][item1.x] = "$";
@@ -168,7 +175,13 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 				//room2.printRoom2();//player, item1, item2);
 			}
-		}
+		}*/
+	//	for(int i = 0; i < room.length; i++){
+	//		for(int j = 0; i < room[i].length; j++){
+	//			System.out.println(room1[i][j] + " ");
+	//		}
+	//	}
+	//	System.out.println();
 	}
 	//Method to print the commands to the user.
 	void printCommands(){
