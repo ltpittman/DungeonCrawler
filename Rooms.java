@@ -1,14 +1,22 @@
 import java.util.Arrays;
 
 class Rooms{
-	public String[][] room;
+	//Instance variables.
+ 	public String[][] room;
 	public int rows;
 	public int columns;
 
-	//The constructor.	
-	Rooms(int rows, int columns){
-		for(int i = 0; i < rows; i++){
-			for(int j = 0; i < columns; j++){
+	//The constructor.
+	//The parameters will come from the World class constructor. AKA the rooms and their length and width.
+	//While the rows and colums are instance variable above. Set the instance variables to the constructor parameters.
+	public Rooms(int roomLength, int roomWidth){
+	
+		this.rows = roomLength;
+		this.columns = roomWidth;
+		room = new String[rows][columns];
+		
+		for(int i = roomLength; i < rows; i++){
+			for(int j = roomWidth; i < columns; j++){
 				if((i == 0) || (j == 0) || (i == rows - 1) || (j == columns - 1)){
 					room[i][j] = "#";
 				}
@@ -17,14 +25,34 @@ class Rooms{
 				}
 			}
 		}
-	}
-	public void printRandomDoor(){
-
-
 		
 	}
+	//Method to get the room.
+	public String[][] getRoom(){
+		return this.room;
+	}
+	public void printWorld(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < columns; j++){
+				System.out.print(room[i][j]);
+			}
+			System.out.println();
+		}
+	}
 		
-	}/* Ignore this below.
+	//Method to add a random door or portal.
+//	public void printRandomDoor(){
+	//void printRoom(){
+	//	for(int i = 0; i < room.lengths; i++){
+	//		for(int j = 0; i < room[i].length; j++){
+	//			System.out.println(room[row][column] + " ");
+	//		}
+	//	}
+	//	System.out.println();
+		
+//	}
+}
+	/* Ignore this below.
 	public void printMainRoom(){
 
 		String[][] mainRoom = 
@@ -109,4 +137,3 @@ class Rooms{
 		System.out.println();
 
 	}*/
-}

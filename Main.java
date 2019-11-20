@@ -50,10 +50,12 @@ class Main{
 		//	Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
 		//	player.inventory.addItem(healthPotion);
 
-		World world = new World();
-		//Rooms room1 = new Rooms();
-		//Rooms room2 = new Rooms();
+		World world = new World();	
+		World room1 = new World();
+		World room2 = new World();
+		World room3 = new World(); 
 
+		
 		//Print the objective of the game.
 		world.printObjective();			
 
@@ -63,7 +65,8 @@ class Main{
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+		room1.fillWorld(1);//player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+		room1.printWorld();
 
 		char input;
 
@@ -88,7 +91,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+				//	world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'L':
 					player.goDown();
@@ -101,7 +104,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+				//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'J':
 					player.goLeft();
@@ -114,7 +117,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+				//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'K':
 					player.goRight();
@@ -127,7 +130,7 @@ class Main{
 					if (enemy3.enemyDead(enemy3) == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+				//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'P':
 					world.printCommands();
