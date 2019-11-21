@@ -39,7 +39,6 @@ class World{
 		if (player.inventory.inInventory(item1) == false){
 			world[item1.y][item1.x] = "$";
 		}
-		
 		if (player.inventory.inInventory(item2) == false){
 			world[item2.y][item2.x] = "$";
 		}
@@ -53,7 +52,6 @@ class World{
 			world[item5.y][item5.x] = "$";
 		}
 		//Monsters.
-<<<<<<< HEAD
 		if (enemy1.enemyDead(enemy1) == false){
 			world[enemy1.y][enemy1.x] = "M";
 		}
@@ -62,16 +60,15 @@ class World{
 		}
 		if (enemy3.enemyDead(enemy3) == false){
 			world[enemy3.y][enemy3.x] = "M";
-=======
+		}
 		if (enemy1.getIsDead() == false){
-			mainRoom.getRoom()[enemy1.y][enemy1.x] = "M";
+			world[enemy1.y][enemy1.x] = "M";
 		}
 		if (enemy2.getIsDead() == false){
-			mainRoom.getRoom()[enemy2.y][enemy2.x] = "M";
+			world[enemy2.y][enemy2.x] = "M";
 		}
 		if (enemy3.getIsDead() == false){
-			mainRoom.getRoom()[enemy3.y][enemy3.x] = "M";
->>>>>>> a367a06054a5411107341b78d87063841e63023b
+			world[enemy3.y][enemy3.x] = "M";
 		}
 
 		//Player.
