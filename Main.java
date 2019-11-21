@@ -10,11 +10,11 @@ class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
 		Objective command = new Objective();
+		File file = new File("info.txt");
 		//Inventory playerInventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
-		File file = new File("info.txt");
 
 		//Creating the monsters.
 		Enemy enemy1 = MonsterGenerator.generateMonster();
@@ -37,8 +37,8 @@ class Main{
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game? Y/N ");
 		
-		String inputAns = in.next().toUpperCase();
-		if(inputAns.equals("Y")){
+		String inputAnswer = in.next().toUpperCase();
+		if(inputAnswer.equals("Y")){
 			if (file.length() == 0){
 				System.out.print("There is no game saved. A new game will start shortly.");
 			} else {
@@ -71,7 +71,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		World world = new World();	
-		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 		//world.printWorld();
 
 		char input;

@@ -24,8 +24,7 @@ class World{
 		this.currentRoom = currentRoom;
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){//, int room){	
-		int room = 0;
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){//, int room){	
 		//Set the mainRoom to null.
 		Room currentRoom = room1;
 		if(room == 1){
