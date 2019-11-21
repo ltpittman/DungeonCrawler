@@ -318,5 +318,24 @@ class Inventory{
 		}
 		pw.println(".");
 	}
+
+	public void restore (String fileName){
+		try{
+			Scanner a = new Scanner (new FileReader (fileName));
+			Item.restore();
+			items.add(item);
+			String x = a.nextLine();
+			while(a.hasNext()){
+				if (x.equals("-")){
+					Item.restore();
+					items.add(item);
+				} else if (x.equals(".")){
+				}
+			}
+		}catch (FileNotFoundException e){
+			System.out.println("Could not find file.");
+		}
+	}
+
 }
 
