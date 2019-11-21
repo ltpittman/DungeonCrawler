@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
+		Objective command = new Objective();
 		//Inventory playerInventory;
 		Player player;
 		//Setting the player's health.
@@ -55,21 +56,22 @@ class Main{
 		}
 		else{
 		}
+		System.out.println("------------------------------------------------");
 
-		World world = new World();	
 		//The player starts out with one health potion. 	
 		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
 		//player.inventory.addItem(healthPotion);
 
 		//Print the objective of the game.
-		world.printObjective();			
+		command.printObjective();			
 
 		//Print the commands.
 		System.out.println("------------------------------------------------");
-		world.printCommands();
+		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+		World world = new World();	
+		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);
 		//world.printWorld();
 
 		char input;

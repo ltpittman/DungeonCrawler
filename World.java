@@ -10,34 +10,35 @@ class World{
 	Inventory inventory;
 	String[][] world;
 	public Room room1 = new Room("Room1.txt");
-	public Room room2 = new Room("Room2.txt");
-	public Room room3 = new Room("Room3.txt");
+//	public Room room2 = new Room("Room2.txt");
+//	public Room room3 = new Room("Room3.txt");
 	public Room currentRoom;
 	Battles battle = new Battles();
 
 	World(){
 		this.room1 = room1; //	new Room("Room1.txt");
-		this.room2 = room2;
-		this.room3 = room3;
+//		this.room2 = room2;
+//		this.room3 = room3;
 		//room2 = new Room("Room2.txt");
 		//room3 = new Room("Room3.txt");
 		this.currentRoom = currentRoom;
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
-			
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){//, int room){	
+		int room = 0;
 		//Set the mainRoom to null.
 		Room currentRoom = room1;
 		if(room == 1){
 			currentRoom = room1;
 		}
-		//else if(room == 2){
-		//	currentRoom = room2;
-	//	}
-	//	else if(room == 3){
-	//		currentRoom = room3;
-	//	}
-	/*	//Items.
+//		else if(room == 2){
+//			currentRoom = room2;
+//		}
+//		else if(room == 3){
+//			currentRoom = room3;
+//		}
+		//Items.
+		/*
 		if (player.inventory.inInventory(item1) == false){
 			world[item1.y][item1.x] = "$";
 		}
@@ -52,7 +53,7 @@ class World{
 		}
 		if (player.inventory.inInventory(item5) == false){
 			world[item5.y][item5.x] = "$";
-		}
+		}*/
 		//Monsters.
 		if (enemy1.enemyDead() == false){
 			world[enemy1.y][enemy1.x] = "M";
@@ -63,7 +64,7 @@ class World{
 		if (enemy3.enemyDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
-		//To Do ask why we were printing this twice
+		//******************************To Do ask why we were printing this twice
 		/*
 		if (enemy1.getIsDead() == false){
 			world[enemy1.y][enemy1.x] = "M";
@@ -74,6 +75,7 @@ class World{
 		if (enemy3.getIsDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
+		*/
 
 		//Player.
 		world[player.y][player.x] = "@";
@@ -178,7 +180,7 @@ class World{
 			}
 		}
 }
-	
+	/*
 	public void printWorld(int room){
 		//Print the first world if the current world if equal to 1.
 		if(currentRoom == room1){
@@ -207,7 +209,7 @@ class World{
 				}
 			System.out.println();
 		}*/
-	}	
+	
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");
