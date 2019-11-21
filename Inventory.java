@@ -325,6 +325,7 @@ class Inventory{
 			String nothing = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
+			String name = a.nextLine();
 			int weight = a.nextInt();
 			int value = a.nextInt();
 			int strength = a.nextInt();
@@ -337,6 +338,7 @@ class Inventory{
 				if (d.equals("-")){
 					t = a.nextLine();
 					type = ItemType.valueOf(t);
+					name = a.nextLine();
 					weight = a.nextInt();
 					value = a.nextInt();
 					strength = a.nextInt();
@@ -347,7 +349,7 @@ class Inventory{
 				} else if (d.equals(".")){
 				}
 			}
-		}catch (FileNotFoundException e){
+		} catch (FileNotFoundException e){
 			System.out.println("Could not find file.");
 		}
 	}
