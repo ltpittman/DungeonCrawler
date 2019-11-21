@@ -19,7 +19,6 @@ class Room{
 			FileInputStream f = new FileInputStream(frame);
 			Scanner in = new Scanner (f);
 			
-			
 			rows = in.nextInt();
 
 			for(int i = 0; i < rows; i++){
