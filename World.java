@@ -6,22 +6,20 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	Inventory inventory;
-	public Rooms room1;
-	public Rooms room2;
-	public Rooms room3;
+	public Room1 room1;
+	public Room2 room2;
+	public Room3 room3;
 	public int currentRoom;
 	Battles battle = new Battles();
 	//store the rooms into variables
 
 	World(){
-		//Setting the dimensions to the rooms.
-		this.room1 = new Rooms(18,23);
-		this.room2 = new Rooms(12,18);
-		this.room3 = new Rooms(12,13);
+		room1 = new Room1();
+		room2 = new Room2();
+		room3 = new Room3();
 
 	}
 	//Method to fill the world with the players, items, and enemies.
-	//the "int num" is to change from room to room. 
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 		
 		//Set the mainRoom to null.
@@ -42,19 +40,19 @@ class World{
 		
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			mainRoom.getRoom()[item1.y][item1.x] = "$";
+			world[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-			mainRoom.getRoom()[item2.y][item2.x] = "$";
+			world[item2.y][item2.x] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-			mainRoom.getRoom()[item3.y][item3.x] = "$";
+			world[item3.y][item3.x] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-			mainRoom.getRoom()[item4.y][item4.x] = "$";
+			world[item4.y][item4.x] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-			mainRoom.getRoom()[item5.y][item5.x] = "$";
+			world[item5.y][item5.x] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
@@ -152,7 +150,7 @@ class World{
 
 		//If the player finds the room on the top, then ask if they want to go to that room.
 		if(player.x == 6 && player.y == 1){
-			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N "); // [Type 'E' to enter...] ");
+			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
@@ -175,7 +173,7 @@ class World{
 			}
 		}
 	}
-	
+/*	
 	public void printWorld(){
 		//Print the first world if the current world if equal to 1.
 		if(currentRoom == 1){
@@ -205,6 +203,7 @@ class World{
 			System.out.println();
 		}
 	}
+	*/
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");
