@@ -29,15 +29,17 @@ class Main{
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
+		System.out.print("[Name] What is your name? ");
+		String userName = in.next();
+		player = new Player(userName, health);
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
-		System.out.println();
-		System.out.println("Would you like to continue with a saved game?(Y/N)");
-		/*
+		System.out.print("[Option] Would you like to continue with a saved game? Y/N ");
+		
 		String inputAns = in.next().toUpperCase();
-		if (inputAns.equals("Y")){
+		if(inputAns.equals("Y")){
 			if (file.length() == 0){
-				System.out.println("There is no game saved. A new game will start shortly.");
+				System.out.print("There is no game saved. A new game will start shortly.");
 			} else {
 				player.restore("info.txt");
 				enemy1.restore("info.txt");
@@ -51,13 +53,9 @@ class Main{
 				player.inventory.restore("info.txt");
 			}
 		}
-
-
-*/
-		System.out.print("[Name] What is your name? ");
-		String userName = in.next();
-
-		player = new Player(userName, health);
+		else{
+			System.out.println();
+		}
 
 		World world = new World();	
 		//The player starts out with one health potion. 	
