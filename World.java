@@ -23,7 +23,7 @@ class World{
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 			
 		//Set the mainRoom to null.
-		Room currentRoom = null;
+		Room currentRoom = room1;
 		if(room == 1){
 			currentRoom = room1;
 		}
@@ -33,7 +33,7 @@ class World{
 		else if(room == 3){
 			currentRoom = room3;
 		}
-		//Items.
+	/*	//Items.
 		if (player.inventory.inInventory(item1) == false){
 			world[item1.y][item1.x] = "$";
 		}
@@ -200,7 +200,7 @@ class World{
 					}
 				}
 			System.out.println();
-		}
+		}*/
 	}	
 	//Method to print the commands to the user.
 	void printCommands(){

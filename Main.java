@@ -34,6 +34,7 @@ class Main{
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("Would you like to continue with a saved game?(Y/N)");
+		/*
 		String inputAns = in.next().toUpperCase();
 		if (inputAns.equals("Y")){
 			if (file.length() == 0){
@@ -53,7 +54,7 @@ class Main{
 		}
 
 
-
+*/
 		System.out.print("[Name] What is your name? ");
 		String userName = in.next();
 
@@ -90,7 +91,7 @@ class Main{
 			switch(input){
 				case'H':
 					player.goUp();
-					if (enemy1.enemyDead(enemy1) == false){
+					/*if (enemy1.enemyDead(enemy1) == false){
 						enemy1.move();
 					}
 					if (enemy2.enemyDead(enemy2) == false){
@@ -139,7 +140,7 @@ class Main{
 						enemy3.move();
 					}
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
-					break;
+					break;*/
 				case'P':
 					world.printCommands();
 					break;
