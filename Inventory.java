@@ -312,8 +312,8 @@ class Inventory{
 
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");
-		for(Item it : items){
-			it.persist(pw);
+		for(Item i : items){
+			i.persist(pw);
 			pw.println("-");
 		}
 		pw.println(".");
@@ -321,15 +321,30 @@ class Inventory{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner (new FileReader (fileName));
-			Item.restore();
+			Scanner a = new Scanner (fileName);
+			String nothing = a.nextLine();
+			String t = a.nextLine();
+			ItemType type = ItemType.valueOf(t);
+			int weight = a.nextInt();
+			int value = a.nextInt();
+			int strength = a.nextInt();
+			int x = a.nextInt();
+			int y = a.nextInt();
+			Item item = new Item (type, name, weight, value, strength, x, y);
 			items.add(item);
-			String x = a.nextLine();
+			String d = a.nextLine();
 			while(a.hasNext()){
-				if (x.equals("-")){
-					Item.restore();
-					items.add(item);
-				} else if (x.equals(".")){
+				if (d.equals("-")){
+					t = a.nextLine();
+					type = ItemType.valueOf(t);
+					weight = a.nextInt();
+					value = a.nextInt();
+					strength = a.nextInt();
+					x = a.nextInt();
+					y = a.nextInt();
+					Item item1 = new Item (type, name, weight, value, strength, x, y);
+					items.add(item1);
+				} else if (d.equals(".")){
 				}
 			}
 		}catch (FileNotFoundException e){
