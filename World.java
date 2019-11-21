@@ -50,15 +50,17 @@ class World{
 			world[item5.y][item5.x] = "$";
 		}
 		//Monsters.
-		if (enemy1.enemyDead(enemy1) == false){
+		if (enemy1.enemyDead() == false){
 			world[enemy1.y][enemy1.x] = "M";
 		}
-		if (enemy2.enemyDead(enemy2) == false){
+		if (enemy2.enemyDead() == false){
 			world[enemy2.y][enemy2.x] = "M";
 		}
-		if (enemy3.enemyDead(enemy3) == false){
+		if (enemy3.enemyDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
+		//To Do ask why we were printing this twice
+		/*
 		if (enemy1.getIsDead() == false){
 			world[enemy1.y][enemy1.x] = "M";
 		}
@@ -68,7 +70,7 @@ class World{
 		if (enemy3.getIsDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
-
+*/
 		//Player.
 		world[player.y][player.x] = "@";
 
