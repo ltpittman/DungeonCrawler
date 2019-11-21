@@ -23,6 +23,7 @@ class Room{
 					System.out.print(grid[j][i]);
 				}
 			}
+			System.out.println();
 			in.close();
 		}
 		catch(FileNotFoundException e){
