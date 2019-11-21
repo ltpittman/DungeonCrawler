@@ -199,7 +199,6 @@ class Main{
 					}
 					System.exit(1);
 					break;
-			}
 		}
 		while(input != 'Q');
 	}

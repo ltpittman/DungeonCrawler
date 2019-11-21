@@ -349,7 +349,7 @@ class Inventory{
 				} else if (d.equals(".")){
 				}
 			}
-		} catch (FileNotFoundException e){
+		} catch (Exception e){
 			System.out.println("Could not find file.");
 		}
 	}

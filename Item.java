@@ -77,7 +77,7 @@ class Item{
 			int x = a.nextInt();
 			int y = a.nextInt();
 			Item item = new Item (type, name, weight, value, strength, x, y);
-		} catch (FileNotFoundException e){
+		} catch (Exception e){
 			System.out.println("Could not find file.");
 		
 		}}
