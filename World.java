@@ -9,14 +9,16 @@ class World{
 	public Room1 room1;
 	public Room2 room2;
 	public Room3 room3;
+	World world;//[][];
 	public int currentRoom;
 	Battles battle = new Battles();
 	//store the rooms into variables
 
 	World(){
-		room1 = new Room1();
-		room2 = new Room2();
-		room3 = new Room3();
+		Room1 room1 = new Room1();
+		Room2 room2 = new Room2();
+		Room3 room3 = new Room3();
+
 
 	}
 	//Method to fill the world with the players, items, and enemies.
@@ -40,7 +42,7 @@ class World{
 		
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			world[item1.y][item1.x] = "$";
+			room1[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
 			world[item2.y][item2.x] = "$";
