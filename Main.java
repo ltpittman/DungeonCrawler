@@ -139,7 +139,7 @@ class Main{
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'P':
-					world.printCommands();
+					command.printCommands();
 					break;
 				case'I':
 					player.inventory.print();
