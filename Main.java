@@ -66,9 +66,6 @@ class Main{
 		//player.inventory.addItem(healthPotion);
 
 		World world = new World();	
-		//World room1 = new World();
-		//Rooms room2 = new Rooms();
-		//Rooms room3 = new Rooms(); 
 
 		//Print the objective of the game.
 		world.printObjective();			
@@ -79,8 +76,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
-		world.printWorld();
-		//room1.printRoom();
+		//world.printWorld();
 
 		char input;
 
@@ -193,18 +189,18 @@ class Main{
 						}
 						else if (ans.equals("N")){
 							break;
-						}}
+						}
+					}
 					catch(FileNotFoundException e){
 						System.out.println("Could not find anything.");
 					}
 					System.exit(1);
 					break;
+			}
 		}
 		while(input != 'Q');
 	}
-
 }
-
 
 
 

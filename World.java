@@ -6,6 +6,7 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	Inventory inventory;
+	String[][] world;
 	public Room room1;
 	public Room room2;
 	public Room room3;
@@ -34,11 +35,11 @@ class World{
 		else if(room == 3){
 			currentRoom = room3;
 		}
-	/*	
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
 			world[item1.y][item1.x] = "$";
 		}
+		
 		if (player.inventory.inInventory(item2) == false){
 			world[item2.y][item2.x] = "$";
 		}
@@ -169,7 +170,6 @@ class World{
 				//room2.printRoom2();//player, item1, item2);
 			}
 		}
-	}*/
 }
 /*	
 	public void printWorld(){
