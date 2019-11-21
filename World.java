@@ -40,19 +40,19 @@ class World{
 		
 		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			currentRoom[item1.y][item1.x] = "$";
+			world[item1.y][item1.x] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-			mainRoom.getRoom()[item2.y][item2.x] = "$";
+			world[item2.y][item2.x] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-			mainRoom.getRoom()[item3.y][item3.x] = "$";
+			world[item3.y][item3.x] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-			mainRoom.getRoom()[item4.y][item4.x] = "$";
+			world[item4.y][item4.x] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-			mainRoom.getRoom()[item5.y][item5.x] = "$";
+			world[item5.y][item5.x] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead(enemy1) == false){
@@ -150,7 +150,7 @@ class World{
 
 		//If the player finds the room on the top, then ask if they want to go to that room.
 		if(player.x == 6 && player.y == 1){
-			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N "); // [Type 'E' to enter...] ");
+			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
