@@ -9,7 +9,7 @@ class World{
 	public Player player;
 	Inventory inventory;
 	String[][] world;
-	public Room room1 = new Room("Room1.txt")';
+	public Room room1 = new Room("Room1.txt");
 	public Room room2 = new Room("Room2.txt");
 	public Room room3 = new Room("Room3.txt");
 	public Room currentRoom;
