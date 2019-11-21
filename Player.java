@@ -147,7 +147,7 @@ class Player extends Characters{// throws FileNotFoundException{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner(new FileReader(fileName));
+			Scanner a = new Scanner(fileName);
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();

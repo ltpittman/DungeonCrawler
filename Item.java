@@ -67,7 +67,7 @@ class Item{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner(new FileReader(fileName));
+			Scanner a = new Scanner(fileName);
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			int weight = a.nextInt();

@@ -125,7 +125,7 @@ class Enemy extends Characters{
 
 	public void restore (String fileName) {
 		try{
-		Scanner a = new Scanner(new FileReader(fileName));
+		Scanner a = new Scanner(fileName);
 		this.name = a.nextLine();
 		String t = a.nextLine();
 		MonsterType type = MonsterType.valueOf(t);
