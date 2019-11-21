@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class Room{
-//	int rows;
+	int rows;
 //	int columns;
 	char[][] grid;
 
