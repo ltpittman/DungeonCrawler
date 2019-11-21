@@ -1,3 +1,5 @@
+/*This class displays the world, along with the three rooms. In the fillWorld method, the player will be able to move between rooms, fight monsters, and pick up random items.*/
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;

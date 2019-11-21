@@ -80,7 +80,7 @@ class Main{
 			System.out.println("------------------------------------------------");
 			player.printInfo();
 			player.getLocation();
-			player.inventory.printOtherStats();
+			command.printOtherStats();
 			System.out.print("[Answer] ");
 			input = in.next().toUpperCase().charAt(0); 
 			System.out.println("------------------------------------------------");

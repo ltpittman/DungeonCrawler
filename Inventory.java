@@ -10,8 +10,8 @@ class Inventory{
 	private int maxWeight;
 	private int health;
 	private int strength;
-	private Item equippedWeapon;
-	private Item equippedArmor;
+	Item equippedWeapon;
+	Item equippedArmor;
 	Player player;
 	Item item;
 
@@ -32,11 +32,15 @@ class Inventory{
 		equippedArmor = leatherArmor;
 		equippedWeapon = ironDagger;
 	}
-
-	//This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
-	void printOtherStats(){
-		System.out.println("Total Weight: " + totalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
+	//Method tog get the maxWeight(){
+	int getMaxWeight(){
+		return this.maxWeight;
 	}
+	//****** I PUT THIS IN TEH OBJECTIVE CLASS!!`
+	//This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
+//	void printOtherStats(){
+//		System.out.println("Total Weight: " + totalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
+//	}
 
 	//Method to check if item is in inventory to not display on map
 	public boolean inInventory(Item item){
@@ -54,7 +58,7 @@ class Inventory{
 		//Get weight of item you want to add.
 		int weightOfNewItem = item.getWeight();
 		//Add the new item's weight and the max weight together.
-		int itemWeight_and_maxWeight = weightOfNewItem + this.totalWeight();
+		int itemWeight_and_maxWeight = weightOfNewItem + this.getTotalWeight();
 		//If the weight added together is less than the maxWeight, then add it to your inventory. 
 		if(itemWeight_and_maxWeight <= maxWeight){
 			if(items.contains(item)){
@@ -76,7 +80,7 @@ class Inventory{
 
 
 	//Method to get the total weight of the player.
-	int totalWeight(){
+	int getTotalWeight(){
 		int currentWeight = 0;
 		for(int i = 0; i < items.size(); i++){
 			currentWeight += items.get(i).getWeight();
