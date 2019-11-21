@@ -124,18 +124,16 @@ class Player extends Characters{// throws FileNotFoundException{
 	//Method for saving the data for the character
 	public void persist(PrintWriter pw){
 		pw.println(name);
-		pw.println(x + " " + y);
+		pw.println(x + "," + y);
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
-		pw.println(equippedWeapon.getType());
 		pw.println(equippedWeapon.getName());
 		pw.println(equippedWeapon.getWeight());
 		pw.println(equippedWeapon.getValue());
 		pw.println(equippedWeapon.getStrength());
 		pw.println(equippedWeapon.getItemX());
 		pw.println(equippedWeapon.getItemY());
-		pw.println(equippedArmor.getType());
 		pw.println(equippedArmor.getName());
 		pw.println(equippedArmor.getWeight());
 		pw.println(equippedArmor.getValue());

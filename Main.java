@@ -54,7 +54,6 @@ class Main{
 			}
 		}
 		else{
-			System.out.println();
 		}
 
 		World world = new World();	
