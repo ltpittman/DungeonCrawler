@@ -89,7 +89,6 @@ class Main{
 			switch(input){
 				case'H':
 					player.goUp();
-<<<<<<< HEAD
 					/*if (enemy1.enemyDead(enemy1) == false){
 =======
 					if (enemy1.enemyDead() == false){

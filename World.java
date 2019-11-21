@@ -7,14 +7,16 @@ class World{
 	public Player player;
 	Inventory inventory;
 	String[][] world;
-	public Room room1;
-	public Room room2;
-	public Room room3;
+	public Room room1 = new Room("Room1.txt")';
+	public Room room2 = new Room("Room2.txt");
+	public Room room3 = new Room("Room3.txt");
 	public Room currentRoom;
 	Battles battle = new Battles();
 
 	World(){
-		room1 = new Room("Room1.txt");
+		this.room1 = room1; //	new Room("Room1.txt");
+		this.room2 = room2;
+		this.room3 = room3;
 		//room2 = new Room("Room2.txt");
 		//room3 = new Room("Room3.txt");
 		this.currentRoom = currentRoom;
@@ -70,7 +72,7 @@ class World{
 		if (enemy3.getIsDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
-*/
+
 		//Player.
 		world[player.y][player.x] = "@";
 
