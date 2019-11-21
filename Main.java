@@ -89,52 +89,56 @@ class Main{
 			switch(input){
 				case'H':
 					player.goUp();
+<<<<<<< HEAD
 					/*if (enemy1.enemyDead(enemy1) == false){
+=======
+					if (enemy1.enemyDead() == false){
+>>>>>>> aefbd798a88ad15a47f2569c160ef722f802cd89
 						enemy1.move();
 					}
-					if (enemy2.enemyDead(enemy2) == false){
+					if (enemy2.enemyDead() == false){
 						enemy2.move();
 					}
-					if (enemy3.enemyDead(enemy3) == false){
+					if (enemy3.enemyDead() == false){
 						enemy3.move();
 					}
 					//	world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'L':
 					player.goDown();
-					if (enemy1.enemyDead(enemy1) == false){
+					if (enemy1.enemyDead() == false){
 						enemy1.move();
 					}
-					if (enemy2.enemyDead(enemy2) == false){
+					if (enemy2.enemyDead() == false){
 						enemy2.move();
 					}
-					if (enemy3.enemyDead(enemy3) == false){
+					if (enemy3.enemyDead() == false){
 						enemy3.move();
 					}
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'J':
 					player.goLeft();
-					if (enemy1.enemyDead(enemy1) == false){
+					if (enemy1.enemyDead() == false){
 						enemy1.move();
 					}
-					if (enemy2.enemyDead(enemy2) == false){
+					if (enemy2.enemyDead() == false){
 						enemy2.move();
 					}
-					if (enemy3.enemyDead(enemy3) == false){
+					if (enemy3.enemyDead() == false){
 						enemy3.move();
 					}
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'K':
 					player.goRight();
-					if (enemy1.enemyDead(enemy1) == false){
+					if (enemy1.enemyDead() == false){
 						enemy1.move();
 					}
-					if (enemy2.enemyDead(enemy2) == false){
+					if (enemy2.enemyDead() == false){
 						enemy2.move();
 					}
-					if (enemy3.enemyDead(enemy3) == false){
+					if (enemy3.enemyDead() == false){
 						enemy3.move();
 					}
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
