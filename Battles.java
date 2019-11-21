@@ -19,7 +19,7 @@ class Battles{
 	private int difference;
 
 	//In this method we compare the health and the strength of the enemy and the player. Based on the strength of each we name a winner of the fight and modify the Health of both. If the player wins then we modify the number of monsters left in the game.
-	public void attack(Player player, Enemy enemy) throws InterruptedException {
+	public void attack(Player player, Enemy enemy) {
 
 		//Get the equipped armor of the player.
 		equippedArmor = player.getEquippedArmor();
@@ -77,13 +77,13 @@ class Battles{
 						playerLoses();
 					}
 					System.out.println("\nThe " + enemyName + " attacked you with a damage of " + strengthEnemy + "...");
-					Thread.sleep(1000);
+					try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
+
 					System.out.println("Your health is now " + healthPlayer + "/100.\n");
-					Thread.sleep(1000);
+					try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
 					System.out.println("You attack the " + enemyName + " with a damage of " + strengthPlayer + "!");
-					Thread.sleep(2000);
-
-
+					try{Thread.sleep(3000);} catch(InterruptedException e){System.out.println(e);}
+					
 					//If the enemy's health is less than 1, then the player defeated the monster.
 					if(healthEnemy < 1){
 						System.out.println("The enemy's health has reached 0/100.");
@@ -92,12 +92,13 @@ class Battles{
 						numberMonster = numberMonster - 1;
 						boolean dead = false;
 						enemy.setIsDead(dead);
-						Thread.sleep(1000);
+						try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
 						//player.setHealth(healthPlayer);
 					}
 					else{
 						System.out.println("The enemy's health is now " + healthEnemy + "/100.\n");
-						Thread.sleep(1000);
+						try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
+
 						//player.setHealth(healthPlayer);
 					}
 
