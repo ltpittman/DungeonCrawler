@@ -18,7 +18,7 @@ class Enemy extends Characters{
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(String name, int health, int damage, int x, int y, MonsterType type){//, boolean isDead){ 
+	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
 		super(name, health);//,health);
 		//this.health = health;
 		this.type = type;
@@ -38,16 +38,16 @@ class Enemy extends Characters{
 	int getDamage(){
 		return this.damage;
 	}
-	/*
+	
 	//to determine if the enemy is dead
 	boolean getIsDead(){
 		return this.isDead;
 	}
 	//to set the is dead
-	public void boolean setIsDead(boolean isDead){
+	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
 	}
-	*/
+	
 	//Adding the movement method for the Enemy class.
 	public boolean move(){
 
@@ -136,7 +136,7 @@ class Enemy extends Characters{
 		this.damage = a.nextInt();
 		this.isDead = a.nextBoolean();
 		}
-		catch(FileNotFoundException e){
+		catch(Exception e){
 			System.out.println("Could not find anything.");
 		}
 	}	
