@@ -38,6 +38,16 @@ class Enemy extends Characters{
 	int getDamage(){
 		return this.damage;
 	}
+
+	//to see if the monster is alive
+	boolean enemyDead(){
+		if(health > 0){
+		       return false;
+		}
+		else{
+			return true;
+		}
+	}		
 	
 	//to determine if the enemy is dead
 	boolean getIsDead(){
