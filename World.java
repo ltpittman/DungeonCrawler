@@ -15,8 +15,8 @@ class World{
 
 	World(){
 		room1 = new Room("Room1.txt");
-		room2 = new Room("Room2.txt");
-		room3 = new Room("Room3.txt");
+		//room2 = new Room("Room2.txt");
+		//room3 = new Room("Room3.txt");
 		this.currentRoom = currentRoom;
 	}
 	//Method to fill the world with the players, items, and enemies.
@@ -27,12 +27,12 @@ class World{
 		if(room == 1){
 			currentRoom = room1;
 		}
-		else if(room == 2){
-			currentRoom = room2;
-		}
-		else if(room == 3){
-			currentRoom = room3;
-		}
+		//else if(room == 2){
+		//	currentRoom = room2;
+	//	}
+	//	else if(room == 3){
+	//		currentRoom = room3;
+	//	}
 	/*	//Items.
 		if (player.inventory.inInventory(item1) == false){
 			world[item1.y][item1.x] = "$";
