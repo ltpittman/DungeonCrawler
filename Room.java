@@ -4,28 +4,23 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class Room{
-	int rows;
-	int columns;
 	char[][] grid;
 
 	//Constructor that takes in a file.
 	Room(String frame){
 		
-		this.rows = rows;
-		this.columns = columns;
-		grid = new char[rows][columns];
+		grid = new char[36][14];
 
 		try{
 			FileInputStream f = new FileInputStream(frame);
 			Scanner in = new Scanner (f);
 			
-			
-			rows = in.nextInt();
-
-			for(int i = 0; i < rows; i++){
+			for(int i = 0; i < 14; i++){
 				String line = in.nextLine();
-				for(int j = 0; j < line.length(); j++){
-					grid[i][j] = line.charAt(j);
+				System.out.print("\n");
+				for(int j = 0; j < 36; j++){
+					grid[j][i] = line.charAt(j);
+					System.out.print(grid[j][i]);
 				}
 			}
 			in.close();

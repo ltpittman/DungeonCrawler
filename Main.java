@@ -31,9 +31,9 @@ class Main{
 		System.out.println("[Game Loading...]");
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
-		System.out.println(" ");
-		System.out.println(" ");
+		System.out.println();
 		System.out.println("Would you like to continue with a saved game?(Y/N)");
+		/*
 		String inputAns = in.next().toUpperCase();
 		if (inputAns.equals("Y")){
 			if (file.length() == 0){
@@ -53,17 +53,16 @@ class Main{
 		}
 
 
-
+*/
 		System.out.print("[Name] What is your name? ");
 		String userName = in.next();
 
 		player = new Player(userName, health);
 
+		World world = new World();	
 		//The player starts out with one health potion. 	
 		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
 		//player.inventory.addItem(healthPotion);
-
-		World world = new World();	
 
 		//Print the objective of the game.
 		world.printObjective();			
