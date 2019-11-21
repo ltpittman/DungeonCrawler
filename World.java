@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.io.PrintWriter;
+
 
 class World{
 	public Enemy enemy;
@@ -214,4 +216,16 @@ class World{
 	void printObjective(){
 		System.out.println("\n[Welcome to Dungeon Crawler!]...\n   The overall objective of the game is to fight all the monsters that you encounter and make it out of the dungeon alive. To begin, your health will start at 100/100 pts. You will have two items in your inventory: a sword and a piece of armor. While out searching for monsters, you have the option to pick up random items, whether it is a piece of armor, a weapon, etc.\n    You may switch your weapon and armor for something different that you find anytime. When it comes to fighting the monsters, it's all about luck. If you win a battle against a monster, you will be able to continue exploring the area and fight any more monsters you come across. If you are able to kill all the monsters in the dungeon, then you have won the game! [Good luck!]"); 
 	}
+
+	public void persist (PrintWriter pw){
+		pw.println(currentRoom);
 	}
+	public void restore (String fileName){
+		try{
+			Scanner a = new Scanner (fileName);
+			this.currentRoom = currentRoom;
+		} catch (Exception e){
+			System.out.println("Could not find file.");
+		}
+	}
+}
