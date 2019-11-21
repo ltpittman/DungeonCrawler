@@ -57,13 +57,13 @@ class World{
 			world[item5.y][item5.x] = "$";
 		}
 		//Monsters.
-		if (enemy1.enemyDead(enemy1) == false){
+		if (enemy1.getIsDead() == false){
 			mainRoom.getRoom()[enemy1.y][enemy1.x] = "M";
 		}
-		if (enemy2.enemyDead(enemy2) == false){
+		if (enemy2.getIsDead() == false){
 			mainRoom.getRoom()[enemy2.y][enemy2.x] = "M";
 		}
-		if (enemy3.enemyDead(enemy3) == false){
+		if (enemy3.getIsDead() == false){
 			mainRoom.getRoom()[enemy3.y][enemy3.x] = "M";
 		}
 
@@ -137,17 +137,14 @@ class World{
 		if (player.y == enemy1.y && player.x == enemy1.x){
 			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
 			battle.attack(player, enemy1);
-			enemy1.enemyDead(enemy1);
 		}
 		else if (player.y == enemy2.y && player.x == enemy2.x){
 			System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
 			battle.attack(player, enemy2);
-			enemy2.enemyDead(enemy2);
 		}
 		else if (player.y == enemy3.y && player.x == enemy3.x){
 			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
 			battle.attack(player, enemy3);
-			enemy3.enemyDead(enemy3);
 		}
 
 		//If the player finds the room on the top, then ask if they want to go to that room.

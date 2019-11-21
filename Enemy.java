@@ -25,7 +25,7 @@ class Enemy extends Characters{
 		this.damage = damage;
 		this.x = x;
 		this.y = y;
-		//this.isDead = isDead;
+		this.isDead = isDead;
 	}
 //	public String characterImage(){
 //		return "M";
@@ -101,7 +101,7 @@ class Enemy extends Characters{
 		return("Enemy Name: " + this.name + "\nHealth: " + this.health + "/100" + "\nDamage: " + this.damage);
 	}
 	//After enemy is dead remove from board
-	public boolean enemyDead(Enemy enemy){
+	/*public boolean enemyDead(Enemy enemy){
 		int healthEnemy = enemy.getHealth();
 		if (healthEnemy <= 0){
 			y= 1;
@@ -111,7 +111,7 @@ class Enemy extends Characters{
 		else{
 			return false;
 		}
-	}
+	}*/
 	//Method to save the information about the enemy
 	public void persist (PrintWriter pw){
 		pw.println(name);
@@ -119,8 +119,8 @@ class Enemy extends Characters{
 		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(damage);
-		pw.println(isDead);
 		pw.println(".");
+		pw.println(isDead);
 	}
 
 	public void restore (String fileName) {
