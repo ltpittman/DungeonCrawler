@@ -71,7 +71,8 @@ class Main{
 		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
+		world.printCurrentRoom();
+		//world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
 
 		char input;
 

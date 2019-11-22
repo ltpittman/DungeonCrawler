@@ -7,70 +7,35 @@ import java.util.ArrayList;
 import java.io.PrintWriter;
 
 class World{
-	public Enemy enemy;
-	public Player player;
-	Inventory inventory;
-	ArrayList<World> world; 
-	public Room room1;
-	public Room room2;
-	public Room room3;
-	public Room currentRoom;
-	Battles battle = new Battles();
+	private Enemy enemy;
+	private Player player;
+	private Inventory inventory;
 
+	private ArrayList<Room> rooms = new ArrayList<Room>(); 
+	private Room room1;
+	private Room room2;
+	private Room room3;
+	private int currentRoom;
+	
+	private Battles battle = new Battles();
+	
+	//Constructor for the world.
 	World(){
 		this.room1 = new Room("Room1.txt");
 		this.room2 = new Room("Room2.txt");
 		this.room3 = new Room("Room3.txt");
-		this.currentRoom = currentRoom;
+		//Add the rooms to the arrayList.
+		rooms.add(room1);
+		rooms.add(room2);
+		rooms.add(room3);
+		//Set the currentRoom to 0 (this will help get the room with the index).
+		this.currentRoom = 0;
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
 
 		Room currentRoom = room1;
 		
-		//Items.
-		/*
-		if (player.inventory.inInventory(item1) == false){
-			world[item1.y][item1.x] = "$";
-		}
-		if (player.inventory.inInventory(item2) == false){
-			world[item2.y][item2.x] = "$";
-		}
-		if (player.inventory.inInventory(item3) == false){
-			world[item3.y][item3.x] = "$";
-		}
-		if (player.inventory.inInventory(item4) == false){
-			world[item4.y][item4.x] = "$";
-		}
-		if (player.inventory.inInventory(item5) == false){
-			world[item5.y][item5.x] = "$";
-		}
-		//Monsters.
-		if (enemy1.enemyDead() == false){
-			world[enemy1.y][enemy1.x] = "M";
-		}
-		if (enemy2.enemyDead() == false){
-			world[enemy2.y][enemy2.x] = "M";
-		}
-		if (enemy3.enemyDead() == false){
-			world[enemy3.y][enemy3.x] = "M";
-		}
-		//******************************To Do ask why we were printing this twice
-		/*
-		if (enemy1.getIsDead() == false){
-			world[enemy1.y][enemy1.x] = "M";
-		}
-		if (enemy2.getIsDead() == false){
-			world[enemy2.y][enemy2.x] = "M";
-		}
-		if (enemy3.getIsDead() == false){
-			world[enemy3.y][enemy3.x] = "M";
-		}
-		*/
-
-		//Player.
-	//	world[player.y][player.x] = "@";
-
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
 			System.out.println("[Attention!] You just came across: " + item1.getName());
@@ -170,36 +135,15 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 			}
 		}
-}
-	/*
-	public void printWorld(int room){
-		//Print the first world if the current world if equal to 1.
-		if(currentRoom == room1){
-			for(int i = 0; i < room1; i++){
-				for(int j = 0; j < room1.length; j++){
-					System.out.println(room1[i][j] + " ");
-				}
-			}
-			System.out.println();
-		}
-		//Print the second world if the current world is equal to 2.
-		else if(currentRoom == room2){
-			for(int i = 0; i < room2; i++){
-				for(int j = 0; j < room2.length; j++){
-					System.out.println(room2[i][j] + " ");
-				}
-			}
-			System.out.println();
-		}
-		//Print the third world if the current world is equal to 3.
-		else if(currentRoom == room3){
-			for(int i = 0; i < room3; i++){
-				for(int j = 0; i < room3[i].length; j++){
-					System.out.println(room3[i][j] + " ");
-					}
-				}
-			System.out.println();
-		}*/
+
+
+	}
+	//This method prints the current room that the player is in.
+	public void printCurrentRoom(){
+		rooms.get(currentRoom).printRoom();
+
+
+	}
 	public void persist (PrintWriter pw){
 		pw.println(currentRoom);
 	}
