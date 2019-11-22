@@ -31,11 +31,12 @@ class Main{
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
 		System.out.print("[Name] What is your name? ");
-		String userName = in.next();
+		String userName = in.nextLine();
+
 		player = new Player(userName, health);
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
-		System.out.print("[Option] Would you like to continue with a saved game? Y/N ");
+		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
 		
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
@@ -61,6 +62,10 @@ class Main{
 		//The player starts out with one health potion. 	
 		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
 		//player.inventory.addItem(healthPotion);
+		
+		//System.out.print("[Name] What is your name? ");
+		//userName = in.next();
+
 
 		//Print the objective of the game.
 		command.printObjective();			

@@ -21,7 +21,7 @@ class World{
 	World(){
 		//world = new World<World>();
 		//world.add(room1);
-		this.room1 = room1; //	new Room("Room1.txt");
+		this.room1 = room1;//new Room("Room1.txt");
 		this.room2 = room2;
 		this.room3 = room3;
 		//room2 = new Room("Room2.txt");
@@ -32,9 +32,9 @@ class World{
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ //int room	
 		//Set the mainRoom to null.
 
-	//	room1 = new Room("Room1.txt");
-	//	room2 = new Room("Room2.txt");
-	//	room3 = new Room("Room3.txt");
+		room1 = new Room("Room1.txt");
+		room2 = new Room("Room2.txt");
+		room3 = new Room("Room3.txt");
 		
 		Room currentRoom = room1;
 		
@@ -63,7 +63,7 @@ class World{
 		}
 		if (player.inventory.inInventory(item5) == false){
 			world[item5.y][item5.x] = "$";
-		}*/
+		}
 		//Monsters.
 		if (enemy1.enemyDead() == false){
 			world[enemy1.y][enemy1.x] = "M";
@@ -88,7 +88,7 @@ class World{
 		*/
 
 		//Player.
-		world[player.y][player.x] = "@";
+	//	world[player.y][player.x] = "@";
 
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
@@ -224,7 +224,7 @@ class World{
 	}
 	public void restore(String fileName){
 		try{
-			Scanner a = new Scanner (fileName);
+			Scanner a = new Scanner(fileName);
 			this.currentRoom = currentRoom;
 		} 
 		catch(Exception e){
