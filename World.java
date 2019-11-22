@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 
-
 class World{
 	public Enemy enemy;
 	public Player player;
@@ -39,9 +38,9 @@ class World{
 		
 		Room currentRoom = room1;
 		
-		if(room == 1){
-			currentRoom = room1;
-		}
+	//	if(room == 1){
+	//		currentRoom = room1;
+	//	}
 //		else if(room == 2){
 //			currentRoom = room2;
 //		}
@@ -228,7 +227,7 @@ class World{
 			Scanner a = new Scanner (fileName);
 			this.currentRoom = currentRoom;
 		} 
-		catch(FileNotFoundException e){
+		catch(Exception e){
 			System.out.println("No file found.");
 		}
 	}
