@@ -11,7 +11,10 @@ class Main{
 	public static void main(String args[]) throws InputMismatchException{
 		Objective command = new Objective();
 		File file = new File("info.txt");
-		//Inventory playerInventory;
+
+		World world = new World();	
+
+		Inventory playerInventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
@@ -57,15 +60,8 @@ class Main{
 		}
 		else{
 		}
+
 		System.out.println("------------------------------------------------");
-
-		//The player starts out with one health potion. 	
-		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
-		//player.inventory.addItem(healthPotion);
-		
-		//System.out.print("[Name] What is your name? ");
-		//userName = in.next();
-
 
 		//Print the objective of the game.
 		command.printObjective();			
@@ -75,9 +71,7 @@ class Main{
 		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		World world = new World();	
 		world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
-		//world.printWorld();
 
 		char input;
 
