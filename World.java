@@ -1,5 +1,6 @@
 /*This class displays the world, along with the three rooms. In the fillWorld method, the player will be able to move between rooms, fight monsters, and pick up random items.*/
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -10,25 +11,34 @@ class World{
 	public Enemy enemy;
 	public Player player;
 	Inventory inventory;
+	//rrayList<World> world; 
 	String[][] world;
-	public Room room1 = new Room("Room1.txt");
-//	public Room room2 = new Room("Room2.txt");
-//	public Room room3 = new Room("Room3.txt");
+	public Room room1;// = new Room("Room1.txt");
+	public Room room2;// = new Room("Room2.txt");
+	public Room room3;// = new Room("Room3.txt");
 	public Room currentRoom;
 	Battles battle = new Battles();
 
 	World(){
+		//world = new World<World>();
+		//world.add(room1);
 		this.room1 = room1; //	new Room("Room1.txt");
-//		this.room2 = room2;
-//		this.room3 = room3;
+		this.room2 = room2;
+		this.room3 = room3;
 		//room2 = new Room("Room2.txt");
 		//room3 = new Room("Room3.txt");
 		this.currentRoom = currentRoom;
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){//, int room){	
+	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ //int room	
 		//Set the mainRoom to null.
+
+	//	room1 = new Room("Room1.txt");
+	//	room2 = new Room("Room2.txt");
+	//	room3 = new Room("Room3.txt");
+		
 		Room currentRoom = room1;
+		
 		if(room == 1){
 			currentRoom = room1;
 		}
@@ -213,12 +223,13 @@ class World{
 	public void persist (PrintWriter pw){
 		pw.println(currentRoom);
 	}
-	public void restore (String fileName){
+	public void restore(String fileName){
 		try{
 			Scanner a = new Scanner (fileName);
 			this.currentRoom = currentRoom;
-		} catch (Exception e){
-			System.out.println("Could not find file.");
+		} 
+		catch(FileNotFoundException e){
+			System.out.println("No file found.");
 		}
 	}
 }
