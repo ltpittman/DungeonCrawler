@@ -6,10 +6,12 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class Room{
+	//Instance variables.
 	char[][] grid;
 	String[][]world;
+
 	//Constructor that takes in a file.
-	Room(String frame){
+	public Room(String frame){
 		
 		grid = new char[30][12];
 
@@ -30,7 +32,6 @@ class Room{
 			System.out.println("File not found.");
 		}
 	}
-<<<<<<< HEAD
 	//Method to print a room.
 	public void printRoom(){
 		for(int i = 0; i < 12; i ++){
@@ -41,7 +42,6 @@ class Room{
 	}
 	//To print the room in the world class, do room1.printRoom()?
 	
-=======
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		//Items
 		if (player.inventory.inInventory(item1) == false){
@@ -72,5 +72,4 @@ class Room{
 		}
 
 	}
->>>>>>> c2a085a97a226bc2bfb228dae5b3eedfa46f1915
 }
