@@ -19,8 +19,9 @@ class Enemy extends Character{
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
-		super(name, health);//,health);
-		//this.health = health;
+		super(name, health);
+		this.name = name;
+		this.health = health;
 		this.type = type;
 		this.damage = damage;
 		this.x = x;
@@ -53,9 +54,19 @@ class Enemy extends Character{
 	boolean getIsDead(){
 		return this.isDead;
 	}
+
 	//to set the is dead
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
+	}
+
+	//to get x and y
+	public int getX(){
+		return this.x;
+	}
+
+	public int getY(){
+		return this.y;
 	}
 	
 	//Adding the movement method for the Enemy class.

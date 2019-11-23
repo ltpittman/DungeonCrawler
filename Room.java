@@ -63,16 +63,15 @@ class Room{
 		if(player.inventory.inInventory(item5) == false){
 			grid[item5.y][item5.x] = '$';
 		}
-
 		//Monsters.
 		if(enemy1.enemyDead() == false){
-			grid[enemy1.y][enemy1.x] = enemy.getCharacterImage();
+			grid[enemy1.getY()][enemy1.getX()] = enemy.getCharacterImage();
 		}
 		if(enemy2.enemyDead() == false){
-			grid[enemy2.y][enemy2.x] = enemy.getCharacterImage();
+			grid[enemy2.getY()][enemy2.getX()] = enemy.getCharacterImage();
 		}
 		if(enemy3.enemyDead() == false){
-			grid[enemy3.y][enemy3.x] = enemy.getCharacterImage();
+			grid[enemy3.getY()][enemy3.getX()] = enemy.getCharacterImage();
 		}
 
 		//Player.
