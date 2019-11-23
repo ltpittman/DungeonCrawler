@@ -71,30 +71,8 @@ class Player extends Character{// throws FileNotFoundException{
 	}
 	//Method to move the player up.
 	public boolean goUp(){
-		if((y + 1) == 17){
-			System.out.println("[You can't go up in that direction anymore.]");
-			return false;
-		}
-		else{
-			y += 1;
-			return true;
-		}
-	}
-	//Method to move the player down.
-	public boolean goDown(){
-		if((y - 1) == 0){
-			System.out.println("[You can't go down in that direction anymore.]");
-			return false;
-		}
-		else{
-			y -= 1;
-			return true;
-		}	
-	}
-	//Method to move the player left.
-	public boolean goLeft(){
 		if((x - 1) == 0){
-			System.out.println("[You can't go left in that direction anymore.]");
+			System.out.println("[You can't go up in that direction anymore.]");
 			return false;
 		}
 		else{
@@ -102,14 +80,36 @@ class Player extends Character{// throws FileNotFoundException{
 			return true;
 		}
 	}
-	//Method to move the player right.
-	public boolean goRight(){
-		if((x + 1) == 19){
-			System.out.println("[You can't go right in that direction anymore.]");
+	//Method to move the player down.
+	public boolean goDown(){
+		if((x + 1) == 11){
+			System.out.println("[You can't go down in that direction anymore.]");
 			return false;
 		}
 		else{
 			x += 1;
+			return true;
+		}	
+	}
+	//Method to move the player left.
+	public boolean goLeft(){
+		if((y - 1) == 0){
+			System.out.println("[You can't go left in that direction anymore.]");
+			return false;
+		}
+		else{
+			y -= 1;
+			return true;
+		}
+	}
+	//Method to move the player right.
+	public boolean goRight(){
+		if((y + 1) == 29){
+			System.out.println("[You can't go right in that direction anymore.]");
+			return false;
+		}
+		else{
+			y += 1;
 			return true;
 		}
 	}

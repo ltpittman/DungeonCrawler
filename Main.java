@@ -9,13 +9,13 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
-		
+
 		Objective command = new Objective();
 		File file = new File("info.txt");
 
 		World world = new World();	
 
-		Inventory playerInventory;
+		Inventory inventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
@@ -41,7 +41,7 @@ class Main{
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
-		
+
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			if (file.length() == 0){
@@ -72,8 +72,8 @@ class Main{
 		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.printCurrentRoom();
-		//world.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+		//world.printCurrentRoom();
+		world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 		char input;
 
@@ -81,7 +81,7 @@ class Main{
 			System.out.println("------------------------------------------------");
 			player.printInfo();
 			player.getLocation();
-			command.printOtherStats();
+			player.inventory.printInventoryStats();
 			System.out.print("[Answer] ");
 			input = in.next().toUpperCase().charAt(0); 
 			System.out.println("------------------------------------------------");
@@ -98,7 +98,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.goDown();
@@ -111,7 +111,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'J':
 					player.goLeft();
@@ -124,7 +124,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					player.goRight();
@@ -137,7 +137,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'P':
 					command.printCommands();
@@ -189,6 +189,7 @@ class Main{
 					System.exit(1);
 					break;
 			}
+			world.printCurrentRoom();
 		}
 		while(input != 'Q');
 	}

@@ -76,5 +76,62 @@ class Room{
 		//Player.
 		grid[player.y][player.x] = '@';
 
+		if(player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
+			System.out.println("[Attention!] You just came across: " + item1.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item1);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
+			System.out.println("[Attention!] You just came across: " + item2.getName() + ".");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item2);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
+			System.out.println("[Attention!] You just came across: " + item3.getName() + ".");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item3);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
+			System.out.println("[Attention!] You just came across: " + item4.getName() + ".");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item4);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
+			System.out.println("[Attention!] You just came across: " + item5.getName() + ".");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item5);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+	
 	}
 }
