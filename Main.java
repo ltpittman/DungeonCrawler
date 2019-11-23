@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
+		
 		Objective command = new Objective();
 		File file = new File("info.txt");
 
@@ -72,7 +73,6 @@ class Main{
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.printCurrentRoom();
-		//world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
 
 		char input;
 
@@ -161,11 +161,6 @@ class Main{
 					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
 					//		room1.fillRoom1();
 					//	break;
-					//	case'R':
-					//		System.out.println("You move aside the heavy rocks to create an opening...");
-					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
-					//		room2.fillRoom2(player,item1, item2);
-					//		
 				case'Q':
 					try{
 						PrintWriter pw = new PrintWriter (file);

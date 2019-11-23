@@ -7,8 +7,9 @@ import java.util.Arrays;
 
 class Room{
 	//Instance variables.
-	char[][] grid;
-	String[][]world;
+	private char[][] grid;
+	private Player player;
+	private Enemy enemy;
 
 	//Constructor that takes in a file.
 	public Room(String frame){
@@ -31,7 +32,8 @@ class Room{
 			System.out.println("File not found.");
 		}
 	}
-	//Method to print a room.
+
+	//Method to print the room the player is in.
 	public void printRoom(){
 		for(int i = 0; i < 12; i ++){
 			for(int j = 0; j < 30; j++){
@@ -40,35 +42,39 @@ class Room{
 			System.out.println();
 		}
 	}
+
 	//We should probably change this to fillRoom so we dont get confused later.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-		//Items
+	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
+		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			world[item1.y][item1.x] = "$";
+			grid[item1.y][item1.x] = '$';
 		}
 		if (player.inventory.inInventory(item2) == false){
-			world[item2.y][item2.x] = "$";
+			grid[item2.y][item2.x] = '$';
 		}
 		if (player.inventory.inInventory(item3) == false){
-			world[item3.y][item3.x] = "$";
+			grid[item3.y][item3.x] = '$';
 		}
 		if (player.inventory.inInventory(item4) == false){
-			world[item4.y][item4.x] = "$";
+			grid[item4.y][item4.x] = '$';
 		}
 		if (player.inventory.inInventory(item5) == false){
-			world[item5.y][item5.x] = "$";
+			grid[item5.y][item5.x] = '$';
 		}
 
-		//Monsters
+		//Monsters.
 		if (enemy1.enemyDead() == false){
-			world[enemy1.y][enemy1.x] = "M";
+			grid[enemy1.y][enemy1.x] = 'M';
 		}
 		if (enemy2.enemyDead() == false){
-			world[enemy2.y][enemy2.x] = "M";
+			grid[enemy2.y][enemy2.x] = 'M';
 		}
 		if (enemy3.enemyDead() == false){
-			world[enemy3.y][enemy3.x] = "M";
+			grid[enemy3.y][enemy3.x] = 'M';
 		}
+
+		//Player.
+		grid[player.y][player.x] = '@';
 
 	}
 }

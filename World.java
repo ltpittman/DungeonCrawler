@@ -10,15 +10,16 @@ class World{
 	private Enemy enemy;
 	private Player player;
 	private Inventory inventory;
-
+	//Store all three rooms in a arraylist.
 	private ArrayList<Room> rooms = new ArrayList<Room>(); 
-	private Room room1;
-	private Room room2;
-	private Room room3;
-	private int currentRoom;
-	
+	//CurrentRoom will be used to get a room through the index of the arraylist.
+	private int currentRoom; 
+	private Room room1; //Index[0]
+	private Room room2; //Index[1]
+	private Room room3; //Index[2]
+
 	private Battles battle = new Battles();
-	
+
 	//Constructor for the world.
 	World(){
 		this.room1 = new Room("Room1.txt");
@@ -28,85 +29,90 @@ class World{
 		rooms.add(room1);
 		rooms.add(room2);
 		rooms.add(room3);
-		//Set the currentRoom to 0 (this will help get the room with the index).
+		//Set the currentRoom to 0(this will help get the room's index in the arraylist).
 		this.currentRoom = 0;
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
-
-		Room currentRoom = room1;
 		
+		//Right now the room is being printed becuase of the currentRoom = 0 in the constructo
+		Room currentRoom = 1;
+		currentRoom.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+
+
+	}
+		/*
 		//Here is where the player will pick up a item they found.
 		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
-			System.out.println("[Attention!] You just came across: " + item1.getName());
-			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-			//If the user takes the item, delete the item from the map.
-			Scanner scan = new Scanner(System.in);
-			String input = scan.next().toUpperCase();
-			if (input.equals("Y")){
-				player.inventory.addItem(item1);
-			}
-			else{
-				System.out.println("You decided to not pick up the item and continue to explore the area...");
-			}
+		System.out.println("[Attention!] You just came across: " + item1.getName());
+		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+		//If the user takes the item, delete the item from the map.
+		Scanner scan = new Scanner(System.in);
+		String input = scan.next().toUpperCase();
+		if (input.equals("Y")){
+		player.inventory.addItem(item1);
+		}
+		else{
+		System.out.println("You decided to not pick up the item and continue to explore the area...");
+		}
 		}
 		if (player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
-			System.out.println("[Attention!] You just came across: " + item2.getName());
-			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-			Scanner scan = new Scanner(System.in);
-			String input = scan.next().toUpperCase();
-			if (input.equals("Y")){
-				player.inventory.addItem(item2);
-			}
-			else{
-				System.out.println("You decided to not pick up the item and continue to explore the area...");
-			}
+		System.out.println("[Attention!] You just came across: " + item2.getName());
+		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+		Scanner scan = new Scanner(System.in);
+		String input = scan.next().toUpperCase();
+		if (input.equals("Y")){
+		player.inventory.addItem(item2);
+		}
+		else{
+		System.out.println("You decided to not pick up the item and continue to explore the area...");
+		}
 		}
 		if (player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
-			System.out.println("[Attention!] You just came across: " + item3.getName());
-			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-			Scanner scan = new Scanner(System.in);
-			String input = scan.next().toUpperCase();
-			if (input.equals("Y")){
-				player.inventory.addItem(item3);
-			}
-			else{
-				System.out.println("You decided to not pick up the item and continue to explore the area...");
-			}
+		System.out.println("[Attention!] You just came across: " + item3.getName());
+		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+		Scanner scan = new Scanner(System.in);
+		String input = scan.next().toUpperCase();
+		if (input.equals("Y")){
+		player.inventory.addItem(item3);
+		}
+		else{
+		System.out.println("You decided to not pick up the item and continue to explore the area...");
+		}
 		}
 		if (player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
-			System.out.println("[Attention!] You just came across: " + item4.getName());
-			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-			Scanner scan = new Scanner(System.in);
-			String input = scan.next().toUpperCase();
-			if (input.equals("Y")){
-				player.inventory.addItem(item4);
-			}
-			else{
-				System.out.println("You decided to not pick up the item and continue to explore the area...");
-			}
+		System.out.println("[Attention!] You just came across: " + item4.getName());
+		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+		Scanner scan = new Scanner(System.in);
+		String input = scan.next().toUpperCase();
+		if (input.equals("Y")){
+		player.inventory.addItem(item4);
+		}
+		else{
+		System.out.println("You decided to not pick up the item and continue to explore the area...");
+		}
 		}
 		if (player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
-			System.out.println("[Attention!] You just came across: " + item5.getName());
-			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-			Scanner scan = new Scanner(System.in);
-			String input = scan.next().toUpperCase();
-			if (input.equals("Y")){
-				player.inventory.addItem(item5);
-			}
-			else{
-				System.out.println("You decided to not pick up the item and continue to explore the area...");
-			}
+		System.out.println("[Attention!] You just came across: " + item5.getName());
+		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+		Scanner scan = new Scanner(System.in);
+		String input = scan.next().toUpperCase();
+		if (input.equals("Y")){
+		player.inventory.addItem(item5);
+		}
+		else{
+		System.out.println("You decided to not pick up the item and continue to explore the area...");
+		}
 		}
 
 		//Here is where the player and enemy will fight if they land on the same area.
 		if (player.y == enemy1.y && player.x == enemy1.x){
-			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
-			battle.attack(player, enemy1);
+		System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
+		battle.attack(player, enemy1);
 		}
 		else if (player.y == enemy2.y && player.x == enemy2.x){
-			System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
-			battle.attack(player, enemy2);
+		System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
+		battle.attack(player, enemy2);
 		}
 		else if (player.y == enemy3.y && player.x == enemy3.x){
 			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
@@ -135,16 +141,17 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 			}
 		}
-
-
-	}
+		*/
 	//This method prints the current room that the player is in.
 	public void printCurrentRoom(){
+		//We are calling the arraylist Rooms to GET the index of the current room the player is in to print it to the screen.
 		rooms.get(currentRoom).printRoom();
-
-
 	}
-	public void persist (PrintWriter pw){
+
+
+
+	//***** This one may need to be changed since the currentRoom is a int.
+	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
 	}
 	public void restore(String fileName){
