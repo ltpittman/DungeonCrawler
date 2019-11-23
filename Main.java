@@ -24,10 +24,6 @@ class Main{
 		Enemy enemy1 = MonsterGenerator.generateMonster();
 		Enemy enemy2 = MonsterGenerator.generateMonster();
 		Enemy enemy3 = MonsterGenerator.generateMonster();
-		//TODO get rid of test to see if x and y are null
-		System.out.println(enemy1.getX() + " " + enemy1.getY());
-		System.out.println(enemy2.getX() + " " + enemy2.getY());
-		System.out.println(enemy3.getX() + " " + enemy3.getY());
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();
 		Item item2 = ItemGenerator.generate();
