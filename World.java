@@ -14,7 +14,13 @@ class World{
 	public Room room3 = new Room("Room3.txt");
 	public Room currentRoom;
 	Battles battle = new Battles();
-
+	public int room;
+	Item item1;
+	Item item2;
+	Item item3;
+	Item item4;
+	Item item5;
+	
 	World(){
 		this.room1 = room1; //	new Room("Room1.txt");
 		this.room2 = room2;
@@ -26,6 +32,12 @@ class World{
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3, int room){	
 			
+		this.room = room;
+		this.item1 = item1;
+		this.item2 = item2;
+		this.item3 = item3;
+		this.item4 = item4;
+		this.item5 = item5;
 		//Set the mainRoom to null.
 		Room currentRoom = room1;
 		if(room == 1){
@@ -37,21 +49,21 @@ class World{
 	//	else if(room == 3){
 	//		currentRoom = room3;
 	//	}
-	/*	//Items.
+		//Items.
 		if (player.inventory.inInventory(item1) == false){
-			world[item1.y][item1.x] = "$";
+			world[item1.getItemY()][item1.getItemX()] = "$";
 		}
 		if (player.inventory.inInventory(item2) == false){
-			world[item2.y][item2.x] = "$";
+			world[item2.getItemY()][item2.getItemX()] = "$";
 		}
 		if (player.inventory.inInventory(item3) == false){
-			world[item3.y][item3.x] = "$";
+			world[item3.getItemY()][item3.getItemX()] = "$";
 		}
 		if (player.inventory.inInventory(item4) == false){
-			world[item4.y][item4.x] = "$";
+			world[item4.getItemY()][item4.getItemX()] = "$";
 		}
 		if (player.inventory.inInventory(item5) == false){
-			world[item5.y][item5.x] = "$";
+			world[item5.getItemY()][item5.getItemX()] = "$";
 		}
 		//Monsters.
 		if (enemy1.enemyDead() == false){
@@ -74,7 +86,7 @@ class World{
 		if (enemy3.getIsDead() == false){
 			world[enemy3.y][enemy3.x] = "M";
 		}
-
+		*/
 		//Player.
 		world[player.y][player.x] = "@";
 
@@ -179,7 +191,7 @@ class World{
 		}
 }
 	
-	public void printWorld(int room){
+/*	public void printWorld(int room){
 		//Print the first world if the current world if equal to 1.
 		if(currentRoom == room1){
 			for(int i = 0; i < room1; i++){
@@ -206,8 +218,8 @@ class World{
 					}
 				}
 			System.out.println();
-		}*/
-	}	
+		}
+	}*/	
 	//Method to print the commands to the user.
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");
