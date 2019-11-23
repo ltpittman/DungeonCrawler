@@ -11,7 +11,8 @@ class Room{
 	private Player player;
 	private Inventory inventory;
 	private Enemy enemy;
-	Item item1, item2, item3, item4, item5;
+	private Item item1, item2, item3, item4, item5;
+	private Battles battle = new Battles();
 
 	//Constructor that takes in a file.
 	public Room(String frame){
@@ -47,6 +48,7 @@ class Room{
 
 	//We should probably change this to fillRoom so we dont get confused later.
 	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
+		
 		//Items.
 		if(player.inventory.inInventory(item1) == false){
 			grid[item1.y][item1.x] = '$';
@@ -63,6 +65,7 @@ class Room{
 		if(player.inventory.inInventory(item5) == false){
 			grid[item5.y][item5.x] = '$';
 		}
+		
 		//Monsters.
 		if(enemy1.enemyDead() == false){
 			grid[enemy1.getY()][enemy1.getX()] = enemy1.getCharacterImage();
@@ -75,9 +78,9 @@ class Room{
 		}
 
 		//Player.
-
 		grid[player.y][player.x] = player.getCharacterImage();
 
+		//Here is where a player will be able to pick up items if they come across any.
 		if(player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
 			System.out.println("[Attention!] You just came across: " + item1.getName() + ".");
 			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
@@ -85,6 +88,7 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item1);
+				System.out.println("[Inventory Updated] " + item1.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -97,6 +101,7 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item2);
+				System.out.println("[Inventory Updated] " + item2.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -109,6 +114,7 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item3);
+				System.out.println("[Inventory Updated] " + item3.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -121,6 +127,7 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item4);
+				System.out.println("[Inventory Updated] " + item4.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -133,6 +140,7 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item5);
+				System.out.println("[Inventory Updated] " + item5.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");

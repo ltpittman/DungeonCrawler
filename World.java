@@ -51,7 +51,6 @@ class World{
 		}
 
 
-	}
 		//If the player finds the room on the top, then ask if they want to go to that room.
 		if(player.x == 6 && player.y == 1){
 			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
@@ -74,6 +73,7 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 			}
 		}
+	}
 	//This method prints the current room that the player is in.
 	public void printCurrentRoom(){
 		//We are calling the arraylist Rooms to GET the index of the current room the player is in to print it to the screen.
