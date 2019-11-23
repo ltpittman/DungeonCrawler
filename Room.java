@@ -138,6 +138,20 @@ class Room{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
 			}
 		}
+
+		//Here is where the player and enemy will fight if they land on the same spot.
+		if(player.y == enemy1.y && player.x == enemy1.x){
+			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
+			battle.attack(player,enemy1);
+		}
+		else if(player.y == enemy2.y && player.x == enemy2.x){
+			System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
+			battle.attack(player,enemy2);
+		}
+		else if(player.y == enemy3.y && player.x == enemy3.x){
+			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
+			battle.attack(player,enemy3);
+		}
 	
 	}
 }

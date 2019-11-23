@@ -52,84 +52,6 @@ class World{
 
 
 	}
-		/*
-		//Here is where the player will pick up a item they found.
-		if (player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
-		System.out.println("[Attention!] You just came across: " + item1.getName());
-		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-		//If the user takes the item, delete the item from the map.
-		Scanner scan = new Scanner(System.in);
-		String input = scan.next().toUpperCase();
-		if (input.equals("Y")){
-		player.inventory.addItem(item1);
-		}
-		else{
-		System.out.println("You decided to not pick up the item and continue to explore the area...");
-		}
-		}
-		if (player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
-		System.out.println("[Attention!] You just came across: " + item2.getName());
-		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-		Scanner scan = new Scanner(System.in);
-		String input = scan.next().toUpperCase();
-		if (input.equals("Y")){
-		player.inventory.addItem(item2);
-		}
-		else{
-		System.out.println("You decided to not pick up the item and continue to explore the area...");
-		}
-		}
-		if (player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
-		System.out.println("[Attention!] You just came across: " + item3.getName());
-		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-		Scanner scan = new Scanner(System.in);
-		String input = scan.next().toUpperCase();
-		if (input.equals("Y")){
-		player.inventory.addItem(item3);
-		}
-		else{
-		System.out.println("You decided to not pick up the item and continue to explore the area...");
-		}
-		}
-		if (player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
-		System.out.println("[Attention!] You just came across: " + item4.getName());
-		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-		Scanner scan = new Scanner(System.in);
-		String input = scan.next().toUpperCase();
-		if (input.equals("Y")){
-		player.inventory.addItem(item4);
-		}
-		else{
-		System.out.println("You decided to not pick up the item and continue to explore the area...");
-		}
-		}
-		if (player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
-		System.out.println("[Attention!] You just came across: " + item5.getName());
-		System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
-		Scanner scan = new Scanner(System.in);
-		String input = scan.next().toUpperCase();
-		if (input.equals("Y")){
-		player.inventory.addItem(item5);
-		}
-		else{
-		System.out.println("You decided to not pick up the item and continue to explore the area...");
-		}
-		}
-
-		//Here is where the player and enemy will fight if they land on the same area.
-		if (player.y == enemy1.y && player.x == enemy1.x){
-		System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
-		battle.attack(player, enemy1);
-		}
-		else if (player.y == enemy2.y && player.x == enemy2.x){
-		System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
-		battle.attack(player, enemy2);
-		}
-		else if (player.y == enemy3.y && player.x == enemy3.x){
-			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
-			battle.attack(player, enemy3);
-		}
-
 		//If the player finds the room on the top, then ask if they want to go to that room.
 		if(player.x == 6 && player.y == 1){
 			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
@@ -152,7 +74,6 @@ class World{
 				System.out.println("You push the heavy rocks to the side and fit through...");
 			}
 		}
-		*/
 	//This method prints the current room that the player is in.
 	public void printCurrentRoom(){
 		//We are calling the arraylist Rooms to GET the index of the current room the player is in to print it to the screen.
