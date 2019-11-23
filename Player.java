@@ -40,9 +40,9 @@ class Player extends Character{// throws FileNotFoundException{
 	public void setHealth(int num){
 		this.health = num;
 	}
-	//public String characterImage(){
-	//	return "@";
-	//}
+	public char getCharacterImage(){
+		return '@';
+	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();

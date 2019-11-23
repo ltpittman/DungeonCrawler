@@ -46,35 +46,36 @@ class Room{
 	//We should probably change this to fillRoom so we dont get confused later.
 	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		//Items.
-		if (player.inventory.inInventory(item1) == false){
-			grid[item1.y][item1.x] = '$';
+		if(player.inventory.inInventory(item1) == false){
+			grid[item1.y][item1.x] = item1.getItemImage();
 		}
-		if (player.inventory.inInventory(item2) == false){
-			grid[item2.y][item2.x] = '$';
+		if(player.inventory.inInventory(item2) == false){
+			grid[item2.y][item2.x] = item2.getItemImage();
 		}
-		if (player.inventory.inInventory(item3) == false){
-			grid[item3.y][item3.x] = '$';
+		if(player.inventory.inInventory(item3) == false){
+			grid[item3.y][item3.x] = item3.getItemImage();
 		}
-		if (player.inventory.inInventory(item4) == false){
-			grid[item4.y][item4.x] = '$';
+		if(player.inventory.inInventory(item4) == false){
+			grid[item4.y][item4.x] = item4.getItemImage();
 		}
-		if (player.inventory.inInventory(item5) == false){
-			grid[item5.y][item5.x] = '$';
+		if(player.inventory.inInventory(item5) == false){
+			grid[item5.y][item5.x] = item5.getItemImage();;
 		}
 
 		//Monsters.
-		if (enemy1.enemyDead() == false){
-			grid[enemy1.y][enemy1.x] = 'M';
+		if(enemy1.enemyDead() == false){
+			grid[enemy1.y][enemy1.x] = enemy.getCharacterImage();
 		}
-		if (enemy2.enemyDead() == false){
-			grid[enemy2.y][enemy2.x] = 'M';
+		if(enemy2.enemyDead() == false){
+			grid[enemy2.y][enemy2.x] = enemy.getCharacterImage();
 		}
-		if (enemy3.enemyDead() == false){
-			grid[enemy3.y][enemy3.x] = 'M';
+		if(enemy3.enemyDead() == false){
+			grid[enemy3.y][enemy3.x] = enemy.getCharacterImage();
 		}
 
 		//Player.
-		grid[player.y][player.x] = '@';
+
+		grid[player.y][player.x] = player.getCharacterImage();
 
 		if(player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
 			System.out.println("[Attention!] You just came across: " + item1.getName() + ".");
@@ -90,6 +91,7 @@ class Room{
 		}
 		if(player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
 			System.out.println("[Attention!] You just came across: " + item2.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
@@ -101,6 +103,7 @@ class Room{
 		}
 		if(player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
 			System.out.println("[Attention!] You just came across: " + item3.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
@@ -112,6 +115,7 @@ class Room{
 		}
 		if(player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
 			System.out.println("[Attention!] You just came across: " + item4.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
@@ -123,6 +127,7 @@ class Room{
 		}
 		if(player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
 			System.out.println("[Attention!] You just came across: " + item5.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
 			Scanner in = new Scanner(System.in);
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){

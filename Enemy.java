@@ -27,9 +27,9 @@ class Enemy extends Character{
 		this.y = y;
 		this.isDead = isDead;
 	}
-//	public String characterImage(){
-//		return "M";
-//	}
+	public char getCharacterImage(){
+		return 'M';
+	}
 	//Get the type of the monster.
 	MonsterType typeOfMonster(){
 		return this.type;
