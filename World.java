@@ -36,8 +36,8 @@ class World{
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
 		
 		//Right now the room is being printed becuase of the currentRoom = 0 in the constructo
-		Room currentRoom = 1;
-		currentRoom.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+		currentRoom = 1;
+		//currentRoom.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 
 	}
