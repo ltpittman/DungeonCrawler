@@ -76,7 +76,8 @@ class Enemy extends Character{
 		int mm = random.nextInt(4);
 
 		if(mm == 0){
-			if(x + 1 == 22){
+			//down
+			if(x + 1 == 11){
 				return false;
 			}
 			else{
@@ -85,6 +86,7 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 1){
+			//up
 			if(x - 1 == 0){
 				return false;
 			}
@@ -94,6 +96,7 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 2){
+			//left
 			if(y - 1 == 0){
 				return false;
 			}
@@ -103,7 +106,8 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 3){
-			if(y + 1 == 18){
+			//right
+			if(y + 1 == 29){
 				return false;
 			}
 			else{
