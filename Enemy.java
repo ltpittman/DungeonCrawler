@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 
-class Enemy extends Characters{
+class Enemy extends Character{
 	//Instance variables.
 	private int health;
 	private String name;

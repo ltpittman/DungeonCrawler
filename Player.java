@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 
-class Player extends Characters{// throws FileNotFoundException{
+class Player extends Character{// throws FileNotFoundException{
 	//Private instance variables.
 	private String name;
 	private int health;
