@@ -189,7 +189,6 @@ class Main{
 					System.exit(1);
 					break;
 			}
-			world.printCurrentRoom();
 		}
 		while(input != 'Q');
 	}
