@@ -9,7 +9,9 @@ class Room{
 	//Instance variables.
 	private char[][] grid;
 	private Player player;
+	private Inventory inventory;
 	private Enemy enemy;
+	Item item1, item2, item3, item4, item5;
 
 	//Constructor that takes in a file.
 	public Room(String frame){
@@ -47,19 +49,19 @@ class Room{
 	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		//Items.
 		if(player.inventory.inInventory(item1) == false){
-			grid[item1.y][item1.x] = item1.getItemImage();
+			grid[item1.y][item1.x] = '$';
 		}
 		if(player.inventory.inInventory(item2) == false){
-			grid[item2.y][item2.x] = item2.getItemImage();
+			grid[item2.y][item2.x] = '$';
 		}
 		if(player.inventory.inInventory(item3) == false){
-			grid[item3.y][item3.x] = item3.getItemImage();
+			grid[item3.y][item3.x] = '$';
 		}
 		if(player.inventory.inInventory(item4) == false){
-			grid[item4.y][item4.x] = item4.getItemImage();
+			grid[item4.y][item4.x] = '$';
 		}
 		if(player.inventory.inInventory(item5) == false){
-			grid[item5.y][item5.x] = item5.getItemImage();;
+			grid[item5.y][item5.x] = '$';
 		}
 
 		//Monsters.

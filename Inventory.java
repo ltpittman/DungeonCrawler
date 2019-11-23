@@ -32,10 +32,6 @@ class Inventory{
 		equippedArmor = leatherArmor;
 		equippedWeapon = ironDagger;
 	}
-	//The image for any item on the map.
-	public char getItemImage(){
-		return '$';
-	}
 	//Method tog get the maxWeight(){
 	int getMaxWeight(){
 		return this.maxWeight;
