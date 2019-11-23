@@ -71,23 +71,23 @@ class Player extends Characters{// throws FileNotFoundException{
 	}
 	//Method to move the player up.
 	public boolean goUp(){
-		if((y - 1) == 0){
+		if((y + 1) == 17){
 			System.out.println("[You can't go up in that direction anymore.]");
 			return false;
 		}
 		else{
-			y -= 1;
+			y += 1;
 			return true;
 		}
 	}
 	//Method to move the player down.
 	public boolean goDown(){
-		if((y + 1) == 17){
+		if((y - 1) == 0){
 			System.out.println("[You can't go down in that direction anymore.]");
 			return false;
 		}
 		else{
-			y += 1;
+			y -= 1;
 			return true;
 		}	
 	}

@@ -9,11 +9,15 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
-		//Inventory playerInventory;
+		Objective command = new Objective();
+		File file = new File("info.txt");
+
+		World world = new World();	
+
+		Inventory playerInventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
-		File file = new File("info.txt");
 
 		//Creating the monsters.
 		Enemy enemy1 = MonsterGenerator.generateMonster();
@@ -30,14 +34,15 @@ class Main{
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
 		System.out.print("[Name] What is your name? ");
-		String userName = in.next();
+		String userName = in.nextLine();
+
 		player = new Player(userName, health);
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
-		System.out.print("[Option] Would you like to continue with a saved game? Y/N ");
+		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
 		
-		String inputAns = in.next().toUpperCase();
-		if(inputAns.equals("Y")){
+		String inputAnswer = in.next().toUpperCase();
+		if(inputAnswer.equals("Y")){
 			if (file.length() == 0){
 				System.out.print("There is no game saved. A new game will start shortly.");
 			} else {
@@ -56,21 +61,19 @@ class Main{
 		else{
 		}
 
-		World world = new World();	
-		//The player starts out with one health potion. 	
-		//Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 4, 5);
-		//player.inventory.addItem(healthPotion);
+		System.out.println("------------------------------------------------");
 
 		//Print the objective of the game.
-		world.printObjective();			
+		command.printObjective();			
 
 		//Print the commands.
 		System.out.println("------------------------------------------------");
-		world.printCommands();
+		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3, 1);
-		//world.printWorld();
+		world.printCurrentRoom();
+		world.rooms.get(currentRoom).fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+		//world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
 
 		char input;
 
@@ -78,7 +81,7 @@ class Main{
 			System.out.println("------------------------------------------------");
 			player.printInfo();
 			player.getLocation();
-			player.inventory.printOtherStats();
+			command.printOtherStats();
 			System.out.print("[Answer] ");
 			input = in.next().toUpperCase().charAt(0); 
 			System.out.println("------------------------------------------------");
@@ -137,7 +140,7 @@ class Main{
 					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
 					break;
 				case'P':
-					world.printCommands();
+					command.printCommands();
 					break;
 				case'I':
 					player.inventory.print();
