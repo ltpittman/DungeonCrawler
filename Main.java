@@ -43,7 +43,9 @@ class Main{
 
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
-			if (file.length() == 0){
+			Scanner a = new Scanner ("info.txt");
+			String open = a.nextLine();
+			if (open.equals("Saved")){
 				System.out.println("There is no game saved. A new game will start shortly.");
 			} else {
 				player.restore("info.txt");

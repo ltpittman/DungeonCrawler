@@ -123,6 +123,8 @@ class Player extends Character{// throws FileNotFoundException{
 
 	//Method for saving the data for the character
 	public void persist(PrintWriter pw){
+		String file = "Saved";
+	        pw.println(file);	
 		pw.println(name);
 		pw.println(x + "," + y);
 		pw.println(health);
@@ -146,6 +148,7 @@ class Player extends Character{// throws FileNotFoundException{
 	public void restore (String fileName){
 		try{
 			Scanner a = new Scanner(fileName);
+			String file = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
