@@ -99,7 +99,6 @@ class Main{
 						enemy3.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					world.printCurrentRoom();
 					break;
 				case'L':
 					player.goDown();
@@ -113,7 +112,6 @@ class Main{
 						enemy3.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					world.printCurrentRoom();
 					break;
 				case'J':
 					player.goLeft();
@@ -127,7 +125,6 @@ class Main{
 						enemy3.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					world.printCurrentRoom();
 					break;
 				case'K':
 					player.goRight();
@@ -141,7 +138,6 @@ class Main{
 						enemy3.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-					world.printCurrentRoom();
 					break;
 				case'P':
 					command.printCommands();
