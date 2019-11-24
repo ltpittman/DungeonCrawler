@@ -9,12 +9,13 @@ import java.io.PrintWriter;
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
+
 		Objective command = new Objective();
 		File file = new File("info.txt");
 
 		World world = new World();	
 
-		Inventory playerInventory;
+		Inventory inventory;
 		Player player;
 		//Setting the player's health.
 		int health = 100;
@@ -23,7 +24,6 @@ class Main{
 		Enemy enemy1 = MonsterGenerator.generateMonster();
 		Enemy enemy2 = MonsterGenerator.generateMonster();
 		Enemy enemy3 = MonsterGenerator.generateMonster();
-
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();
 		Item item2 = ItemGenerator.generate();
@@ -40,11 +40,11 @@ class Main{
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
-		
+
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			if (file.length() == 0){
-				System.out.print("There is no game saved. A new game will start shortly.");
+				System.out.println("There is no game saved. A new game will start shortly.");
 			} else {
 				player.restore("info.txt");
 				enemy1.restore("info.txt");
@@ -71,9 +71,7 @@ class Main{
 		command.printCommands();
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.printCurrentRoom();
-		world.rooms.get(currentRoom).fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-		//world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3);//, 1);
+		//world.printCurrentRoom();
 
 		char input;
 
@@ -81,7 +79,9 @@ class Main{
 			System.out.println("------------------------------------------------");
 			player.printInfo();
 			player.getLocation();
-			command.printOtherStats();
+			player.inventory.printInventoryStats();
+			world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+			world.printCurrentRoom();
 			System.out.print("[Answer] ");
 			input = in.next().toUpperCase().charAt(0); 
 			System.out.println("------------------------------------------------");
@@ -98,7 +98,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.goDown();
@@ -111,7 +111,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'J':
 					player.goLeft();
@@ -124,7 +124,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					player.goRight();
@@ -137,7 +137,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					//	world.fillWorld(player, item1, item2, item3, item4,item5, enemy1, enemy2, enemy3, 1);
+					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					break;
 				case'P':
 					command.printCommands();
@@ -162,11 +162,6 @@ class Main{
 					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
 					//		room1.fillRoom1();
 					//	break;
-					//	case'R':
-					//		System.out.println("You move aside the heavy rocks to create an opening...");
-					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
-					//		room2.fillRoom2(player,item1, item2);
-					//		
 				case'Q':
 					try{
 						PrintWriter pw = new PrintWriter (file);

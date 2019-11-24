@@ -1,4 +1,4 @@
-abstract class Characters{
+abstract class Character{
 	
 	private String name;
 	private int health;
@@ -6,7 +6,7 @@ abstract class Characters{
 	public int y;
 
 	//constuctor with basic character qualities
-	protected Characters(String name, int health){//, int health){
+	protected Character(String name, int health){//, int health){
 		this.name = name;
 		this.health = health;
 	}
@@ -21,6 +21,8 @@ abstract class Characters{
 	public void setHealth(int num){
 		this.health = num;
 	}
+	abstract public char getCharacterImage();
+	//q
 	//Method to get the position of the characters.
 	public int getPositionX(){
 		return this.x;

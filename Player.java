@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 
-class Player extends Characters{// throws FileNotFoundException{
+class Player extends Character{// throws FileNotFoundException{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -40,9 +40,9 @@ class Player extends Characters{// throws FileNotFoundException{
 	public void setHealth(int num){
 		this.health = num;
 	}
-	//public String characterImage(){
-	//	return "@";
-	//}
+	public char getCharacterImage(){
+		return '@';
+	}
 	//Method to get the equipped armor.
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
@@ -71,30 +71,8 @@ class Player extends Characters{// throws FileNotFoundException{
 	}
 	//Method to move the player up.
 	public boolean goUp(){
-		if((y + 1) == 17){
-			System.out.println("[You can't go up in that direction anymore.]");
-			return false;
-		}
-		else{
-			y += 1;
-			return true;
-		}
-	}
-	//Method to move the player down.
-	public boolean goDown(){
-		if((y - 1) == 0){
-			System.out.println("[You can't go down in that direction anymore.]");
-			return false;
-		}
-		else{
-			y -= 1;
-			return true;
-		}	
-	}
-	//Method to move the player left.
-	public boolean goLeft(){
 		if((x - 1) == 0){
-			System.out.println("[You can't go left in that direction anymore.]");
+			System.out.println("[You can't go up in that direction anymore.]");
 			return false;
 		}
 		else{
@@ -102,14 +80,36 @@ class Player extends Characters{// throws FileNotFoundException{
 			return true;
 		}
 	}
-	//Method to move the player right.
-	public boolean goRight(){
-		if((x + 1) == 19){
-			System.out.println("[You can't go right in that direction anymore.]");
+	//Method to move the player down.
+	public boolean goDown(){
+		if((x + 1) == 11){
+			System.out.println("[You can't go down in that direction anymore.]");
 			return false;
 		}
 		else{
 			x += 1;
+			return true;
+		}	
+	}
+	//Method to move the player left.
+	public boolean goLeft(){
+		if((y - 1) == 0){
+			System.out.println("[You can't go left in that direction anymore.]");
+			return false;
+		}
+		else{
+			y -= 1;
+			return true;
+		}
+	}
+	//Method to move the player right.
+	public boolean goRight(){
+		if((y + 1) == 29){
+			System.out.println("[You can't go right in that direction anymore.]");
+			return false;
+		}
+		else{
+			y += 1;
 			return true;
 		}
 	}
@@ -128,18 +128,18 @@ class Player extends Characters{// throws FileNotFoundException{
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
-		pw.println(equippedWeapon.getName());
-		pw.println(equippedWeapon.getWeight());
-		pw.println(equippedWeapon.getValue());
-		pw.println(equippedWeapon.getStrength());
-		pw.println(equippedWeapon.getItemX());
-		pw.println(equippedWeapon.getItemY());
-		pw.println(equippedArmor.getName());
-		pw.println(equippedArmor.getWeight());
-		pw.println(equippedArmor.getValue());
-		pw.println(equippedArmor.getStrength());
-		pw.println(equippedArmor.getItemX());
-		pw.println(equippedArmor.getItemY());
+		pw.println(inventory.equippedWeapon.getName());
+		pw.println(inventory.equippedWeapon.getWeight());
+		pw.println(inventory.equippedWeapon.getValue());
+		pw.println(inventory.equippedWeapon.getStrength());
+		pw.println(inventory.equippedWeapon.getItemX());
+		pw.println(inventory.equippedWeapon.getItemY());
+		pw.println(inventory.equippedArmor.getName());
+		pw.println(inventory.equippedArmor.getWeight());
+		pw.println(inventory.equippedArmor.getValue());
+		pw.println(inventory.equippedArmor.getStrength());
+		pw.println(inventory.equippedArmor.getItemX());
+		pw.println(inventory.equippedArmor.getItemY());
 		pw.println(".");
 	}
 

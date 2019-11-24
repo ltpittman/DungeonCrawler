@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 
 
-class Enemy extends Characters{
+class Enemy extends Character{
 	//Instance variables.
 	private int health;
 	private String name;
@@ -19,17 +19,18 @@ class Enemy extends Characters{
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
-		super(name, health);//,health);
-		//this.health = health;
+		super(name, health);
+		this.name = name;
+		this.health = health;
 		this.type = type;
 		this.damage = damage;
 		this.x = x;
 		this.y = y;
 		this.isDead = isDead;
 	}
-//	public String characterImage(){
-//		return "M";
-//	}
+	public char getCharacterImage(){
+		return 'M';
+	}
 	//Get the type of the monster.
 	MonsterType typeOfMonster(){
 		return this.type;
@@ -53,9 +54,19 @@ class Enemy extends Characters{
 	boolean getIsDead(){
 		return this.isDead;
 	}
+
 	//to set the is dead
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
+	}
+
+	//to get x and y
+	public int getX(){
+		return this.x;
+	}
+
+	public int getY(){
+		return this.y;
 	}
 	
 	//Adding the movement method for the Enemy class.
@@ -65,7 +76,8 @@ class Enemy extends Characters{
 		int mm = random.nextInt(4);
 
 		if(mm == 0){
-			if(x + 1 == 22){
+			//down
+			if(x + 1 == 11){
 				return false;
 			}
 			else{
@@ -74,6 +86,7 @@ class Enemy extends Characters{
 			}
 		}
 		else if(mm == 1){
+			//up
 			if(x - 1 == 0){
 				return false;
 			}
@@ -83,6 +96,7 @@ class Enemy extends Characters{
 			}
 		}
 		else if(mm == 2){
+			//left
 			if(y - 1 == 0){
 				return false;
 			}
@@ -92,7 +106,8 @@ class Enemy extends Characters{
 			}
 		}
 		else if(mm == 3){
-			if(y + 1 == 18){
+			//right
+			if(y + 1 == 29){
 				return false;
 			}
 			else{

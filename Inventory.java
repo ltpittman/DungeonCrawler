@@ -36,11 +36,10 @@ class Inventory{
 	int getMaxWeight(){
 		return this.maxWeight;
 	}
-	//****** I PUT THIS IN TEH OBJECTIVE CLASS!!`
 	//This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
-//	void printOtherStats(){
-//		System.out.println("Total Weight: " + totalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
-//	}
+	void printInventoryStats(){
+		System.out.println("Total Weight: " + getTotalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
+	}
 
 	//Method to check if item is in inventory to not display on map
 	public boolean inInventory(Item item){
