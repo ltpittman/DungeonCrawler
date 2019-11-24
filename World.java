@@ -52,9 +52,9 @@ class World{
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
-			}
-			else{
-				System.out.println("You decide to keep exploring the room you are currently in...");
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
 			}
 			//Here is where the player will enter the third room (located on the right).
 			if(player.getPositionX() == 9 && player.getPositionY() == 28 && currentRoom == 0){
@@ -65,9 +65,9 @@ class World{
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
-			}
-			else{
-				System.out.println("You decide to keep exploring the room you are currently in...");
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
 			}
 		}
 		//If the player is in the second room, then print Room2.
@@ -82,9 +82,9 @@ class World{
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
-			}
-			else{
-				System.out.println("You decide to keep exploring the room you are currently in...");
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
 			}
 		}
 		//If the player is in the third room, then print Room3.
@@ -98,9 +98,9 @@ class World{
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
-			}
-			else{
-				System.out.println("You decide to keep exploring the room you are currently in...");
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
 			}
 		}
 		//Return the current room that the player is in to print it to the screen.
