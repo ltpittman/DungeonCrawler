@@ -63,7 +63,7 @@ class Room{
 		if(player.inventory.inInventory(item5) == false){
 			grid[item5.y][item5.x] = item5.getItemImage();
 		}
-		
+
 		//Monsters.
 		if(enemy1.enemyDead() == false){
 			grid[enemy1.getY()][enemy1.getX()] = enemy1.getCharacterImage();
@@ -158,6 +158,7 @@ class Room{
 			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy3);
 		}
-	
+
 	}
+
 }
