@@ -11,7 +11,6 @@ class Main{
 	public static void main(String args[]) throws InputMismatchException{
 
 		Objective command = new Objective();
-		File file = new File("info.txt");
 
 		World world = new World();	
 
@@ -44,6 +43,7 @@ class Main{
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			Scanner a = new Scanner ("info.txt");
+			String noth = a.nextLine();
 			String open = a.nextLine();
 			if (open.equals("Saved")){
 				System.out.println("There is no game saved. A new game will start shortly.");
@@ -166,7 +166,7 @@ class Main{
 					//	break;
 				case'Q':
 					try{
-						PrintWriter pw = new PrintWriter (file);
+						PrintWriter pw = new PrintWriter ("info.txt");
 						System.out.print("Would you like to save the game? Y/N ");
 						String ans = in.next().toUpperCase();
 						if (ans.equals("Y")) {
