@@ -58,8 +58,8 @@ class Main{
 				player.inventory.restore("info.txt");
 			}
 		}
-		else{
-		}
+		//else{
+	//	}
 
 		System.out.println("------------------------------------------------");
 
