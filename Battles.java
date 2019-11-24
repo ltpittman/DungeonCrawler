@@ -35,11 +35,11 @@ class Battles{
 		healthEnemy = enemy.getHealth();
 		int strengthEnemy = enemy.getDamage();
 
-		System.out.println();
-		System.out.println("[Player Health] " + healthPlayer + " pts.");
-		System.out.println("[Player Strength] " + strengthArmor + " pts.");
-		System.out.println("[Enemy Health] " + healthEnemy + " pts.");
-		System.out.println();
+		//System.out.println();
+		//System.out.println("[Player Health] " + healthPlayer + " pts.");
+		//System.out.println("[Player Strength] " + strengthArmor + " pts.");
+		//System.out.println("[Enemy Health] " + healthEnemy + " pts.");
+		//System.out.println();
 
 		while(healthEnemy > 0){
 
@@ -118,7 +118,7 @@ class Battles{
 						playerWins();
 					}
 				}
-				else if{
+				else if(answer == 2){
 					player.goUp();
 					System.out.println("You dodge the monster's last attack and try to get away...");
 					break;
