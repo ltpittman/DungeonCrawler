@@ -39,15 +39,15 @@ class World{
 		//Right now the room is being printed becuase of the currentRoom = 0 in the constructo
 		if(currentRoom == 0){
 			room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-			room1.printRoom();
+			//room1.printRoom();
 		}
 		if(currentRoom == 1){
 			room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-			room2.printRoom();
+			//room2.printRoom();
 		}
 		if(currentRoom == 2){
 			room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-			room3.printRoom();
+			//room3.printRoom();
 		}
 
 

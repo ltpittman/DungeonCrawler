@@ -44,7 +44,7 @@ class Main{
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			if (file.length() == 0){
-				System.out.print("There is no game saved. A new game will start shortly.");
+				System.out.println("There is no game saved. A new game will start shortly.");
 			} else {
 				player.restore("info.txt");
 				enemy1.restore("info.txt");
@@ -72,7 +72,6 @@ class Main{
 		System.out.println("------------------------------------------------");
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		//world.printCurrentRoom();
-		world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 		char input;
 
@@ -81,6 +80,8 @@ class Main{
 			player.printInfo();
 			player.getLocation();
 			player.inventory.printInventoryStats();
+			world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+			world.printCurrentRoom();
 			System.out.print("[Answer] ");
 			input = in.next().toUpperCase().charAt(0); 
 			System.out.println("------------------------------------------------");

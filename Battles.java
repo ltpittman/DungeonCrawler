@@ -12,9 +12,8 @@ class Battles{
 	Inventory inventory;
 	Item equippedArmor;
 	Item equippedWeapon;
-	//	Item healthPotion;
 
-	private int numberMonster = 3;
+	private int numberMonster = 9;
 	private static int healthEnemy;
 	private int difference;
 
@@ -47,13 +46,7 @@ class Battles{
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
-				//if(player.inventory.equals(healthPotion)){
-				//	System.out.println("2. Drink health potion!");
 				System.out.println("3. Run away!");
-				//	}
-				//	else{
-				//		System.out.println("2. Run away!");
-				//	}
 				System.out.print("[Answer]");
 
 				Scanner in = new Scanner(System.in);
@@ -77,13 +70,30 @@ class Battles{
 						playerLoses();
 					}
 					System.out.println("\nThe " + enemyName + " attacked you with a damage of " + strengthEnemy + "...");
-					try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
+					try{
+						Thread.sleep(1000);
+					} 
+					catch(InterruptedException e){
+						System.out.println(e);
+					}
 
 					System.out.println("Your health is now " + healthPlayer + "/100.\n");
-					try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
+
+					try{
+						Thread.sleep(1000);
+					} 
+					catch(InterruptedException e){
+						System.out.println(e);
+					}
+
 					System.out.println("You attack the " + enemyName + " with a damage of " + strengthPlayer + "!");
-					try{Thread.sleep(3000);} catch(InterruptedException e){System.out.println(e);}
-					
+					try{
+						Thread.sleep(2000);
+					} 
+					catch(InterruptedException e){
+						System.out.println(e);
+					}
+
 					//If the enemy's health is less than 1, then the player defeated the monster.
 					if(healthEnemy < 1){
 						System.out.println("The enemy's health has reached 0/100.");
@@ -93,13 +103,11 @@ class Battles{
 						boolean dead = false;
 						enemy.setIsDead(dead);
 						try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
-						//player.setHealth(healthPlayer);
 					}
 					else{
 						System.out.println("The enemy's health is now " + healthEnemy + "/100.\n");
 						try{Thread.sleep(1000);} catch(InterruptedException e){System.out.println(e);}
 
-						//player.setHealth(healthPlayer);
 					}
 
 					//If the player's health is less than 1, the player loses and the game exits.
@@ -111,17 +119,10 @@ class Battles{
 					if(numberMonster == 0){
 						playerWins();
 					}
-					//	else if(answer == 2){
-					//		if(player.inventory.equals(healthPotion)){
-					//			player.inventory.drinkHealthPotion(healthPotion);
-					//		}
-					//		else{
-					//			System.out.println("You have no health potions to drink!");
-					//		}
-					}
 					else{
 						break;
 					}
+				}
 				}
 			}
 		}

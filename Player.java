@@ -128,18 +128,18 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
-		pw.println(equippedWeapon.getName());
-		pw.println(equippedWeapon.getWeight());
-		pw.println(equippedWeapon.getValue());
-		pw.println(equippedWeapon.getStrength());
-		pw.println(equippedWeapon.getItemX());
-		pw.println(equippedWeapon.getItemY());
-		pw.println(equippedArmor.getName());
-		pw.println(equippedArmor.getWeight());
-		pw.println(equippedArmor.getValue());
-		pw.println(equippedArmor.getStrength());
-		pw.println(equippedArmor.getItemX());
-		pw.println(equippedArmor.getItemY());
+		pw.println(inventory.equippedWeapon.getName());
+		pw.println(inventory.equippedWeapon.getWeight());
+		pw.println(inventory.equippedWeapon.getValue());
+		pw.println(inventory.equippedWeapon.getStrength());
+		pw.println(inventory.equippedWeapon.getItemX());
+		pw.println(inventory.equippedWeapon.getItemY());
+		pw.println(inventory.equippedArmor.getName());
+		pw.println(inventory.equippedArmor.getWeight());
+		pw.println(inventory.equippedArmor.getValue());
+		pw.println(inventory.equippedArmor.getStrength());
+		pw.println(inventory.equippedArmor.getItemX());
+		pw.println(inventory.equippedArmor.getItemY());
 		pw.println(".");
 	}
 
