@@ -118,7 +118,7 @@ class Battles{
 						playerWins();
 					}
 				}
-				else{
+				else if{
 					player.goUp();
 					System.out.println("You dodge the monster's last attack and try to get away...");
 					break;
