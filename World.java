@@ -30,8 +30,7 @@ class World{
 		rooms.add(room1);
 		rooms.add(room2);
 		rooms.add(room3);
-		//Set the currentRoom to 0(this will help get the room's index in the arraylist).
-		this.currentRoom = 0;
+		this.currentRoom = currentRoom;
 	}
 	//Method to fill the world with the players, items, and enemies.
 	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
@@ -51,11 +50,12 @@ class World{
 				input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 1;
+					room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					while(room == true){
 						room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 						printCurrentRoom();
 						//Have the player be in the position of(10,6)
-						if(player.getPositionX() == 10 && player.getPositionX() == 6){//Fix coordinates
+						if(player.getPositionX() == 10 && player.getPositionX() == 6 && currentRoom == 1){//Fix coordinates
 							System.out.print("\nYou come cross the door that you entered. Do you want to leave this room? Y/N ");
 							input = in.next().toUpperCase();
 							if(input.equals("Y")){
@@ -64,6 +64,7 @@ class World{
 							}
 							else{
 								System.out.println("You decide to continue exploring this room...");
+								currentRoom = 1;
 								room = true;
 							}
 						}
@@ -76,10 +77,11 @@ class World{
 				input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 2;
+					room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 					while(room == true){
 						room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 						printCurrentRoom();
-						if(player.getPositionX() == 9 && player.getPositionX() == 8){
+						if(player.getPositionX() == 1 && player.getPositionX() == 28 && currentRoom == 2){
 							System.out.print("\nYou come cross the door that you entered. Do you want to leave this room? Y/N ");
 							input = in.next().toUpperCase();
 							if(input.equals("Y")){
@@ -88,30 +90,12 @@ class World{
 							}
 							else{
 								System.out.println("You decide to continue exploring this room...");
+								currentRoom = 2;
 								room = true;
 							}
 						}
 					}
 				}
-			}
-		}
-		if(currentRoom == 1){
-			room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-
-		}
-		if(currentRoom == 2){
-			room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-		}
-		//If the player finds the room on the top, then ask if they want to go to that room.
-		if(player.getPositionX() == 6 && player.getPositionX() == 1){
-			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
-			input = in.next().toUpperCase();
-			if(input.equals("Y")){
-				System.out.println("You push the heavy rocks to the side and fit through...");
-				currentRoom = 1;
-			}
-			else{
-				System.out.println("You decide to stay in the main room and continue to explore...");
 			}
 		}
 	}
