@@ -42,7 +42,6 @@ class World{
 
 		//If the player is in the first room, then print Room1.
 		if(currentRoom == 0){
-			player.setPosition(6,14);
 			room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0){
@@ -50,6 +49,8 @@ class World{
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 1; //Room2
+					player.x = 10;
+					player.y = 6;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
@@ -63,6 +64,8 @@ class World{
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 2; //Room3
+					player.x = 9;
+					player.y = 1;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
@@ -80,6 +83,8 @@ class World{
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
+					player.x = 1;
+					player.y = 6;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
@@ -96,6 +101,8 @@ class World{
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
+					player.x = 9;
+					player.y = 28;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
 					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}

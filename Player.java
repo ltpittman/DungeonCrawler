@@ -25,8 +25,8 @@ class Player extends Character{// throws FileNotFoundException{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = x;//6;
-		this.y = y;//14;
+		this.x = 6;
+		this.y = 14;
 	}
 	//Method to get the name of the player.
 	String getName(){
