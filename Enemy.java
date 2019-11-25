@@ -144,8 +144,8 @@ class Enemy extends Character{
 		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(damage);
-		pw.println(".");
 		pw.println(isDead);
+		pw.println(".");
 	}
 
 	public void restore (String fileName) {

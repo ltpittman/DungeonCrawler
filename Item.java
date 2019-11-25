@@ -69,6 +69,7 @@ class Item{
 		pw.println(strength);
 		pw.println(x);
 		pw.println(y);
+		pw.println(".");
 	}
 
 	public void restore (String fileName){
@@ -77,6 +78,7 @@ class Item{
 			Scanner a = new Scanner(f);
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
+			String name = a.nextLine();
 			int weight = a.nextInt();
 			int value = a.nextInt();
 			int strength = a.nextInt();
@@ -84,7 +86,7 @@ class Item{
 			int y = a.nextInt();
 			Item item = new Item (type, name, weight, value, strength, x, y);
 		} catch (Exception e){
-			System.out.println("Could not find file.");
+			System.out.println("Could not read in item.");
 		
 		}}
 

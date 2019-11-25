@@ -51,15 +51,25 @@ class Main{
 					System.out.println("There is no game saved. A new game will start shortly.");
 				} else {
 					player.restore("info.txt");
+					String noth = a.nextLine();
 					enemy1.restore("info.txt");
+					noth = a.nextLine();
 					enemy2.restore("info.txt");
+					noth = a.nextLine();
 					enemy3.restore("info.txt");
+					noth = a.nextLine();
 					item1.restore("info.txt");
+					noth = a.nextLine();
 					item2.restore("info.txt");
+					noth = a.nextLine();
 					item3.restore("info.txt");
+					noth = a.nextLine();
 					item4.restore("info.txt");
+					noth = a.nextLine();
 					item5.restore("info.txt");
-					player.inventory.restore("info.txt");
+					noth = a.nextLine();
+					//player.inventory.restore("info.txt");
+					world.restore("info.txt");
 				}
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found.");
