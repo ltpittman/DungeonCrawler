@@ -2,6 +2,7 @@ import java.io.FileNotFoundException;
 //Class for Item
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.io.FileInputStream;
 import java.io.FileReader;
 class Item{
 	//Create the instance variables.
@@ -72,7 +73,8 @@ class Item{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner(fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner(f);
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			int weight = a.nextInt();

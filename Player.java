@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 class Player extends Character{// throws FileNotFoundException{
@@ -152,7 +153,8 @@ class Player extends Character{// throws FileNotFoundException{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner(fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner(f);
 			String noth = a.nextLine();
 			String file = a.nextLine();
 			this.name = a.nextLine();

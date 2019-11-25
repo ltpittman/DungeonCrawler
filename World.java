@@ -1,5 +1,5 @@
 /*This class displays the world, along with the three rooms. In the fillWorld method, the player will be able to move between rooms, fight monsters, and pick up random items.*/
-
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
@@ -128,7 +128,8 @@ class World{
 	}
 	public void restore(String fileName){
 		try{
-			Scanner a = new Scanner(fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner(f);
 			this.currentRoom = currentRoom;
 		} 
 		catch(Exception e){
