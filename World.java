@@ -132,6 +132,7 @@ class World{
 	//***** This one may need to be changed since the currentRoom is a int.
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
+		pw.println(".");
 	}
 	public void restore(Scanner a){
 		try{

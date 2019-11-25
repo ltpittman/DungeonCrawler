@@ -129,8 +129,10 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(name);
 		pw.println(x + " " + y);
 		pw.println(health);
-		pw.println(weaponStrength);
-		pw.println(armorStrength);
+		//pw.println(weaponStrength);
+		//pw.println(armorStrength);
+		pw.println(inventory.equippedWeapon.getStrength());
+		pw.println(inventory.equippedArmor.getStrength());
 
 		pw.println(inventory.equippedWeapon.getType());
 		pw.println(inventory.equippedWeapon.getName());

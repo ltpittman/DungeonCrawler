@@ -37,6 +37,8 @@ class Main{
 		String userName = in.nextLine();
 
 		player = new Player(userName, health);
+		File f;
+		Scanner a;
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
@@ -46,14 +48,15 @@ class Main{
 			try{
 				
 				//FileInputStream f = new FileInputStream("info.txt");
-				File f = new File("info.txt");
-				Scanner a = new Scanner (f);
+				f = new File("info.txt");
+				a = new Scanner (f);
 				String open = a.nextLine();
 				if (!open.equals("Saved")){
 					System.out.println("There is no game saved. A new game will start shortly.");
 				} else {
-					player.restore(a);
 					String noth = a.nextLine();
+					player.restore(a);
+					noth = a.nextLine();
 					enemy1.restore(a);
 					noth = a.nextLine();
 					enemy2.restore(a);
@@ -70,8 +73,9 @@ class Main{
 					noth = a.nextLine();
 					item5.restore(a);
 					noth = a.nextLine();
-					//player.inventory.restore(a);
+					player.inventory.restore(a);
 					world.restore(a);
+					a.close();
 				}
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found.");
@@ -186,6 +190,7 @@ class Main{
 							item4.persist(pw);
 							item5.persist(pw);
 							player.inventory.persist(pw);
+							world.persist(pw);
 							pw.close();
 						}
 						catch(FileNotFoundException e){
