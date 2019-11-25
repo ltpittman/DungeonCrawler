@@ -9,7 +9,6 @@ import java.io.PrintWriter;
 class World{
 	private Enemy enemy;
 	private Player player;
-	private int x,y;
 	private Inventory inventory;
 	//Store all three rooms in a arraylist.
 	private ArrayList<Room> rooms = new ArrayList<Room>(); 
