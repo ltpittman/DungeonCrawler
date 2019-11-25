@@ -32,7 +32,7 @@ class Room{
 			in.close();
 		}
 		catch(FileNotFoundException e){
-			System.out.println("File not found.");
+			System.out.println("File to upload the given room could not found.");
 		}
 	}
 
@@ -74,7 +74,7 @@ class Room{
 		if(enemy3.enemyDead() == false){
 			grid[enemy3.getY()][enemy3.getX()] = enemy3.getCharacterImage();
 		}
-
+	
 		//Player.
 		grid[player.y][player.x] = player.getCharacterImage();
 

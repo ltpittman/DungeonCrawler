@@ -313,8 +313,7 @@ class Inventory{
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
 	}
-
-
+	//Method to save the game into a file.
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");
 		for(Item i : items){
@@ -323,7 +322,7 @@ class Inventory{
 		}
 		pw.println(".");
 	}
-
+	//Method to restore the game from a saved file.
 	public void restore (Scanner a){
 		try{
 			String nothing = a.nextLine();
@@ -339,7 +338,7 @@ class Inventory{
 			items.add(item);
 			String d = a.nextLine();
 			while(a.hasNext()){
-				if (d.equals("-")){
+				if(d.equals("-")){
 					t = a.nextLine();
 					type = ItemType.valueOf(t);
 					name = a.nextLine();
@@ -350,7 +349,8 @@ class Inventory{
 					y = a.nextInt();
 					Item item1 = new Item (type, name, weight, value, strength, x, y);
 					items.add(item1);
-				} else if (d.equals(".")){
+				} 
+				else if(d.equals(".")){
 				}
 			}
 		} catch (Exception e){
@@ -358,5 +358,5 @@ class Inventory{
 		}
 	}
 
-}
+	}
 

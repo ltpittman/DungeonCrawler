@@ -12,7 +12,7 @@ class Player extends Character{// throws FileNotFoundException{
 	private int armorStrength;
 	private Item equippedWeapon;
 	private Item equippedArmor;
-	Inventory inventory;
+	public Inventory inventory;
 	public World world;
 	public int x;
 	public int y;
@@ -69,11 +69,6 @@ class Player extends Character{// throws FileNotFoundException{
 	//Method to get the y-coordinate.
 	public int getPositionY(){
 		return this.y;
-	}
-	//Sets the player's x coordinate in a speficic place in the roon.
-	public void setPosition(int X, int Y){
-		this.x = X;
-		this.y = Y;
 	}
 	//Method to move the player up.
 	public boolean goUp(){
@@ -190,7 +185,7 @@ class Player extends Character{// throws FileNotFoundException{
 		}
 
 		catch(Exception e){
-			System.out.println("Could not read player portion of file.");
+			System.out.println("No file could be found for the player portion.");
 		}
 	}
 }

@@ -71,7 +71,7 @@ class Item{
 		pw.println(y);
 		pw.println(".");
 	}
-
+	//Method to restore the game from a saved file.
 	public void restore (Scanner a){
 		try{
 			String t = a.nextLine();
@@ -85,8 +85,9 @@ class Item{
 			Item item = new Item (type, name, weight, value, strength, x, y);
 		} catch (Exception e){
 			System.out.println("Could not read item portion of file");
+		} 
 		
-		}}
+	}
 
 
 }

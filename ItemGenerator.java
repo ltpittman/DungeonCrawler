@@ -24,7 +24,7 @@ public class ItemGenerator{
 		
 		poss[6] = new Item(ItemType.Armor, "Iron Armor", 38, 298, 14, 10, 7);
 		
-		poss[7] = new Item(ItemType.Armor, "Steel Armor", 47, 456, 16, 6, 14);
+		poss[7] = new Item(ItemType.Armor, "Steel Armor", 47, 456, 16, 6, 4);
 		
 		poss[8] = new Item(ItemType.Armor, "Ebony Armor", 59, 768, 18, 9, 20);	
 		
