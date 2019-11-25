@@ -25,8 +25,8 @@ class Player extends Character{// throws FileNotFoundException{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = 9;
-		this.y = 9;
+		this.x = x;//6;
+		this.y = y;//14;
 	}
 	//Method to get the name of the player.
 	String getName(){
@@ -68,6 +68,11 @@ class Player extends Character{// throws FileNotFoundException{
 	//Method to get the y-coordinate.
 	public int getPositionY(){
 		return this.y;
+	}
+	//Sets the player's x coordinate in a speficic place in the roon.
+	public void setPosition(int X, int Y){
+		this.x = X;
+		this.y = Y;
 	}
 	//Method to move the player up.
 	public boolean goUp(){

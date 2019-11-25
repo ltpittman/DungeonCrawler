@@ -27,93 +27,85 @@ class World{
 		this.room2 = new Room("Room2.txt");
 		this.room3 = new Room("Room3.txt");
 		//Add the rooms to the arrayList.
+		this.currentRoom = currentRoom;
 		rooms.add(room1);
 		rooms.add(room2);
 		rooms.add(room3);
-		//Set the currentRoom to 0(this will help get the room's index in the arraylist).
-		this.currentRoom = 0;
 	}
 	//Method to fill the world with the players, items, and enemies.
-	public void fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
-				Scanner in = new Scanner(System.in);
-				String input;
-		//public void switchRooms(int currentRoom){
-		//Set the currentRoom's index to 0 to print the first room when the game starts.
-		currentRoom = 0;
-		boolean room = false;
+	public int fillWorld(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){ 	
+
+		Scanner in = new Scanner(System.in);
+		
+		//Set the main room as room1.
 		room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
-		//Right now the room is being printed becuase of the currentRoom = 0 in the constructor.
-		if(currentRoom == 0){ //Room1 has the index of 0.
+		//If the player is in the first room, then print Room1.
+		if(currentRoom == 0){
+			player.setPosition(6,14);
 			room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0){
 				System.out.print("\n[Attention!] You just encountered a mysterious entrance!\nHowever, it is blocked by rocks... Do you want to try and enter the dark room? Y/N ");
-				input = in.next().toUpperCase();
+				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
-					currentRoom = 1;
-					while(room == true){
-						room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-						printCurrentRoom();
-						//Have the player be in the position of(10,6)
-						if(player.getPositionX() == 10 && player.getPositionX() == 6){//Fix coordinates
-							System.out.print("\nYou come cross the door that you entered. Do you want to leave this room? Y/N ");
-							input = in.next().toUpperCase();
-							if(input.equals("Y")){
-								currentRoom = 0;
-								room = false;
-							}
-							else{
-								System.out.println("You decide to continue exploring this room...");
-								room = true;
-							}
-						}
-					}
+					currentRoom = 1; //Room2
+					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
+					room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+				}
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
 				}
 			}
+			//Here is where the player will enter the third room (located on the right).
 			if(player.getPositionX() == 9 && player.getPositionY() == 28 && currentRoom == 0){
 				System.out.print("\n[Attention!] You just encountered a mysterious entrance!\nHowever, it is blocked by rocks... Do you want to try and enter the dark room? Y/N ");
-			
-				input = in.next().toUpperCase();
+				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
-					currentRoom = 2;
-					while(room == true){
-						room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-						printCurrentRoom();
-						if(player.getPositionX() == 9 && player.getPositionX() == 8){
-							System.out.print("\nYou come cross the door that you entered. Do you want to leave this room? Y/N ");
-							input = in.next().toUpperCase();
-							if(input.equals("Y")){
-								currentRoom = 0;
-								room = false;
-							}
-							else{
-								System.out.println("You decide to continue exploring this room...");
-								room = true;
-							}
-						}
-					}
+					currentRoom = 2; //Room3
+					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
+					room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+				}
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
 				}
 			}
 		}
-		if(currentRoom == 1){
+		//If the player is in the second room, then print Room2.
+		else if(currentRoom == 1){
 			room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-
+			//Here is where the player will enter the first room if they want to leave this room.
+			if(player.getPositionX() == 10 && player.getPositionY() == 6 && currentRoom == 1){
+				System.out.print("\n[Attention!] You came across the door you entered in from earlier... Do you want to leave this room and head back to the first one? Y/N ");
+				String input = in.next().toUpperCase();
+				if(input.equals("Y")){
+					currentRoom = 0; //Room1
+					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
+					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+				}
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
+			}
 		}
-		if(currentRoom == 2){
+		//If the player is in the third room, then print Room3.
+		else if(currentRoom == 2){
 			room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
-		}
-		//If the player finds the room on the top, then ask if they want to go to that room.
-		if(player.getPositionX() == 6 && player.getPositionX() == 1){
-			System.out.print("\nYou just encountered a mysterious entrance! However, it is blocked by rocks...\nDo you want to try and enter the dark room? Y/N ");
-			input = in.next().toUpperCase();
-			if(input.equals("Y")){
-				System.out.println("You push the heavy rocks to the side and fit through...");
-				currentRoom = 1;
+			if(player.getPositionX() == 9 && player.getPositionY() == 1 && currentRoom == 2){
+				System.out.print("\n[Attention!] You came across the door you entered in from earlier... Do you want to leave this room and head back to the first one? Y/N ");
+				String input = in.next().toUpperCase();
+				if(input.equals("Y")){
+					currentRoom = 0; //Room1
+					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
+					room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+				}
+				else{
+					System.out.println("You decide to keep exploring the room you are currently in...");
+				}
 			}
-			else{
-				System.out.println("You decide to stay in the main room and continue to explore...");
-			}
 		}
+		//Return the current room that the player is in to print it to the screen.
+		return currentRoom;
 	}
 	void printCommands(){
 		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'P' to print the commands to read again.");
@@ -143,4 +135,4 @@ class World{
 			System.out.println("No file found.");
 		}
 	}
-	}
+}

@@ -60,8 +60,8 @@ class Main{
 				player.inventory.restore("info.txt");
 			}
 		}
-		else{
-		}
+		//else{
+	//	}
 
 		System.out.println("------------------------------------------------");
 
@@ -156,14 +156,6 @@ class Main{
 				case'A':
 					player.inventory.equipArmor();
 					break;
-					//	case'R':
-					//		player.inventory.drinkHealthPotion(healthPotion);
-					//		break;
-					//case'E':
-					//		System.out.println("You move aside the heavy rocks to create an opening...");
-					//		System.out.println("You manage to fit your body through the rocks and enter the room...");
-					//		room1.fillRoom1();
-					//	break;
 				case'Q':
 					try{
 						PrintWriter pw = new PrintWriter ("info.txt");
