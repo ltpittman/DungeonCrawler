@@ -62,11 +62,6 @@ class Player extends Character{// throws FileNotFoundException{
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
 	}
-	//Sets the player's x coordinate in a speficic place in the roon.
-	public void startPosition(int row, int column){
-		this.x = row;
-		this.y = column;
-	}
 	//Method to get the x-coordinate.
 	public int getPositionX(){
 		return this.x;
@@ -76,14 +71,14 @@ class Player extends Character{// throws FileNotFoundException{
 		return this.y;
 	}
 	//Method to move the player up.
-	public char goUp(){
+	public boolean goUp(){
 		if((x - 1) == 0){
 			System.out.println("[You can't go up in that direction anymore.]");
-			return '@';
+			return false;
 		}
 		else{
 			x -= 1;
-			return '.';
+			return true;
 		}
 	}
 	//Method to move the player down.

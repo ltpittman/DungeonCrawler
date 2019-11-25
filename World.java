@@ -41,10 +41,7 @@ class World{
 
 		//If the player is in the first room, then print Room1.
 		if(currentRoom == 0){
-<<<<<<< HEAD
 			//player.startPosition();
-=======
->>>>>>> 6b4f941f08ee21a49082765106fc47fb34f7a351
 			room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0){
