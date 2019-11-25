@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 class Player extends Character{// throws FileNotFoundException{
@@ -128,17 +129,23 @@ class Player extends Character{// throws FileNotFoundException{
 
 	//Method for saving the data for the character
 	public void persist(PrintWriter pw){
+		String file = "Saved";
+	        pw.println(file);	
 		pw.println(name);
-		pw.println(x + "," + y);
+		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
+
+		pw.println(inventory.equippedWeapon.getType());
 		pw.println(inventory.equippedWeapon.getName());
 		pw.println(inventory.equippedWeapon.getWeight());
 		pw.println(inventory.equippedWeapon.getValue());
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedWeapon.getItemX());
 		pw.println(inventory.equippedWeapon.getItemY());
+
+		pw.println(inventory.equippedArmor.getType());
 		pw.println(inventory.equippedArmor.getName());
 		pw.println(inventory.equippedArmor.getWeight());
 		pw.println(inventory.equippedArmor.getValue());
@@ -150,14 +157,18 @@ class Player extends Character{// throws FileNotFoundException{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner(fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner(f);
+			String file = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
 			this.health = a.nextInt();
 			this.weaponStrength = a.nextInt();
 			this.armorStrength = a.nextInt();
+			String blank = a.nextLine();
 			String typeItem = a.nextLine();
+
 			ItemType type = ItemType.valueOf(typeItem);
 			String name = a.nextLine();
 			int weight = a.nextInt();
@@ -165,6 +176,7 @@ class Player extends Character{// throws FileNotFoundException{
 			int stren = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
+			blank = a.nextLine();
 			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y);
 			String typeitemB = a.nextLine();
 			ItemType typeB = ItemType.valueOf(typeitemB);
@@ -176,8 +188,9 @@ class Player extends Character{// throws FileNotFoundException{
 			int yB = a.nextInt();
 			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
 		}
+
 		catch(Exception e){
-			System.out.println("Could not find file.");
+			System.out.println("Could not read player portion of file.");
 		}
 	}
 }

@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-
+import java.io.FileInputStream;
 
 class Enemy extends Character{
 	//Instance variables.
@@ -150,7 +150,8 @@ class Enemy extends Character{
 
 	public void restore (String fileName) {
 		try{
-		Scanner a = new Scanner(fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner(f);
 		this.name = a.nextLine();
 		String t = a.nextLine();
 		MonsterType type = MonsterType.valueOf(t);
@@ -162,7 +163,7 @@ class Enemy extends Character{
 		this.isDead = a.nextBoolean();
 		}
 		catch(Exception e){
-			System.out.println("Could not find anything.");
+			System.out.println("Could not find file for Enemy.");
 		}
 	}	
 

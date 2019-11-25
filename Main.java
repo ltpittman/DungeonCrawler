@@ -5,13 +5,13 @@ import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.io.FileInputStream;
 
 class Main{
 
 	public static void main(String args[]) throws InputMismatchException{
 
 		Objective command = new Objective();
-		File file = new File("info.txt");
 
 		World world = new World();	
 
@@ -43,24 +43,28 @@ class Main{
 
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
-			if (file.length() == 0){
-				System.out.println("There is no game saved. A new game will start shortly.");
-			} else {
-				player.restore("info.txt");
-				enemy1.restore("info.txt");
-				enemy2.restore("info.txt");
-				enemy3.restore("info.txt");
-				item1.restore("info.txt");
-				item2.restore("info.txt");
-				item3.restore("info.txt");
-				item4.restore("info.txt");
-				item5.restore("info.txt");
-				player.inventory.restore("info.txt");
+			try{
+				FileInputStream f = new FileInputStream("info.txt");
+				Scanner a = new Scanner (f);
+				String open = a.nextLine();
+				if (!open.equals("Saved")){
+					System.out.println("There is no game saved. A new game will start shortly.");
+				} else {
+					player.restore("info.txt");
+					enemy1.restore("info.txt");
+					enemy2.restore("info.txt");
+					enemy3.restore("info.txt");
+					item1.restore("info.txt");
+					item2.restore("info.txt");
+					item3.restore("info.txt");
+					item4.restore("info.txt");
+					item5.restore("info.txt");
+					player.inventory.restore("info.txt");
+				}
+			}catch (FileNotFoundException e){
+				System.out.println("File Not Found.");
 			}
 		}
-		//else{
-	//	}
-
 		System.out.println("------------------------------------------------");
 
 		//Print the objective of the game.
@@ -70,7 +74,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 		command.printCommands();
 		System.out.println("------------------------------------------------");
-		
+
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
@@ -155,11 +159,11 @@ class Main{
 					player.inventory.equipArmor();
 					break;
 				case'Q':
-					try{
-						PrintWriter pw = new PrintWriter (file);
-						System.out.print("Would you like to save the game? Y/N ");
-						String ans = in.next().toUpperCase();
-						if (ans.equals("Y")) {
+					System.out.print("Would you like to save the game? Y/N ");
+					String ans = in.next().toUpperCase();
+					if (ans.equals("Y")) {
+						try{
+							PrintWriter pw = new PrintWriter ("info.txt");
 							player.persist(pw);
 							enemy1.persist(pw);
 							enemy2.persist(pw);
@@ -170,13 +174,14 @@ class Main{
 							item4.persist(pw);
 							item5.persist(pw);
 							player.inventory.persist(pw);
+							pw.close();
 						}
-						else if (ans.equals("N")){
-							break;
-						}
+						catch(FileNotFoundException e){
+							System.out.println("Could not find anything.");
+						}		
 					}
-					catch(FileNotFoundException e){
-						System.out.println("Could not find anything.");
+					else if (ans.equals("N")){
+						break;
 					}
 					System.exit(1);
 					break;
