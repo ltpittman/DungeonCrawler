@@ -163,7 +163,7 @@ class Enemy extends Character{
 		this.isDead = a.nextBoolean();
 		}
 		catch(Exception e){
-			System.out.println("Could not find anything.");
+			System.out.println("Could not find file for Enemy.");
 		}
 	}	
 

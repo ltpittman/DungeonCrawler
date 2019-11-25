@@ -132,16 +132,20 @@ class Player extends Character{// throws FileNotFoundException{
 		String file = "Saved";
 	        pw.println(file);	
 		pw.println(name);
-		pw.println(x + "," + y);
+		pw.println(x + " " + y);
 		pw.println(health);
 		pw.println(weaponStrength);
 		pw.println(armorStrength);
+
+		pw.println(inventory.equippedWeapon.getType());
 		pw.println(inventory.equippedWeapon.getName());
 		pw.println(inventory.equippedWeapon.getWeight());
 		pw.println(inventory.equippedWeapon.getValue());
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedWeapon.getItemX());
 		pw.println(inventory.equippedWeapon.getItemY());
+
+		pw.println(inventory.equippedArmor.getType());
 		pw.println(inventory.equippedArmor.getName());
 		pw.println(inventory.equippedArmor.getWeight());
 		pw.println(inventory.equippedArmor.getValue());
@@ -155,7 +159,6 @@ class Player extends Character{// throws FileNotFoundException{
 		try{
 			FileInputStream f = new FileInputStream(fileName);
 			Scanner a = new Scanner(f);
-			String noth = a.nextLine();
 			String file = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();
@@ -163,7 +166,9 @@ class Player extends Character{// throws FileNotFoundException{
 			this.health = a.nextInt();
 			this.weaponStrength = a.nextInt();
 			this.armorStrength = a.nextInt();
+			String blank = a.nextLine();
 			String typeItem = a.nextLine();
+
 			ItemType type = ItemType.valueOf(typeItem);
 			String name = a.nextLine();
 			int weight = a.nextInt();
@@ -171,6 +176,7 @@ class Player extends Character{// throws FileNotFoundException{
 			int stren = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
+			blank = a.nextLine();
 			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y);
 			String typeitemB = a.nextLine();
 			ItemType typeB = ItemType.valueOf(typeitemB);
@@ -182,8 +188,9 @@ class Player extends Character{// throws FileNotFoundException{
 			int yB = a.nextInt();
 			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
 		}
+
 		catch(Exception e){
-			System.out.println("Could not find file.");
+			System.out.println("Could not read player portion of file.");
 		}
 	}
 }

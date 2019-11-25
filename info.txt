@@ -1,0 +1,95 @@
+Saved
+Grace
+6 14
+100
+0
+0
+Weapon
+Iron Dagger
+12
+28
+16
+0
+0
+Armor
+Leather Armor
+14
+120
+18
+0
+0
+.
+Zombie
+Zombie
+5 16
+100
+21
+.
+false
+Ghost
+Ghost
+10 13
+100
+26
+.
+false
+Zombie
+Zombie
+6 19
+100
+21
+.
+false
+Weapon
+Orcish Sword
+39
+336
+25
+6
+5
+Weapon
+Orcish Dagger
+30
+290
+23
+7
+28
+Weapon
+Steel Sword
+29
+120
+20
+5
+19
+Weapon
+Steel Staff
+83
+323
+19
+2
+17
+Weapon
+Iron Dagger
+17
+146
+13
+6
+6
+Inventory
+Weapon
+Iron Dagger
+12
+28
+16
+0
+0
+-
+Armor
+Leather Armor
+14
+120
+18
+0
+0
+-
+.
