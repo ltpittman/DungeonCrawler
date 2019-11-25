@@ -48,7 +48,7 @@ class Battles{
 				System.out.println("1. Attack the monster!");
 				System.out.println("2. Run away!");
 				System.out.print("[Answer]");
-
+				
 				Scanner in = new Scanner(System.in);
 				int answer = in.nextInt();
 
