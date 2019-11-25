@@ -72,10 +72,8 @@ class Item{
 		pw.println(".");
 	}
 
-	public void restore (String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			String name = a.nextLine();
@@ -86,7 +84,7 @@ class Item{
 			int y = a.nextInt();
 			Item item = new Item (type, name, weight, value, strength, x, y);
 		} catch (Exception e){
-			System.out.println("Could not read in item.");
+			System.out.println("Could not read item portion of file");
 		
 		}}
 

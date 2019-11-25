@@ -155,10 +155,10 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(".");
 	}
 
-	public void restore (String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
+			//FileInputStream f = new FileInputStream(fileName);
+			//Scanner a = new Scanner(f);
 			String file = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();

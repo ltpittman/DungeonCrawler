@@ -44,32 +44,34 @@ class Main{
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			try{
-				FileInputStream f = new FileInputStream("info.txt");
+				
+				//FileInputStream f = new FileInputStream("info.txt");
+				File f = new File("info.txt");
 				Scanner a = new Scanner (f);
 				String open = a.nextLine();
 				if (!open.equals("Saved")){
 					System.out.println("There is no game saved. A new game will start shortly.");
 				} else {
-					player.restore("info.txt");
+					player.restore(a);
 					String noth = a.nextLine();
-					enemy1.restore("info.txt");
+					enemy1.restore(a);
 					noth = a.nextLine();
-					enemy2.restore("info.txt");
+					enemy2.restore(a);
 					noth = a.nextLine();
-					enemy3.restore("info.txt");
+					enemy3.restore(a);
 					noth = a.nextLine();
-					item1.restore("info.txt");
+					item1.restore(a);
 					noth = a.nextLine();
-					item2.restore("info.txt");
+					item2.restore(a);
 					noth = a.nextLine();
-					item3.restore("info.txt");
+					item3.restore(a);
 					noth = a.nextLine();
-					item4.restore("info.txt");
+					item4.restore(a);
 					noth = a.nextLine();
-					item5.restore("info.txt");
+					item5.restore(a);
 					noth = a.nextLine();
-					//player.inventory.restore("info.txt");
-					world.restore("info.txt");
+					//player.inventory.restore(a);
+					world.restore(a);
 				}
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found.");

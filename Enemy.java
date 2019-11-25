@@ -43,13 +43,13 @@ class Enemy extends Character{
 	//to see if the monster is alive
 	boolean enemyDead(){
 		if(health > 0){
-		       return false;
+			return false;
 		}
 		else{
 			return true;
 		}
 	}		
-	
+
 	//to determine if the enemy is dead
 	boolean getIsDead(){
 		return this.isDead;
@@ -68,7 +68,7 @@ class Enemy extends Character{
 	public int getY(){
 		return this.y;
 	}
-	
+
 	//Adding the movement method for the Enemy class.
 	public boolean move(){
 
@@ -127,16 +127,16 @@ class Enemy extends Character{
 	}
 	//After enemy is dead remove from board
 	/*public boolean enemyDead(Enemy enemy){
-		int healthEnemy = enemy.getHealth();
-		if (healthEnemy <= 0){
-			y= 1;
-			x = 1;
-			return true;
-		} 
-		else{
-			return false;
-		}
-	}*/
+	  int healthEnemy = enemy.getHealth();
+	  if (healthEnemy <= 0){
+	  y= 1;
+	  x = 1;
+	  return true;
+	  } 
+	  else{
+	  return false;
+	  }
+	  }*/
 	//Method to save the information about the enemy
 	public void persist (PrintWriter pw){
 		pw.println(name);
@@ -148,22 +148,20 @@ class Enemy extends Character{
 		pw.println(".");
 	}
 
-	public void restore (String fileName) {
+	public void restore (Scanner a) {
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
-		this.name = a.nextLine();
-		String t = a.nextLine();
-		MonsterType type = MonsterType.valueOf(t);
-		this.type = type;
-		this.x = a.nextInt();
-		this.y = a.nextInt();
-		this.health = a.nextInt();
-		this.damage = a.nextInt();
-		this.isDead = a.nextBoolean();
+			this.name = a.nextLine();
+			String t = a.nextLine();
+			MonsterType type = MonsterType.valueOf(t);
+			this.type = type;
+			this.x = a.nextInt();
+			this.y = a.nextInt();
+			this.health = a.nextInt();
+			this.damage = a.nextInt();
+			this.isDead = a.nextBoolean();
 		}
 		catch(Exception e){
-			System.out.println("Could not find file for Enemy.");
+			System.out.println("Could not read enemy portion of file.");
 		}
 	}	
 

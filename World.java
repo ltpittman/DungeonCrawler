@@ -133,14 +133,12 @@ class World{
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
 	}
-	public void restore(String fileName){
+	public void restore(Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
-			this.currentRoom = currentRoom;
+			this.currentRoom = a.nextInt();
 		} 
 		catch(Exception e){
-			System.out.println("No file found.");
+			System.out.println("Could not read world portion of the file");
 		}
 	}
 }

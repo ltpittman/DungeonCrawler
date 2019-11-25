@@ -324,10 +324,8 @@ class Inventory{
 		pw.println(".");
 	}
 
-	public void restore (String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner (f);
 			String nothing = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
@@ -356,7 +354,7 @@ class Inventory{
 				}
 			}
 		} catch (Exception e){
-			System.out.println("Could not find file.");
+			System.out.println("Could not read inventory portion of file.");
 		}
 	}
 
