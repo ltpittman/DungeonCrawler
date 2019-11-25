@@ -12,7 +12,7 @@ class Player extends Character{// throws FileNotFoundException{
 	private int armorStrength;
 	private Item equippedWeapon;
 	private Item equippedArmor;
-	Inventory inventory;
+	public Inventory inventory;
 	public World world;
 	public int x;
 	public int y;
@@ -26,8 +26,8 @@ class Player extends Character{// throws FileNotFoundException{
 		this.armorStrength = armorStrength;
 		inventory = new Inventory(275);
 		//Player starts in the middle.	
-		this.x = x;//6;
-		this.y = y;//14;
+		this.x = 6;
+		this.y = 14;
 	}
 	//Method to get the name of the player.
 	String getName(){
@@ -62,6 +62,11 @@ class Player extends Character{// throws FileNotFoundException{
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
 	}
+	//Sets the player's x coordinate in a speficic place in the roon.
+	public void startPosition(){//int row, int column){//{int X, int Y){
+		this.x = 6;//row;
+		this.y = 14;//column;
+	}
 	//Method to get the x-coordinate.
 	public int getPositionX(){
 		return this.x;
@@ -69,11 +74,6 @@ class Player extends Character{// throws FileNotFoundException{
 	//Method to get the y-coordinate.
 	public int getPositionY(){
 		return this.y;
-	}
-	//Sets the player's x coordinate in a speficic place in the roon.
-	public void setPosition(int X, int Y){
-		this.x = X;
-		this.y = Y;
 	}
 	//Method to move the player up.
 	public boolean goUp(){
@@ -155,7 +155,7 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(".");
 	}
 
-	public void restore (String fileName){
+	public void restore(String fileName){
 		try{
 			FileInputStream f = new FileInputStream(fileName);
 			Scanner a = new Scanner(f);
@@ -190,7 +190,7 @@ class Player extends Character{// throws FileNotFoundException{
 		}
 
 		catch(Exception e){
-			System.out.println("Could not read player portion of file.");
+			System.out.println("No file could be found for the player portion.");
 		}
 	}
 }

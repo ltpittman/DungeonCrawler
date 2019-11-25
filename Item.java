@@ -70,7 +70,7 @@ class Item{
 		pw.println(x);
 		pw.println(y);
 	}
-
+	//Method to restore the game from a saved file.
 	public void restore (String fileName){
 		try{
 			FileInputStream f = new FileInputStream(fileName);
@@ -83,10 +83,12 @@ class Item{
 			int x = a.nextInt();
 			int y = a.nextInt();
 			Item item = new Item (type, name, weight, value, strength, x, y);
-		} catch (Exception e){
-			System.out.println("Could not find file.");
+		} 
+		catch(Exception e){
+			System.out.println("No file could be found for the item portion.");
 		
-		}}
+		}
+	}
 
 
 }

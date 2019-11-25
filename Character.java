@@ -9,6 +9,8 @@ abstract class Character{
 	protected Character(String name, int health){//, int health){
 		this.name = name;
 		this.health = health;
+		this.x = x;
+		this.y = y;
 	}
 	//If the character class shares any methods inside of the player or enemy class,
 	//then only the character class needs the methods.

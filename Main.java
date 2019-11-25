@@ -48,8 +48,11 @@ class Main{
 				Scanner a = new Scanner (f);
 				String open = a.nextLine();
 				if (!open.equals("Saved")){
-					System.out.println("There is no game saved. A new game will start shortly.");
-				} else {
+					System.out.println("[Attention!] There is no game saved. A new game will start shortly...");
+				} 
+				else{
+					System.out.println("[Game Loading...] You game is loading, please wait...");
+					System.out.println();
 					player.restore("info.txt");
 					enemy1.restore("info.txt");
 					enemy2.restore("info.txt");
@@ -60,6 +63,7 @@ class Main{
 					item4.restore("info.txt");
 					item5.restore("info.txt");
 					player.inventory.restore("info.txt");
+					System.out.println();
 				}
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found.");
