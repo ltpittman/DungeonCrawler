@@ -45,7 +45,6 @@ class Room{
 			System.out.println();
 		}
 	}
-	//Method to fill the rooms with the player, enemies, and items.
 	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 
 		//Items.

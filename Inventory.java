@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.PrintWriter;
+import java.io.FileInputStream;
 
 class Inventory{
 	//All instance variables will be private!
@@ -325,7 +326,8 @@ class Inventory{
 
 	public void restore (String fileName){
 		try{
-			Scanner a = new Scanner (fileName);
+			FileInputStream f = new FileInputStream(fileName);
+			Scanner a = new Scanner (f);
 			String nothing = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
