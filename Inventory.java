@@ -126,47 +126,41 @@ class Inventory{
 			System.out.println(count + ". Cancel");
 
 			//Asking the user what they want to drop from their inventory.
-			System.out.print("[Attention!] If you drop a item from your inventory, it will be destroyed. Continue with option? Y/N ");
-
+			System.out.print("\nWhat item do you want to drop from your inventory?\nAnswer: ");
 			Scanner in = new Scanner(System.in);
-
-			String answer = in.next().toUpperCase();
-
-			if(answer.equals("Y")){
-				System.out.print("\nWhat item do you want to drop from your inventory?\nAnswer: ");
-				//Store the user's answer into this variable.
-				int userInput = in.nextInt();
-				//While the user's input is not equal to count(or the last number/option), then either break or remove the item from the arrayList.
-				while(userInput != count){
-					if(userInput == count){
-						break;
-					}
-					//If the user's input is not a valid number, then ask them to enter in a number again.
-					else if(userInput > count || userInput < 1){
-						System.out.print("Please enter a valid number.\n[Answer] ");
-						userInput = in.nextInt();
-						continue;
-					}
-					else{
-						//Remove the item by the user's input(userInput - 1, since userInput will be different than the index of the ArrayList).
-						Item dropItem = items.get(userInput - 1);
-						//Getting the equipped items of the player.
-						Item equipItemA = player.getEquippedArmor();
-						Item equipItemB = player.getEquippedWeapon();
-						//If the player is equipping a item they want to drop, then tell them they have to equip something else first.
-						if (dropItem == equipItemA || dropItem == equipItemB){
-							System.out.println("[Attention!] You cannot drop an item that you have equipped! You must be able to defend yourself...\nIf you do not have another item to equip, look for items around the area.");
-						} else {
-							items.remove(userInput - 1);
-						}
-						break;
-					}
+			//Store the user's answer into this variable.
+			int userInput = in.nextInt();
+			//While the user's input is not equal to count(or the last number/option), then either break or remove the item from the arrayList.
+			while(userInput != count){
+				if(userInput == count){
+					break;
 				}
+				//If the user's input is not a valid number, then ask them to enter in a number again.
+				else if(userInput > count || userInput < 1){
+					System.out.print("Please enter a valid number.\n[Answer] ");
+					userInput = in.nextInt();
+					continue;
+				}
+				else{
+					//Remove the item by the user's input(userInput - 1, since userInput will be different than the index of the ArrayList).
+					Item dropItem = items.get(userInput - 1);
+					//Getting the equipped items of the player.
+					Item equipItemA = player.getEquippedArmor();
+					Item equipItemB = player.getEquippedWeapon();
+					//If the player is equipping a item they want to drop, then tell them they have to equip something else first.
+					if (dropItem == equipItemA || dropItem == equipItemB){
+						System.out.println("[Attention!] You cannot drop an item that you have equipped! You must be able to defend yourself...\nIf you do not have another item to equip, look for items around the area.");
+					} else {
+						items.remove(userInput - 1);
+					}
+					break;
+				}
+				//Else if userInput is equal to "N," then cancel the action.
+				//else{
+				//	System.out.println("Action cancelled.");
+			//	}
 			}
-			//Else if userInput is equal to "N," then cancel the action.
-			else{
-				System.out.println("Action cancelled.");
-			}
+
 		}
 	}
 	//Method to equip weapon.

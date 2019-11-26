@@ -47,6 +47,7 @@ class Main{
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
 
 		String inputAnswer = in.next().toUpperCase();
+
 		if(inputAnswer.equals("Y")){
 			try{
 				
@@ -196,8 +197,8 @@ class Main{
 					break;
 				case'Q':
 					System.out.print("Would you like to save the game? Y/N ");
-					String ans = in.next().toUpperCase();
-					if (ans.equals("Y")) {
+					String answer = in.next().toUpperCase();
+					if(answer.equals("Y")) {
 						try{
 							PrintWriter pw = new PrintWriter ("info.txt");
 							player.persist(pw);
@@ -227,7 +228,7 @@ class Main{
 							System.out.println("Could not find anything.");
 						}		
 					}
-					else if (ans.equals("N")){
+					else if (answer.equals("N")){
 						break;
 					}
 					System.exit(1);

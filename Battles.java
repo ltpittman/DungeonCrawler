@@ -13,7 +13,7 @@ class Battles{
 	Item equippedArmor;
 	Item equippedWeapon;
 
-	private int numberOfMonsters = 9;
+	private int numberOfMonsters = 3;
 	private static int healthEnemy;
 	private int difference;
 
@@ -118,9 +118,6 @@ class Battles{
 					System.out.println("You dodge the monster's last attack and try to get away...");
 					break;
 
-				}
-				else{
-					
 				}
 			}
 		}
