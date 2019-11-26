@@ -51,7 +51,7 @@ class Main{
 				f = new File("info.txt");
 
 					//FileInputStream f = new FileInputStream("info.txt");
-					Scanner a = new Scanner ("info.txt");
+					Scanner a = new Scanner (f);
 					String open = a.nextLine();
 					if (!open.equals("Saved")){
 						System.out.println("There is no game saved. A new game will start shortly.");

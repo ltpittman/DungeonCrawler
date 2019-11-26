@@ -137,6 +137,7 @@ class World{
 	public void restore(Scanner a){
 		try{
 			this.currentRoom = a.nextInt();
+			System.out.println("Room = " + currentRoom);
 		} 
 		catch(Exception e){
 			System.out.println("Could not read world portion of the file");
