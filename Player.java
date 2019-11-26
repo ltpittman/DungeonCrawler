@@ -129,8 +129,10 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(name);
 		pw.println(x + " " + y);
 		pw.println(health);
-		pw.println(weaponStrength);
-		pw.println(armorStrength);
+		//pw.println(weaponStrength);
+		//pw.println(armorStrength);
+		pw.println(inventory.equippedWeapon.getStrength());
+		pw.println(inventory.equippedArmor.getStrength());
 
 		pw.println(inventory.equippedWeapon.getType());
 		pw.println(inventory.equippedWeapon.getName());
@@ -150,11 +152,10 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(".");
 	}
 
-	public void restore(String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
-			String file = a.nextLine();
+			//FileInputStream f = new FileInputStream(fileName);
+			//Scanner a = new Scanner(f);
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();

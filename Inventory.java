@@ -318,16 +318,17 @@ class Inventory{
 		pw.println("Inventory");
 		for(Item i : items){
 			i.persist(pw);
-			pw.println("-");
 		}
-		pw.println(".");
+		pw.println("-");
+		pw.println("nothing");
 	}
 	//Method to restore the game from a saved file.
-	public void restore(String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner (f);
-			String nothing = a.nextLine();
+			this.items.clear();
+			String noth = a.nextLine();
+			noth = a.nextLine();
+			noth = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			String name = a.nextLine();
@@ -337,11 +338,13 @@ class Inventory{
 			int x = a.nextInt();
 			int y = a.nextInt();
 			Item item = new Item (type, name, weight, value, strength, x, y);
-			items.add(item);
-			String d = a.nextLine();
+			this.items.add(item);
+			noth = a.nextLine();
+			noth = a.nextLine();
 			while(a.hasNext()){
-				if(d.equals("-")){
-					t = a.nextLine();
+				t = a.nextLine();
+				System.out.println("t = " + t);
+				if(!t.equals("-")){
 					type = ItemType.valueOf(t);
 					name = a.nextLine();
 					weight = a.nextInt();
@@ -349,15 +352,18 @@ class Inventory{
 					strength = a.nextInt();
 					x = a.nextInt();
 					y = a.nextInt();
+					noth = a.nextLine();
+					noth = a.nextLine();
 					Item item1 = new Item (type, name, weight, value, strength, x, y);
-					items.add(item1);
+					this.items.add(item1);
 				} 
-				else if(d.equals(".")){
+				else if(t.equals("-")){
+					noth = a.nextLine();
+					break;
 				}
 			}
-		} 
-		catch(Exception e){
-			System.out.println("No file could be found for the inventory portion.");
+		} catch (Exception e){
+			System.out.println("Could not read inventory portion of file.");
 		}
 	}
 

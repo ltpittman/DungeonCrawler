@@ -37,6 +37,8 @@ class Main{
 		String userName = in.nextLine();
 
 		player = new Player(userName, health);
+		File f;
+		Scanner a;
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
@@ -44,26 +46,31 @@ class Main{
 		String inputAnswer = in.next().toUpperCase();
 		if(inputAnswer.equals("Y")){
 			try{
-				FileInputStream f = new FileInputStream("info.txt");
-				Scanner a = new Scanner (f);
+				
+				//FileInputStream f = new FileInputStream("info.txt");
+				f = new File("info.txt");
+				a = new Scanner (f);
 				String open = a.nextLine();
 				if (!open.equals("Saved")){
-					System.out.println("[Attention!] There is no game saved. A new game will start shortly...");
-				} 
-				else{
-					System.out.println("[Game Loading...] You game is loading, please wait...");
-					System.out.println();
-					player.restore("info.txt");
-					enemy1.restore("info.txt");
-					enemy2.restore("info.txt");
-					enemy3.restore("info.txt");
-					item1.restore("info.txt");
-					item2.restore("info.txt");
-					item3.restore("info.txt");
-					item4.restore("info.txt");
-					item5.restore("info.txt");
-					player.inventory.restore("info.txt");
-					System.out.println();
+					System.out.println("There is no game saved. A new game will start shortly.");
+				} else {
+					player.restore(a);
+					enemy1.restore(a);
+					enemy2.restore(a);
+					enemy3.restore(a);
+					String noth = a.nextLine();
+					item1.restore(a);
+					noth = a.nextLine();
+					item2.restore(a);
+					noth = a.nextLine();
+					item3.restore(a);
+					noth = a.nextLine();
+					item4.restore(a);
+					noth = a.nextLine();
+					item5.restore(a);
+					player.inventory.restore(a);
+					world.restore(a);
+					a.close();
 				}
 			}catch (FileNotFoundException e){
 				System.out.println("File Not Found.");
@@ -178,6 +185,7 @@ class Main{
 							item4.persist(pw);
 							item5.persist(pw);
 							player.inventory.persist(pw);
+							world.persist(pw);
 							pw.close();
 						}
 						catch(FileNotFoundException e){

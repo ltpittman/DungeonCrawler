@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 class World{
 	private Enemy enemy;
 	private Player player;
+	private int x,y;
 	private Inventory inventory;
 	//Store all three rooms in a arraylist.
 	private ArrayList<Room> rooms = new ArrayList<Room>(); 
@@ -41,7 +42,6 @@ class World{
 
 		//If the player is in the first room, then print Room1.
 		if(currentRoom == 0){
-			//player.startPosition();
 			room1.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0){
@@ -132,15 +132,14 @@ class World{
 	//***** This one may need to be changed since the currentRoom is a int.
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
+		pw.println(".");
 	}
-	public void restore(String fileName){
+	public void restore(Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
-			this.currentRoom = currentRoom;
+			this.currentRoom = a.nextInt();
 		} 
 		catch(Exception e){
-			System.out.println("No file found.");
+			System.out.println("Could not read world portion of the file");
 		}
 	}
 }

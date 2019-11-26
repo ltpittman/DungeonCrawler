@@ -69,25 +69,25 @@ class Item{
 		pw.println(strength);
 		pw.println(x);
 		pw.println(y);
+		pw.println(".");
 	}
 	//Method to restore the game from a saved file.
-	public void restore (String fileName){
+	public void restore (Scanner a){
 		try{
-			FileInputStream f = new FileInputStream(fileName);
-			Scanner a = new Scanner(f);
+			String noth = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
-			int weight = a.nextInt();
-			int value = a.nextInt();
-			int strength = a.nextInt();
-			int x = a.nextInt();
-			int y = a.nextInt();
-			Item item = new Item (type, name, weight, value, strength, x, y);
+			this.type = type;
+			this.name = a.nextLine();
+			this.weight = a.nextInt();
+			this.value = a.nextInt();
+			this.strength = a.nextInt();
+			this.x = a.nextInt();
+			this.y = a.nextInt();
+		} catch (Exception e){
+			System.out.println("Could not read item portion of file");
 		} 
-		catch(Exception e){
-			System.out.println("No file could be found for the item portion.");
 		
-		}
 	}
 
 
