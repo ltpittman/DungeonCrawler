@@ -20,6 +20,8 @@ class Battles{
 	//In this method we compare the health and the strength of the enemy and the player. Based on the strength of each we name a winner of the fight and modify the Health of both. If the player wins then we modify the number of monsters left in the game.
 	public void attack(Player player, Enemy enemy) {
 
+		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight! ");
+
 		//Get the equipped armor of the player.
 		equippedArmor = player.getEquippedArmor();
 		//Get the equipped weapon of the player.
