@@ -108,52 +108,52 @@ class Main{
 				case'H':
 					player.goUp();
 					if (enemy1.getIsDead() == false){
-						enemy1.move();
+						enemy1.moveRandomly();
 					}
 					if (enemy2.getIsDead() == false){
-						enemy2.move();
+						enemy2.moveRandomly();
 					}
 					if (enemy3.getIsDead() == false){
-						enemy3.move();
+						enemy3.moveRandomly();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.goDown();
 					if (enemy1.getIsDead() == false){
-						enemy1.move();
+						enemy1.moveRandomly();
 					}
 					if (enemy2.getIsDead() == false){
-						enemy2.move();
+						enemy2.moveRandomly();
 					}
 					if (enemy3.getIsDead() == false){
-						enemy3.move();
+						enemy3.moveRandomly();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'J':
 					player.goLeft();
 					if (enemy1.getIsDead() == false){
-						enemy1.move();
+						enemy1.moveRandomly();
 					}
 					if (enemy2.getIsDead() == false){
-						enemy2.move();
+						enemy2.moveRandomly();
 					}
 					if (enemy3.getIsDead() == false){
-						enemy3.move();
+						enemy3.moveRandomly();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					player.goRight();
 					if (enemy1.getIsDead() == false){
-						enemy1.move();
+						enemy1.moveRandomly();
 					}
 					if (enemy2.getIsDead() == false){
-						enemy2.move();
+						enemy2.moveRandomly();
 					}
 					if (enemy3.getIsDead() == false){
-						enemy3.move();
+						enemy3.moveRandomly();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;

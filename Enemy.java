@@ -70,7 +70,7 @@ class Enemy extends Character{
 	}
 
 	//Adding the movement method for the Enemy class.
-	public boolean move(){
+	public boolean moveRandomly(){
 
 		Random random = new Random();
 		int mm = random.nextInt(4);
