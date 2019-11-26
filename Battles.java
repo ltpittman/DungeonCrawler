@@ -13,7 +13,7 @@ class Battles{
 	Item equippedArmor;
 	Item equippedWeapon;
 
-	private int numberOfMonsters = 9;
+	private int numberOfMonsters = 5;
 	private static int healthEnemy;
 	private int difference;
 
@@ -35,20 +35,14 @@ class Battles{
 		healthEnemy = enemy.getHealth();
 		int strengthEnemy = enemy.getDamage();
 
-		//System.out.println();
-		//System.out.println("[Player Health] " + healthPlayer + " pts.");
-		//System.out.println("[Player Strength] " + strengthArmor + " pts.");
-		//System.out.println("[Enemy Health] " + healthEnemy + " pts.");
-		//System.out.println();
-
 		while(healthEnemy > 0){
 
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
 				System.out.println("2. Run away!");
-				System.out.print("[Answer]");
-
+				System.out.print("[Answer] ");
+				
 				Scanner in = new Scanner(System.in);
 				int answer = in.nextInt();
 
@@ -119,27 +113,30 @@ class Battles{
 					}
 				}
 				else if(answer == 2){
-					player.goUp();
+					player.goDown();
 					System.out.println("You dodge the monster's last attack and try to get away...");
 					break;
 
 				}
+				else{
+					
+				}
 			}
 		}
+	}
+	public static int getNewHealth(){
+		return healthEnemy;
 	}
 	//In this method we determine if the player has lost the game. We do this by looking at the player's health.
 	public void playerLoses(){
 
 		System.out.println("The monsters have defeated you... you lost :(");
 		System.exit(1);
-	}
-	public static int getNewHealth(){
-		return healthEnemy;
 	}	
 	//In this method we determin if the player won after the battle. We do this by seeing how many monsters are left. Once all the monsters have been killed the player wins.
 	public void playerWins(){
 		if(numberOfMonsters == 0){
-			System.out.println("Woohoo! You have defeated all the monsters and won the game!!");
+			System.out.println("Woohoo! You were able to kill five monsters and won the game!!");
 			System.exit(1);
 		}
 		else{

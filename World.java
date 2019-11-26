@@ -79,7 +79,7 @@ class World{
 			room2.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the first room if they want to leave this room.
 			if(player.getPositionX() == 10 && player.getPositionY() == 6 && currentRoom == 1){
-				System.out.print("\n[Attention!] You came across the door you entered in from earlier... Do you want to leave this room and head back to the first one? Y/N ");
+				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
@@ -97,7 +97,7 @@ class World{
 		else if(currentRoom == 2){
 			room3.fillRoom(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			if(player.getPositionX() == 9 && player.getPositionY() == 1 && currentRoom == 2){
-				System.out.print("\n[Attention!] You came across the door you entered in from earlier... Do you want to leave this room and head back to the first one? Y/N ");
+				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
