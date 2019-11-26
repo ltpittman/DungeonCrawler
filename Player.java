@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
@@ -112,6 +113,56 @@ class Player extends Character{// throws FileNotFoundException{
 		else{
 			y += 1;
 			return true;
+		}
+	}
+	//Method to move the player to a random spot.
+	public boolean movePlayer(){
+
+		Random random = new Random();
+		int pp = random.nextInt(4);
+
+		if(pp == 0){
+			//Have the player go down.
+			if(x + 1 == 11){
+				return false;
+			}
+			else{
+				x += 1;
+				return true;
+			}
+		}
+		else if(pp == 1){
+			//Have the player go up.
+			if(x - 1 == 0){
+				return false;
+			}
+			else{
+				x -= 1;
+				return true;
+			}
+		}
+		else if(pp == 2){
+			//Have the player go left.
+			if(y - 1 == 0){
+				return false;
+			}
+			else{
+				y -= 1;
+				return true;
+			}
+		}
+		else if(pp == 3){
+			//Have the player go right.
+			if(y + 1 == 29){
+				return false;
+			}
+			else{
+				y += 1;
+				return true;
+			}
+		}
+		else{
+			return false;
 		}
 	}
 	//This method prints the player's name and health.
