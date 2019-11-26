@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 
 class Main{
 
-	public static void main(String args[]) throws InputMismatchException{
+	public static void main(String args[]) throws InputMismatchException, FileNotFoundException{
 
 		Objective command = new Objective();
 
@@ -41,7 +41,6 @@ class Main{
 
 		player = new Player(userName, health);
 		File f;
-		Scanner a;
 
 		//Ask player if they would like to continue with saved game. If no game is saved print no game is saved and continue
 		System.out.print("[Option] Would you like to continue with a saved game, " + userName + "? Y/N ");
@@ -49,10 +48,9 @@ class Main{
 		String inputAnswer = in.next().toUpperCase();
 
 		if(inputAnswer.equals("Y")){
-			try{
-				
-				//FileInputStream f = new FileInputStream("info.txt");
+			try {
 				f = new File("info.txt");
+<<<<<<< HEAD
 				a = new Scanner (f);
 				String open = a.nextLine();
 				if(!open.equals("Saved")){
@@ -103,30 +101,70 @@ class Main{
 			}
 		}
 		System.out.println("------------------------------------------------");
+=======
+>>>>>>> 8b5391fdf0a0e11a5790cc5902cc29819c473d99
 
-		//Print the objective of the game.
-		command.printObjective();			
+					//FileInputStream f = new FileInputStream("info.txt");
+					Scanner a = new Scanner ("info.txt");
+					String open = a.nextLine();
+					if (!open.equals("Saved")){
+						System.out.println("There is no game saved. A new game will start shortly.");
+					} else {
+						player.restore(a);
+						enemy1.restore(a);
+						enemy2.restore(a);
+						enemy3.restore(a);
+						String noth = a.nextLine();
+						item1.restore(a);
+						noth = a.nextLine();
+						item2.restore(a);
+						noth = a.nextLine();
+						item3.restore(a);
+						noth = a.nextLine();
+						item4.restore(a);
+						noth = a.nextLine();
+						item5.restore(a);
+						noth = a.nextLine();
+						item6.restore(a);
+						noth = a.nextLine();
+						item7.restore(a);
+						noth = a.nextLine();
+						item8.restore(a);
+						noth = a.nextLine();
+						item9.restore(a);
+						noth = a.nextLine();
+						item10.restore(a);
+						noth = a.nextLine();
+						item11.restore(a);
+						noth = a.nextLine();
+						item12.restore(a);
+						noth = a.nextLine();
+						item13.restore(a);
+						noth = a.nextLine();
+						item14.restore(a);
+						noth = a.nextLine();
+						item15.restore(a);
+						player.inventory.restore(a);
+						world.restore(a);
+						a.close();
+					}
+			}catch (Exception e){
+						System.out.println("File Not Found.");
+					}
 
-		//Print the commands.
-		System.out.println("------------------------------------------------");
-		command.printCommands();
-		System.out.println("------------------------------------------------");
 
-		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
-
-		char input;
-
-		do{
+		}
 			System.out.println("------------------------------------------------");
-			player.printInfo();
-			player.getLocation();
-			player.inventory.printInventoryStats();
-			world.printCurrentRoom();
-			System.out.print("[Answer] ");
-			input = in.next().toUpperCase().charAt(0); 
+
+			//Print the objective of the game.
+			command.printObjective();			
+
+			//Print the commands.
+			System.out.println("------------------------------------------------");
+			command.printCommands();
 			System.out.println("------------------------------------------------");
 
+<<<<<<< HEAD
 			switch(input){
 				case'H':
 					player.goUp();
@@ -229,15 +267,134 @@ class Main{
 						}		
 					}
 					else if (answer.equals("N")){
+=======
+			//Put the player, items, and monster in the world, then print the world to the screen.
+			world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+
+			char input;
+
+			do{
+				System.out.println("------------------------------------------------");
+				player.printInfo();
+				player.getLocation();
+				player.inventory.printInventoryStats();
+				world.printCurrentRoom();
+				System.out.print("[Answer] ");
+				input = in.next().toUpperCase().charAt(0); 
+				System.out.println("------------------------------------------------");
+
+				switch(input){
+					case'H':
+						player.goUp();
+						if (enemy1.getIsDead() == false){
+							enemy1.move();
+						}
+						if (enemy2.getIsDead() == false){
+							enemy2.move();
+						}
+						if (enemy3.getIsDead() == false){
+							enemy3.move();
+						}
+						world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+>>>>>>> 8b5391fdf0a0e11a5790cc5902cc29819c473d99
 						break;
-					}
-					System.exit(1);
-					break;
+					case'L':
+						player.goDown();
+						if (enemy1.getIsDead() == false){
+							enemy1.move();
+						}
+						if (enemy2.getIsDead() == false){
+							enemy2.move();
+						}
+						if (enemy3.getIsDead() == false){
+							enemy3.move();
+						}
+						world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+						break;
+					case'J':
+						player.goLeft();
+						if (enemy1.getIsDead() == false){
+							enemy1.move();
+						}
+						if (enemy2.getIsDead() == false){
+							enemy2.move();
+						}
+						if (enemy3.getIsDead() == false){
+							enemy3.move();
+						}
+						world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+						break;
+					case'K':
+						player.goRight();
+						if (enemy1.getIsDead() == false){
+							enemy1.move();
+						}
+						if (enemy2.getIsDead() == false){
+							enemy2.move();
+						}
+						if (enemy3.getIsDead() == false){
+							enemy3.move();
+						}
+						world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+						break;
+					case'P':
+						command.printCommands();
+						break;
+					case'I':
+						player.inventory.print();
+						break;
+					case'D':
+						player.inventory.drop(player);
+						break;
+					case'W':
+						player.inventory.equipWeapon();
+						break;
+					case'A':
+						player.inventory.equipArmor();
+						break;
+					case'Q':
+						System.out.print("Would you like to save the game? Y/N ");
+						String ans = in.next().toUpperCase();
+						if (ans.equals("Y")) {
+							try{
+								PrintWriter pw = new PrintWriter ("info.txt");
+								player.persist(pw);
+								enemy1.persist(pw);
+								enemy2.persist(pw);
+								enemy3.persist(pw);
+								item1.persist(pw);
+								item2.persist(pw);
+								item3.persist(pw);
+								item4.persist(pw);
+								item5.persist(pw);
+								item6.persist(pw);
+								item7.persist(pw);
+								item8.persist(pw);
+								item9.persist(pw);
+								item10.persist(pw);
+								item11.persist(pw);
+								item12.persist(pw);
+								item13.persist(pw);
+								item14.persist(pw);
+								item15.persist(pw);
+								player.inventory.persist(pw);
+								world.persist(pw);
+								pw.close();
+							}
+							catch(FileNotFoundException e){
+								System.out.println("Could not find anything.");
+							}		
+						}
+						else if (ans.equals("N")){
+							break;
+						}
+						System.exit(1);
+						break;
+				}
 			}
+			while(input != 'Q');
 		}
-		while(input != 'Q');
 	}
-}
 
 
 
