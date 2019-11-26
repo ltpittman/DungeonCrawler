@@ -108,6 +108,7 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
+				player.goDown();
 			}
 		}
 		if(player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
@@ -121,6 +122,7 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
+				player.goDown();
 			}
 		}
 		if(player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
@@ -134,6 +136,7 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
+				player.goDown();
 			}
 		}
 		if(player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
@@ -147,6 +150,7 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
+				player.goDown();
 			}
 		}
 		if(player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
@@ -160,6 +164,7 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
+				player.goDown();
 			}
 		}
 
