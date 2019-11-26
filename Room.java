@@ -47,8 +47,8 @@ class Room{
 	}
 	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		
-		//Erase old players location
-		for(int i = 0; i <12; i++){
+		//Erase old players location.
+		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
 				if(grid[j][i] == '@'){
 					grid[j][i] = '.';
@@ -56,8 +56,8 @@ class Room{
 			}
 		}
 
-		//Erase old monsters locations
-		for(int i = 0; i <12; i++){
+		//Erase old monsters locations.
+		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
 				if(grid[j][i] == 'M'){
 					grid[j][i] = '.';
@@ -108,7 +108,6 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
-				player.goDown();
 			}
 		}
 		if(player.y == item2.y && player.x == item2.x && !player.inventory.items.contains(item2)){
@@ -122,7 +121,6 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
-				player.goDown();
 			}
 		}
 		if(player.y == item3.y && player.x == item3.x && !player.inventory.items.contains(item3)){
@@ -136,7 +134,6 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
-				player.goDown();
 			}
 		}
 		if(player.y == item4.y && player.x == item4.x && !player.inventory.items.contains(item4)){
@@ -150,7 +147,6 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
-				player.goDown();
 			}
 		}
 		if(player.y == item5.y && player.x == item5.x && !player.inventory.items.contains(item5)){
@@ -164,7 +160,6 @@ class Room{
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
-				player.goDown();
 			}
 		}
 

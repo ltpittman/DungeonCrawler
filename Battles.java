@@ -86,7 +86,7 @@ class Battles{
 					if(healthEnemy < 1){
 						System.out.println("The enemy's health has reached 0/100.");
 						System.out.println("You have defeated the monster!");
-						player.movePlayer();
+						player.move();
 						//Subtract one from the numberMonster variable. 
 						numberOfMonsters = numberOfMonsters - 1;
 						boolean dead = false;
@@ -114,7 +114,7 @@ class Battles{
 					}
 				}
 				else if(answer == 2){
-					player.movePlayer();
+					player.move();
 					System.out.println("You dodge the monster's last attack and try to get away...");
 					break;
 

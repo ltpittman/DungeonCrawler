@@ -23,8 +23,13 @@ abstract class Character{
 	public void setHealth(int num){
 		this.health = num;
 	}
+
+	//Abstract method to get the character's image for the screen.
 	abstract public char getCharacterImage();
-	//q
+	
+	//Abtract method to randomly move the player and monster.
+	abstract public boolean move();
+	
 	//Method to get the position of the characters.
 	public int getPositionX(){
 		return this.x;

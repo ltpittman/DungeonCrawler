@@ -25,11 +25,14 @@ class Main{
 		Enemy enemy2 = MonsterGenerator.generateMonster();
 		Enemy enemy3 = MonsterGenerator.generateMonster();
 		//Creating the items.
-		Item item1 = ItemGenerator.generate();
-		Item item2 = ItemGenerator.generate();
-		Item item3 = ItemGenerator.generate();
-		Item item4 = ItemGenerator.generate();
-		Item item5 = ItemGenerator.generate();
+		Item item1 = ItemGenerator.generate();   Item item2 = ItemGenerator.generate();
+		Item item3 = ItemGenerator.generate();   Item item4 = ItemGenerator.generate();
+		Item item5 = ItemGenerator.generate();   Item item6 = ItemGenerator.generate();
+		Item item7 = ItemGenerator.generate();   Item item8 = ItemGenerator.generate();
+		Item item9 = ItemGenerator.generate();   Item item10 = ItemGenerator.generate();
+		Item item11 = ItemGenerator.generate();  Item item12 = ItemGenerator.generate();
+		Item item13 = ItemGenerator.generate();  Item item14 = ItemGenerator.generate();
+		Item item15 = ItemGenerator.generate();  
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
@@ -87,7 +90,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+		world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 
 		char input;
 
@@ -113,7 +116,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'L':
 					player.goDown();
@@ -126,7 +129,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'J':
 					player.goLeft();
@@ -139,7 +142,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'K':
 					player.goRight();
@@ -152,7 +155,7 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
+					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
 					break;
 				case'P':
 					command.printCommands();
