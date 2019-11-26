@@ -84,7 +84,8 @@ class Item{
 			this.strength = a.nextInt();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
-		} catch (Exception e){
+		} 
+		catch (Exception e){
 			System.out.println("Could not read item portion of file");
 		} 
 		

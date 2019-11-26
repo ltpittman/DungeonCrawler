@@ -54,9 +54,10 @@ class Main{
 				f = new File("info.txt");
 				a = new Scanner (f);
 				String open = a.nextLine();
-				if (!open.equals("Saved")){
+				if(!open.equals("Saved")){
 					System.out.println("There is no game saved. A new game will start shortly.");
-				} else {
+				} 
+				else{
 					player.restore(a);
 					enemy1.restore(a);
 					enemy2.restore(a);
@@ -95,7 +96,8 @@ class Main{
 					world.restore(a);
 					a.close();
 				}
-			}catch (FileNotFoundException e){
+			}
+			catch (FileNotFoundException e){
 				System.out.println("File Not Found.");
 			}
 		}

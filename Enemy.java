@@ -11,10 +11,10 @@ class Enemy extends Character{
 	private String name;
 	private MonsterType type;
 	private int damage;
-	public int x;
-	public int y;
 	private boolean isDead;
 	public World world;
+	public int x;
+	public int y;
 
 	//Constructor for the enemy.
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
