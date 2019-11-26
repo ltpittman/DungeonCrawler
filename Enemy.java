@@ -76,7 +76,7 @@ class Enemy extends Character{
 		int mm = random.nextInt(4);
 
 		if(mm == 0){
-			//down
+			//Have the monster go down.
 			if(x + 1 == 11){
 				return false;
 			}
@@ -86,7 +86,7 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 1){
-			//up
+			//Have the monster go up.
 			if(x - 1 == 0){
 				return false;
 			}
@@ -96,7 +96,7 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 2){
-			//left
+			//Have the monster go left.
 			if(y - 1 == 0){
 				return false;
 			}
@@ -106,7 +106,7 @@ class Enemy extends Character{
 			}
 		}
 		else if(mm == 3){
-			//right
+			//Have the monster go right.
 			if(y + 1 == 29){
 				return false;
 			}
@@ -125,18 +125,6 @@ class Enemy extends Character{
 	public String toString(){
 		return("Enemy Name: " + this.name + "\nHealth: " + this.health + "/100" + "\nDamage: " + this.damage);
 	}
-	//After enemy is dead remove from board
-	/*public boolean enemyDead(Enemy enemy){
-	  int healthEnemy = enemy.getHealth();
-	  if (healthEnemy <= 0){
-	  y= 1;
-	  x = 1;
-	  return true;
-	  } 
-	  else{
-	  return false;
-	  }
-	  }*/
 	//Method to save the information about the enemy
 	public void persist (PrintWriter pw){
 		pw.println(name);
@@ -148,7 +136,7 @@ class Enemy extends Character{
 		pw.println(".");
 	}
 
-	public void restore (Scanner a) {
+	public void restore(Scanner a) {
 		try{
 			String noth = a.nextLine();
 			noth = a.nextLine();
