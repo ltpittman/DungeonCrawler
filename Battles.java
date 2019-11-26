@@ -88,7 +88,7 @@ class Battles{
 						System.out.println("You have defeated the monster!");
 						//Subtract one from the numberMonster variable. 
 						numberOfMonsters = numberOfMonsters - 1;
-						boolean dead = false;
+						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
 					else{

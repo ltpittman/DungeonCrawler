@@ -65,13 +65,13 @@ class Room{
 		}
 
 		//Monsters.
-		if(enemy1.enemyDead() == false){
+		if(enemy1.getIsDead() == false){
 			grid[enemy1.getY()][enemy1.getX()] = enemy1.getCharacterImage();
 		}
-		if(enemy2.enemyDead() == false){
+		if(enemy2.getIsDead() == false){
 			grid[enemy2.getY()][enemy2.getX()] = enemy2.getCharacterImage();
 		}
-		if(enemy3.enemyDead() == false){
+		if(enemy3.getIsDead() == false){
 			grid[enemy3.getY()][enemy3.getX()] = enemy3.getCharacterImage();
 		}
 	
@@ -154,14 +154,17 @@ class Room{
 		if(player.y == enemy1.y && player.x == enemy1.x){
 			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy1);
+			player.goDown();
 		}
 		else if(player.y == enemy2.y && player.x == enemy2.x){
 			System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy2);
+			player.goDown();
 		}
 		else if(player.y == enemy3.y && player.x == enemy3.x){
 			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy3);
+			player.goDown();
 		}
 
 	}
