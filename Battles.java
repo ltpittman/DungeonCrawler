@@ -13,14 +13,12 @@ class Battles{
 	Item equippedArmor;
 	Item equippedWeapon;
 
-	private int numberOfMonsters = 5;
+	private int numberOfMonsters = 9;
 	private static int healthEnemy;
 	private int difference;
 
 	//In this method we compare the health and the strength of the enemy and the player. Based on the strength of each we name a winner of the fight and modify the Health of both. If the player wins then we modify the number of monsters left in the game.
 	public void attack(Player player, Enemy enemy) {
-
-		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight! ");
 
 		//Get the equipped armor of the player.
 		equippedArmor = player.getEquippedArmor();
@@ -88,6 +86,7 @@ class Battles{
 					if(healthEnemy < 1){
 						System.out.println("The enemy's health has reached 0/100.");
 						System.out.println("You have defeated the monster!");
+						player.goDown();
 						//Subtract one from the numberMonster variable. 
 						numberOfMonsters = numberOfMonsters - 1;
 						boolean dead = false;
@@ -138,7 +137,7 @@ class Battles{
 	//In this method we determin if the player won after the battle. We do this by seeing how many monsters are left. Once all the monsters have been killed the player wins.
 	public void playerWins(){
 		if(numberOfMonsters == 0){
-			System.out.println("Woohoo! You were able to kill five monsters and won the game!!");
+			System.out.println("Woohoo! You were able to kill all monsters and won the game!!");
 			System.exit(1);
 		}
 		else{
