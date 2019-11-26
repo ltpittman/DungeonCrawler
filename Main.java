@@ -54,15 +54,11 @@ class Main{
 				if (!open.equals("Saved")){
 					System.out.println("There is no game saved. A new game will start shortly.");
 				} else {
-					String noth = a.nextLine();
 					player.restore(a);
-					noth = a.nextLine();
 					enemy1.restore(a);
-					noth = a.nextLine();
 					enemy2.restore(a);
-					noth = a.nextLine();
 					enemy3.restore(a);
-					noth = a.nextLine();
+					String noth = a.nextLine();
 					item1.restore(a);
 					noth = a.nextLine();
 					item2.restore(a);
@@ -72,7 +68,6 @@ class Main{
 					item4.restore(a);
 					noth = a.nextLine();
 					item5.restore(a);
-					noth = a.nextLine();
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();

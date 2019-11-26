@@ -150,6 +150,8 @@ class Enemy extends Character{
 
 	public void restore (Scanner a) {
 		try{
+			String noth = a.nextLine();
+			noth = a.nextLine();
 			this.name = a.nextLine();
 			String t = a.nextLine();
 			MonsterType type = MonsterType.valueOf(t);
