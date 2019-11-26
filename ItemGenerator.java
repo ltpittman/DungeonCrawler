@@ -7,7 +7,7 @@ public class ItemGenerator{
 		//Will get a random number between 0 and 19.
 		Item poss[] = new Item[25];
 
-	 	//Item type, Item name, weight, value, strength, x(12), and y(30).	
+	 	//Item type, Item name, weight, value, strength, x(12), and y(30) and roomNumber.	
 		poss[0] = new Item(ItemType.Other,"Vase", 8, 4, 0, 2, 11);
 		
 		poss[1] = new Item(ItemType.Other,"Silver Cup", 2, 7, 0, 9, 17);
