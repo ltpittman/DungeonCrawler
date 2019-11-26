@@ -89,7 +89,7 @@ class Battles{
 						player.moveRandomly();
 						//Subtract one from the numberMonster variable. 
 						numberOfMonsters = numberOfMonsters - 1;
-						boolean dead = false;
+						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
 					else{
