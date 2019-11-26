@@ -343,7 +343,6 @@ class Inventory{
 			noth = a.nextLine();
 			while(a.hasNext()){
 				t = a.nextLine();
-				System.out.println("t = " + t);
 				if(!t.equals("-")){
 					type = ItemType.valueOf(t);
 					name = a.nextLine();
