@@ -20,23 +20,23 @@ public class ItemGenerator{
 		
 
 
-		poss[5] = new Item(ItemType.Armor,"Hunting Armor", 29, 146, 12, 5, 13);
+		poss[5] = new Item(ItemType.Armor,"Hunting Armor", 29, 146, 15, 5, 13);
 		
-		poss[6] = new Item(ItemType.Armor,"Iron Armor", 38, 298, 14, 10, 7);
+		poss[6] = new Item(ItemType.Armor,"Iron Armor", 38, 298, 16, 10, 7);
 
-		poss[7] = new Item(ItemType.Armor,"Branded Iron Armor", 42, 388, 16, 6, 5);
+		poss[7] = new Item(ItemType.Armor,"Branded Iron Armor", 42, 388, 17, 6, 5);
 		
-		poss[8] = new Item(ItemType.Armor,"Steel Armor", 47, 456, 16, 6, 4);
+		poss[8] = new Item(ItemType.Armor,"Steel Armor", 47, 456, 18, 6, 4);
 
-		poss[9] = new Item(ItemType.Armor,"Branded Steel Armor", 47, 424, 18, 6, 4);
+		poss[9] = new Item(ItemType.Armor,"Branded Steel Armor", 47, 424, 19, 6, 4);
 	
-		poss[10] = new Item(ItemType.Armor,"Ebony Armor", 59, 768, 18, 9, 20);	
+		poss[10] = new Item(ItemType.Armor,"Ebony Armor", 59, 768, 20, 9, 20);	
 		
-		poss[11] = new Item(ItemType.Armor,"Orcish Armor", 68, 486, 20, 3, 14);
+		poss[11] = new Item(ItemType.Armor,"Orcish Armor", 68, 486, 18, 3, 14);
 
 		poss[12] = new Item(ItemType.Armor,"Black Mage Robes", 20, 129, 16, 9, 9);
 
-		poss[13] = new Item(ItemType.Armor,"Blue Mage Robes", 20, 145, 16, 6, 24);
+		poss[13] = new Item(ItemType.Armor,"Blue Mage Robes", 20, 145, 17, 6, 24);
 
 
 		poss[14] = new Item(ItemType.Weapon,"Iron Sword", 24, 112, 15, 3, 2);
