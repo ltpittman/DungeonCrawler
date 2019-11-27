@@ -52,7 +52,7 @@ class World{
 					player.x = 10;
 					player.y = 6;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
-					room2.fillRoom(player, item1, item2, item3, item4, item5, item6, item6, enemy1, enemy2, enemy3, enemy4);
+					room2.fillRoom(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 				}
 				else{
 					System.out.println("You decide to keep exploring the room you are currently in...");
