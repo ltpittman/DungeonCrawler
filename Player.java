@@ -116,7 +116,7 @@ class Player extends Character{// throws FileNotFoundException{
 		}
 	}
 	//Method to move the player to a random spot.
-	public boolean moveRandomly(){
+	public boolean move(){
 
 		Random random = new Random();
 		int pp = random.nextInt(4);

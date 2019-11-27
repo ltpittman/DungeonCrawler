@@ -67,7 +67,7 @@ class Inventory{
 			}
 			else{
 				items.add(item);
-				System.out.println(item.getName() + " was added to your inventory.");
+				System.out.println("[Inventory Updated] " + item.getName() + " was added to your inventory.");
 				return false;
 			}
 		}
@@ -155,10 +155,6 @@ class Inventory{
 					}
 					break;
 				}
-				//Else if userInput is equal to "N," then cancel the action.
-				//else{
-				//	System.out.println("Action cancelled.");
-			//	}
 			}
 
 		}

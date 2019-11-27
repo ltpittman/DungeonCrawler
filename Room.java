@@ -11,7 +11,7 @@ class Room{
 	private Player player;
 	private Inventory inventory;
 	private Enemy enemy;
-	private Item item1, item2, item3, item4, item5;
+	private Item item1, item2, item3, item4, item5, item6, item7;
 	private Battles battle = new Battles();
 
 	//Constructor that takes in a file.
@@ -45,7 +45,7 @@ class Room{
 			System.out.println();
 		}
 	}
-	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
+	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		
 		//Erase old players location.
 		for(int i = 0; i < 12; i++){
@@ -81,6 +81,12 @@ class Room{
 		if(player.inventory.inInventory(item5) == false){
 			grid[item5.y][item5.x] = item5.getItemImage();
 		}
+		if(player.inventory.inInventory(item6) == false){
+			grid[item6.y][item6.x] = item6.getItemImage();
+		}
+		if(player.inventory.inInventory(item7) == false){
+			grid[item7.y][item7.x] = item7.getItemImage();
+		}
 
 		//Monsters.
 		if(enemy1.getIsDead() == false){
@@ -104,7 +110,6 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item1);
-				System.out.println("[Inventory Updated] " + item1.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -117,7 +122,6 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item2);
-				System.out.println("[Inventory Updated] " + item2.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -130,7 +134,6 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item3);
-				System.out.println("[Inventory Updated] " + item3.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -143,7 +146,6 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item4);
-				System.out.println("[Inventory Updated] " + item4.getName() + " was added to your inventory.");
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
@@ -156,7 +158,30 @@ class Room{
 			String input = in.next().toUpperCase();
 			if(input.equals("Y")){
 				player.inventory.addItem(item5);
-				System.out.println("[Inventory Updated] " + item5.getName() + " was added to your inventory.");
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item6.y && player.x == item6.x && !player.inventory.items.contains(item6)){
+			System.out.println("[Attention!] You just came across: " + item6.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item6);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == item7.y && player.x == item7.x && !player.inventory.items.contains(item7)){
+			System.out.println("[Attention!] You just came across: " + item7.getName() + ".");
+			System.out.print("Do you want to pick this item up and add it to your inventory? Y/N ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(item7);
 			}
 			else{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");

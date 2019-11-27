@@ -28,7 +28,7 @@ abstract class Character{
 	abstract public char getCharacterImage();
 	
 	//Abtract method to randomly move the player and monster.
-	abstract public boolean moveRandomly();
+	abstract public boolean move();
 	
 	//Method to get the position of the characters.
 	public int getPositionX(){
