@@ -120,6 +120,9 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
+					if (enemy4.getIsDead() == false){
+						enemy4.move();
+					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'L':
@@ -132,6 +135,9 @@ class Main{
 					}
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
+					}
+					if (enemy4.getIsDead() == false){
+						enemy4.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
@@ -146,6 +152,9 @@ class Main{
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
 					}
+					if (enemy4.getIsDead() == false){
+						enemy4.move();
+					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'K':
@@ -158,6 +167,9 @@ class Main{
 					}
 					if (enemy3.getIsDead() == false){
 						enemy3.move();
+					}
+					if (enemy4.getIsDead() == false){
+						enemy4.move();
 					}
 					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;

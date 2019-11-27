@@ -13,7 +13,7 @@ class Battles{
 	Item equippedArmor;
 	Item equippedWeapon;
 
-	private int numberOfMonsters = 3;
+	private int numberOfMonsters = 4;
 	private static int healthEnemy;
 	private int difference;
 

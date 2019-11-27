@@ -200,6 +200,9 @@ class Room{
 		else if(player.y == enemy3.y && player.x == enemy3.x){
 			battle.attack(player,enemy3);
 		}
+		else if(player.y == enemy3.y && player.x == enemy3.x){
+			battle.attack(player,enemy3);
+		}
 		else if(player.y == enemy4.y && player.x == enemy4.x){
 			battle.attack(player,enemy4);
 		}
