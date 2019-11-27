@@ -25,14 +25,11 @@ class Main{
 		Enemy enemy2 = MonsterGenerator.generateMonster();
 		Enemy enemy3 = MonsterGenerator.generateMonster();
 		//Creating the items.
-		Item item1 = ItemGenerator.generate();   Item item2 = ItemGenerator.generate();
-		Item item3 = ItemGenerator.generate();   Item item4 = ItemGenerator.generate();
-		Item item5 = ItemGenerator.generate();   Item item6 = ItemGenerator.generate();
-		Item item7 = ItemGenerator.generate();   Item item8 = ItemGenerator.generate();
-		Item item9 = ItemGenerator.generate();   Item item10 = ItemGenerator.generate();
-		Item item11 = ItemGenerator.generate();  Item item12 = ItemGenerator.generate();
-		Item item13 = ItemGenerator.generate();  Item item14 = ItemGenerator.generate();
-		Item item15 = ItemGenerator.generate();  
+		Item item1 = ItemGenerator.generate();   
+		Item item2 = ItemGenerator.generate();
+		Item item3 = ItemGenerator.generate();   
+		Item item4 = ItemGenerator.generate();
+		Item item5 = ItemGenerator.generate();
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
@@ -70,26 +67,6 @@ class Main{
 						item4.restore(a);
 						noth = a.nextLine();
 						item5.restore(a);
-						noth = a.nextLine();
-						item6.restore(a);
-						noth = a.nextLine();
-						item7.restore(a);
-						noth = a.nextLine();
-						item8.restore(a);
-						noth = a.nextLine();
-						item9.restore(a);
-						noth = a.nextLine();
-						item10.restore(a);
-						noth = a.nextLine();
-						item11.restore(a);
-						noth = a.nextLine();
-						item12.restore(a);
-						noth = a.nextLine();
-						item13.restore(a);
-						noth = a.nextLine();
-						item14.restore(a);
-						noth = a.nextLine();
-						item15.restore(a);
 						player.inventory.restore(a);
 						world.restore(a);
 						a.close();
@@ -176,7 +153,7 @@ class Main{
 						if (enemy3.getIsDead() == false){
 							enemy3.move();
 						}
-						world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3);
+						world.fillWorld(player, item1, item2, item3, item4, item5,  enemy1, enemy2, enemy3);
 						break;
 					case'P':
 						command.printCommands();
@@ -208,16 +185,6 @@ class Main{
 								item3.persist(pw);
 								item4.persist(pw);
 								item5.persist(pw);
-								item6.persist(pw);
-								item7.persist(pw);
-								item8.persist(pw);
-								item9.persist(pw);
-								item10.persist(pw);
-								item11.persist(pw);
-								item12.persist(pw);
-								item13.persist(pw);
-								item14.persist(pw);
-								item15.persist(pw);
 								player.inventory.persist(pw);
 								world.persist(pw);
 								pw.close();
