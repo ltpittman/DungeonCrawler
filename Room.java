@@ -11,7 +11,6 @@ class Room{
 	private Player player;
 	private Inventory inventory;
 	private Enemy enemy;
-	private Item item1, item2, item3, item4, item5, item6, item7;
 	private Battles battle = new Battles();
 
 	//Constructor that takes in a file.
@@ -45,7 +44,7 @@ class Room{
 			System.out.println();
 		}
 	}
-	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3){
+	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4){
 		
 		//Erase old players location.
 		for(int i = 0; i < 12; i++){
@@ -97,6 +96,9 @@ class Room{
 		}
 		if(enemy3.getIsDead() == false){
 			grid[enemy3.getY()][enemy3.getX()] = enemy3.getCharacterImage();
+		}
+		if(enemy4.getIsDead() == false){
+			grid[enemy4.getY()][enemy4.getX()] = enemy4.getCharacterImage();
 		}
 	
 		//Player.
@@ -190,16 +192,16 @@ class Room{
 
 		//Here is where the player and enemy will fight if they land on the same spot.
 		if(player.y == enemy1.y && player.x == enemy1.x){
-			System.out.println("[Attention!] You just came across a " + enemy1.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy1);
 		}
 		else if(player.y == enemy2.y && player.x == enemy2.x){
-			System.out.println("[Attention!] You just came across a " + enemy2.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy2);
 		}
 		else if(player.y == enemy3.y && player.x == enemy3.x){
-			System.out.println("[Attention!] You just came across a " + enemy3.getName() + ". Prepare to fight!");
 			battle.attack(player,enemy3);
+		}
+		else if(player.y == enemy4.y && player.x == enemy4.x){
+			battle.attack(player,enemy4);
 		}
 
 	}
