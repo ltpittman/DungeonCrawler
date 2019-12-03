@@ -9,6 +9,8 @@
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
+import java.util.InputMismatchException;
+
 class Battles{
 	World world;
 	Player player;
@@ -30,7 +32,7 @@ class Battles{
 	 * @param enemy
 	 *
 	 */
-	public void attack(Player player, Enemy enemy) {
+	public void attack(Player player, Enemy enemy) throws InputMismatchException {
 		
 		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
 
@@ -134,10 +136,12 @@ class Battles{
 					break;
 
 				}
+				else if(answer != 1 || answer != 2){
+					System.out.println("\nInvalid answer. Please enter in a valid number.");
+				}
 			}
 		}
 	}
-	
 	/**
 	 *In this method the health is updated. 
 	 * @return int  the updated health

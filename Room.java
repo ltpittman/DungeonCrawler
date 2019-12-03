@@ -46,7 +46,7 @@ class Room{
 			System.out.println();
 		}
 	}
-	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4){
+	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		
 		//Erase old players location.
 		for(int i = 0; i < 12; i++){
@@ -116,10 +116,6 @@ class Room{
 		if(enemy3.getIsDead() == false){
 			grid[enemy3.getY()][enemy3.getX()] = enemy3.getCharacterImage();
 		}
-		if(enemy4.getIsDead() == false){
-			grid[enemy4.getY()][enemy4.getX()] = enemy4.getCharacterImage();
-		}
-	
 		//Player.
 		grid[player.y][player.x] = player.getCharacterImage();
 
@@ -237,18 +233,34 @@ class Room{
 		}
 
 		//Here is where the player and enemy will fight if they land on the same spot.
-		if(player.y - 1 == enemy1.y - 1 && player.x - 1 == enemy1.x - 1 || player.y + 1 == enemy1.y + 1 && player.x + 1 == enemy1.x + 1){
+		if(player.y == enemy1.y && player.x == enemy1.x || player.y == enemy1.y&& player.x == enemy1.x){
 			battle.attack(player,enemy1);
 		}
-		else if(player.y - 1 == enemy2.y - 1 && player.x - 1 == enemy2.x - 1 || player.y + 1 == enemy2.y + 1 && player.x + 1 == enemy2.x + 1){
+		else if(player.y == enemy2.y && player.x == enemy2.x || player.y == enemy2.y && player.x == enemy2.x){
 			battle.attack(player,enemy2);
 		}
-		else if(player.y - 1 == enemy3.y - 1 && player.x - 1 == enemy3.x - 1 || player.y + 1 == enemy3.y + 1 && player.x + 1 == enemy3.x + 1){
+		else if(player.y == enemy3.y && player.x == enemy3.x || player.y == enemy3.y && player.x == enemy3.x){
 			battle.attack(player,enemy3);
 		}
+		/*
 		else if(player.y - 1 == enemy4.y - 1 && player.x - 1 == enemy4.x - 1 || player.y + 1 == enemy4.y + 1 && player.x + 1 == enemy4.x + 1){
 			battle.attack(player,enemy4);
 		}
+		else if(player.y - 1 == enemy5.y - 1 && player.x - 1 == enemy5.x - 1 || player.y + 1 == enemy5.y + 1 && player.x + 1 == enemy5.x + 1){
+			battle.attack(player,enemy5);
+		}
+		else if(player.y - 1 == enemy6.y - 1 && player.x - 1 == enemy6.x - 1 || player.y + 1 == enemy6.y + 1 && player.x + 1 == enemy6.x + 1){
+			battle.attack(player,enemy6);
+		}
+		else if(player.y - 1 == enemy7.y - 1 && player.x - 1 == enemy7.x - 1 || player.y + 1 == enemy7.y + 1 && player.x + 1 == enemy7.x + 1){
+			battle.attack(player,enemy7);
+		}
+		else if(player.y - 1 == enemy8.y - 1 && player.x - 1 == enemy8.x - 1 || player.y + 1 == enemy8.y + 1 && player.x + 1 == enemy8.x + 1){
+			battle.attack(player,enemy8);
+		}
+		else if(player.y - 1 == enemy9.y - 1 && player.x - 1 == enemy9.x - 1 || player.y + 1 == enemy9.y + 1 && player.x + 1 == enemy9.x + 1){
+			battle.attack(player,enemy9);
+		}*/
 
 		//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
 		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){

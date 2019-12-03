@@ -28,6 +28,11 @@ class Main{
 		Enemy enemy2 = MonsterGenerator.generateMonster();
 		Enemy enemy3 = MonsterGenerator.generateMonster();
 		Enemy enemy4 = MonsterGenerator.generateMonster();
+		Enemy enemy5 = MonsterGenerator.generateMonster();
+		Enemy enemy6 = MonsterGenerator.generateMonster();
+		Enemy enemy7 = MonsterGenerator.generateMonster();
+		Enemy enemy8 = MonsterGenerator.generateMonster();
+		Enemy enemy9 = MonsterGenerator.generateMonster();
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();   
 		Item item2 = ItemGenerator.generate();
@@ -65,6 +70,11 @@ class Main{
 					enemy2.restore(a);
 					enemy3.restore(a);
 					enemy4.restore(a);
+					enemy5.restore(a);
+					enemy6.restore(a);
+					enemy7.restore(a);
+					enemy8.restore(a);
+					enemy9.restore(a);
 					String noth = a.nextLine();
 					item1.restore(a);
 					noth = a.nextLine();
@@ -88,7 +98,7 @@ class Main{
 				System.out.println("There is no game saved. A new game will start shortly.");
 			}
 		}
-		
+
 		System.out.println("------------------------------------------------");
 
 		//Print the objective of the game.
@@ -100,7 +110,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 
 		char input;
 
@@ -130,7 +140,22 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					if (enemy4.getIsDead() == false){
+						enemy5.move();
+					}
+					if (enemy5.getIsDead() == false){
+						enemy6.move();
+					}
+					if (enemy6.getIsDead() == false){
+						enemy7.move();
+					}
+					if (enemy8.getIsDead() == false){
+						enemy8.move();
+					}
+					if (enemy9.getIsDead() == false){
+						enemy9.move();
+					}
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'L':
 					player.goDown();
@@ -147,7 +172,22 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					if (enemy5.getIsDead() == false){
+						enemy5.move();
+					}
+					if (enemy6.getIsDead() == false){
+						enemy6.move();
+					}
+					if (enemy7.getIsDead() == false){
+						enemy7.move();
+					}
+					if (enemy8.getIsDead() == false){
+						enemy8.move();
+					}
+					if (enemy9.getIsDead() == false){
+						enemy9.move();
+					}
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'J':
 					player.goLeft();
@@ -164,7 +204,22 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					if (enemy5.getIsDead() == false){
+						enemy5.move();
+					}
+					if (enemy6.getIsDead() == false){
+						enemy6.move();
+					}
+					if (enemy7.getIsDead() == false){
+						enemy7.move();
+					}
+					if (enemy8.getIsDead() == false){
+						enemy8.move();
+					}
+					if (enemy9.getIsDead() == false){
+						enemy9.move();
+					}
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'K':
 					player.goRight();
@@ -181,7 +236,22 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					if (enemy5.getIsDead() == false){
+						enemy5.move();
+					}
+					if (enemy6.getIsDead() == false){
+						enemy6.move();
+					}
+					if (enemy7.getIsDead() == false){
+						enemy7.move();
+					}
+					if (enemy8.getIsDead() == false){
+						enemy8.move();
+					}
+					if (enemy9.getIsDead() == false){
+						enemy9.move();
+					}
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'P':
 					command.printCommands();
