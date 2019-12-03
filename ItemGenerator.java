@@ -1,4 +1,5 @@
 import java.util.Random;
+
 public class ItemGenerator{
 	//Method gets a random number and uses that number to get an item from a list.
 	public static Item generate(){
@@ -8,15 +9,15 @@ public class ItemGenerator{
 		Item poss[] = new Item[25];
 
 	 	//Item type, Item name, weight, value, strength, x(12), and y(30) and roomNumber.	
-		poss[0] = new Item(ItemType.Other,"Vase", 8, 4, 0, 2, 11);
+		poss[0] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 5, 23);//Other,"Vase", 8, 4, 0, 2, 11);
 		
-		poss[1] = new Item(ItemType.Other,"Silver Cup", 2, 7, 0, 9, 17);
+		poss[1] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 10, 5);//Other,"Silver Cup", 2, 7, 0, 9, 17);
 		
-		poss[2] = new Item(ItemType.Other,"Broom", 12, 15, 0, 3, 4);	
+		poss[2] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 9, 6);// Other,"Broom", 12, 15, 0, 3, 4);	
 		
-		poss[3] = new Item(ItemType.Other,"Book", 4, 46, 0, 6, 8);	
+		poss[3] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 4, 19);//Other,"Book", 4, 46, 0, 6, 8);	
 		
-		poss[4] = new Item(ItemType.Other,"Broken Sword", 14, 87, 0, 6, 28);	
+		poss[4] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 6, 28);//Other,"Broken Sword", 14, 87, 0, 6, 28);	
 		
 
 

@@ -71,6 +71,9 @@ class Player extends Character{// throws FileNotFoundException{
 	public int getPositionY(){
 		return this.y;
 	}
+	int restoreHealth(){
+		return this.health = 100;
+	}
 	//Method to move the player up.
 	public boolean goUp(){
 		if((x - 1) == 0){

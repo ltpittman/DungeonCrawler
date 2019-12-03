@@ -12,8 +12,11 @@ class Main{
 	public static void main(String args[]) throws InputMismatchException, FileNotFoundException{
 
 		Objective command = new Objective();
+		Interaction interaction = new Interaction();	
 
-		World world = new World();	
+		World world = new World();
+
+		SideCharacter explorer = new SideCharacter("Bolgraf", 100);
 
 		Inventory inventory;
 		Player player;
@@ -33,6 +36,9 @@ class Main{
 		Item item5 = ItemGenerator.generate();
 		Item item6 = ItemGenerator.generate();
 		Item item7 = ItemGenerator.generate();   
+
+		Item key1 = KeyGenerator.generateKey();
+		Item key2 = KeyGenerator.generateKey();
 
 		Scanner in = new Scanner(System.in);
 		System.out.println("[Game Loading...]");
@@ -94,7 +100,7 @@ class Main{
 		System.out.println("------------------------------------------------");
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 
 		char input;
 
@@ -111,6 +117,7 @@ class Main{
 			switch(input){
 				case'H':
 					player.goUp();
+					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -123,10 +130,11 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'L':
 					player.goDown();
+					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -139,10 +147,11 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'J':
 					player.goLeft();
+					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -155,10 +164,11 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'K':
 					player.goRight();
+					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -171,7 +181,7 @@ class Main{
 					if (enemy4.getIsDead() == false){
 						enemy4.move();
 					}
-					world.fillWorld(player, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4);
 					break;
 				case'P':
 					command.printCommands();
@@ -187,6 +197,9 @@ class Main{
 					break;
 				case'A':
 					player.inventory.equipArmor();
+					break;
+				case'R':
+					player.inventory.drinkHealthPotion();
 					break;
 				case'Q':
 					System.out.print("Would you like to save the game? Y/N ");

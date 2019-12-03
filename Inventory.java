@@ -28,6 +28,9 @@ class Inventory{
 
 		Item leatherArmor = new Item(ItemType.Armor, "Leather Armor", 14, 120, 18, 0, 0);
 		items.add(leatherArmor);
+		
+		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0);
+		items.add(healthPotion);
 
 		//Default armor and weapon.
 		equippedArmor = leatherArmor;
@@ -42,7 +45,7 @@ class Inventory{
 		System.out.println("Total Weight: " + getTotalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
 	}
 
-	//Method to check if item is in inventory to not display on map
+	//Method to check if item is in inventory to not display on map.
 	public boolean inInventory(Item item){
 		if (items.contains(item)){
 			return true;
@@ -51,9 +54,7 @@ class Inventory{
 			return false;
 		}
 	}
-
-
-	//Method to add a item.
+	//Method to pick up a item.
 	public boolean addItem(Item item){
 		//Get weight of item you want to add.
 		int weightOfNewItem = item.getWeight();
@@ -77,8 +78,6 @@ class Inventory{
 			return false;
 		}
 	}
-
-
 	//Method to get the total weight of the player.
 	int getTotalWeight(){
 		int currentWeight = 0;
@@ -95,7 +94,7 @@ class Inventory{
 
 		else{
 			int count = 0;
-			System.out.println("\nInventory:");
+			System.out.println("[Player Inventory]");
 			System.out.println("Item Weight Value Strength");
 			for(int i = 0; i < items.size(); i++){
 				count++;
@@ -113,7 +112,7 @@ class Inventory{
 		//If the user has items in their inventory, ask them to pick out which item they want to drop.
 		else{
 			int count = 0;
-			System.out.println("\nInventory:");
+			System.out.println("[Player Inventory]");
 			System.out.println("Item Weight Value Strength");
 			//This for-loop prints out the items in a numbered list.
 			for(int i = 0; i < items.size(); i++){
@@ -150,7 +149,8 @@ class Inventory{
 					//If the player is equipping a item they want to drop, then tell them they have to equip something else first.
 					if (dropItem == equipItemA || dropItem == equipItemB){
 						System.out.println("[Attention!] You cannot drop an item that you have equipped! You must be able to defend yourself...\nIf you do not have another item to equip, look for items around the area.");
-					} else {
+					}	
+					else {
 						items.remove(userInput - 1);
 					}
 					break;
@@ -167,6 +167,7 @@ class Inventory{
 		int count = 0;
 		//This for-loop reads over the items in the inventory and stores the weapons into the weapons arrayList.
 		//Then the items that are classified as weapons is printed to the user. The user will then pick a weapon to equip.
+		System.out.println("[Player Inventory]");
 		System.out.println("Item Weight Value Strength");
 		for(int i = 0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.Weapon){
@@ -215,6 +216,7 @@ class Inventory{
 		int count = 0;
 		//This for-loop reads over the items in the inventory and stores the armors into the armor arrayList.
 		//Then the items that are classifed as armor is printed to the user. The user will then pick one armor to wear.
+		System.out.println("[Player Inventory]");
 		System.out.println("Item Weight Value Strength");
 		for(int i = 0; i < items.size(); i++){
 			if(items.get(i).getType() == ItemType.Armor){
@@ -257,44 +259,41 @@ class Inventory{
 		}
 	}
 	//Method to drink a health potion.
-	/*
-	   void drinkHealthPotion(Item healthPotion){
-	   ArrayList<Item> healthPotions = new ArrayList<Item>();
+	void drinkHealthPotion(){
+	
+		int count = 0;
+		System.out.println("[Player Inventory]");
+		System.out.println("Name Weight Value Strength");
+		for(int i = 0; i < items.size(); i++){
+				count++;
+				System.out.println(count + ". " + items.get(i));
+			}
+			
+		count++;
+		System.out.println(count + ". Cancel\n");
 
-	   int count = 0;
-	   System.out.println("Name Weight Value Strength");
-	   for(int i = 0; i < items.size(); i++){
-	   if(items.get(i).getType() == ItemType.HealthPotion){
-	   count++;
-	   healthPotions.add(items.get(i));
-	   System.out.println(count + ". " + items.get(i));
-	   }
-	   }
-	   count++;
-	   System.out.println(count + ".Cancel\n");
+		System.out.print("Which health potion do you want to drink?\n[Answer] ");
+		Scanner in = new Scanner(System.in);
+		int userInput = in.nextInt();
 
-	   System.out.print("Which health potion do you want to drink?\n[Answer] ");
-	   Scanner in = new Scanner(System.in);
-	   int userInput = in.nextInt();
-
-	   while(userInput != count){
-	   if(userInput == count){
-	   break;
-	   }
-	   else if(userInput > count || userInput < 1){
-	   System.out.println("Please enter a valid number.\n[Answer] ");
-	   userInput = in.nextInt();
-	   continue;
-	   }
-	   else{
-	   this.health = 100;
-	   items.remove(healthPotion);
-	   System.out.println("You drink the health potion and restore your health...");
-	   break;
-	   }
-	   }
-	   }*/
-
+		while(userInput != count){
+			if(userInput == count){
+				break;
+			}
+			else if(userInput > count || userInput < 1){
+				System.out.println("Please enter a valid number.\n[Answer] ");
+				userInput = in.nextInt();
+				continue;
+			}
+			else{
+				//player.restoreHealth(100);
+				this.health = 100;
+				items.remove(userInput - 1);
+				System.out.println("[Health Restored] You drink the health potion and restore your health...");
+				break;
+			}
+		}
+	}
 	//To get the equipped Armor.
 	Item getEquippedArmor(){
 		return this.equippedArmor;

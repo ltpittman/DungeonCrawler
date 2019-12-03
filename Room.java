@@ -12,6 +12,8 @@ class Room{
 	private Inventory inventory;
 	private Enemy enemy;
 	private Battles battle = new Battles();
+	private SideCharacter explorer;
+	private Interaction interact = new Interaction();
 
 	//Constructor that takes in a file.
 	public Room(String frame){
@@ -44,7 +46,7 @@ class Room{
 			System.out.println();
 		}
 	}
-	public void fillRoom(Player player, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4){
+	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4){
 		
 		//Erase old players location.
 		for(int i = 0; i < 12; i++){
@@ -63,6 +65,16 @@ class Room{
 				}
 			}
 		}
+
+		//Erase the old key location.
+		for(int i = 0; i < 12; i++){
+			for(int j = 0; j < 30; j++){
+				if(grid[j][i] == 'K'){
+						grid[j][i] = '.';
+				}
+			}
+		}
+
 
 		//Items.
 		if(player.inventory.inInventory(item1) == false){
@@ -86,6 +98,13 @@ class Room{
 		if(player.inventory.inInventory(item7) == false){
 			grid[item7.y][item7.x] = item7.getItemImage();
 		}
+		//Adding a key to the room.
+		if(player.inventory.inInventory(key1) == false){
+			grid[key1.y][key1.x] = key1.getItemImage();
+		}
+		if(player.inventory.inInventory(key2) == false){
+			grid[key2.y][key2.x] = key2.getItemImage();
+		}
 
 		//Monsters.
 		if(enemy1.getIsDead() == false){
@@ -103,6 +122,9 @@ class Room{
 	
 		//Player.
 		grid[player.y][player.x] = player.getCharacterImage();
+
+		//Dungeon Explorer.
+		grid[explorer.y][explorer.x] = explorer.getCharacterImage();
 
 		//Here is where a player will be able to pick up items if they come across any.
 		if(player.y == item1.y && player.x == item1.x && !player.inventory.items.contains(item1)){
@@ -189,24 +211,49 @@ class Room{
 				System.out.println("You decided to not pick up the item and continue to explore the area...");
 			}
 		}
+		if(player.y == key1.y && player.x == key1.x && !player.inventory.items.contains(key1)){
+			System.out.println("[Attention!] You just came across a key.");
+			System.out.print("Do you want to pick this key up and add it to your inventory? Y/N ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(key1);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
+		if(player.y == key2.y && player.x == key2.x && !player.inventory.items.contains(key2)){
+			System.out.println("[Attention!] You just came across a key.");
+			System.out.print("Do you want to pick this key up and add it to your inventory? Y/N ");
+			Scanner in = new Scanner(System.in);
+			String input = in.next().toUpperCase();
+			if(input.equals("Y")){
+				player.inventory.addItem(key2);
+			}
+			else{
+				System.out.println("You decided to not pick up the item and continue to explore the area...");
+			}
+		}
 
 		//Here is where the player and enemy will fight if they land on the same spot.
-		if(player.y == enemy1.y && player.x == enemy1.x){
+		if(player.y - 1 == enemy1.y - 1 && player.x - 1 == enemy1.x - 1 || player.y + 1 == enemy1.y + 1 && player.x + 1 == enemy1.x + 1){
 			battle.attack(player,enemy1);
 		}
-		else if(player.y == enemy2.y && player.x == enemy2.x){
+		else if(player.y - 1 == enemy2.y - 1 && player.x - 1 == enemy2.x - 1 || player.y + 1 == enemy2.y + 1 && player.x + 1 == enemy2.x + 1){
 			battle.attack(player,enemy2);
 		}
-		else if(player.y == enemy3.y && player.x == enemy3.x){
+		else if(player.y - 1 == enemy3.y - 1 && player.x - 1 == enemy3.x - 1 || player.y + 1 == enemy3.y + 1 && player.x + 1 == enemy3.x + 1){
 			battle.attack(player,enemy3);
 		}
-		else if(player.y == enemy3.y && player.x == enemy3.x){
-			battle.attack(player,enemy3);
-		}
-		else if(player.y == enemy4.y && player.x == enemy4.x){
+		else if(player.y - 1 == enemy4.y - 1 && player.x - 1 == enemy4.x - 1 || player.y + 1 == enemy4.y + 1 && player.x + 1 == enemy4.x + 1){
 			battle.attack(player,enemy4);
 		}
 
+		//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
+		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){
+			interact.interactCharacters(player, explorer);
+		}
 	}
 
 }

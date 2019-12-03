@@ -53,7 +53,16 @@ class Item{
 	}
 	//Method to get the item's image.
 	public char getItemImage(){
-		return '$';
+		if(type == ItemType.HealthPotion){
+			return 'H';
+		}
+		else if(type == ItemType.Key){
+			return 'K';
+		}
+		else{
+		
+			return '$';
+		}
 	}
 	//Method to print out the statements with toString()
 	public String toString(){
