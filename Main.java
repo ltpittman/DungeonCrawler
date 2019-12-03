@@ -200,6 +200,7 @@ class Main{
 					break;
 				case'R':
 					player.inventory.drinkHealthPotion();
+					player.restoreHealth();
 					break;
 				case'Q':
 					System.out.print("Would you like to save the game? Y/N ");

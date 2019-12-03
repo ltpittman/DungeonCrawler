@@ -1,3 +1,5 @@
+/**This class is used as the inventory for the player. The player starts out with one iron dagger, one leather armor, and a health potion when they start the game. Here the player will be able to add a item to their inventory, drop a item, print their inventory, get their total weight and other stats, equip a weapon or armor, and drink a health potion.*/
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,8 +17,10 @@ class Inventory{
 	Item equippedArmor;
 	Player player;
 	Item item;
-
-	//Method for the maxWeight/inventory.
+	
+	/**This is the constructor for the Inventoy class. Here we we set the max weight into the arraylist and add a few items into the player's inventory. The player is given a iron dagger, leather armor, and a health potion when the game starts.
+	 * @param maxWeight This is the total weight that the player can carry in their inventory.
+	 */
 	Inventory(int maxWeight){
 
 		this.maxWeight = maxWeight;
@@ -36,16 +40,22 @@ class Inventory{
 		equippedArmor = leatherArmor;
 		equippedWeapon = ironDagger;
 	}
-	//Method tog get the maxWeight(){
+	/**This is a method to get the max weight of the player.
+	 * @return maxWeight
+	 */
 	int getMaxWeight(){
 		return this.maxWeight;
 	}
-	//This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
+	/**This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
+	 */
 	void printInventoryStats(){
 		System.out.println("Total Weight: " + getTotalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
 	}
-
-	//Method to check if item is in inventory to not display on map.
+	
+	/**Method to check if item is in inventory to not display on map.
+	 * @param item Checks this particular item in the inventory.
+	 * @return Returns true if the item is located in the inventory, or false if it is not.
+	 */
 	public boolean inInventory(Item item){
 		if (items.contains(item)){
 			return true;
@@ -54,7 +64,10 @@ class Inventory{
 			return false;
 		}
 	}
-	//Method to pick up a item.
+	/**Method to pick up a item.
+	 * @param item This particular item is checked for its weight first then added to the inventory if it weighs less than the inventory max weight.
+	 * @return Returns true if the item is already in the player's inventory, else false and adds the item to the player's inventory.
+	 */
 	public boolean addItem(Item item){
 		//Get weight of item you want to add.
 		int weightOfNewItem = item.getWeight();
@@ -78,7 +91,9 @@ class Inventory{
 			return false;
 		}
 	}
-	//Method to get the total weight of the player.
+	/**Method to get the total weight of the player.
+	 * @return currentWeight Return the current weight that the player is carrying.
+	 */
 	int getTotalWeight(){
 		int currentWeight = 0;
 		for(int i = 0; i < items.size(); i++){
@@ -86,7 +101,8 @@ class Inventory{
 		}
 		return currentWeight;
 	}
-	//Method to present the player a list of all their items in inventory.
+	/**Method to present the player a list of all their items in inventory.
+	 */
 	void print(){
 		if(items.size() == 0){
 			System.out.println("You have no items in your inventory.");
@@ -103,7 +119,9 @@ class Inventory{
 			System.out.println();
 		}
 	}	
-	//Method to drop a item.
+	/**Method to drop a item from the player's inventory.
+	 * @param player
+	 */
 	void drop(Player player){
 		//If the user's inventory is empty, then print that they have no items in their inventory.
 		if(items.size() == 0){
@@ -159,7 +177,8 @@ class Inventory{
 
 		}
 	}
-	//Method to equip weapon.
+	/**Method to equip weapon.
+	 */
 	void equipWeapon(){
 		//Create a new arrayList to hold the items that are classified as weapons.
 		ArrayList<Item> weapons = new ArrayList<Item>();
@@ -208,7 +227,8 @@ class Inventory{
 			}
 		}
 	}
-	//Method to equip armor.
+	/**Method to equip armor.
+	 */
 	void equipArmor(){
 		//Create a new arrayList to hold the items that are classified as armor.
 		ArrayList<Item> armor = new ArrayList<Item>();
@@ -258,7 +278,8 @@ class Inventory{
 			}
 		}
 	}
-	//Method to drink a health potion.
+	/**Method to drink a health potion.
+	 */
 	void drinkHealthPotion(){
 	
 		int count = 0;
@@ -286,22 +307,25 @@ class Inventory{
 				continue;
 			}
 			else{
-				//player.restoreHealth(100);
-				this.health = 100;
 				items.remove(userInput - 1);
 				System.out.println("[Health Restored] You drink the health potion and restore your health...");
 				break;
 			}
 		}
 	}
-	//To get the equipped Armor.
+	/**Method to get the equipped armor of the player.
+	 */
 	Item getEquippedArmor(){
 		return this.equippedArmor;
 	}
-	//To get the equipped Weapon.
+	/** Method to get the equipped weapon of the player.
+	 */
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
 	}
+	/**Method to persist the items in the game.
+	 * @param pw
+	 */
 	//Method to save the game into a file.
 	public void persist(PrintWriter pw){
 		pw.println("Inventory");
@@ -311,7 +335,9 @@ class Inventory{
 		pw.println("-");
 		pw.println("nothing");
 	}
-	//Method to restore the game from a saved file.
+	/**Method to restore the game from a saved file.
+	 * @param a
+	 */
 	public void restore (Scanner a){
 		try{
 			this.items.clear();

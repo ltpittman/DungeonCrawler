@@ -42,6 +42,11 @@ class Player extends Character{// throws FileNotFoundException{
 	public void setHealth(int num){
 		this.health = num;
 	}
+	//Method to restore the health to 100 when the player drinks a health potion.
+	public void restoreHealth(){
+		this.health = 100;
+	}
+	//Method to return the player's image to the screen.
 	public char getCharacterImage(){
 		return '@';
 	}
@@ -70,9 +75,6 @@ class Player extends Character{// throws FileNotFoundException{
 	//Method to get the y-coordinate.
 	public int getPositionY(){
 		return this.y;
-	}
-	int restoreHealth(){
-		return this.health = 100;
 	}
 	//Method to move the player up.
 	public boolean goUp(){
