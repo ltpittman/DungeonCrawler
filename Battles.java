@@ -1,10 +1,14 @@
+/**
+ * This class is where the enemy and player attack each other. After the attack
+ * this class also has methods to see if the player won or lost the game. The 
+ * four methods in the class are attack, playerWins, playerLoses, and 
+ * playerDeath.
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
+
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
-/*In this class we have the methods for when a character and an enemy attack
- * each other. There are four methods, attack, playerWins, playerLoses, and
- * playerDeath.
- */
 class Battles{
 	World world;
 	Player player;
@@ -17,7 +21,15 @@ class Battles{
 	private static int healthEnemy;
 	private int difference;
 
-	//In this method we compare the health and the strength of the enemy and the player. Based on the strength of each we name a winner of the fight and modify the Health of both. If the player wins then we modify the number of monsters left in the game.
+	/**
+	 * In this method we compare the health and the strength of the enemy
+	 * and the player. Based on the strength of each we name a winner of
+	 * of the fight and modify the Health of both. If a monster is killed
+	 * the number of monsters on the board is decreased.
+	 * @param player
+	 * @param enemy
+	 *
+	 */
 	public void attack(Player player, Enemy enemy) {
 		
 		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
@@ -125,16 +137,29 @@ class Battles{
 			}
 		}
 	}
+	
+	/**
+	 *In this method the health is updated. 
+	 * @return int  the updated health
+	 */
 	public static int getNewHealth(){
 		return healthEnemy;
 	}
-	//In this method we determine if the player has lost the game. We do this by looking at the player's health.
+
+	/**
+	 *In this methd we determine if the player has lost the game. This is
+	 * concluded by looking at the player's health.
+	 */
 	public void playerLoses(){
 
 		System.out.println("The monsters have defeated you... you lost :(");
 		System.exit(1);
-	}	
-	//In this method we determin if the player won after the battle. We do this by seeing how many monsters are left. Once all the monsters have been killed the player wins.
+	}
+
+	/**
+	 * In this method we determine if the player won the game. A player
+	 * wins the game if there are no more monsters left on the board.
+	 */	
 	public void playerWins(){
 		if(numberOfMonsters == 0){
 			System.out.println("Woohoo! You were able to kill all monsters and won the game!!");
