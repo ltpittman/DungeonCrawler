@@ -1,8 +1,13 @@
+/**This class is used to set up the foundation of a item object. It creates a Item with a name, weight, value, strength, and x/ y coordinates. If creating a a object, this class will be needed or it will not work.
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileReader;
+
 class Item{
 	//Create the instance variables.
 	private ItemType type;
@@ -13,7 +18,15 @@ class Item{
 	public int x;
 	public int y;
 	
-	//Create the constructor for the items.
+	/** This is the constructor for the item objects. The Item takes in the type, name, weight, value, strength, x, y coordinates when creating a object.
+	 * @param type Type includes either a weapon, armor, health potion, or other. 
+	 * @param name The name of the object.
+	 * @param weight The weight of the object.
+	 * @param value The value of the object.
+	 * @param strength The strength of the object.
+	 * @param x The x coordinate of the object (where it will be placed on the map).
+	 * @param y The y coordinate of the object (where it will be placed on the map).
+	 */
 	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y){
 		this.type = type;
 		this.name = name;
@@ -23,35 +36,51 @@ class Item{
 		this.x = x;
 		this.y = y;
 	}	
-	//Method to get the weight.
+	/**This method is used to get the weight of the item.
+	 * @return Returns this.weight of the item.
+	 */
 	int getWeight(){
 		return this.weight;
 	}
-	//Method to get the value of the item.
+	/**This method is used to get the value of the item.
+	 * @return Returns this.value of the item.
+	 */
 	int getValue(){
 		return this.value;
 	}
-	//Method to get the name of the item.
+	/**This method is used to get the name of the item.
+	 * @return Returns this.name of the item.
+	 */
 	String getName(){
 		return this.name;
 	}
-	//Method to get the type of the item.
+	/**This method is used to get the type of the item.
+	 * @return Returns this.type of the item type (Weapon, Armor, Health Potion, Other).
+	 */
 	ItemType getType(){
 		return this.type;
 	}
-	//Method to get the strength of item.
+	/**This method is used to get the strength of item.
+	 * @return Returns this.strength of the item.
+	 */
 	int getStrength(){
 		return this.strength;
 	}
-	//Method to get the x-coordinate of the player.
+	/**This method is used to get the x-coordinate of the item.
+	 * @return Returns the x-coordinate of the item.
+	 */
 	public int getItemX(){
 		return this.x;
 	}
-	//Method to get the y-coordinate of the player.
+	/**This method is used to get the x-coordinate of the item.
+	 * @return Returns the y-coordinate of the item.
+	 */
 	public int getItemY(){
 		return this.y;
 	}
-	//Method to get the item's image.
+	/**This method is return to get the item's image.
+	 *@return Returns the item's char image.
+	 */
 	public char getItemImage(){
 		if(type == ItemType.HealthPotion){
 			return 'H';
@@ -64,11 +93,14 @@ class Item{
 			return '$';
 		}
 	}
-	//Method to print out the statements with toString()
+	/** This method is used to print out the statements with toString().
+	 * @return Returns the toString statement.
+	 */
 	public String toString(){
 		return(this.name + ": " + this.weight + ", " + this.value + ", " + this.strength);
 	}
-	//To save the data into a file
+	/**This method is used to save the data into a file.
+	 */
 	public void persist (PrintWriter pw){
 		pw.println(type);
 		pw.println(name);
@@ -79,7 +111,8 @@ class Item{
 		pw.println(y);
 		pw.println(".");
 	}
-	//Method to restore the game from a saved file.
+	/**This method is used to restore the data to the game.
+	 */
 	public void restore (Scanner a){
 		try{
 			String noth = a.nextLine();

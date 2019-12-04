@@ -1,3 +1,9 @@
+/**This class serves as the Main class for the game. It creates a player, side character, items, monsters, and world. This class is needed to play the game. Here the player is able to tell the program to move up, down, left, or right, print their inventory, add or drop items, fight monsters, restore their health with a health potion, and load/save a game. The items and monsters  created in this class are randomly generated. 
+ * @throws InputMismatchException Throws this exception when the user enters the wrong input.
+ * @throws FileNotFoundException Throws this exception when a file cannot be found to upload.
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
+
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;

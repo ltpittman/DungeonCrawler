@@ -1,7 +1,12 @@
+/**This class is used to get a random item from the array and place it into the game at different coordinates. Since each number will be picked at random, there can be multiple items of the same type in the game.
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
+
 import java.util.Random;
 
 public class ItemGenerator{
-	//Method gets a random number and uses that number to get an item from a list.
+	/**This method produces a random number that is used to pick a item from the array. 
+	 * @return Returns poss[x] that holds the random item index.
 	public static Item generate(){
 		
 		Random rng = new Random();
