@@ -104,10 +104,7 @@ class Main{
 					key1.restore(a);
 					noth = a.nextLine();
 					key2.restore(a);
-<<<<<<< HEAD
 					noth = a.nextLine();
-=======
->>>>>>> a662574f1ddf210ad07aab6898cbfeef878a0e31
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();
