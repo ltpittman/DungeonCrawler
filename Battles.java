@@ -27,8 +27,8 @@ class Battles{
 	 * and the player. Based on the strength of each we name a winner of
 	 * of the fight and modify the Health of both. If a monster is killed
 	 * the number of monsters on the board is decreased.
-	 * @param player
-	 * @param enemy
+	 * @param player the player that is fighting the enemy
+	 * @param enemy the enemy that is being attacked
 	 *
 	 */
 	public void attack(Player player, Enemy enemy) throws InputMismatchException {

@@ -37,14 +37,23 @@ class Main{
 		Interaction interact = new Interaction();
 		//Creating the monsters.
 		Enemy enemy1 = MonsterGenerator.generateMonster();
+		enemy1.setRoomNum(1);
 		Enemy enemy2 = MonsterGenerator.generateMonster();
+		enemy2.setRoomNum(1);
 		Enemy enemy3 = MonsterGenerator.generateMonster();
+		enemy3.setRoomNum(1);
 		Enemy enemy4 = MonsterGenerator.generateMonster();
+		enemy4.setRoomNum(2);
 		Enemy enemy5 = MonsterGenerator.generateMonster();
+		enemy5.setRoomNum(2);
 		Enemy enemy6 = MonsterGenerator.generateMonster();
+		enemy6.setRoomNum(2);
 		Enemy enemy7 = MonsterGenerator.generateMonster();
+		enemy7.setRoomNum(3);
 		Enemy enemy8 = MonsterGenerator.generateMonster();
+		enemy8.setRoomNum(3);
 		Enemy enemy9 = MonsterGenerator.generateMonster();
+		enemy9.setRoomNum(3);
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();   
 		Item item2 = ItemGenerator.generate();
@@ -88,9 +97,8 @@ class Main{
 					enemy7.restore(a);
 					enemy8.restore(a);
 					enemy9.restore(a);
-					String noth = a.nextLine();
 					item1.restore(a);
-					noth = a.nextLine();
+					String noth = a.nextLine();
 					item2.restore(a);
 					noth = a.nextLine();
 					item3.restore(a);
@@ -102,6 +110,11 @@ class Main{
 					item6.restore(a);
 					noth = a.nextLine();
 					item7.restore(a);
+					noth = a.nextLine();
+					key1.restore(a);
+					noth = a.nextLine();
+					key2.restore(a);
+					noth = a.nextLine();
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();
@@ -121,6 +134,8 @@ class Main{
 		System.out.println("------------------------------------------------");
 		command.printCommands();
 		System.out.println("------------------------------------------------");
+
+
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
 		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
@@ -415,6 +430,7 @@ class Main{
 							player.persist(pw);
 							explorer.persist(pw);
 							enemy1.persist(pw);
+
 							enemy2.persist(pw);
 							enemy3.persist(pw);
 							enemy4.persist(pw);
@@ -430,6 +446,8 @@ class Main{
 							item5.persist(pw);
 							item6.persist(pw);
 							item7.persist(pw);
+							key1.persist(pw);
+							key2.persist(pw);
 							player.inventory.persist(pw);
 							world.persist(pw);
 							pw.close();

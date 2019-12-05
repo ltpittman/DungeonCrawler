@@ -362,7 +362,7 @@ class Inventory{
 
 	/**
 	 * Saves the informaiton from the <tt>Inventory</tt> into a file to save the game.
-	 * @param a print writer that will type the information into the file 
+	 * @param pw  print writer that will type the information into the file 
 	 */
 	//Method to save the game into a file.
 	public void persist(PrintWriter pw){
@@ -383,8 +383,6 @@ class Inventory{
 		try{
 			this.items.clear();
 			String noth = a.nextLine();
-			noth = a.nextLine();
-			noth = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			String name = a.nextLine();

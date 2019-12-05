@@ -22,6 +22,7 @@ class Enemy extends Character{
 	public World world;
 	public int x;
 	public int y;
+	public int roomNum;
 
 	/**
 	 * Constructs a new <tt>Enemy</tt> with stats from the paramaters.
@@ -33,8 +34,8 @@ class Enemy extends Character{
 	 * @param type the type of monster the enemy is {@link MonsterType}
 	 * @param isDead a boolean telling if the enemy is alive
 	 */
-	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
-	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
+	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y,){ 
+	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead, int roomNum){ 
 		super(name, health);
 		this.name = name;
 		this.health = health;
@@ -43,6 +44,23 @@ class Enemy extends Character{
 		this.x = x;
 		this.y = y;
 		this.isDead = isDead;
+		this.roomNum = roomNum;
+	}
+
+	/**
+	 * Sets the room number that the enemy is in. 
+	 * @param roomNum the room number that the enemy is in
+	 */
+	public void setRoomNum (int roomNum){
+		this.roomNum = roomNum;
+	}
+
+	/**
+	 * Returns the room number that the enemy is in
+	 * @return the room number 
+	 */
+	public int getRoomNum(){
+		return this.roomNum;
 	}
 
 	/**
@@ -187,6 +205,7 @@ class Enemy extends Character{
 		pw.println(health);
 		pw.println(damage);
 		pw.println(isDead);
+		pw.println(roomNum);
 		pw.println(".");
 	}
 
@@ -196,8 +215,6 @@ class Enemy extends Character{
 	 */
 	public void restore(Scanner a) throws Exception {
 		try{
-			String noth = a.nextLine();
-			noth = a.nextLine();
 			this.name = a.nextLine();
 			String t = a.nextLine();
 			MonsterType type = MonsterType.valueOf(t);
@@ -207,6 +224,9 @@ class Enemy extends Character{
 			this.health = a.nextInt();
 			this.damage = a.nextInt();
 			this.isDead = a.nextBoolean();
+			this.roomNum = a.nextInt();
+			String noth = a.nextLine();
+			noth = a.nextLine();
 		}
 		catch(Exception e){
 			System.out.println("Could not read enemy portion of file.");
