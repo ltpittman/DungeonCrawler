@@ -25,8 +25,6 @@ class World{
 	private Room room2; //Index[1]
 	private Room room3; //Index[2]
 
-	private Battles battle = new Battles();
-
 	/**
 	 * Constructs a new <tt>World</tt> that contains three rooms.
 	 * @throws FileNotFoundException
@@ -47,20 +45,28 @@ class World{
 	}
 
 	/**
-	 * Adds objects to the world including: a player, a side character, two keys, seven items, and three enemies. The character move around the board and the items are 
-	 * on the board for the benefit of the player.
-	 * @param player the main character of the game that is controlled by the user
-	 * @param explorer a side character that helps the player out by giving them items
-	 * @param key1 a key that allows the player to enter a new room
-	 * @param key2 a key that allows the player to enter a new room
-	 * @param item1 a random item that the player can pick up and use
-	 * @param item2 a random item that the player can pick up and use
-	 * @param item3 a random item that the player can pick up and use
-	 * @param item4 a random item that the player can pick up and use
-	 * @param item5 a random item that the player can pick up and use
-	 * @param item6 a random item that the player can pick up and use
-	 * @param item7 a random item that the player can pick up and use
-	 * @return the current room number of the player
+	 * Adds objects to the world including: a player, a side character, two keys, seven items, and three enemies. The character move around the board and the items are  on the board for the benefit of the player.
+	 * @param player the main character of the game that is controlled by the user.
+	 * @param explorer a side character that helps the player out by giving them items.
+	 * @param key1 a key that allows the player to enter a new specific room.
+	 * @param key2 a key that allows the player to enter a new specific room.
+	 * @param item1 a random item that the player can pick up and use.
+	 * @param item2 a random item that the player can pick up and use.
+	 * @param item3 a random item that the player can pick up and use.
+	 * @param item4 a random item that the player can pick up and use.
+	 * @param item5 a random item that the player can pick up and use.
+	 * @param item6 a random item that the player can pick up and use.
+	 * @param item7 a random item that the player can pick up and use.
+	 * @param enemy1 a enemy that the player can battle against.
+	 * @param enemy2 a enemy that the player can battle against.
+	 * @param enemy3 a enemy that the player can battle against.
+	 * @param enemy4 a enemy that the player can battle against.
+	 * @param enemy5 a enemy that the player can battle against.
+	 * @param enemy6 a enemy that the player can battle against.
+	 * @param enemy7 a enemy that the player can battle against.
+	 * @param enemy8 a enemy that the player can battle against.
+	 * @param enemy9 a enemy that the player can battle against.
+	 * @return the current room number of the player.
 	 */
 	public int fillWorld(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4, Enemy enemy5, Enemy enemy6, Enemy enemy7, Enemy enemy8, Enemy enemy9){ 	
 
@@ -192,8 +198,8 @@ class World{
 	}
 
 	/**
-	 * Saves the information about the current room the player is in to a file 
-	 * @param pw print writer that types the information into a file
+	 * Saves the information about the current room the player is in to a file.
+	 * @param pw Print writer that types the information into a file.
 	 */
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
@@ -202,12 +208,11 @@ class World{
 
 	/**
 	 * Reads the information about the current room from a file. This they allows the user to continue with a previously saved game. 
-	 * @param a scanner that reads the text in from a file
+	 * @param a A scanner that reads the text in from a file.
 	 */
 	public void restore(Scanner a){
 		try{
 			this.currentRoom = a.nextInt();
-			//System.out.println("Room = " + currentRoom);
 		} 
 		catch(Exception e){
 			System.out.println("Could not read world portion of the file");
