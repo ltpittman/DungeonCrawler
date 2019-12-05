@@ -1,3 +1,11 @@
+/**
+ * A <tt>Player</tt> is a type of character that the user creates to go around the game. The player has a 
+ * name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength)
+ * and an inventroy. The player is moved around the board through the control of the user. It can pick items up,
+ * add the items to the player's inventory, and equip the items to use in a battle. When the player comes across
+ * an enemy the player can choose to fight it.
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 import java.util.Random;
 import java.util.Scanner;
 import java.io.PrintWriter;
@@ -5,7 +13,7 @@ import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-class Player extends Character{// throws FileNotFoundException{
+class Player extends Character{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -18,7 +26,13 @@ class Player extends Character{// throws FileNotFoundException{
 	public int x;
 	public int y;
 
-	//Constructor
+	/**
+	 * Constructs a new <tt>Player</tt> with a name, health, Inventory, and equipped weapon and armor. Each
+	 * new player starts with their location in the center of the board
+	 * @param name the name of the <tt>Player</tt>
+	 * @param health the health of the <tt>Player</tt>
+	 * @return the new <tt>Player</tt>
+	 */
 	public Player(String name, int health){
 		super(name, health); 
 		this.name = name;
@@ -30,53 +44,101 @@ class Player extends Character{// throws FileNotFoundException{
 		this.x = 6;
 		this.y = 14;
 	}
-	//Method to get the name of the player.
+
+	/**
+	 * Returns the name of the <tt>Player</tt>.
+	 * @return name of the player
+	 */
 	String getName(){
 		return this.name;
 	}
-	//Method to get the health of the player.
+
+	/**
+	 * Returns the health of the <tt>Player</tt> out of 100.
+	 * @return the players health
+	 */
 	int getHealth(){
 		return this.health;
 	}
-	//Method to set the health of the player.
+
+	/**
+	 * Sets the health of the <tt>Player</tt>.
+	 * @param num the health of the player
+	 */
 	public void setHealth(int num){
 		this.health = num;
 	}
-	//Method to restore the health to 100 when the player drinks a health potion.
+
+	/**
+	 * Restores the health to 100 when the <tt>Player</tt> drinks a health potion.
+	 */
 	public void restoreHealth(){
 		this.health = 100;
 	}
-	//Method to return the player's image to the screen.
+
+	/**
+	 * Returns the player's image to the screen.
+	 * @return the symbol of the player
+	 */
 	public char getCharacterImage(){
 		return '@';
 	}
-	//Method to get the equipped armor.
+
+	/**
+	 * Returns the item that the <tt>Player</tt> currently has equipped
+	 * @return armor that is equipped
+	 */
 	Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
 	}
-	//Method to get the equipped weapon.
+
+	/**
+	 * Return the item that the <tt>Player</tt> currently has equipped
+	 * @return weapon that is equipped
+	 */
 	Item getEquippedWeapon(){
 		return inventory.getEquippedWeapon();
 	}
-	//Method to the the strength of the armor.
+
+	/**
+	 * Returns the strength of the armor.
+	 * @return the strength of the armor
+	 */
 	int getArmorStrength(){
 		armorStrength = equippedArmor.getStrength();
 		return armorStrength;
 	}
-	//Method to get the strength of the weapon.
+
+	/**
+	 * Returns the strength of the weapon.
+	 * @return the strength of the weapon
+	 */
 	int getWeaponStrength(){
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
 	}
-	//Method to get the x-coordinate.
+
+	/**
+	 * Returns the x-coordinate of the <tt>Player</tt>.
+	 * @return x-coordinate
+	 */
 	public int getPositionX(){
 		return this.x;
 	}
-	//Method to get the y-coordinate.
+
+	/**
+	 * Returns the y-coordinate of the <tt>Player</tt>.
+	 * @return y-coordinate
+	 */
 	public int getPositionY(){
 		return this.y;
 	}
-	//Method to move the player up.
+
+	/**
+	 * Checks to see if the <tt>Player</tt> can move up, if it can the <tt>Player</tt> moves up one 
+	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * @return true if the player can move, false if the player cannot move
+	 */
 	public boolean goUp(){
 		if((x - 1) == 0){
 			System.out.println("[You can't go up in that direction anymore.]");
@@ -87,7 +149,12 @@ class Player extends Character{// throws FileNotFoundException{
 			return true;
 		}
 	}
-	//Method to move the player down.
+
+	/**
+	 * Checks to see if the <tt>Player</tt> can move down, it it can the <tt>Player</tt> moves down one
+	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * @return true if the player can move, false if the player cannot move
+	 */
 	public boolean goDown(){
 		if((x + 1) == 11){
 			System.out.println("[You can't go down in that direction anymore.]");
@@ -98,7 +165,12 @@ class Player extends Character{// throws FileNotFoundException{
 			return true;
 		}	
 	}
-	//Method to move the player left.
+
+	/**
+	 * Checks to see if the <tt>Player</tt> can move left, if it can the <tt>Player</tt> moves left one
+	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * @return true if the player can move, false if the player cannot move
+	 */
 	public boolean goLeft(){
 		if((y - 1) == 0){
 			System.out.println("[You can't go left in that direction anymore.]");
@@ -109,8 +181,13 @@ class Player extends Character{// throws FileNotFoundException{
 			return true;
 		}
 	}
-	//Method to move the player right.
-	public boolean goRight(){
+
+	/**
+	 * Checks to see if the <tt>Player</tt> can move right, if it can <tt>Player</tt> moves right one
+	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * @return true if the player can move, false if the player cannot move
+	 */
+	 public boolean goRight(){
 		if((y + 1) == 29){
 			System.out.println("[You can't go right in that direction anymore.]");
 			return false;
@@ -120,7 +197,11 @@ class Player extends Character{// throws FileNotFoundException{
 			return true;
 		}
 	}
-	//Method to move the player to a random spot.
+
+	/**
+	 * Moves the player in a random direction. 
+	 * @return true if the player can move in the random direction, false if it cannot
+	 */
 	public boolean move(){
 
 		Random random = new Random();
@@ -170,16 +251,27 @@ class Player extends Character{// throws FileNotFoundException{
 			return false;
 		}
 	}
-	//This method prints the player's name and health.
+
+	/**
+	 * Prints the player's name and health (out of 100)
+	 */
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
 	}
+
+	/**
+	 * Prints the player's name, health(out of 100) and strength of the weapon the <tt>Player</tt> is using. 
+	 * @return player's name, health, and strength
+	 */
 	public String toString(){
 		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
 	}
 
-	//Method for saving the data for the character
-	public void persist(PrintWriter pw){
+	/**
+	 * Prints the information about the <tt>Player</tt> into a text file to save the game.
+	 * @param pw the print writer that types the information into the file
+	 */ 
+	 public void persist(PrintWriter pw){
 		String file = "Saved";
 	        pw.println(file);	
 		pw.println(name);
@@ -208,6 +300,11 @@ class Player extends Character{// throws FileNotFoundException{
 		pw.println(".");
 	}
 
+	/**
+	 * Restores the information from a text file. This information is saved from a previous game and 
+	 * allows the user to continue the game.
+	 * @param a scanner that reads the file
+	 */
 	public void restore (Scanner a){
 		try{
 			//FileInputStream f = new FileInputStream(fileName);
