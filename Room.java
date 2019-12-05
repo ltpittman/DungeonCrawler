@@ -251,28 +251,9 @@ class Room{
 		else if(player.y == enemy3.y && player.x == enemy3.x || player.y == enemy3.y && player.x == enemy3.x){
 			battle.attack(player,enemy3);
 		}
-		/*
-		else if(player.y - 1 == enemy4.y - 1 && player.x - 1 == enemy4.x - 1 || player.y + 1 == enemy4.y + 1 && player.x + 1 == enemy4.x + 1){
-			battle.attack(player,enemy4);
-		}
-		else if(player.y - 1 == enemy5.y - 1 && player.x - 1 == enemy5.x - 1 || player.y + 1 == enemy5.y + 1 && player.x + 1 == enemy5.x + 1){
-			battle.attack(player,enemy5);
-		}
-		else if(player.y - 1 == enemy6.y - 1 && player.x - 1 == enemy6.x - 1 || player.y + 1 == enemy6.y + 1 && player.x + 1 == enemy6.x + 1){
-			battle.attack(player,enemy6);
-		}
-		else if(player.y - 1 == enemy7.y - 1 && player.x - 1 == enemy7.x - 1 || player.y + 1 == enemy7.y + 1 && player.x + 1 == enemy7.x + 1){
-			battle.attack(player,enemy7);
-		}
-		else if(player.y - 1 == enemy8.y - 1 && player.x - 1 == enemy8.x - 1 || player.y + 1 == enemy8.y + 1 && player.x + 1 == enemy8.x + 1){
-			battle.attack(player,enemy8);
-		}
-		else if(player.y - 1 == enemy9.y - 1 && player.x - 1 == enemy9.x - 1 || player.y + 1 == enemy9.y + 1 && player.x + 1 == enemy9.x + 1){
-			battle.attack(player,enemy9);
-		}*/
 
 		//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
-		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){
+		if(player.y == explorer.y && player.x == explorer.x){
 			interact.interactCharacters(player, explorer);
 		}
 	}
