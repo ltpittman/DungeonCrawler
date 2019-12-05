@@ -250,8 +250,13 @@ class Room{
 			battle.attack(player,enemy3);
 		}
 
+<<<<<<< HEAD
 		//Here is where the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
 		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){
+=======
+		//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
+		if(player.y == explorer.y && player.x == explorer.x){
+>>>>>>> 506054a932d9f6b817989921f8fa876119b4f86f
 			interact.interactCharacters(player, explorer);
 		}
 	}

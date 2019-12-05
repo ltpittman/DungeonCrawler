@@ -33,6 +33,8 @@ class Main{
 		//Setting the player's health.
 		int health = 100;
 
+		Battles battle = new Battles();
+		Interaction interact = new Interaction();
 		//Creating the monsters.
 		Enemy enemy1 = MonsterGenerator.generateMonster();
 		enemy1.setRoomNum(1);
@@ -195,6 +197,37 @@ class Main{
 			switch(input){
 				case'H':
 					player.goUp();
+					if(player.y == enemy1.y && player.x == enemy1.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy2.y && player.x == enemy2.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy3.y && player.x == enemy3.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy4.y && player.x == enemy4.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy5.y && player.x == enemy5.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy6.y && player.x == enemy6.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy7.y && player.x == enemy7.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy8.y && player.x == enemy8.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy9.y && player.x == enemy9.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == explorer.y && player.x == explorer.x){
+						interact.interactCharacters(player,explorer);
+					}
+
 					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
@@ -227,6 +260,36 @@ class Main{
 					break;
 				case'L':
 					player.goDown();
+					if(player.y == enemy1.y && player.x == enemy1.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy2.y && player.x == enemy2.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy3.y && player.x == enemy3.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy4.y && player.x == enemy4.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy5.y && player.x == enemy5.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy6.y && player.x == enemy6.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy7.y && player.x == enemy7.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy8.y && player.x == enemy8.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy9.y && player.x == enemy9.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == explorer.y && player.x == explorer.x){
+						interact.interactCharacters(player,explorer);
+					}
 					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
@@ -259,6 +322,36 @@ class Main{
 					break;
 				case'J':
 					player.goLeft();
+					if(player.y == enemy1.y && player.x == enemy1.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy2.y && player.x == enemy2.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy3.y && player.x == enemy3.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy4.y && player.x == enemy4.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy5.y && player.x == enemy5.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy6.y && player.x == enemy6.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy7.y && player.x == enemy7.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy8.y && player.x == enemy8.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy9.y && player.x == enemy9.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == explorer.y && player.x == explorer.x){
+						interact.interactCharacters(player,explorer);
+					}
 					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
@@ -291,6 +384,36 @@ class Main{
 					break;
 				case'K':
 					player.goRight();
+					if(player.y == enemy1.y && player.x == enemy1.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy2.y && player.x == enemy2.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy3.y && player.x == enemy3.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy4.y && player.x == enemy4.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy5.y && player.x == enemy5.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy6.y && player.x == enemy6.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy7.y && player.x == enemy7.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy8.y && player.x == enemy8.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == enemy9.y && player.x == enemy9.x){
+						battle.attack(player,enemy1);
+					}
+					else if(player.y == explorer.y && player.x == explorer.x){
+						interact.interactCharacters(player,explorer);
+					}
 					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
