@@ -1,5 +1,6 @@
 /**
- *This is an abstract class of all the characters in the game. 
+ * A <tt>Character</tt> represents an individual on the game board. Each <tt>Character</tt> object 
+ * has a name, health, strength, and location.   
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
@@ -11,9 +12,9 @@ abstract class Character{
 	public int y;
 
 	/**
-	 * This is a constuctor with basic character qualities
-	 * @param name The name of the character
-	 * @param health The health of the character
+	 * Constucts a new <tt>Character</tt> object with a name, health, and location
+	 * @param name the name of the character
+	 * @param health the health of the character (out of 100 pts)
 	 */ 
 	protected Character(String name, int health){
 		this.name = name;
@@ -25,23 +26,23 @@ abstract class Character{
 	//then only the character class needs the methods.
 	
 	/**
-	 * This method gets the Name of the character
-	 * @return String The name of the character
+	 * Returns the name of the <tt>Character</tt>
+	 * @return String the name of the character
 	 */
 	String getName(){
 		return this.name;
 	}
 
 	/**
-	 * This method gets the Health of the character
-	 * @return int The health of the character
+	 * Returns the health of the <tt>Character</tt>. 
+	 * @return int the health of the character
 	 */
 	int getHealth(){
 		return this.health;
 	}
 
 	/**
-	 * This method sets the health of the character
+	 * Sets the health of the <tt>Character</tt>. 
 	 * @param num the health
 	 */
 	public void setHealth(int num){
@@ -50,7 +51,7 @@ abstract class Character{
 
 	/**
 	 * Abstract method to get the character's image for the screen.
-	 * @return char The image that represents the character on the board
+	 * @return char the symbol that represents the character on the board
 	 */ 
 	abstract public char getCharacterImage();
 	
@@ -60,7 +61,8 @@ abstract class Character{
 	 */
 	abstract public boolean move();
 	
-	/**Method to get the position of the characters.
+	/**
+	 * Returns the position(x coordinate) of the <tt>Character</tt> on the board
 	 * @return int the x coordinate of the character
 	 */
 	public int getPositionX(){
@@ -68,7 +70,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Method to get the position of the characters.
+	 * Returns the position(y coordinate) of the <tt>Character</tt> on the board
 	 * @return int the y coordinate of the character
 	 */ 
 	public int getPositionY(){
@@ -76,7 +78,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Method to print the information about the location of the character
+	 * Prints the information about the location of the <tt>Character</tt>
 	 */
 	public void getLocation(){
 		System.out.println("Location: " + getPositionX() + "," + getPositionY());

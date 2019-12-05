@@ -1,3 +1,10 @@
+/**
+ * A <tt>Enemy</tt> is a character in the game who's goal is to kill the players. They have a name, health
+ * (out of 100), damage, and location. There are also many different types of monsters that have different 
+ * stats. When a player and an enemy approach each other they fight. {@link Battles} 
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
+
 import java.util.Random;
 import java.io.PrintWriter;
 import java.io.FileReader;
@@ -16,7 +23,16 @@ class Enemy extends Character{
 	public int x;
 	public int y;
 
-	//Constructor for the enemy.
+	/**
+	 * Constructs a new <tt>Enemy</tt> with stats from the paramaters.
+	 * @param name the name of the Enemy
+	 * @param health the health of the Enemy (out of 100)
+	 * @param damage the damage of the Enemy {@link Battles} 
+	 * @param x the x coordinate of the Enemy
+	 * @param y the y coordinate of the Enemy
+	 * @param type the type of monster the enemy is {@link MonsterType}
+	 * @param isDead a boolean telling if the enemy is alive
+	 */
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead){ 
 		super(name, health);
@@ -28,19 +44,35 @@ class Enemy extends Character{
 		this.y = y;
 		this.isDead = isDead;
 	}
+
+	/**
+	 * Returns the enemy's symbol the is displayed on the board
+	 * @return the symbol for the enemy
+	 */
 	public char getCharacterImage(){
 		return 'M';
 	}
-	//Get the type of the monster.
+
+	/**
+	 * Returns the type of monster the <tt>Enemy</tt> is.
+	 * @return type of monster
+	 */
 	MonsterType typeOfMonster(){
 		return this.type;
 	}
-	//Get the strength of the monster.
+
+	/**
+	 * Returns the strength of the <tt>Enemy</tt>.
+	 * @return strenght out of 100
+	 */
 	int getDamage(){
 		return this.damage;
 	}
 
-	//to see if the monster is alive
+	/**
+	 * Determines if the <tt>Enemy</tt> is dead or alive
+	 * @return true if dead and false if alive
+	 */
 	boolean enemyDead(){
 		if(health > 0){
 			return false;
@@ -50,26 +82,42 @@ class Enemy extends Character{
 		}
 	}		
 
-	//to determine if the enemy is dead
+	/**
+	 * Determines if <tt>Enemy</tt> is dead or alive 
+	 * @return true if enemy is dead and false if enemy is alive
+	 */
 	boolean getIsDead(){
 		return this.isDead;
 	}
 
-	//to set the is dead
+	/**
+	 * Sets if the <tt>Enemy</tt> is dead or alive
+	 */
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
 	}
 
-	//to get x and y
+	/**
+	 * Returns the x coordinate of the <tt>Enemy</tt> 
+	 * @return x coordinate
+	 */
 	public int getX(){
 		return this.x;
 	}
 
+	/**
+	 * Returns the y coordinate of the <tt>Enemy</tt>
+	 * @return y coordinate
+	 */
 	public int getY(){
 		return this.y;
 	}
 
-	//Adding the movement method for the Enemy class.
+	/**
+	 * Moves the <tt>Enemy</tt> around the board randomly. If the <tt>Enemy</tt> will run into a wall 
+	 * when it moves it returns false, otherwise it returns true.
+	 * @return if the enemy can move in the random directon
+	 */
 	public boolean move(){
 
 		Random random = new Random();
@@ -121,11 +169,17 @@ class Enemy extends Character{
 
 	}
 
-	//Print out format. 
+	/**
+	 * Prints inforamtion about the <tt>Enemy</tt>.
+	 * @return Enemy's name, health, and damage
+	 */
 	public String toString(){
 		return("Enemy Name: " + this.name + "\nHealth: " + this.health + "/100" + "\nDamage: " + this.damage);
 	}
-	//Method to save the information about the enemy
+
+	/**
+	 * Saves the information about the <tt>Enemy</tt> to a text file.
+	 */
 	public void persist (PrintWriter pw){
 		pw.println(name);
 		pw.println(type);
@@ -136,7 +190,11 @@ class Enemy extends Character{
 		pw.println(".");
 	}
 
-	public void restore(Scanner a) {
+	/**
+	 * Restores the inforamtion about the <tt>Enemy</tt> from a text file.
+	 * @throws Exception if there is an error reading in the file.
+	 */
+	public void restore(Scanner a) throws Exception {
 		try{
 			String noth = a.nextLine();
 			noth = a.nextLine();
