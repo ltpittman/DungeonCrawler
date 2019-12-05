@@ -277,8 +277,6 @@ class Player extends Character{
 		pw.println(name);
 		pw.println(x + " " + y);
 		pw.println(health);
-		//pw.println(weaponStrength);
-		//pw.println(armorStrength);
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedArmor.getStrength());
 
@@ -307,8 +305,6 @@ class Player extends Character{
 	 */
 	public void restore (Scanner a){
 		try{
-			//FileInputStream f = new FileInputStream(fileName);
-			//Scanner a = new Scanner(f);
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();

@@ -76,6 +76,7 @@ class Main{
 					System.out.println("There is no game saved. A new game will start shortly.");
 				} else {
 					player.restore(a);
+					explorer.restore(a);
 					enemy1.restore(a);
 					enemy2.restore(a);
 					enemy3.restore(a);
@@ -289,10 +290,16 @@ class Main{
 						try{
 							PrintWriter pw = new PrintWriter ("info.txt");
 							player.persist(pw);
+							explorer.persist(pw);
 							enemy1.persist(pw);
 							enemy2.persist(pw);
 							enemy3.persist(pw);
 							enemy4.persist(pw);
+							enemy5.persit(pw);
+							enemy6.persit(pw);
+							enemy7.persit(pw);
+							enemy8.persit(pw);
+							enemy9.persit(pw);
 							item1.persist(pw);
 							item2.persist(pw);
 							item3.persist(pw);
