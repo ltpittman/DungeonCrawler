@@ -54,15 +54,41 @@ class Main{
 		enemy8.setRoomNum(3);
 		Enemy enemy9 = MonsterGenerator.generateMonster();
 		enemy9.setRoomNum(3);
+
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();   
+		item1.setRoomNum(1);
 		Item item2 = ItemGenerator.generate();
+		item2.setRoomNum(1);
 		Item item3 = ItemGenerator.generate();   
+		item3.setRoomNum(1);
 		Item item4 = ItemGenerator.generate();
+		item4.setRoomNum(1);
 		Item item5 = ItemGenerator.generate();
+		item5.setRoomNum(1);
+		
 		Item item6 = ItemGenerator.generate();
+		item6.setRoomNum(2);
 		Item item7 = ItemGenerator.generate();   
+		item7.setRoomNum(2);
+		Item item8 = ItemGenerator.generate();   
+		item8.setRoomNum(2);
+		Item item9 = ItemGenerator.generate();   
+		item9.setRoomNum(2);
+		Item item10 = ItemGenerator.generate();   
+		item10.setRoomNum(2);
 
+		Item item11 = ItemGenerator.generate();   
+		item11.setRoomNum(3);
+		Item item12 = ItemGenerator.generate();   
+		item12.setRoomNum(3);
+		Item item13 = ItemGenerator.generate();   
+		item13.setRoomNum(3);
+		Item item14 = ItemGenerator.generate();   
+		item14.setRoomNum(3);
+		Item item15 = ItemGenerator.generate();   
+		item15.setRoomNum(3);
+		
 		Item key1 = KeyGenerator.generateKey();
 		Item key2 = KeyGenerator.generateKey();
 
@@ -111,6 +137,22 @@ class Main{
 					noth = a.nextLine();
 					item7.restore(a);
 					noth = a.nextLine();
+					item8.restore(a);
+					noth = a.nextLine();
+					item9.restore(a);
+					noth = a.nextLine();
+					item10.restore(a);
+					noth = a.nextLine();
+					item11.restore(a);
+					noth = a.nextLine();
+					item12.restore(a);
+					noth = a.nextLine();
+					item13.restore(a);
+					noth = a.nextLine();
+					item14.restore(a);
+					noth = a.nextLine();
+					item15.restore(a);
+					noth = a.nextLine();
 					key1.restore(a);
 					noth = a.nextLine();
 					key2.restore(a);
@@ -138,7 +180,7 @@ class Main{
 
 
 		//Put the player, items, and monster in the world, then print the world to the screen.
-		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
+		world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 
 		char input;
 
@@ -214,7 +256,7 @@ class Main{
 					if (enemy9.getIsDead() == false){
 						enemy9.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'L':
 					player.goDown();
@@ -276,7 +318,7 @@ class Main{
 					if (enemy9.getIsDead() == false){
 						enemy9.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'J':
 					player.goLeft();
@@ -338,7 +380,7 @@ class Main{
 					if (enemy9.getIsDead() == false){
 						enemy9.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'K':
 					player.goRight();
@@ -400,7 +442,7 @@ class Main{
 					if (enemy9.getIsDead() == false){
 						enemy9.move();
 					}
-					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
+					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'P':
 					command.printCommands();
@@ -430,7 +472,6 @@ class Main{
 							player.persist(pw);
 							explorer.persist(pw);
 							enemy1.persist(pw);
-
 							enemy2.persist(pw);
 							enemy3.persist(pw);
 							enemy4.persist(pw);
@@ -446,6 +487,14 @@ class Main{
 							item5.persist(pw);
 							item6.persist(pw);
 							item7.persist(pw);
+							item8.persist(pw);
+							item9.persist(pw);
+							item10.persist(pw);
+							item11.persist(pw);
+							item12.persist(pw);
+							item13.persist(pw);
+							item14.persist(pw);
+							item15.persist(pw);
 							key1.persist(pw);
 							key2.persist(pw);
 							player.inventory.persist(pw);

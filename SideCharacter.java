@@ -6,6 +6,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.PrintWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 class SideCharacter extends Character{
 	//Private instance variables.

@@ -15,25 +15,25 @@ public class KeyGenerator{
 		Item poss[] = new Item[10];
 
 	 	//Item type, name, weight, value, strength, x, and y.	
-		poss[0] = new Item(ItemType.Key,"Key", 0, 0, 0, 8, 8);
+		poss[0] = new Item(ItemType.Key,"Key", 0, 0, 0, 8, 8, 1);
 		
-		poss[1] = new Item(ItemType.Key,"Key", 0, 0, 0, 10, 25);
+		poss[1] = new Item(ItemType.Key,"Key", 0, 0, 0, 10, 25, 1);
 		
-		poss[2] = new Item(ItemType.Key,"Key", 0, 0, 0, 3, 5);
+		poss[2] = new Item(ItemType.Key,"Key", 0, 0, 0, 3, 5, 1);
 
-		poss[3] = new Item(ItemType.Key,"Key", 0, 0, 0, 6, 20);
+		poss[3] = new Item(ItemType.Key,"Key", 0, 0, 0, 6, 20, 1);
 
-		poss[4] = new Item(ItemType.Key,"Key", 0, 0, 0, 4, 9);
+		poss[4] = new Item(ItemType.Key,"Key", 0, 0, 0, 4, 9, 1);
 		
-		poss[5] = new Item(ItemType.Key,"Key", 0, 0, 0, 7, 12);
+		poss[5] = new Item(ItemType.Key,"Key", 0, 0, 0, 7, 12, 1);
 		
-		poss[6] = new Item(ItemType.Key,"Key", 0, 0, 0, 5, 26);
+		poss[6] = new Item(ItemType.Key,"Key", 0, 0, 0, 5, 26, 1);
 		
-		poss[7] = new Item(ItemType.Key,"Key", 0, 0, 0, 3, 21);
+		poss[7] = new Item(ItemType.Key,"Key", 0, 0, 0, 3, 21, 1);
 		
-		poss[8] = new Item(ItemType.Key,"Key", 0, 0, 0, 10, 13);
+		poss[8] = new Item(ItemType.Key,"Key", 0, 0, 0, 10, 13, 1);
 		
-		poss[9] = new Item(ItemType.Key,"Key", 0, 0, 0, 6, 3);
+		poss[9] = new Item(ItemType.Key,"Key", 0, 0, 0, 6, 3, 1);
 		
 		
 		int x = rng.nextInt(10);

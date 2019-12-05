@@ -23,7 +23,7 @@ class Inventory{
 	Item equippedArmor;
 	Player player;
 	Item item;
-	
+
 	/**Constructs a new <tt>Inventory</tt> with a iron daggeer, leather armor, and a health potion.
 	 * @param maxWeight the total weight that the player can carry in their inventory
 	 */
@@ -33,13 +33,13 @@ class Inventory{
 		items = new ArrayList<Item>();
 
 		//The two items that the player will have in their inventory when the game starts.
-		Item ironDagger = new Item(ItemType.Weapon, "Iron Dagger", 12, 28, 16, 0, 0);
+		Item ironDagger = new Item(ItemType.Weapon, "Iron Dagger", 12, 28, 16, 0, 0, 1);
 		items.add(ironDagger);
 
-		Item leatherArmor = new Item(ItemType.Armor, "Leather Armor", 14, 120, 18, 0, 0);
+		Item leatherArmor = new Item(ItemType.Armor, "Leather Armor", 14, 120, 18, 0, 0, 1);
 		items.add(leatherArmor);
-		
-		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0);
+
+		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0, 1);
 		items.add(healthPotion);
 
 		//Default armor and weapon.
@@ -61,7 +61,7 @@ class Inventory{
 	void printInventoryStats(){
 		System.out.println("Total Weight: " + getTotalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
 	}
-	
+
 	/**
 	 * Determines if an item is in the <tt>Inventory</tt>. If it is then the item will not be displayed
 	 * on the board
@@ -139,7 +139,7 @@ class Inventory{
 			System.out.println();
 		}
 	}
-	
+
 	/**
 	 * Drops a item from the player's <tt>Inventory</tt>.
 	 * @param player that corresponds to the inventory {@link Player}
@@ -311,15 +311,14 @@ class Inventory{
 	 * strength to fight the enemies on the board. 
 	 */
 	void drinkHealthPotion(){
-	
+
 		int count = 0;
 		System.out.println("[Player Inventory]");
 		System.out.println("Name Weight Value Strength");
 		for(int i = 0; i < items.size(); i++){
-				count++;
-				System.out.println(count + ". " + items.get(i));
-			}
-			
+			count++;
+			System.out.println(count + ". " + items.get(i));
+		}
 		count++;
 		System.out.println(count + ". Cancel\n");
 
@@ -391,8 +390,9 @@ class Inventory{
 			int strength = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
-			Item item = new Item (type, name, weight, value, strength, x, y);
-			this.items.add(item);
+			int roomNum = a.nextInt(); //added this
+			Item item = new Item (type, name, weight, value, strength, x, y, roomNum); //added the end "roomNum"
+			this.items.add(item); 
 			noth = a.nextLine();
 			noth = a.nextLine();
 			while(a.hasNext()){
@@ -405,9 +405,10 @@ class Inventory{
 					strength = a.nextInt();
 					x = a.nextInt();
 					y = a.nextInt();
+					roomNum = a.nextInt(); // added this
 					noth = a.nextLine();
 					noth = a.nextLine();
-					Item item1 = new Item (type, name, weight, value, strength, x, y);
+					Item item1 = new Item (type, name, weight, value, strength, x, y, roomNum); //added the end "roomNum"
 					this.items.add(item1);
 				} 
 				else if(t.equals("-")){
@@ -420,5 +421,5 @@ class Inventory{
 		}
 	}
 
-	}
+}
 

@@ -20,6 +20,7 @@ class Item{
 	private int strength;
 	public int x;
 	public int y;
+	public int roomNum;
 	
 	/** 
 	 * Constructs an <tt>Item</tt> with a type, name, weight, value, strength, x, y coordinates that are taken 
@@ -32,7 +33,7 @@ class Item{
 	 * @param x x coordinate of the object (where it will be placed on the map).
 	 * @param y y coordinate of the object (where it will be placed on the map).
 	 */
-	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y){
+	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y, int roomNum){
 		this.type = type;
 		this.name = name;
 		this.weight = weight;
@@ -40,6 +41,21 @@ class Item{
 		this.strength = strength;
 		this.x = x;
 		this.y = y;
+		this.roomNum = roomNum;
+	}
+	
+	/**Sets the room number that the item is in.
+	 * @return The room number.
+	 */
+	public void setRoomNum(int roomNum){
+		this.roomNum = roomNum;
+	}
+
+	/**Returns the room number that the enemy is in.
+	 * @return The room number.
+	 */
+	public int getRoomNum(){
+		return this.roomNum;
 	}
 
 	/**
@@ -137,6 +153,7 @@ class Item{
 		pw.println(strength);
 		pw.println(x);
 		pw.println(y);
+		pw.println(roomNum);
 		pw.println(".");
 	}
 
@@ -155,6 +172,7 @@ class Item{
 			this.strength = a.nextInt();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
+			this.roomNum = a.nextInt(); //added this
 			String noth = a.nextLine();
 		} 
 		catch (Exception e){
@@ -165,40 +183,4 @@ class Item{
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
