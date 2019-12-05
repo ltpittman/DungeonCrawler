@@ -102,7 +102,7 @@ class Item{
 
 	/**
 	 * Returns the symbol to represent the <tt>Item</tt> on the board
-	 *@return item's char image.
+	 * @return item's char image.
 	 */
 	public char getItemImage(){
 		if(type == ItemType.HealthPotion){
@@ -127,7 +127,7 @@ class Item{
 
 	/**
 	 * Saves the information about the <tt>Item</tt> in a file
-	 * @param a printwriter that will type the informatin into a file
+	 * @param pw printwriter that will type the informatin into a file
 	 */
 	public void persist (PrintWriter pw){
 		pw.println(type);
