@@ -48,7 +48,7 @@ class Room{
 	}
 	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		
-		//Erase old players location.
+		//Erase old player's location.
 		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
 				if(grid[j][i] == '@'){
@@ -57,7 +57,15 @@ class Room{
 			}
 		}
 
-		//Erase old monsters locations.
+		//Erase old side character's location.
+		for(int i = 0; i < 12; i++){
+			for(int j = 0; j < 30; j++){
+				if(grid[j][i] == '&'){
+					grid[j][i] = '.';
+				}
+			}
+		}
+		//Erase old monster's locations.
 		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
 				if(grid[j][i] == 'M'){

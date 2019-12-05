@@ -100,6 +100,11 @@ class Main{
 					item6.restore(a);
 					noth = a.nextLine();
 					item7.restore(a);
+					noth = a.nextLine();
+					key1.restore(a);
+					noth = a.nextLine();
+					key2.restore(a);
+					noth = a.nextLine();
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();
@@ -295,11 +300,11 @@ class Main{
 							enemy2.persist(pw);
 							enemy3.persist(pw);
 							enemy4.persist(pw);
-							enemy5.persit(pw);
-							enemy6.persit(pw);
-							enemy7.persit(pw);
-							enemy8.persit(pw);
-							enemy9.persit(pw);
+							enemy5.persist(pw);
+							enemy6.persist(pw);
+							enemy7.persist(pw);
+							enemy8.persist(pw);
+							enemy9.persist(pw);
 							item1.persist(pw);
 							item2.persist(pw);
 							item3.persist(pw);
@@ -307,6 +312,8 @@ class Main{
 							item5.persist(pw);
 							item6.persist(pw);
 							item7.persist(pw);
+							key1.persist(pw);
+							key2.persist(pw);
 							player.inventory.persist(pw);
 							world.persist(pw);
 							pw.close();
