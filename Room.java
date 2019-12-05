@@ -76,7 +76,7 @@ class Room{
 	 * @param enemy3 a random monster that the player must kill.
 	 */
 	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
-		
+
 		//Erase old player's location.
 		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
@@ -250,15 +250,13 @@ class Room{
 			battle.attack(player,enemy3);
 		}
 
-<<<<<<< HEAD
 		//Here is where the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
 		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){
-=======
-		//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
-		if(player.y == explorer.y && player.x == explorer.x){
->>>>>>> 506054a932d9f6b817989921f8fa876119b4f86f
-			interact.interactCharacters(player, explorer);
+			//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
+			if(player.y == explorer.y && player.x == explorer.x){
+				interact.interactCharacters(player, explorer);
+			}
 		}
-	}
 
+	}
 }
