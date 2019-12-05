@@ -196,8 +196,6 @@ class Enemy extends Character{
 	 */
 	public void restore(Scanner a) throws Exception {
 		try{
-			String noth = a.nextLine();
-			noth = a.nextLine();
 			this.name = a.nextLine();
 			String t = a.nextLine();
 			MonsterType type = MonsterType.valueOf(t);
@@ -207,6 +205,8 @@ class Enemy extends Character{
 			this.health = a.nextInt();
 			this.damage = a.nextInt();
 			this.isDead = a.nextBoolean();
+			String noth = a.nextLine();
+			noth = a.nextLine();
 		}
 		catch(Exception e){
 			System.out.println("Could not read enemy portion of file.");

@@ -86,9 +86,8 @@ class Main{
 					enemy7.restore(a);
 					enemy8.restore(a);
 					enemy9.restore(a);
-					String noth = a.nextLine();
 					item1.restore(a);
-					noth = a.nextLine();
+					String noth = a.nextLine();
 					item2.restore(a);
 					noth = a.nextLine();
 					item3.restore(a);
@@ -104,6 +103,7 @@ class Main{
 					key1.restore(a);
 					noth = a.nextLine();
 					key2.restore(a);
+					noth = a.nextLine();
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();

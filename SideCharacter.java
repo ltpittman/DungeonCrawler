@@ -105,8 +105,6 @@ class SideCharacter extends Character{
 	 * @param pw The print writer that types the inforamtion into the file.
 	 */
 	public void persist(PrintWriter pw){
-		String file = "Saved";
-		pw.println(file);
 		pw.println(name);
 		pw.println(x + " " + y);
 		pw.println(health);
@@ -117,10 +115,14 @@ class SideCharacter extends Character{
 	 */
 	public void restore (Scanner a){
 		try{
+			String noth = a.nextLine();
+			noth = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
 			this.health = a.nextInt();
+			noth = a.nextLine();
+			noth = a.nextLine();
 		}
 		catch(Exception e){
 			System.out.println("No file could be found for the side character portion.");

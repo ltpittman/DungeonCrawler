@@ -383,8 +383,6 @@ class Inventory{
 		try{
 			this.items.clear();
 			String noth = a.nextLine();
-			noth = a.nextLine();
-			noth = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			String name = a.nextLine();

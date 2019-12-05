@@ -146,7 +146,6 @@ class Item{
 	 */
 	public void restore (Scanner a){
 		try{
-			String noth = a.nextLine();
 			String t = a.nextLine();
 			ItemType type = ItemType.valueOf(t);
 			this.type = type;
@@ -156,6 +155,7 @@ class Item{
 			this.strength = a.nextInt();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
+			String noth = a.nextLine();
 		} 
 		catch (Exception e){
 			System.out.println("Could not read item portion of file");
