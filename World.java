@@ -57,6 +57,14 @@ class World{
 	 * @param item5 a random item that the player can pick up and use.
 	 * @param item6 a random item that the player can pick up and use.
 	 * @param item7 a random item that the player can pick up and use.
+	 * @param item8 a random item that the player can pick up and use.
+	 * @param item9 a random item that the player can pick up and use.
+	 * @param item10 a random item that the player can pick up and use.
+	 * @param item11 a random item that the player can pick up and use.
+	 * @param item12 a random item that the player can pick up and use.
+	 * @param item13 a random item that the player can pick up and use.
+	 * @param item14 a random item that the player can pick up and use.
+	 * @param item15 a random item that the player can pick up and use.
 	 * @param enemy1 a enemy that the player can battle against.
 	 * @param enemy2 a enemy that the player can battle against.
 	 * @param enemy3 a enemy that the player can battle against.
@@ -68,16 +76,16 @@ class World{
 	 * @param enemy9 a enemy that the player can battle against.
 	 * @return the current room number of the player.
 	 */
-	public int fillWorld(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4, Enemy enemy5, Enemy enemy6, Enemy enemy7, Enemy enemy8, Enemy enemy9){ 	
+	public int fillWorld(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Item item8, Item item9, Item item10, Item item11, Item item12, Item item13, Item item14, Item item15, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4, Enemy enemy5, Enemy enemy6, Enemy enemy7, Enemy enemy8, Enemy enemy9){ 	
 
 		Scanner in = new Scanner(System.in);
 		
 		//Set the main room as room1.
-		room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3);
+		room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 
 		//If the player is in the first room, then print Room1.
 		if(currentRoom == 0){
-			room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3);
+			room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0 && player.inventory.items.contains(key1)){
 				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room?");
@@ -88,7 +96,7 @@ class World{
 					player.x = 10;
 					player.y = 6;
 					System.out.println("You put the key into the lock and slowly turn it. You hear a click as the old, worn down door unlocks.\nYou carefully open the door and enter into the dark room before you...");
-					room2.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy4, enemy5, enemy6);
+					room2.fillRoom(player, explorer, key1, key2, item6, item7, item8, item9, item10, enemy4, enemy5, enemy6);
 				}
 				else{
 					System.out.println("You decide to keep exploring the room you are currently in...");
@@ -113,7 +121,7 @@ class World{
 					player.x = 9;
 					player.y = 1;
 					System.out.println("You put the key into the lock and slowly turn it. You hear a click as the old, worn down door unlocks.\nYou carefully open the door and enter into the dark room before you...");
-					room3.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy7, enemy8, enemy9);
+					room3.fillRoom(player, explorer, key1, key2, item11, item12, item13, item14, item15, enemy7, enemy8, enemy9);
 				}
 				else{
 					System.out.println("You decide to keep exploring the room you are currently in...");
@@ -137,7 +145,7 @@ class World{
 
 		//If the player is in the second room, then print Room2.
 		else if(currentRoom == 1){
-			room2.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy4, enemy5, enemy6);
+			room2.fillRoom(player, explorer, key1, key2, item6, item7, item8, item9, item10, enemy4, enemy5, enemy6);
 			//Here is where the player will enter the first room if they want to leave this room.
 			if(player.getPositionX() == 10 && player.getPositionY() == 6 && currentRoom == 1){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
@@ -148,7 +156,7 @@ class World{
 					player.x = 1;
 					player.y = 6;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
-					room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3);
+					room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
 				else{
 					System.out.println("You decide to keep exploring the room you are currently in...");
@@ -164,7 +172,7 @@ class World{
 
 		//If the player is in the third room, then print Room3.
 		else if(currentRoom == 2){
-			room3.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy7, enemy8, enemy9);
+			room3.fillRoom(player, explorer, key1, key2, item11, item12, item13, item14, item15, enemy7, enemy8, enemy9);
 			if(player.getPositionX() == 9 && player.getPositionY() == 1 && currentRoom == 2){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
 				System.out.print("[Answer] ");
@@ -174,7 +182,7 @@ class World{
 					player.x = 9;
 					player.y = 28;
 					System.out.println("You manage to push aside the heavy rocks and push your body through the entrance...");
-					room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, enemy1, enemy2, enemy3);
+					room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 				}
 				else{
 					System.out.println("You decide to keep exploring the room you are currently in...");

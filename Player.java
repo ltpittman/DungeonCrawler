@@ -321,8 +321,9 @@ class Player extends Character{
 			int stren = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
+			int roomNum = a.nextInt(); //added this
 			blank = a.nextLine();
-			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y);
+			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y, roomNum);
 			String typeitemB = a.nextLine();
 			ItemType typeB = ItemType.valueOf(typeitemB);
 			String nameB = a.nextLine();
@@ -331,7 +332,8 @@ class Player extends Character{
 			int strenB = a.nextInt();
 			int xB = a.nextInt();
 			int yB = a.nextInt();
-			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB);
+			int rN = a.nextInt();
+			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB, rN);
 		}
 
 		catch(Exception e){

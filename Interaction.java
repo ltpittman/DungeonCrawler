@@ -66,7 +66,7 @@ class Interaction{
 				
 				System.out.println();
 				System.out.println("[" + characterName + "] I have a few health potions to spare. Here you can have one!");
-				Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0);
+				Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0, 1);
 				player.inventory.addItem(healthPotion);
 				System.out.println();
 				running = true;

@@ -25,7 +25,7 @@ class Enemy extends Character{
 	public int roomNum;
 
 	/**
-	 * Constructs a new <tt>Enemy</tt> with stats from the paramaters.
+	 * Constructs a new <tt>Enemy</tt> with stats from the paramaters. Contains a name, health, damage, x, y, type, isDead, and roomNum status.
 	 * @param name the name of the Enemy
 	 * @param health the health of the Enemy (out of 100)
 	 * @param damage the damage of the Enemy {@link Battles} 
@@ -49,15 +49,15 @@ class Enemy extends Character{
 
 	/**
 	 * Sets the room number that the enemy is in. 
-	 * @param roomNum the room number that the enemy is in
+	 * @param roomNum The room number that the enemy is in.
 	 */
-	public void setRoomNum (int roomNum){
+	public void setRoomNum(int roomNum){
 		this.roomNum = roomNum;
 	}
 
 	/**
-	 * Returns the room number that the enemy is in
-	 * @return the room number 
+	 * Returns the room number that the enemy is in.
+	 * @return The room number. 
 	 */
 	public int getRoomNum(){
 		return this.roomNum;

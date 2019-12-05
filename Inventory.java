@@ -33,13 +33,13 @@ class Inventory{
 		items = new ArrayList<Item>();
 
 		//The two items that the player will have in their inventory when the game starts.
-		Item ironDagger = new Item(ItemType.Weapon, "Iron Dagger", 12, 28, 16, 0, 0);
+		Item ironDagger = new Item(ItemType.Weapon, "Iron Dagger", 12, 28, 16, 0, 0, 1);
 		items.add(ironDagger);
 
-		Item leatherArmor = new Item(ItemType.Armor, "Leather Armor", 14, 120, 18, 0, 0);
+		Item leatherArmor = new Item(ItemType.Armor, "Leather Armor", 14, 120, 18, 0, 0, 1);
 		items.add(leatherArmor);
 
-		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0);
+		Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0, 1);
 		items.add(healthPotion);
 
 		//Default armor and weapon.
@@ -390,8 +390,9 @@ class Inventory{
 			int strength = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
-			Item item = new Item (type, name, weight, value, strength, x, y);
-			this.items.add(item);
+			int roomNum = a.nextInt(); //added this
+			Item item = new Item (type, name, weight, value, strength, x, y, roomNum); //added the end "roomNum"
+			this.items.add(item); 
 			noth = a.nextLine();
 			noth = a.nextLine();
 			while(a.hasNext()){
@@ -404,9 +405,10 @@ class Inventory{
 					strength = a.nextInt();
 					x = a.nextInt();
 					y = a.nextInt();
+					roomNum = a.nextInt(); // added this
 					noth = a.nextLine();
 					noth = a.nextLine();
-					Item item1 = new Item (type, name, weight, value, strength, x, y);
+					Item item1 = new Item (type, name, weight, value, strength, x, y, roomNum); //added the end "roomNum"
 					this.items.add(item1);
 				} 
 				else if(t.equals("-")){
