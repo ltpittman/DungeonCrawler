@@ -295,11 +295,11 @@ class Main{
 							enemy2.persist(pw);
 							enemy3.persist(pw);
 							enemy4.persist(pw);
-							enemy5.persit(pw);
-							enemy6.persit(pw);
-							enemy7.persit(pw);
-							enemy8.persit(pw);
-							enemy9.persit(pw);
+							enemy5.persist(pw);
+							enemy6.persist(pw);
+							enemy7.persist(pw);
+							enemy8.persist(pw);
+							enemy9.persist(pw);
 							item1.persist(pw);
 							item2.persist(pw);
 							item3.persist(pw);
