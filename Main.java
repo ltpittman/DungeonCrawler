@@ -100,6 +100,10 @@ class Main{
 					item6.restore(a);
 					noth = a.nextLine();
 					item7.restore(a);
+					noth = a.nextLine();
+					key1.restore(a);
+					noth = a.nextLine();
+					key2.restore(a);
 					player.inventory.restore(a);
 					world.restore(a);
 					a.close();
@@ -307,6 +311,8 @@ class Main{
 							item5.persist(pw);
 							item6.persist(pw);
 							item7.persist(pw);
+							key1.persist(pw);
+							key2.persist(pw);
 							player.inventory.persist(pw);
 							world.persist(pw);
 							pw.close();

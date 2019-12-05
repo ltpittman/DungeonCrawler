@@ -29,11 +29,16 @@ class World{
 
 	/**
 	 * Constructs a new <tt>World</tt> that contains three rooms.
+	 * @throws FileNotFoundException
 	 */
-	World(){
-		this.room1 = new Room("Room1.txt");
-		this.room2 = new Room("Room2.txt");
-		this.room3 = new Room("Room3.txt");
+	World() throws FileNotFoundException{
+		try{
+			this.room1 = new Room("Room1.txt");
+			this.room2 = new Room("Room2.txt");
+			this.room3 = new Room("Room3.txt");
+		} catch(FileNotFoundException e){
+			System.out.println("The room files were not found.");
+		}
 		//Add the rooms to the arrayList.
 		this.currentRoom = currentRoom;
 		rooms.add(room1);
