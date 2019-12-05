@@ -1,5 +1,9 @@
-/*This class reads in a file to create a room for the game. */
-
+/**
+ * A <tt>Room</tt> represents part of the board that the player can move around. Each room is filled with a player,
+ * side character, nine items, and three enemies. The player is able to move around the room and interact with the
+ * other objects in the room. 
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,8 +19,13 @@ class Room{
 	private SideCharacter explorer;
 	private Interaction interact = new Interaction();
 
-	//Constructor that takes in a file.
-	public Room(String frame){
+	/**
+	 * Constructs a new <tt>Room</tt> that is empty. The rooms are saved onto a file that is read
+	 * @param frame 
+	 * @throws FileNotFoundException
+	 * @return the new room that is created
+	 */
+	public Room(String frame) throws FileNotFoundException {
 
 		grid = new char[30][12];
 
@@ -37,7 +46,9 @@ class Room{
 		}
 	}
 
-	//Method to print the room the player is in.
+	/**
+	 * Prints the room to the screen for the user to see. 
+	 */
 	public void printRoom(){
 		for(int i = 0; i < 12; i ++){
 			for(int j = 0; j < 30; j++){
@@ -46,6 +57,26 @@ class Room{
 			System.out.println();
 		}
 	}
+
+	/**
+	 * Added objects to the room including a player, a side character, two keys, seven items, and three
+	 * enemies. The characters in the room are able to move around the board and the other items are
+	 * for the main player's benefit through out the game.
+	 * @param player the main player that is controlled by the user
+	 * @param explorer a side character that helps the player pick up items
+	 * @param key1 a key to open the door to another room
+	 * @param key2 a key to otpen the door to another room
+	 * @param item1 a random item the player can pick up
+	 * @param item2 a random item the player can pick up
+	 * @param item3 a random item the player can pick up
+	 * @param item4 a randoom item the player can pick up
+	 * @param item5 a random item the player can pick up
+	 * @param item6 a random item the player can pick up 
+	 * @param item7 a random item the player can pick up
+	 * @param enemy1 a random monster that the player must kill
+	 * @param enemy2 a random monster that the player must kill
+	 * @param enemy3 a random monster that the player must kill
+	 */
 	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 		
 		//Erase old players location.

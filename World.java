@@ -1,4 +1,9 @@
-/*This class displays the world, along with the three rooms. In the fillWorld method, the player will be able to move between rooms, fight monsters, and pick up random items.*/
+/**
+ * A <tt>World</tt> represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the
+ * next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they
+ * please and fight any monsters, pick up any items, and converse with their side character
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -22,7 +27,9 @@ class World{
 
 	private Battles battle = new Battles();
 
-	//Constructor for the world.
+	/**
+	 * Constructs a new <tt>World</tt> that contains three rooms.
+	 */
 	World(){
 		this.room1 = new Room("Room1.txt");
 		this.room2 = new Room("Room2.txt");
@@ -33,7 +40,23 @@ class World{
 		rooms.add(room2);
 		rooms.add(room3);
 	}
-	//Method to fill the world with the players, items, and enemies.
+
+	/**
+	 * Adds objects to the world including: a player, a side character, two keys, seven items, and three enemies. The character move around the board and the items are 
+	 * on the board for the benefit of the player.
+	 * @param player the main character of the game that is controlled by the user
+	 * @param explorer a side character that helps the player out by giving them items
+	 * @param key1 a key that allows the player to enter a new room
+	 * @param key2 a key that allows the player to enter a new room
+	 * @param item1 a random item that the player can pick up and use
+	 * @param item2 a random item that the player can pick up and use
+	 * @param item3 a random item that the player can pick up and use
+	 * @param item4 a random item that the player can pick up and use
+	 * @param item5 a random item that the player can pick up and use
+	 * @param item6 a random item that the player can pick up and use
+	 * @param item7 a random item that the player can pick up and use
+	 * @return the current room number of the player
+	 */
 	public int fillWorld(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4, Enemy enemy5, Enemy enemy6, Enemy enemy7, Enemy enemy8, Enemy enemy9){ 	
 
 		Scanner in = new Scanner(System.in);
@@ -155,17 +178,27 @@ class World{
 
 
 
-	//This method prints the current room that the player is in.
+	/**
+	 * Prints the current room the main player is in to the screen.
+	 */
 	public void printCurrentRoom(){
 		//We are calling the arraylist Rooms to GET the index of the current room the player is in to print it to the screen.
 		rooms.get(currentRoom).printRoom();
 	}
-	//Method to save the game to a file.
+
+	/**
+	 * Saves the information about the current room the player is in to a file 
+	 * @param pw print writer that types the information into a file
+	 */
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
 		pw.println(".");
 	}
-	//Method to restore the previous saved game.
+
+	/**
+	 * Reads the information about the current room from a file. This they allows the user to continue with a previously saved game. 
+	 * @param a scanner that reads the text in from a file
+	 */
 	public void restore(Scanner a){
 		try{
 			this.currentRoom = a.nextInt();
