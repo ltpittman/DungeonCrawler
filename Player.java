@@ -287,6 +287,7 @@ class Player extends Character{
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedWeapon.getItemX());
 		pw.println(inventory.equippedWeapon.getItemY());
+		pw.println(inventory.equippedWeapon.getRoomNum());
 
 		pw.println(inventory.equippedArmor.getType());
 		pw.println(inventory.equippedArmor.getName());
@@ -295,6 +296,7 @@ class Player extends Character{
 		pw.println(inventory.equippedArmor.getStrength());
 		pw.println(inventory.equippedArmor.getItemX());
 		pw.println(inventory.equippedArmor.getItemY());
+		pw.println(inventory.equippedArmor.getRoomNum());
 		pw.println(".");
 	}
 
