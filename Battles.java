@@ -32,10 +32,6 @@ class Battles{
 	 *
 	 */
 	public void attack(Player player, Enemy enemy) throws InputMismatchException {
-		
-		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
-
-
 		//Get the equipped armor of the player.
 		equippedArmor = player.getEquippedArmor();
 		//Get the equipped weapon of the player.
@@ -52,7 +48,7 @@ class Battles{
 		int strengthEnemy = enemy.getDamage();
 
 		while(healthEnemy > 0){
-
+			System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");
