@@ -87,6 +87,15 @@ class Room{
 				}
 			}
 		}
+		
+		//Erase old SideCharacter location.
+		for(int i =0; i <12; i++){
+			for(int j = 0; j < 30; j++){
+				if(grid[j][i] == '&'){
+					grid[j][i] = '.';
+				}
+			}
+		}
 
 		//Erase old monsters locations.
 		for(int i = 0; i < 12; i++){
@@ -101,7 +110,7 @@ class Room{
 		for(int i = 0; i < 12; i++){
 			for(int j = 0; j < 30; j++){
 				if(grid[j][i] == 'K'){
-						grid[j][i] = '.';
+					grid[j][i] = '.';
 				}
 			}
 		}
