@@ -1,5 +1,5 @@
 /**
- * A World represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the
+ * A <tt>World</tt> represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the
  * next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they
  * please and fight any monsters, pick up any items, and converse with their side character
  * @author Lauren Pittman, Tavion Britt, and Grace Long

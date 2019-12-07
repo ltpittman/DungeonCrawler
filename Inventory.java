@@ -1,8 +1,5 @@
 /**
- * A Inventory is all the items the player is curently holding. The player starts out with 
- * one iron dagger, one leather armor, and a health potion when they start the game. Here the player 
- * will be able to add a item to their inventory, drop a item, print their inventory, get their total 
- * weight and other stats, equip a weapon or armor, and drink a health potion.
+ * <tt>Inventory</tt> is all the items the player is currently holding. The player starts out with one iron dagger, one leather armor, and a health potion when they start the game. Here the player will be able to add a item to their inventory, drop a item, print their inventory, get their total weight and other stats, equip a weapon or armor, and drink a health potion.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 

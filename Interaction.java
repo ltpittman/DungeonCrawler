@@ -1,4 +1,4 @@
-/**This class is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
+/**<tt>Interaction</tt> is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 

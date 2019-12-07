@@ -1,6 +1,5 @@
 /** 
- * An Objective is information for the user to know about the game,  it describes the scenerio of the game 
- * and shows the user how the win the game. 
+ * <tt>Objective</tt> is information for the user to know about the game's objective along with the commands you player can use to move around the board, pick up or drop items, show their inventory, restore their health by drinking a health potion, and to equip a weapon or piece of armor.
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 public class Objective{
