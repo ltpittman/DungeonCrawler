@@ -26,7 +26,7 @@ public class Main{
 
 		World world = new World();
 
-		SideCharacter explorer = new SideCharacter("Bolgraf", 100);
+		SideCharacter explorer = new SideCharacter("Ranulph", 100);
 
 		Inventory inventory;
 		Player player;

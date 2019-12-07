@@ -18,7 +18,7 @@ public class ItemGenerator{
 		
 		Random rng = new Random();
 		//Will get a random number between 0 and 26.
-		Item poss[] = new Item[25];
+		Item poss[] = new Item[29];
 
 	 	//Item type, Item name, weight, value, strength, x and y, and roomNumber.	
 		poss[0] = new Item(ItemType.HealthPotion,"Health Potion", 2, 25, 100, 5, 23, 1);
@@ -75,7 +75,16 @@ public class ItemGenerator{
 		poss[24] = new Item(ItemType.Weapon,"Steel Staff", 83, 323, 19, 2, 17, 1);
 		
 
-		int x = rng.nextInt(25);
+		poss[25] = new Item(ItemType.Other,"Steel Cup", 4, 16, 0, 3, 13, 1);
+		
+		poss[26] = new Item(ItemType.Other,"Ruined Book", 2, 4, 0, 8, 3, 1);
+		
+		poss[27] = new Item(ItemType.Other,"Dried Moss", 1, 14, 0, 5, 11, 1);
+		
+		poss[28] = new Item(ItemType.Other,"Broken Sword", 25, 14, 0, 4, 7, 1);
+		
+		
+		int x = rng.nextInt(29);
 		//Returns a random item.
 		return poss[x];
 
