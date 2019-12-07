@@ -45,9 +45,7 @@ public class Player extends Character{
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Restores the health to 100 when the <tt>Player</tt> drinks a health potion.
-=======
 	 * Returns the name of the Player.
 	 * @return name of the player
 	 */
@@ -73,7 +71,6 @@ public class Player extends Character{
 
 	/**
 	 * Restores the health to 100 when the Player drinks a health potion.
->>>>>>> d81ff17b1983faf0f79dd2c38f915db49a24f183
 	 */
 	public void restoreHealth(){
 		this.health = 100;
@@ -122,12 +119,8 @@ public class Player extends Character{
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Checks to see if the <tt>Player</tt> can move up, if it can the <tt>Player</tt> moves up one 
-	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
-=======
-	 * Returns the x-coordinate of the Player.
-	 * @return x-coordinate
+	 * Checks to see if the <tt>Player</tt> can move up, if it can the <tt>Player</tt> moves up one space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * @return Returns the x-coordinate of the Player.
 	 */
 	public int getPositionX(){
 		return this.x;
@@ -142,9 +135,7 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move up, if it can the Player moves up one 
-	 * space on the board. The Player would not be able to move if there was a wall in the way.
->>>>>>> d81ff17b1983faf0f79dd2c38f915db49a24f183
+	 * Checks to see if the Player can move up, if it can the Player moves up one  space on the board. The Player would not be able to move if there was a wall in the way.
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	public boolean goUp(){

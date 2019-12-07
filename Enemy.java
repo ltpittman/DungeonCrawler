@@ -118,22 +118,6 @@ public class Enemy extends Character{
 	}
 
 	/**
-	 * Returns the x coordinate of the Enemy 
-	 * @return x coordinate
-	 */
-	public int getX(){
-		return this.x;
-	}
-
-	/**
-	 * Returns the y coordinate of the Enemy
-	 * @return y coordinate
-	 */
-	public int getY(){
-		return this.y;
-	}
-
-	/**
 	 * Moves the Enemy around the board randomly. If the Enemy will run into a wall 
 	 * when it moves it returns false, otherwise it returns true.
 	 * @return if the enemy can move in the random directon

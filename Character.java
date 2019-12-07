@@ -76,15 +76,5 @@ public abstract class Character{
 	public int getPositionY(){
 		return this.y;
 	}
-
-<<<<<<< HEAD
-=======
-	/**
-	 * Prints the information about the location of the Character
-	 */
-	public void getLocation(){
-		System.out.println("Location: " + getPositionX() + "," + getPositionY());
-	}
->>>>>>> d81ff17b1983faf0f79dd2c38f915db49a24f183
 }
 
