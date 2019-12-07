@@ -52,9 +52,19 @@ class Interaction{
 			else if(input == 2){
 				
 				System.out.println();
-				System.out.println("[" + characterName + "] What am I doing down here? I could say the same thing about you!\nJust like yourself I love to explore and fight monsters. I have been doing this since I was a young kid with my father. In fact, I love to see new explorers like yourself taking on such strong monsters! If you happen to need anything, just let me know and I may have what you need!");
+				System.out.println("[" + characterName + "] What am I doing down here? I could say the same thing about you!\nJust like yourself I love to explore. I have been doing this since I was a young kid with my father. Although time has passed and I am not as strong as I use to be, I still like to come down here and try to find anything that can prove to be useful...");
+				try{
+					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println();				
+				System.out.println("[" + characterName + "] In fact, I love to see new explorers like yourself taking on such strong monsters! If you happen to need anything, just let me know and I may have what you need!");
 				System.out.println();
+
 				running = true;
+				
 				try{
 					Thread.sleep(3000);
 				}
@@ -77,12 +87,21 @@ class Interaction{
 					System.out.println(e);
 				}
 
+				System.out.println("[" + characterName + "] If you need any more health potions, just let me know.");
+				System.out.println();
+				try{
+					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+
 			}
 			else if(input == 4){
 
 				Item item = SideCharacterItemGenerator.generate();
 				System.out.println();
-				System.out.println("[" + characterName + "] I may have something that can be useful... Hope this can help!");
+				System.out.println("[" + characterName + "] I may have something that can be useful... I'm sure this can help!");
 				player.inventory.addItem(item);
 				System.out.println();
 				System.out.println();
@@ -93,9 +112,20 @@ class Interaction{
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
+				System.out.println("[" + characterName + "] Hopefully you can find use for this. If not, I'm sure I have something else if you need it...");
+				System.out.println();
+				try{
+					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
 			}
 			else if(input == 5){
 				running = false;
+				System.out.println();
+				System.out.println("[" + characterName + "] If you need anything, you know where to find me!");
+				System.out.println();
 				break;
 			}
 		}

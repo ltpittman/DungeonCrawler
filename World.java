@@ -47,34 +47,34 @@ class World{
 	/**
 	 * Adds objects to the world including: a player, a side character, two keys, seven items, and three enemies. The character move around the board and the items are  on the board for the benefit of the player.
 	 * @param player the main character of the game that is controlled by the user.
-	 * @param explorer a side character that helps the player out by giving them items.
-	 * @param key1 a key that allows the player to enter a new specific room.
-	 * @param key2 a key that allows the player to enter a new specific room.
-	 * @param item1 a random item that the player can pick up and use.
-	 * @param item2 a random item that the player can pick up and use.
-	 * @param item3 a random item that the player can pick up and use.
-	 * @param item4 a random item that the player can pick up and use.
-	 * @param item5 a random item that the player can pick up and use.
-	 * @param item6 a random item that the player can pick up and use.
-	 * @param item7 a random item that the player can pick up and use.
-	 * @param item8 a random item that the player can pick up and use.
-	 * @param item9 a random item that the player can pick up and use.
-	 * @param item10 a random item that the player can pick up and use.
-	 * @param item11 a random item that the player can pick up and use.
-	 * @param item12 a random item that the player can pick up and use.
-	 * @param item13 a random item that the player can pick up and use.
-	 * @param item14 a random item that the player can pick up and use.
-	 * @param item15 a random item that the player can pick up and use.
-	 * @param enemy1 a enemy that the player can battle against.
-	 * @param enemy2 a enemy that the player can battle against.
-	 * @param enemy3 a enemy that the player can battle against.
-	 * @param enemy4 a enemy that the player can battle against.
-	 * @param enemy5 a enemy that the player can battle against.
-	 * @param enemy6 a enemy that the player can battle against.
-	 * @param enemy7 a enemy that the player can battle against.
-	 * @param enemy8 a enemy that the player can battle against.
-	 * @param enemy9 a enemy that the player can battle against.
-	 * @return the current room number of the player.
+	 * @param explorer A side character that helps the player out by giving them items.
+	 * @param key1 A key that allows the player to enter a new specific room.
+	 * @param key2 A key that allows the player to enter a new specific room.
+	 * @param item1 A random item that the player can pick up and use.
+	 * @param item2 A random item that the player can pick up and use.
+	 * @param item3 A random item that the player can pick up and use.
+	 * @param item4 A random item that the player can pick up and use.
+	 * @param item5 A random item that the player can pick up and use.
+	 * @param item6 A random item that the player can pick up and use.
+	 * @param item7 A random item that the player can pick up and use.
+	 * @param item8 A random item that the player can pick up and use.
+	 * @param item9 A random item that the player can pick up and use.
+	 * @param item10 A random item that the player can pick up and use.
+	 * @param item11 A random item that the player can pick up and use.
+	 * @param item12 A random item that the player can pick up and use.
+	 * @param item13 A random item that the player can pick up and use.
+	 * @param item14 A random item that the player can pick up and use.
+	 * @param item15 A random item that the player can pick up and use.
+	 * @param enemy1 A enemy that the player can battle against.
+	 * @param enemy2 A enemy that the player can battle against.
+	 * @param enemy3 A enemy that the player can battle against.
+	 * @param enemy4 A enemy that the player can battle against.
+	 * @param enemy5 A enemy that the player can battle against.
+	 * @param enemy6 A enemy that the player can battle against.
+	 * @param enemy7 A enemy that the player can battle against.
+	 * @param enemy8 A enemy that the player can battle against.
+	 * @param enemy9 A enemy that the player can battle against.
+	 * @return Reurns the current room number of the player.
 	 */
 	public int fillWorld(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Item item6, Item item7, Item item8, Item item9, Item item10, Item item11, Item item12, Item item13, Item item14, Item item15, Enemy enemy1, Enemy enemy2, Enemy enemy3, Enemy enemy4, Enemy enemy5, Enemy enemy6, Enemy enemy7, Enemy enemy8, Enemy enemy9){ 	
 
@@ -88,7 +88,7 @@ class World{
 			room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
 			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0 && player.inventory.items.contains(key1)){
-				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room?");
+				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room? Y/N");
 				System.out.print("[Answer] ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
@@ -113,7 +113,7 @@ class World{
 			}
 			//Here is where the player will enter the third room (located on the right).
 			if(player.getPositionX() == 9 && player.getPositionY() == 28 && currentRoom == 0 && player.inventory.items.contains(key2)){
-				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room?");
+				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room? Y/N");
 				System.out.print("[Answer] ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
@@ -149,7 +149,7 @@ class World{
 			//Here is where the player will enter the first room if they want to leave this room.
 			if(player.getPositionX() == 10 && player.getPositionY() == 6 && currentRoom == 1){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
-				System.out.print("[Answer] ");
+				System.out.print("\n[Answer] ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
@@ -175,7 +175,7 @@ class World{
 			room3.fillRoom(player, explorer, key1, key2, item11, item12, item13, item14, item15, enemy7, enemy8, enemy9);
 			if(player.getPositionX() == 9 && player.getPositionY() == 1 && currentRoom == 2){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
-				System.out.print("[Answer] ");
+				System.out.print("\n[Answer] ");
 				String input = in.next().toUpperCase();
 				if(input.equals("Y")){
 					currentRoom = 0; //Room1
