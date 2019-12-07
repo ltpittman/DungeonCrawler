@@ -1,5 +1,5 @@
 /**
- * <tt>Character</tt> represents an individual on the game board. Each Character object  * has a name, health, strength, and location.   
+ * Character represents an individual on the game board. Each Character object has a name, health, strength, image, and location.   
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 

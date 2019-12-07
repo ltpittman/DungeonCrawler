@@ -1,5 +1,5 @@
 /**
- * <tt>Battles</tt> represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
+ *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 

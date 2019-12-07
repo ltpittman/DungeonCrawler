@@ -1,6 +1,5 @@
 /**
- * A <tt>MonsterGenerator</tt> is a random generator that picks a monster from an array list of monsters. THese
- * monsters are then added to the board as enemies. {@link Enemy}
+ * A MonsterGenerator is a random generator that picks a monster from an array list of monsters. Monster types include: Vampire, Ghoul, Werewolf, Zombie, and Ghost. These  monsters are then added to the board as enemies. {@link Enemy}
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 

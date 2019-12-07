@@ -1,7 +1,5 @@
 /**
- * A <tt>World</tt> represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the
- * next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they
- * please and fight any monsters, pick up any items, and converse with their side character
+ * World represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the  next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they please and fight any monsters, pick up any items, and converse with their side character.
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 import java.io.FileInputStream;
@@ -26,8 +24,8 @@ public class World{
 	private Room room3; //Index[2]
 
 	/**
-	 * Constructs a new World that contains three rooms.
-	 * @throws FileNotFoundException
+	 * Constructs a new World that contains three rooms. World contains a arraylist called Rooms that hold the three different rooms.
+	 * @throws FileNotFoundException Throws exception if file is not found.
 	 */
 	World() throws FileNotFoundException{
 		try{

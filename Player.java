@@ -1,9 +1,5 @@
 /**
- * A Player is a type of character that the user creates to go around the game. The player has a 
- * name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength)
- * and an inventroy. The player is moved around the board through the control of the user. It can pick items up,
- * add the items to the player's inventory, and equip the items to use in a battle. When the player comes across
- * an enemy the player can choose to fight it.
+ *A Player is a type of character that the user creates to go around the game. The player has a name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength) and an inventroy. The player is moved around the board through the control of the user. It can pick items up, add the items to the player's inventory, and equip the items to use in a battle. When the player comes across an enemy the player can choose to fight it.
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 import java.util.Random;
@@ -45,7 +41,7 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Restores the health to 100 when the <tt>Player</tt> drinks a health potion.
+	 * Restores the health to 100 when the Player drinks a health potion.
 	 * Returns the name of the Player.
 	 * @return name of the player
 	 */
@@ -119,7 +115,7 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the <tt>Player</tt> can move up, if it can the <tt>Player</tt> moves up one space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * Checks to see if the Player can move up, if it can the Player moves up one space on the board. The Player would not be able to move if there was a wall in the way.
 	 * @return Returns the x-coordinate of the Player.
 	 */
 	public int getPositionX(){

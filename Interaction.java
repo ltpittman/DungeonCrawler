@@ -1,4 +1,4 @@
-/**<tt>Interaction</tt> is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
+/**Interaction is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
@@ -13,8 +13,8 @@ public class Interaction{
 	SideCharacter character;
 
 	/**In this method, we have a conversation between the player and a side character. The player will be able to ask the side character who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). This will happen through a while loop that will only break when the player inputs the number to cancel. The amount of health potions that the player can receive is unlimited.
-	 * @param player
-	 * @param character
+	 * @param player Player will interact with the adventurer and get items from them.
+	 * @param character Character will interact with the player and gives items.
 	 */
 	public void interactCharacters(Player player, SideCharacter character){
 

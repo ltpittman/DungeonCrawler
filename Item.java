@@ -25,13 +25,14 @@ class Item{
 	/** 
 	 * Constructs an Item with a type, name, weight, value, strength, x, y coordinates that are taken 
 	 * in as parameters
-	 * @param type either a weapon, armor, health potion, or other. 
-	 * @param name name of the object.
-	 * @param weight weight of the object. used in calculating the max weight of the inventory
-	 * @param value value of the object.
-	 * @param strength strength of the object. used in a battle against an enemy
-	 * @param x x coordinate of the object (where it will be placed on the map).
-	 * @param y y coordinate of the object (where it will be placed on the map).
+	 * @param type Either a weapon, armor, health potion, or other. 
+	 * @param name The name of the object.
+	 * @param weight The weight of the object. used in calculating the max weight of the inventory
+	 * @param value The value of the object.
+	 * @param strength The strength of the object. used in a battle against an enemy
+	 * @param x The X coordinate of the object (where it will be placed on the map).
+	 * @param y The Y coordinate of the object (where it will be placed on the map).
+	 * @param roomNum The room number which the item is in.
 	 */
 	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y, int roomNum){
 		this.type = type;
@@ -44,8 +45,9 @@ class Item{
 		this.roomNum = roomNum;
 	}
 	
-	/**Sets the room number that the item is in.
-	 * @return The room number.
+	/**Sets the room number that the item is in. The item will be in either room 1,2 or 3.
+	 * @param roomNum Sets the room number as either 1, 2, or 3.
+	 * Returns The room number the item is in.
 	 */
 	public void setRoomNum(int roomNum){
 		this.roomNum = roomNum;

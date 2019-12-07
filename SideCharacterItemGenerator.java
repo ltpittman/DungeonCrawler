@@ -1,5 +1,5 @@
 /**
- * <tt>SideCharacterItemGenerator</tt> is used to generate a random item for the player. These items are only given by the side character in the game. The Iteraction class uses this class.
+ * SideCharacterItemGenerator is used to generate a random item for the player. These items are only given by the side character in the game. The Iteraction class uses this class.
  * @author Lauren Pittman, Tavion Britt, Grace Long.
 */
 
