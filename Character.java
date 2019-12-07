@@ -1,10 +1,10 @@
 /**
- * A <tt>Character</tt> represents an individual on the game board. Each <tt>Character</tt> object 
+ * A Character represents an individual on the game board. Each Character object 
  * has a name, health, strength, and location.   
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
-abstract class Character{
+public abstract class Character{
 	
 	private String name;
 	private int health;
@@ -12,7 +12,7 @@ abstract class Character{
 	public int y;
 
 	/**
-	 * Constucts a new <tt>Character</tt> object with a name, health, and location
+	 * Constucts a new Character object with a name, health, and location
 	 * @param name the name of the character
 	 * @param health the health of the character (out of 100 pts)
 	 */ 
@@ -26,7 +26,7 @@ abstract class Character{
 	//then only the character class needs the methods.
 	
 	/**
-	 * Returns the name of the <tt>Character</tt>
+	 * Returns the name of the Character
 	 * @return String the name of the character
 	 */
 	String getName(){
@@ -34,7 +34,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Returns the health of the <tt>Character</tt>. 
+	 * Returns the health of the Character. 
 	 * @return int the health of the character
 	 */
 	int getHealth(){
@@ -42,7 +42,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Sets the health of the <tt>Character</tt>. 
+	 * Sets the health of the Character. 
 	 * @param num the health
 	 */
 	public void setHealth(int num){
@@ -62,7 +62,7 @@ abstract class Character{
 	abstract public boolean move();
 	
 	/**
-	 * Returns the position(x coordinate) of the <tt>Character</tt> on the board
+	 * Returns the position(x coordinate) of the Character on the board
 	 * @return int the x coordinate of the character
 	 */
 	public int getPositionX(){
@@ -70,7 +70,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Returns the position(y coordinate) of the <tt>Character</tt> on the board
+	 * Returns the position(y coordinate) of the Character on the board
 	 * @return int the y coordinate of the character
 	 */ 
 	public int getPositionY(){
@@ -78,7 +78,7 @@ abstract class Character{
 	}
 
 	/**
-	 * Prints the information about the location of the <tt>Character</tt>
+	 * Prints the information about the location of the Character
 	 */
 	public void getLocation(){
 		System.out.println("Location: " + getPositionX() + "," + getPositionY());

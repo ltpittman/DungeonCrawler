@@ -1,5 +1,5 @@
 /**
- * A <tt>MonsterGenerator</tt> is a random generator that picks a monster from an array list of monsters. THese
+ * A MonsterGenerator is a random generator that picks a monster from an array list of monsters. THese
  * monsters are then added to the board as enemies. {@link Enemy}
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
@@ -7,7 +7,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-class MonsterGenerator{
+public class MonsterGenerator{
 	static Enemy generateMonster(){
 		
 		ArrayList<Enemy> enemyList;

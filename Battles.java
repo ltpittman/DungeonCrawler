@@ -1,5 +1,5 @@
 /**
- * A <tt>Battle</tt> represents when the enemy and player attack each other. After the attack 
+ * A Battle represents when the enemy and player attack each other. After the attack 
  * the player's health and the number of monsters left on the board is checked to see if the 
  * player won or lost the game.
  * @author Lauren Pittman, Tavion Britt, Grace Long
@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.InputMismatchException;
 
-class Battles{
+public class Battles{
 	World world;
 	Player player;
 	Enemy enemy;	

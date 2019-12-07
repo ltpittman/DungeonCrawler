@@ -1,5 +1,5 @@
 /**
- * A <tt>Enemy</tt> is a character in the game who's goal is to kill the players. They have a name, health
+ * A Enemy is a character in the game who's goal is to kill the players. They have a name, health
  * (out of 100), damage, and location. There are also many different types of monsters that have different 
  * stats. When a player and an enemy approach each other they fight. {@link Battles} 
  * @author Lauren Pittman, Tavion Britt, and Grace Long
@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 
-class Enemy extends Character{
+public class Enemy extends Character{
 	//Instance variables.
 	private int health;
 	private String name;
@@ -25,7 +25,7 @@ class Enemy extends Character{
 	public int roomNum;
 
 	/**
-	 * Constructs a new <tt>Enemy</tt> with stats from the paramaters. Contains a name, health, damage, x, y, type, isDead, and roomNum status.
+	 * Constructs a new Enemy with stats from the paramaters. Contains a name, health, damage, x, y, type, isDead, and roomNum status.
 	 * @param name the name of the Enemy
 	 * @param health the health of the Enemy (out of 100)
 	 * @param damage the damage of the Enemy {@link Battles} 
@@ -33,6 +33,7 @@ class Enemy extends Character{
 	 * @param y the y coordinate of the Enemy
 	 * @param type the type of monster the enemy is {@link MonsterType}
 	 * @param isDead a boolean telling if the enemy is alive
+	 * @param roomNum the room number that the enemy is assigned to
 	 */
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y,){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead, int roomNum){ 
@@ -72,7 +73,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Returns the type of monster the <tt>Enemy</tt> is.
+	 * Returns the type of monster the Enemy is.
 	 * @return type of monster
 	 */
 	MonsterType typeOfMonster(){
@@ -80,7 +81,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Returns the strength of the <tt>Enemy</tt>.
+	 * Returns the strength of the Enemy.
 	 * @return strenght out of 100
 	 */
 	int getDamage(){
@@ -88,7 +89,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Determines if the <tt>Enemy</tt> is dead or alive
+	 * Determines if the Enemy is dead or alive
 	 * @return true if dead and false if alive
 	 */
 	boolean enemyDead(){
@@ -101,7 +102,7 @@ class Enemy extends Character{
 	}		
 
 	/**
-	 * Determines if <tt>Enemy</tt> is dead or alive 
+	 * Determines if Enemy is dead or alive 
 	 * @return true if enemy is dead and false if enemy is alive
 	 */
 	boolean getIsDead(){
@@ -109,14 +110,15 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Sets if the <tt>Enemy</tt> is dead or alive
+	 * Sets if the Enemy is dead or alive
+	 * @param isDead if true enemy is dead and if false enemy is alive
 	 */
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
 	}
 
 	/**
-	 * Returns the x coordinate of the <tt>Enemy</tt> 
+	 * Returns the x coordinate of the Enemy 
 	 * @return x coordinate
 	 */
 	public int getX(){
@@ -124,7 +126,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Returns the y coordinate of the <tt>Enemy</tt>
+	 * Returns the y coordinate of the Enemy
 	 * @return y coordinate
 	 */
 	public int getY(){
@@ -132,7 +134,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Moves the <tt>Enemy</tt> around the board randomly. If the <tt>Enemy</tt> will run into a wall 
+	 * Moves the Enemy around the board randomly. If the Enemy will run into a wall 
 	 * when it moves it returns false, otherwise it returns true.
 	 * @return if the enemy can move in the random directon
 	 */
@@ -188,7 +190,7 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Prints inforamtion about the <tt>Enemy</tt>.
+	 * Prints inforamtion about the Enemy.
 	 * @return Enemy's name, health, and damage
 	 */
 	public String toString(){
@@ -196,7 +198,8 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Saves the information about the <tt>Enemy</tt> to a text file.
+	 * Saves the information about the Enemy to a text file.
+	 * @param pw a print writer that will type the information into the file
 	 */
 	public void persist (PrintWriter pw){
 		pw.println(name);
@@ -210,7 +213,8 @@ class Enemy extends Character{
 	}
 
 	/**
-	 * Restores the inforamtion about the <tt>Enemy</tt> from a text file.
+	 * Restores the inforamtion about the Enemy from a text file.
+	 * @param a scanner that will read the information in from a file
 	 * @throws Exception if there is an error reading in the file.
 	 */
 	public void restore(Scanner a) throws Exception {
