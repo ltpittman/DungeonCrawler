@@ -1,5 +1,5 @@
 /**
- * A <tt>Inventory</tt> is all the items the player is curently holding. The player starts out with 
+ * A Inventory is all the items the player is curently holding. The player starts out with 
  * one iron dagger, one leather armor, and a health potion when they start the game. Here the player 
  * will be able to add a item to their inventory, drop a item, print their inventory, get their total 
  * weight and other stats, equip a weapon or armor, and drink a health potion.
@@ -13,7 +13,7 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileInputStream;
 
-class Inventory{
+public class Inventory{
 	//All instance variables will be private!
 	public ArrayList<Item> items;
 	private int maxWeight;
@@ -24,7 +24,7 @@ class Inventory{
 	Player player;
 	Item item;
 
-	/**Constructs a new <tt>Inventory</tt> with a iron daggeer, leather armor, and a health potion.
+	/**Constructs a new Inventory with a iron daggeer, leather armor, and a health potion.
 	 * @param maxWeight the total weight that the player can carry in their inventory
 	 */
 	Inventory(int maxWeight){
@@ -63,7 +63,7 @@ class Inventory{
 	}
 
 	/**
-	 * Determines if an item is in the <tt>Inventory</tt>. If it is then the item will not be displayed
+	 * Determines if an item is in the Inventory. If it is then the item will not be displayed
 	 * on the board
 	 * @param item checks this particular item in the inventory.
 	 * @return returns true if the item is located in the inventory, or false if it is not.
@@ -78,7 +78,7 @@ class Inventory{
 	}
 
 	/**
-	 * Adds item to the <tt>Inventory</tt> after checking if the player can carry it.
+	 * Adds item to the Inventory after checking if the player can carry it.
 	 * @param item This particular item is checked for its weight first then added to 
 	 * the inventory if it weighs less than the inventory max weight.
 	 * @return Returns true if the item is already in the player's inventory, else false 
@@ -109,7 +109,7 @@ class Inventory{
 	}
 
 	/**
-	 * Returns the total weight of the <tt>Inventory</tt>
+	 * Returns the total weight of the Inventory
 	 * @return current weight that the player is carrying.
 	 */
 	int getTotalWeight(){
@@ -121,7 +121,7 @@ class Inventory{
 	}
 
 	/**
-	 * Prints a list of all their items in the <tt>Inventory</tt>
+	 * Prints a list of all their items in the Inventory
 	 */
 	void print(){
 		if(items.size() == 0){
@@ -141,7 +141,7 @@ class Inventory{
 	}
 
 	/**
-	 * Drops a item from the player's <tt>Inventory</tt>.
+	 * Drops a item from the player's Inventory.
 	 * @param player that corresponds to the inventory {@link Player}
 	 */
 	void drop(Player player){
@@ -201,7 +201,7 @@ class Inventory{
 	}
 
 	/**
-	 * Equips weapon from the <tt>Inventory</tt> for the player to use in a battle. A player will look at the 
+	 * Equips weapon from the Inventory for the player to use in a battle. A player will look at the 
 	 * strength of the weapons to decide which is suitable for battle.
 	 */
 	void equipWeapon(){
@@ -253,7 +253,7 @@ class Inventory{
 		}
 	}
 	/**
-	 * Equips an armor from the <tt>Inventory</tt> for the player to use in an attack. A player will
+	 * Equips an armor from the Inventory for the player to use in an attack. A player will
 	 * look at the strength of the armor to determine which is suitable. 
 	 */
 	void equipArmor(){
@@ -307,7 +307,7 @@ class Inventory{
 	}
 
 	/**
-	 * Drinks the health potion in the player's <tt>Inventory</tt>. The health potion give the player more
+	 * Drinks the health potion in the player's Inventory. The health potion give the player more
 	 * strength to fight the enemies on the board. 
 	 */
 	void drinkHealthPotion(){
@@ -360,7 +360,7 @@ class Inventory{
 	}
 
 	/**
-	 * Saves the informaiton from the <tt>Inventory</tt> into a file to save the game.
+	 * Saves the informaiton from the Inventory into a file to save the game.
 	 * @param pw  print writer that will type the information into the file 
 	 */
 	//Method to save the game into a file.
@@ -374,7 +374,7 @@ class Inventory{
 	}
 
 	/**
-	 * Restores information from a file to create a new <tt>Inventory</tt> that consists of items saved
+	 * Restores information from a file to create a new Inventory that consists of items saved
 	 *  from a previous game
 	 * @param a scanner that will read the information from a file
 	 */

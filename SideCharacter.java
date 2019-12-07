@@ -1,4 +1,4 @@
-/**A <tt>SideCharacter</tt> is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
+/**A SideCharacter is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
  * @author Lauren Pittman, Tavion Britt, Grace Long.
  */
 
@@ -16,9 +16,9 @@ class SideCharacter extends Character{
 	public int x;
 	public int y;
 	
-	/**Constructs a new <tt>SideCharacter</tt> with a name and health. When the game starts, the side character is placed on a x-coordinate of 3 and a y-coordinate of 23. This will be palced in the upper right corner of the room. 
-	 * @param name The name of the <tt>SideCharacter</tt>.
-	 * @param health The health of the <tt>SideCharacter</tt>.
+	/**Constructs a new SideCharacter with a name and health. When the game starts, the side character is placed on a x-coordinate of 3 and a y-coordinate of 23. This will be palced in the upper right corner of the room. 
+	 * @param name The name of the SideCharacter.
+	 * @param health The health of the SideCharacter.
 	 */
 	public SideCharacter(String name, int health){
 		super(name,health);
@@ -28,37 +28,37 @@ class SideCharacter extends Character{
 		this.y = 23;
 
 	}
-	/**This method returns the name of the <tt>SideCharater</tt>.
+	/**This method returns the name of the SideCharater.
 	 * @return Returns the name of the side character. 
 	 */
 	String getName(){
 		return this.name;
 	}
-	/**This method returns the health of the <tt>SideCharater</tt>.
+	/**This method returns the health of the SideCharater.
 	 * @return Returns the health of the side character.
 	 */
 	int getHealth(){
 		return this.health;
 	}
-	/**This method returns the char image of the <tt>SideCharater</tt>.
+	/**This method returns the char image of the SideCharater.
 	 * @return Returns the char image of the side character.
 	 */
 	public char getCharacterImage(){
 		return '&';
 	}
-	/**This method returns the x-coordinate of the <tt>SideCharater</tt>.
+	/**This method returns the x-coordinate of the SideCharater.
 	 * @return x-coordinate.
 	 */
 	public int getpositionX(){
 		return this.x;
 	}
-	/**This method returns the y-coordinate of the <tt>SideCharater</tt>.
+	/**This method returns the y-coordinate of the SideCharater.
 	 * @return y-coorinate.
 	 */
 	public int getPositionY(){
 		return this.y;
 	}
-	/**Moves the <tt>SideCharacter</tt> in a random direction.
+	/**Moves the SideCharacter in a random direction.
 	 * @return Returns true if the player can move, else returns false if the player comes across a wall or goes out of bounds.
 	 */
 	public boolean move(){
@@ -97,13 +97,13 @@ class SideCharacter extends Character{
 			return false;
 		}
 	}
-	/**Prints the <tt>SideCharacter</tt> name.
+	/**Prints the SideCharacter name.
 	 * @return Returns the side character's name.
 	 */
 	public String toString(){
 		return this.name;
 	}
-	/**Prints the information about the <tt>SideCharacter</tt> into a text file to save the game.
+	/**Prints the information about the SideCharacter into a text file to save the game.
 	 * @param pw The print writer that types the inforamtion into the file.
 	 */
 	public void persist(PrintWriter pw){

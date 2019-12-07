@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 
-class Interaction{
+public class Interaction{
 	World world;
 	Player player;
 	Inventory inventory;

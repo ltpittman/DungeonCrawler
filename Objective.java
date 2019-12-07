@@ -1,9 +1,9 @@
 /** 
- * An <tt>Objective</tt> is information for the user to know about the game. It describes the scenerio of the game 
+ * An Objective is information for the user to know about the game,  it describes the scenerio of the game 
  * and shows the user how the win the game. 
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
-class Objective{
+public class Objective{
 	Player player;
 	Inventory inventory;
 	

@@ -1,5 +1,5 @@
 /**
- * A <tt>Room</tt> represents part of the board that the player can move around. Each room is filled with a player,
+ * A Room represents part of the board that the player can move around. Each room is filled with a player,
  * side character, nine items, and three enemies. The player is able to move around the room and interact with the
  * other objects in the room. 
  * @author Lauren Pittman, Tavion Britt, and Grace Long
@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
 
-class Room{
+public class Room{
 	//Private instance variables.
 	private char[][] grid;
 	private Player player;
@@ -20,10 +20,9 @@ class Room{
 	private Interaction interact = new Interaction();
 
 	/**
-	 * Constructs a new <tt>Room</tt> that is empty. The rooms are saved onto a file that is read
+	 * Constructs a new Room that is empty. The rooms are saved onto a file that is read
 	 * @param frame 
-	 * @throws FileNotFoundException
-	 * @return the new room that is created
+	 * @throws FileNotFoundException if a file is not found for the room
 	 */
 	public Room(String frame) throws FileNotFoundException {
 

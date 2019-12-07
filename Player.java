@@ -1,5 +1,5 @@
 /**
- * A <tt>Player</tt> is a type of character that the user creates to go around the game. The player has a 
+ * A Player is a type of character that the user creates to go around the game. The player has a 
  * name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength)
  * and an inventroy. The player is moved around the board through the control of the user. It can pick items up,
  * add the items to the player's inventory, and equip the items to use in a battle. When the player comes across
@@ -13,7 +13,7 @@ import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-class Player extends Character{
+public class Player extends Character{
 	//Private instance variables.
 	private String name;
 	private int health;
@@ -27,11 +27,10 @@ class Player extends Character{
 	public int y;
 
 	/**
-	 * Constructs a new <tt>Player</tt> with a name, health, Inventory, and equipped weapon and armor. Each
+	 * Constructs a new Player with a name, health, Inventory, and equipped weapon and armor. Each
 	 * new player starts with their location in the center of the board
-	 * @param name the name of the <tt>Player</tt>
-	 * @param health the health of the <tt>Player</tt>
-	 * @return the new <tt>Player</tt>
+	 * @param name the name of the Player
+	 * @param health the health of the Player
 	 */
 	public Player(String name, int health){
 		super(name, health); 
@@ -46,7 +45,35 @@ class Player extends Character{
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Restores the health to 100 when the <tt>Player</tt> drinks a health potion.
+=======
+	 * Returns the name of the Player.
+	 * @return name of the player
+	 */
+	String getName(){
+		return this.name;
+	}
+
+	/**
+	 * Returns the health of the Player out of 100.
+	 * @return the players health
+	 */
+	int getHealth(){
+		return this.health;
+	}
+
+	/**
+	 * Sets the health of the Player.
+	 * @param num the health of the player
+	 */
+	public void setHealth(int num){
+		this.health = num;
+	}
+
+	/**
+	 * Restores the health to 100 when the Player drinks a health potion.
+>>>>>>> d81ff17b1983faf0f79dd2c38f915db49a24f183
 	 */
 	public void restoreHealth(){
 		this.health = 100;
@@ -61,7 +88,7 @@ class Player extends Character{
 	}
 
 	/**
-	 * Returns the item that the <tt>Player</tt> currently has equipped
+	 * Returns the item that the Player currently has equipped
 	 * @return armor that is equipped
 	 */
 	Item getEquippedArmor(){
@@ -69,7 +96,7 @@ class Player extends Character{
 	}
 
 	/**
-	 * Return the item that the <tt>Player</tt> currently has equipped
+	 * Return the item that the Player currently has equipped
 	 * @return weapon that is equipped
 	 */
 	Item getEquippedWeapon(){
@@ -95,8 +122,29 @@ class Player extends Character{
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks to see if the <tt>Player</tt> can move up, if it can the <tt>Player</tt> moves up one 
 	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+=======
+	 * Returns the x-coordinate of the Player.
+	 * @return x-coordinate
+	 */
+	public int getPositionX(){
+		return this.x;
+	}
+
+	/**
+	 * Returns the y-coordinate of the Player.
+	 * @return y-coordinate
+	 */
+	public int getPositionY(){
+		return this.y;
+	}
+
+	/**
+	 * Checks to see if the Player can move up, if it can the Player moves up one 
+	 * space on the board. The Player would not be able to move if there was a wall in the way.
+>>>>>>> d81ff17b1983faf0f79dd2c38f915db49a24f183
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	public boolean goUp(){
@@ -111,8 +159,8 @@ class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the <tt>Player</tt> can move down, it it can the <tt>Player</tt> moves down one
-	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * Checks to see if the Player can move down, it it can the Player moves down one
+	 * space on the board. The Playe would not be able to move if there was a wall in the way.
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	public boolean goDown(){
@@ -127,8 +175,8 @@ class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the <tt>Player</tt> can move left, if it can the <tt>Player</tt> moves left one
-	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * Checks to see if the Player can move left, if it can the Player moves left one
+	 * space on the board. The Player would not be able to move if there was a wall in the way.
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	public boolean goLeft(){
@@ -143,8 +191,8 @@ class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the <tt>Player</tt> can move right, if it can <tt>Player</tt> moves right one
-	 * space on the board. The <tt>Player</tt> would not be able to move if there was a wall in the way.
+	 * Checks to see if the Player can move right, if it can Player moves right one
+	 * space on the board. The Player would not be able to move if there was a wall in the way.
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	 public boolean goRight(){
@@ -226,7 +274,7 @@ class Player extends Character{
 	}
 
 	/**
-	 * Prints the player's name, health(out of 100) and strength of the weapon the <tt>Player</tt> is using. 
+	 * Prints the player's name, health(out of 100) and strength of the weapon the Player is using. 
 	 * @return player's name, health, and strength
 	 */
 	public String toString(){
@@ -234,7 +282,7 @@ class Player extends Character{
 	}
 
 	/**
-	 * Prints the information about the <tt>Player</tt> into a text file to save the game.
+	 * Prints the information about the Player into a text file to save the game.
 	 * @param pw the print writer that types the information into the file
 	 */ 
 	 public void persist(PrintWriter pw){

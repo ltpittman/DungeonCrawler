@@ -1,5 +1,5 @@
 /**
- * A <tt>Item</tt> is a object on the board that helps the player in some way. The <tt>Item</tt> has a name, 
+ * A Item is a object on the board that helps the player in some way. The Item has a name, 
  * weight, value, strength, and x/ y coordinates. When moving around the board the player is able to pick 
  * up the item and add it their inventory to use. {@link Inventory} {@link World}
  * @author Lauren Pittman, Tavion Britt, Grace Long
@@ -23,7 +23,7 @@ class Item{
 	public int roomNum;
 	
 	/** 
-	 * Constructs an <tt>Item</tt> with a type, name, weight, value, strength, x, y coordinates that are taken 
+	 * Constructs an Item with a type, name, weight, value, strength, x, y coordinates that are taken 
 	 * in as parameters
 	 * @param type either a weapon, armor, health potion, or other. 
 	 * @param name name of the object.
@@ -59,7 +59,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the weight of the <tt>Item</tt>. Used when calculating the max weight of the Inventory {@link Inventory}
+	 * Returns the weight of the Item. Used when calculating the max weight of the Inventory {@link Inventory}
 	 * @return weight of the item 
 	 */
 	int getWeight(){
@@ -67,7 +67,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the value of the <tt>Item</tt>.
+	 * Returns the value of the Item.
 	 * @return value of the item.
 	 */
 	int getValue(){
@@ -75,7 +75,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the name of the <tt>Item</tt>.
+	 * Returns the name of the Item.
 	 * @return name of the item.
 	 */
 	String getName(){
@@ -83,7 +83,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the type of the <tt>Item</tt>. There are four types of items: Weapon, Armor, 
+	 * Returns the type of the Item. There are four types of items: Weapon, Armor, 
 	 * Health Potion, and Other
 	 * @return type of the item (weapon, armor, health potion, or other)
 	 */
@@ -92,7 +92,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the strength of <tt>Item</tt>. This is used in a battle when a player is attacking an enemy and 
+	 * Returns the strength of Item. This is used in a battle when a player is attacking an enemy and 
 	 * using its equipped weapon or armor. {@link Battles}
 	 * @return strength of the item.
 	 */
@@ -101,7 +101,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the x-coordinate of the <tt>Item</tt>.
+	 * Returns the x-coordinate of the Item.
 	 * @return x-coordinate of the item.
 	 */
 	public int getItemX(){
@@ -109,7 +109,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the y-coordinate of the <tt>Item</tt>.
+	 * Returns the y-coordinate of the Item.
 	 * @return y-coordinate of the item.
 	 */
 	public int getItemY(){
@@ -117,7 +117,7 @@ class Item{
 	}
 
 	/**
-	 * Returns the symbol to represent the <tt>Item</tt> on the board
+	 * Returns the symbol to represent the Item on the board
 	 * @return item's char image.
 	 */
 	public char getItemImage(){
@@ -134,7 +134,7 @@ class Item{
 	}
 
 	/** 
-	 * Return the infomation about the <tt>Item</tt>
+	 * Return the infomation about the Item
 	 * @return itmes name, wright, value, and strength
 	 */
 	public String toString(){
@@ -142,7 +142,7 @@ class Item{
 	}
 
 	/**
-	 * Saves the information about the <tt>Item</tt> in a file
+	 * Saves the information about the Item in a file
 	 * @param pw printwriter that will type the informatin into a file
 	 */
 	public void persist (PrintWriter pw){
