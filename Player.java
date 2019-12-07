@@ -46,30 +46,6 @@ class Player extends Character{
 	}
 
 	/**
-	 * Returns the name of the <tt>Player</tt>.
-	 * @return name of the player
-	 */
-	String getName(){
-		return this.name;
-	}
-
-	/**
-	 * Returns the health of the <tt>Player</tt> out of 100.
-	 * @return the players health
-	 */
-	int getHealth(){
-		return this.health;
-	}
-
-	/**
-	 * Sets the health of the <tt>Player</tt>.
-	 * @param num the health of the player
-	 */
-	public void setHealth(int num){
-		this.health = num;
-	}
-
-	/**
 	 * Restores the health to 100 when the <tt>Player</tt> drinks a health potion.
 	 */
 	public void restoreHealth(){
@@ -116,22 +92,6 @@ class Player extends Character{
 	int getWeaponStrength(){
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
-	}
-
-	/**
-	 * Returns the x-coordinate of the <tt>Player</tt>.
-	 * @return x-coordinate
-	 */
-	public int getPositionX(){
-		return this.x;
-	}
-
-	/**
-	 * Returns the y-coordinate of the <tt>Player</tt>.
-	 * @return y-coordinate
-	 */
-	public int getPositionY(){
-		return this.y;
 	}
 
 	/**
@@ -257,6 +217,12 @@ class Player extends Character{
 	 */
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
+	}
+
+	/**Returns the location of the player to the screen.
+	 */
+	public void getLocation(){
+		System.out.println("Location: " + this.x + "," + this.y);
 	}
 
 	/**
