@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileReader;
 
-class Item{
+public class Item{
 	//Create the instance variables.
 	private ItemType type;
 	private String name;
@@ -32,6 +32,7 @@ class Item{
 	 * @param strength strength of the object. used in a battle against an enemy
 	 * @param x x coordinate of the object (where it will be placed on the map).
 	 * @param y y coordinate of the object (where it will be placed on the map).
+	 * @param roomNum the room number that the item is assigned to
 	 */
 	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y, int roomNum){
 		this.type = type;
@@ -45,7 +46,6 @@ class Item{
 	}
 	
 	/**Sets the room number that the item is in.
-	 * @return The room number.
 	 */
 	public void setRoomNum(int roomNum){
 		this.roomNum = roomNum;

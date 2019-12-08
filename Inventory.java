@@ -43,8 +43,8 @@ public class Inventory{
 		items.add(healthPotion);
 
 		//Default armor and weapon.
-		equippedArmor = leatherArmor;
-		equippedWeapon = ironDagger;
+		player.setEquippedArmor = leatherArmor;
+		player.setEquippedWeapon = ironDagger;
 	}
 
 	/**

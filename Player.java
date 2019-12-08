@@ -87,16 +87,32 @@ public class Player extends Character{
 	 * Returns the item that the Player currently has equipped
 	 * @return armor that is equipped
 	 */
-	Item getEquippedArmor(){
+	public Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
 	}
 
 	/**
+	 * Assigns an equipped armor to the player
+	 * @param i the item being equipped
+	 */
+	public void setEquippedArmor(Item i){
+		this.equippedArmor = i;
+	}
+	
+	/**
 	 * Return the item that the Player currently has equipped
 	 * @return weapon that is equipped
 	 */
-	Item getEquippedWeapon(){
+	public Item getEquippedWeapon(){
 		return inventory.getEquippedWeapon();
+	}
+
+	/**
+	 * Assigns an equipped weapon to the player
+	 * @param i the item being equipped 
+	 */
+	public void setEquippedWeapon(Item i){
+		this.equippedWeapon = i;
 	}
 
 	/**
@@ -324,7 +340,8 @@ public class Player extends Character{
 			int y = a.nextInt();
 			int roomNum = a.nextInt(); //added this
 			blank = a.nextLine();
-			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y, roomNum);
+			Item w  = new Item(type, name, weight, value, stren, x, y, roomNum);
+			setEquippedWeapon(w);
 			String typeitemB = a.nextLine();
 			ItemType typeB = ItemType.valueOf(typeitemB);
 			String nameB = a.nextLine();
@@ -334,7 +351,8 @@ public class Player extends Character{
 			int xB = a.nextInt();
 			int yB = a.nextInt();
 			int rN = a.nextInt();
-			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB, rN);
+			Item r  = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB, rN);
+			setEquippedArmor(r);
 		}
 
 		catch(Exception e){
