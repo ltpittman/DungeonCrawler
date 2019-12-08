@@ -15,8 +15,8 @@ public class Player extends Character{
 	private int health;
 	private int weaponStrength;
 	private int armorStrength;
-	private Item equippedWeapon;
-	private Item equippedArmor;
+	Item equippedWeapon;
+	Item equippedArmor;
 	public Inventory inventory;
 	public World world;
 	public int x;
@@ -84,7 +84,7 @@ public class Player extends Character{
 	 * Returns the item that the Player currently has equipped
 	 * @return armor that is equipped
 	 */
-	Item getEquippedArmor(){
+	public Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
 	}
 
@@ -92,7 +92,7 @@ public class Player extends Character{
 	 * Return the item that the Player currently has equipped
 	 * @return weapon that is equipped
 	 */
-	Item getEquippedWeapon(){
+	public Item getEquippedWeapon(){
 		return inventory.getEquippedWeapon();
 	}
 
@@ -280,25 +280,6 @@ public class Player extends Character{
 		pw.println(health);
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedArmor.getStrength());
-
-		pw.println(inventory.equippedWeapon.getType());
-		pw.println(inventory.equippedWeapon.getName());
-		pw.println(inventory.equippedWeapon.getWeight());
-		pw.println(inventory.equippedWeapon.getValue());
-		pw.println(inventory.equippedWeapon.getStrength());
-		pw.println(inventory.equippedWeapon.getItemX());
-		pw.println(inventory.equippedWeapon.getItemY());
-		pw.println(inventory.equippedWeapon.getRoomNum());
-
-		pw.println(inventory.equippedArmor.getType());
-		pw.println(inventory.equippedArmor.getName());
-		pw.println(inventory.equippedArmor.getWeight());
-		pw.println(inventory.equippedArmor.getValue());
-		pw.println(inventory.equippedArmor.getStrength());
-		pw.println(inventory.equippedArmor.getItemX());
-		pw.println(inventory.equippedArmor.getItemY());
-		pw.println(inventory.equippedArmor.getRoomNum());
-		pw.println(".");
 	}
 
 	/**
@@ -314,29 +295,6 @@ public class Player extends Character{
 			this.health = a.nextInt();
 			this.weaponStrength = a.nextInt();
 			this.armorStrength = a.nextInt();
-			String blank = a.nextLine();
-			String typeItem = a.nextLine();
-
-			ItemType type = ItemType.valueOf(typeItem);
-			String name = a.nextLine();
-			int weight = a.nextInt();
-			int value = a.nextInt();
-			int stren = a.nextInt();
-			int x = a.nextInt();
-			int y = a.nextInt();
-			int roomNum = a.nextInt(); //added this
-			blank = a.nextLine();
-			this.equippedWeapon = new Item(type, name, weight, value, stren, x, y, roomNum);
-			String typeitemB = a.nextLine();
-			ItemType typeB = ItemType.valueOf(typeitemB);
-			String nameB = a.nextLine();
-			int weightB = a.nextInt();
-			int valueB = a.nextInt();
-			int strenB = a.nextInt();
-			int xB = a.nextInt();
-			int yB = a.nextInt();
-			int rN = a.nextInt();
-			this.equippedArmor = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB, rN);
 		}
 
 		catch(Exception e){
