@@ -28,36 +28,14 @@ class SideCharacter extends Character{
 		this.y = 23;
 
 	}
-	/**This method returns the name of the SideCharater.
-	 * @return Returns the name of the side character. 
-	 */
-	String getName(){
-		return this.name;
-	}
-	/**This method returns the health of the SideCharater.
-	 * @return Returns the health of the side character.
-	 */
-	int getHealth(){
-		return this.health;
-	}
+
 	/**This method returns the char image of the SideCharater.
 	 * @return Returns the char image of the side character.
 	 */
 	public char getCharacterImage(){
 		return '&';
 	}
-	/**This method returns the x-coordinate of the SideCharater.
-	 * @return x-coordinate.
-	 */
-	public int getpositionX(){
-		return this.x;
-	}
-	/**This method returns the y-coordinate of the SideCharater.
-	 * @return y-coorinate.
-	 */
-	public int getPositionY(){
-		return this.y;
-	}
+	
 	/**Moves the SideCharacter in a random direction.
 	 * @return Returns true if the player can move, else returns false if the player comes across a wall or goes out of bounds.
 	 */
