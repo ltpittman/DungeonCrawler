@@ -192,7 +192,12 @@ public class World{
 	}
 
 
-
+	/**
+	 * Gets the current room number
+	 */ 
+	public int getCurrentRoom(){
+		return currentRoom;
+	}
 
 
 	/**

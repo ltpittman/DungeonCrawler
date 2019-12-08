@@ -198,32 +198,32 @@ public class Main{
 				case'H':
 					player.goLeft();
 					explorer.move();
-					if(player.y == enemy1.y && player.x == enemy1.x){
+					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
@@ -261,32 +261,32 @@ public class Main{
 				case'L':
 					player.goRight();
 					explorer.move();
-					if(player.y == enemy1.y && player.x == enemy1.x){
+					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
@@ -323,32 +323,32 @@ public class Main{
 				case'J':
 					player.goDown();
 					explorer.move();
-					if(player.y == enemy1.y && player.x == enemy1.x){
+					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
@@ -385,32 +385,32 @@ public class Main{
 				case'K':
 					player.goUp();
 					explorer.move();
-					if(player.y == enemy1.y && player.x == enemy1.x){
+					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x){
-						battle.attack(player,enemy1);
+					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
