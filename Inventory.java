@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 import java.io.FileInputStream;
 
 public class Inventory{
-	//All instance variables will be private!
+	//Instance variables.
 	public ArrayList<Item> items;
 	private int maxWeight;
 	private int health;
@@ -22,7 +22,7 @@ public class Inventory{
 	Item item;
 
 	/**Constructs a new Inventory with a iron daggeer, leather armor, and a health potion.
-	 * @param maxWeight the total weight that the player can carry in their inventory
+	 * @param maxWeight The total weight that the player can carry in their inventory.
 	 */
 	Inventory(int maxWeight){
 
@@ -45,25 +45,24 @@ public class Inventory{
 	}
 
 	/**
-	 * Returns the max weight of the player.
-	 * @return maxWeight
+	 * This method returns the max weight of the player.
+	 * @return Returns the maxWeight.
 	 */
 	int getMaxWeight(){
 		return this.maxWeight;
 	}
 
 	/**
-	 * Prints the total weight/max weight, equipped armor name, and the equipped weapon name.
+	 * This method prints the total weight/max weight, equipped armor name, and the equipped weapon name.
 	 */
 	void printInventoryStats(){
 		System.out.println("Total Weight: " + getTotalWeight() + "/" + maxWeight + "\nEquipped Armor: " + equippedArmor.getName() + " "  + equippedArmor.getStrength() + "\nEquipped Weapon: " + equippedWeapon.getName() + " " + equippedWeapon.getStrength() + "\nPress 'P' to print the commands again.");
 	}
 
 	/**
-	 * Determines if an item is in the Inventory. If it is then the item will not be displayed
-	 * on the board
-	 * @param item checks this particular item in the inventory.
-	 * @return returns true if the item is located in the inventory, or false if it is not.
+	 * This method determines if an item is in the Inventory. If it is then the item will not be displayed on the board.
+	 * @param item This variable checks this particular item in the inventory.
+	 * @return Returns true if the item is located in the inventory, or false if it is not.
 	 */
 	public boolean inInventory(Item item){
 		if (items.contains(item)){
@@ -75,11 +74,9 @@ public class Inventory{
 	}
 
 	/**
-	 * Adds item to the Inventory after checking if the player can carry it.
-	 * @param item This particular item is checked for its weight first then added to 
-	 * the inventory if it weighs less than the inventory max weight.
-	 * @return Returns true if the item is already in the player's inventory, else false 
-	 * and adds the item to the player's inventory.
+	 * This method adds item to the Inventory after checking if the player can carry it.
+	 * @param item This particular item is checked for its weight first then added to the inventory if it weighs less than the inventory max weight.
+	 * @return Returns true if the item is already in the player's inventory, else false and adds the item to the player's inventory.
 	 */
 	public boolean addItem(Item item){
 		//Get weight of item you want to add.
@@ -106,8 +103,8 @@ public class Inventory{
 	}
 
 	/**
-	 * Returns the total weight of the Inventory
-	 * @return current weight that the player is carrying.
+	 * This method returns the total weight of the Inventory.
+	 * @return Returns the current weight that the player is carrying.
 	 */
 	int getTotalWeight(){
 		int currentWeight = 0;
@@ -118,7 +115,7 @@ public class Inventory{
 	}
 
 	/**
-	 * Prints a list of all their items in the Inventory
+	 * This method prints a list of all their items in the Player's inventory.
 	 */
 	void print(){
 		if(items.size() == 0){
@@ -138,8 +135,8 @@ public class Inventory{
 	}
 
 	/**
-	 * Drops a item from the player's Inventory.
-	 * @param player that corresponds to the inventory {@link Player}
+	 * This method drops a item from the player's Inventory. The player cannot drop a weapon or armor that they are equipping.
+	 * @param player Player corresponds to the inventory {@link Player}.
 	 */
 	void drop(Player player){
 		//If the user's inventory is empty, then print that they have no items in their inventory.
@@ -198,8 +195,7 @@ public class Inventory{
 	}
 
 	/**
-	 * Equips weapon from the Inventory for the player to use in a battle. A player will look at the 
-	 * strength of the weapons to decide which is suitable for battle.
+	 * This method equips weapon from the Player's inventory for the player to use in a battle. A player will look at the  strength of the weapons to decide which is suitable for battle.
 	 */
 	void equipWeapon(){
 		//Create a new arrayList to hold the items that are classified as weapons.
@@ -250,8 +246,7 @@ public class Inventory{
 		}
 	}
 	/**
-	 * Equips an armor from the Inventory for the player to use in an attack. A player will
-	 * look at the strength of the armor to determine which is suitable. 
+	 * This method equips an armor from the player's inventory for the player to use in an attack. A player will look at the strength of the armor to determine which is suitable. 
 	 */
 	void equipArmor(){
 		//Create a new arrayList to hold the items that are classified as armor.
@@ -304,8 +299,7 @@ public class Inventory{
 	}
 
 	/**
-	 * Drinks the health potion in the player's Inventory. The health potion give the player more
-	 * strength to fight the enemies on the board. 
+	 * This method lets the player drink a health potion from their Inventory. The health potion give the player more strength to fight the enemies on the board. 
 	 */
 	void drinkHealthPotion(){
 
@@ -341,24 +335,24 @@ public class Inventory{
 	}
 
 	/**
-	 * Returns the current equipped armor of the player.
-	 * @return the armor the player has on
+	 * This method returns the current equipped armor of the player that they are wearing.
+	 * @return Returns the armor the player has on.
 	 */
 	Item getEquippedArmor(){
 		return this.equippedArmor;
 	}
 
 	/** 
-	 * Returns the current equipped weapon of the player.
-	 * @return the weapon the player is holding
+	 * This method returns the current equipped weapon of the player.
+	 * @return Returns the weapon the player is holding.
 	 */
 	Item getEquippedWeapon(){
 		return this.equippedWeapon;
 	}
 
 	/**
-	 * Saves the informaiton from the Inventory into a file to save the game.
-	 * @param pw  print writer that will type the information into the file 
+	 * This method saves the informaiton from the Inventory into a file to save the game.
+	 * @param pw  PrintWwriter pw will type the information into the file 
 	 */
 	//Method to save the game into a file.
 	public void persist(PrintWriter pw){
@@ -391,9 +385,8 @@ public class Inventory{
 	}
 
 	/**
-	 * Restores information from a file to create a new Inventory that consists of items saved
-	 *  from a previous game
-	 * @param a scanner that will read the information from a file
+	 * This method restores information from a file to create a new Inventory that consists of items saved from a previous game.
+	 * @param a Scanner a will read the information from a file.
 	 */
 	public void restore (Scanner a){
 		try{

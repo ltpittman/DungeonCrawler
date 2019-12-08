@@ -1,8 +1,5 @@
 /**
- * Main class for the game. It creates a player, side character, items, monsters, and world. This class 
- * is needed to play the game. Here the player is able to tell the program to move up, down, left, or right, 
- * print their inventory, add or drop items, fight monsters, restore their health with a health potion, and 
- * load/save a game. The items and monsters  created in this class are randomly generated. 
+ * Main class for the game. It creates a player, side character, items, monsters, and world. This class  is needed to play the game. Here the player is able to tell the program to move up, down, left, or right, print their inventory, add or drop items, fight monsters, restore their health with a health potion, and load/save a game. The items and monsters  created in this class are randomly generated. 
  * @throws InputMismatchException Throws this exception when the user enters the wrong input.
  * @throws FileNotFoundException Throws this exception when a file cannot be found to upload.
  * @author Lauren Pittman, Tavion Britt, Grace Long.
@@ -22,7 +19,6 @@ public class Main{
 	public static void main(String args[]) throws InputMismatchException, FileNotFoundException{
 
 		Objective command = new Objective();
-		Interaction interaction = new Interaction();	
 
 		World world = new World();
 

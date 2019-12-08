@@ -23,13 +23,12 @@ public class Player extends Character{
 	public int y;
 
 	/**
-	 * Constructs a new Player with a name, health, Inventory, and equipped weapon and armor. Each
-	 * new player starts with their location in the center of the board
-	 * @param name the name of the Player
-	 * @param health the health of the Player
+	 * Constructs a new Player with a name, health, Inventory, and equipped weapon and armor. Each  new player starts with their location in the center of the board
+	 *  @param name The name of the Player.
+	 * @param health The health of the Player.
 	 */
 	public Player(String name, int health){
-		super(name, health); 
+		super(name, health);
 		this.name = name;
 		this.health = health;
 		this.weaponStrength = weaponStrength;
@@ -41,47 +40,61 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Sets the health of the Player.
-	 * @param num the health of the player
+	 * This method sets the health of the Player.
+	 * @param num The health of the player.
 	 */
 	public void setHealth(int num){
 		this.health = num;
 	}
 
 	/**
-	 * Restores the health to 100 when the Player drinks a health potion.
+	 * This method restores the health to 100 when the Player drinks a health potion.
 	 */
 	public void restoreHealth(){
 		this.health = 100;
 	}
 
 	/**
-	 * Returns the player's image to the screen.
-	 * @return the symbol of the player
+	 * This method returns the player's image to the screen.
+	 * @return Returns the symbol of the player ('@').
 	 */
 	public char getCharacterImage(){
 		return '@';
 	}
 
+	/**This method returns the player's x-coordinate.
+	 * @return Returns the x-coordinate of the player.
+	 */
+	public int getPlayerX(){
+		return this.x;
+	}
+	
+	/**This method returns the player's x-coordinate.
+	 * @return Returns the y-coordinate of the player.
+	 */
+	public int getPlayerY(){
+		return this.y;
+	}
+
 	/**
-	 * Returns the item that the Player currently has equipped
-	 * @return armor that is equipped
+	 * This method returns the item that the Player currently has equipped.
+	 * @return Returns the armor that is equipped by the player.
 	 */
 	public Item getEquippedArmor(){
 		return inventory.getEquippedArmor();
 	}
 
 	/**
-	 * Return the item that the Player currently has equipped
-	 * @return weapon that is equipped
+	 * This method returns the item that the Player currently has equipped.
+	 * @return Returns the weapon that is equipped by the player.
 	 */
 	public Item getEquippedWeapon(){
 		return inventory.getEquippedWeapon();
 	}
 
 	/**
-	 * Returns the strength of the armor.
-	 * @return the strength of the armor
+	 * This method returns the strength of the armor that is worn by the player.
+	 * @return Returns the strength of the armor that is worn by the player.
 	 */
 	int getArmorStrength(){
 		armorStrength = equippedArmor.getStrength();
@@ -89,8 +102,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Returns the strength of the weapon.
-	 * @return the strength of the weapon
+	 * This method returns the strength of the weapon that is worn by the player.
+	 * @return Returns the strength of the weapon that is worn by the player.
 	 */
 	int getWeaponStrength(){
 		weaponStrength = equippedWeapon.getStrength();
@@ -98,8 +111,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move up, if it can the Player moves up one  space on the board. The Player would not be able to move if there was a wall in the way.
-	 * @return true if the player can move, false if the player cannot move
+	 * This method checks to see if the Player can move up. If the Player can move up, then they can go up one space on the board. The Player would not be able to move if there was a wall in the way.
+	 * @return Returns true if the player can move, else false if the player cannot move.
 	 */
 	public boolean goUp(){
 		if((x - 1) == 0){
@@ -113,9 +126,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move down, it it can the Player moves down one
-	 * space on the board. The Playe would not be able to move if there was a wall in the way.
-	 * @return true if the player can move, false if the player cannot move
+	 * This method checks to see if the Player can move down. If the Player can move down, then they can go down one space on the board. The Player would not be able to move if there was a wall in the way.
+	 * @return Returns true if the player can move, else false if the player cannot move.
 	 */
 	public boolean goDown(){
 		if((x + 1) == 11){
@@ -129,9 +141,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move left, if it can the Player moves left one
-	 * space on the board. The Player would not be able to move if there was a wall in the way.
-	 * @return true if the player can move, false if the player cannot move
+	 * This method checks to see if the Player can move left. If the Player can move left, then they can go left one space on the board. The Player would not be able to move if there was a wall in the way.
+	 * @return Returns true if the player can move, else false if the player cannot move.
 	 */
 	public boolean goLeft(){
 		if((y - 1) == 0){
@@ -145,9 +156,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move right, if it can Player moves right one
-	 * space on the board. The Player would not be able to move if there was a wall in the way.
-	 * @return true if the player can move, false if the player cannot move
+	 * This method checks to see if the Player can move right. If the Player can move right, then they can go right one space  on the board. The Player would not be able to move if there was a wall in the way.
+	 * @return Returns true if the player can move, else false if the player cannot move.
 	 */
 	 public boolean goRight(){
 		if((y + 1) == 29){
@@ -161,8 +171,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Moves the player in a random direction. 
-	 * @return true if the player can move in the random direction, false if it cannot
+	 * This method moves the player in a random direction. The player can move left,right,up, or down.
+	 * @return Returns true if the player can move in the random direction, false if it cannot.
 	 */
 	public boolean move(){
 
@@ -215,29 +225,29 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Prints the player's name and health (out of 100)
+	 * This method prints the player's name and health.
 	 */
 	void printInfo(){
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
 	}
 
-	/**Returns the location of the player to the screen.
+	/**This method returns the location of the player to the screen.
 	 */
 	public void getLocation(){
 		System.out.println("Location: " + this.x + "," + this.y);
 	}
 
 	/**
-	 * Prints the player's name, health(out of 100) and strength of the weapon the Player is using. 
-	 * @return player's name, health, and strength
+	 * This method prints the player's name, health, and strength of the weapon the Player is using. 
+	 * @return Returns the player's name, health, and strength.
 	 */
 	public String toString(){
 		return("Player Name: " +  this.name + "\nHealth: " + this.health + "/100" + "\nStrength: " + this.weaponStrength);
 	}
 
 	/**
-	 * Prints the information about the Player into a text file to save the game.
-	 * @param pw the print writer that types the information into the file
+	 * The method prints the information about the Player into a text file to save the game.
+	 * @param pw PrintWriter pw types the information into the file.
 	 */ 
 	 public void persist(PrintWriter pw){
 		String file = "Saved";
@@ -250,9 +260,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Restores the information from a text file. This information is saved from a previous game and 
-	 * allows the user to continue the game.
-	 * @param a scanner that reads the file
+	 * This method restores the information from a text file. This information is saved from a previous game and  allows the user to continue the game.
+	 * @param a Scanner a reads the file.
 	 */
 	public void restore (Scanner a){
 		try{

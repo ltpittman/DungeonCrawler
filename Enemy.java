@@ -24,14 +24,14 @@ public class Enemy extends Character{
 
 	/**
 	 * Constructs a new Enemy with stats from the paramaters. Contains a name, health, damage, x, y, type, isDead, and roomNum status.
-	 * @param name the name of the Enemy
-	 * @param health the health of the Enemy (out of 100)
-	 * @param damage the damage of the Enemy {@link Battles} 
-	 * @param x the x coordinate of the Enemy
-	 * @param y the y coordinate of the Enemy
-	 * @param type the type of monster the enemy is {@link MonsterType}
-	 * @param isDead a boolean telling if the enemy is alive
-	 * @param roomNum the room number that the enemy is assigned to
+	 * @param name The name of the Enemy.
+	 * @param health The health of the Enemy (out of 100).
+	 * @param damage The damage of the Enemy {@link Battles} .
+	 * @param x The x coordinate of the Enemy.
+	 * @param y The y coordinate of the Enemy.
+	 * @param type The type of monster the enemy is {@link MonsterType}.
+	 * @param isDead A boolean telling if the enemy is alive.
+	 * @param roomNum The room number that the enemy is assigned to.
 	 */
 	//Enemy(MonsterType type, String name, int health, int damage, int X, int Y,){ 
 	public Enemy(String name, int health, int damage, int x, int y, MonsterType type, boolean isDead, int roomNum){ 
@@ -47,7 +47,7 @@ public class Enemy extends Character{
 	}
 
 	/**
-	 * Sets the room number that the enemy is in. 
+	 * This method sets the room number that the enemy is in. 
 	 * @param roomNum The room number that the enemy is in.
 	 */
 	public void setRoomNum(int roomNum){
@@ -55,40 +55,40 @@ public class Enemy extends Character{
 	}
 
 	/**
-	 * Returns the room number that the enemy is in.
-	 * @return The room number. 
+	 * This method returns the room number that the enemy is in.
+	 * @return The room number the enemy is in. 
 	 */
 	public int getRoomNum(){
 		return this.roomNum;
 	}
 
 	/**
-	 * Returns the enemy's symbol the is displayed on the board
-	 * @return the symbol for the enemy
+	 * This method returns the enemy's symbol the is displayed on the board.
+	 * @return Returns the symbol for the enemy ('M').
 	 */
 	public char getCharacterImage(){
 		return 'M';
 	}
 
 	/**
-	 * Returns the type of monster the Enemy is.
-	 * @return type of monster
+	 * This method returns the type of monster the Enemy is.
+	 * @return Returns the type of monster it is.
 	 */
 	MonsterType typeOfMonster(){
 		return this.type;
 	}
 
 	/**
-	 * Returns the strength of the Enemy.
-	 * @return strenght out of 100
+	 * This method returns the strength of the Enemy.
+	 * @return Returns the strength of the enemy.
 	 */
 	int getDamage(){
 		return this.damage;
 	}
 
 	/**
-	 * Determines if the Enemy is dead or alive
-	 * @return true if dead and false if alive
+	 * This method determines if the Enemy is dead or alive.
+	 * @return Rturns true if dead and false if alive.
 	 */
 	boolean enemyDead(){
 		if(health > 0){
@@ -100,25 +100,24 @@ public class Enemy extends Character{
 	}		
 
 	/**
-	 * Determines if Enemy is dead or alive 
-	 * @return true if enemy is dead and false if enemy is alive
+	 * This method determines if Enemy is dead or alive. 
+	 * @return Returns true if enemy is dead and false if enemy is alive.
 	 */
 	boolean getIsDead(){
 		return this.isDead;
 	}
 
 	/**
-	 * Sets if the Enemy is dead or alive
-	 * @param isDead if true enemy is dead and if false enemy is alive
+	 * This method sets if the Enemy is dead or alive.
+	 * @param isDead If true enemy is dead and if false enemy is alive.
 	 */
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
 	}
 
 	/**
-	 * Moves the Enemy around the board randomly. If the Enemy will run into a wall 
-	 * when it moves it returns false, otherwise it returns true.
-	 * @return if the enemy can move in the random directon
+	 * This method moves the Enemy around the board randomly. If the Enemy will run into a wall when it moves it returns false, otherwise it returns true.
+	 * @return Returns if the enemy can move in the random directon.
 	 */
 	public boolean move(){
 
@@ -172,16 +171,16 @@ public class Enemy extends Character{
 	}
 
 	/**
-	 * Prints inforamtion about the Enemy.
-	 * @return Enemy's name, health, and damage
+	 * This method prints inforamtion about the Enemy.
+	 * @return Returns the Enemy's name, health, and damage.
 	 */
 	public String toString(){
 		return("Enemy Name: " + this.name + "\nHealth: " + this.health + "/100" + "\nDamage: " + this.damage);
 	}
 
 	/**
-	 * Saves the information about the Enemy to a text file.
-	 * @param pw a print writer that will type the information into the file
+	 * This method saves the information about the Enemy to a text file.
+	 * @param pw PrinterWriter pw will type the information into the file.
 	 */
 	public void persist (PrintWriter pw){
 		pw.println(name);
@@ -195,9 +194,9 @@ public class Enemy extends Character{
 	}
 
 	/**
-	 * Restores the inforamtion about the Enemy from a text file.
-	 * @param a scanner that will read the information in from a file
-	 * @throws Exception if there is an error reading in the file.
+	 * This method restores the inforamtion about the Enemy from a text file.
+	 * @param a Scanner a will read the information in from a file.
+	 * @throws Exception Throws an exception if there is an error reading in the file.
 	 */
 	public void restore(Scanner a) throws Exception {
 		try{
@@ -219,5 +218,4 @@ public class Enemy extends Character{
 		}
 	}	
 
-	}
-
+}

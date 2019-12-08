@@ -5,7 +5,7 @@
 import java.util.Random;
 
 public class KeyGenerator{
-	/**This method gets a random number and uses that number to get a key from a list. There are multiple keys in the array, however, each key has a differnt x and y coordinate so there will be less duplicates iwhen the game generates. 
+	/**This Static method gets a random number and uses that number to get a key from a list. There are multiple keys in the array, however, each key has a differnt x and y coordinate so there will be less duplicates iwhen the game generates. 
 	 * @return Returns the key located at the index of the random number.
 	 */
 	public static Item generateKey(){

@@ -8,9 +8,8 @@ import java.util.Random;
 public class ItemGenerator{
 
 	/**
-	 * Produce a random number that is used to pick a item from the array. This item will then me added to 
-	 * the game board.
-	 * @return random item
+	 * This Static method returns a  random number that is used to pick a item from the array. This item will then me added to  the game board.
+	 * @return Returns a random item from the array.
 	 */
 	public static Item generate(){
 		

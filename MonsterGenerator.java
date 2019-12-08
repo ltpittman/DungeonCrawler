@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MonsterGenerator{
+
+	/**This Static method returns a random monster from the array.
+	 * @return Returns a random monster from the array.
+	 */
 	static Enemy generateMonster(){
 		
 		ArrayList<Enemy> enemyList;
