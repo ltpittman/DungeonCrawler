@@ -1,8 +1,5 @@
 /**
- * A Inventory is all the items the player is curently holding. The player starts out with 
- * one iron dagger, one leather armor, and a health potion when they start the game. Here the player 
- * will be able to add a item to their inventory, drop a item, print their inventory, get their total 
- * weight and other stats, equip a weapon or armor, and drink a health potion.
+ * Inventory is all the items the player is currently holding. The player starts out with one iron dagger, one leather armor, and a health potion when they start the game. Here the player will be able to add a item to their inventory, drop a item, print their inventory, get their total weight and other stats, equip a weapon or armor, and drink a health potion.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
@@ -43,8 +40,8 @@ public class Inventory{
 		items.add(healthPotion);
 
 		//Default armor and weapon.
-		player.setEquippedArmor = leatherArmor;
-		player.setEquippedWeapon = ironDagger;
+		equippedWeapon = leatherArmor;
+		equippedArmor = ironDagger;
 	}
 
 	/**
@@ -365,12 +362,32 @@ public class Inventory{
 	 */
 	//Method to save the game into a file.
 	public void persist(PrintWriter pw){
+		pw.println(equippedWeapon.getType());
+		pw.println(equippedWeapon.getName());
+		pw.println(equippedWeapon.getWeight());
+		pw.println(equippedWeapon.getValue());
+		pw.println(equippedWeapon.getStrength());
+		pw.println(equippedWeapon.getItemX());
+		pw.println(equippedWeapon.getItemY());
+		pw.println(equippedWeapon.getRoomNum());
+
+		pw.println(equippedArmor.getType());
+		pw.println(equippedArmor.getName());
+		pw.println(equippedArmor.getWeight());
+		pw.println(equippedArmor.getValue());
+		pw.println(equippedArmor.getStrength());
+		pw.println(equippedArmor.getItemX());
+		pw.println(equippedArmor.getItemY());
+		pw.println(equippedArmor.getRoomNum());
+				
 		pw.println("Inventory");
 		for(Item i : items){
 			i.persist(pw);
 		}
 		pw.println("-");
 		pw.println("nothing");
+
+
 	}
 
 	/**
@@ -380,18 +397,45 @@ public class Inventory{
 	 */
 	public void restore (Scanner a){
 		try{
-			this.items.clear();
-			String noth = a.nextLine();
-			String t = a.nextLine();
-			ItemType type = ItemType.valueOf(t);
+			String typeItem = a.nextLine();
+			ItemType type = ItemType.valueOf(typeItem);
 			String name = a.nextLine();
 			int weight = a.nextInt();
 			int value = a.nextInt();
-			int strength = a.nextInt();
+			int stren = a.nextInt();
 			int x = a.nextInt();
 			int y = a.nextInt();
-			int roomNum = a.nextInt(); //added this
-			Item item = new Item (type, name, weight, value, strength, x, y, roomNum); //added the end "roomNum"
+			int roomNum = a.nextInt();
+			String blank = a.nextLine();
+			Item w = new Item (type, name, weight, value, stren, x, y, roomNum);
+			this.equippedWeapon = w;
+
+			String typeItemB = a.nextLine();
+			ItemType typeB = ItemType.valueOf(typeItemB);
+			String nameB = a.nextLine();
+			int weightB = a.nextInt();
+			int valueB = a.nextInt();
+			int strenB = a.nextInt();
+			int xB = a.nextInt();
+			int yB = a.nextInt();
+			int roomNumB = a.nextInt();
+			blank = a.nextLine();
+			Item r = new Item (typeB, nameB, weightB, valueB, strenB, xB, yB, roomNumB);
+			this.equippedArmor = r;
+			
+			
+			this.items.clear();
+			String noth = a.nextLine();
+			String t = a.nextLine();
+			ItemType typeC = ItemType.valueOf(t);
+			String nameC = a.nextLine();
+			int weightC = a.nextInt();
+			int valueC = a.nextInt();
+			int strengthC = a.nextInt();
+			int xC = a.nextInt();
+			int yC = a.nextInt();
+			int roomNumC = a.nextInt(); //added this
+			Item item = new Item (typeC, nameC, weightC, valueC, strengthC, xC, yC, roomNumC); //added the end "roomNum"
 			this.items.add(item); 
 			noth = a.nextLine();
 			noth = a.nextLine();

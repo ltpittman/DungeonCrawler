@@ -1,6 +1,5 @@
 /** 
- * An Objective is information for the user to know about the game,  it describes the scenerio of the game 
- * and shows the user how the win the game. 
+ *Objective is information for the user to know about the game's objective along with the commands you player can use to move around the board, pick up or drop items, show their inventory, restore their health by drinking a health potion, and to equip a weapon or piece of armor.
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 public class Objective{
@@ -11,7 +10,7 @@ public class Objective{
 	 * Prints the commands to the user.
 	 */
 	void printCommands(){
-		System.out.println("[How to Play]:\nPress 'H' to go up.\nPress 'L' to go down.\nPress 'J' to go left.\nPress 'K' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'R' to drink a health potion.\nPress 'P' to print the commands to read again.");
+		System.out.println("[How to Play]:\nPress 'K' to go up.\nPress 'J' to go down.\nPress 'H' to go left.\nPress 'L' to go right.\nPress 'I' to print your inventory.\nPress 'D' to drop an item from your inventory.\nPress 'W' to equip a weapon from your inventory.\nPress 'A' to equip armor from your inventory.\nPress 'R' to drink a health potion.\nPress 'P' to print the commands to read again.");
 	}
 
 	/**

@@ -118,7 +118,6 @@ class SideCharacter extends Character{
 	public void restore (Scanner a){
 		try{
 			String noth = a.nextLine();
-			noth = a.nextLine();
 			this.name = a.nextLine();
 			this.x = a.nextInt();
 			this.y = a.nextInt();

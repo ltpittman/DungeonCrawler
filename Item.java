@@ -45,7 +45,8 @@ public class Item{
 		this.roomNum = roomNum;
 	}
 	
-	/**Sets the room number that the item is in.
+	/**Sets the room number that the item is in. The item will be in either room 1,2 or 3.
+	 * @param roomNum Sets the room number as either 1, 2, or 3.
 	 */
 	public void setRoomNum(int roomNum){
 		this.roomNum = roomNum;

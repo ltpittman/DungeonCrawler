@@ -1,7 +1,5 @@
 /**
- * A ItemGenerator is a generator that produced a random time from an array of items. These items are
- * placed on the board for the player to add to their inventory and use. Since it is a random generator, 
- * there can be multiple items of the same type in the game.
+ * ItemGenerator is a generator that produced a random time from an array of items. These items are placed on the board for the player to add to their inventory and use. Since it is a random generator, there can be multiple items of the same type in the game.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 

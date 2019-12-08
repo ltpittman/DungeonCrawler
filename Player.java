@@ -1,9 +1,5 @@
 /**
- * A Player is a type of character that the user creates to go around the game. The player has a 
- * name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength)
- * and an inventroy. The player is moved around the board through the control of the user. It can pick items up,
- * add the items to the player's inventory, and equip the items to use in a battle. When the player comes across
- * an enemy the player can choose to fight it.
+ *A Player is a type of character that the user creates to go around the game. The player has a name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength) and an inventroy. The player is moved around the board through the control of the user. It can pick items up, add the items to the player's inventory, and equip the items to use in a battle. When the player comes across an enemy the player can choose to fight it.
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 import java.util.Random;
@@ -19,8 +15,8 @@ public class Player extends Character{
 	private int health;
 	private int weaponStrength;
 	private int armorStrength;
-	private Item equippedWeapon;
-	private Item equippedArmor;
+	Item equippedWeapon;
+	Item equippedArmor;
 	public Inventory inventory;
 	public World world;
 	public int x;
@@ -45,6 +41,7 @@ public class Player extends Character{
 	}
 
 	/**
+	 * Restores the health to 100 when the Player drinks a health potion.
 	 * Returns the name of the Player.
 	 * @return name of the player
 	 */
@@ -92,27 +89,11 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Assigns an equipped armor to the player
-	 * @param i the item being equipped
-	 */
-	public void setEquippedArmor(Item i){
-		this.equippedArmor = i;
-	}
-	
-	/**
 	 * Return the item that the Player currently has equipped
 	 * @return weapon that is equipped
 	 */
 	public Item getEquippedWeapon(){
 		return inventory.getEquippedWeapon();
-	}
-
-	/**
-	 * Assigns an equipped weapon to the player
-	 * @param i the item being equipped 
-	 */
-	public void setEquippedWeapon(Item i){
-		this.equippedWeapon = i;
 	}
 
 	/**
@@ -134,8 +115,8 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Returns the x-coordinate of the Player.
-	 * @return x-coordinate
+	 * Checks to see if the Player can move up, if it can the Player moves up one space on the board. The Player would not be able to move if there was a wall in the way.
+	 * @return Returns the x-coordinate of the Player.
 	 */
 	public int getPositionX(){
 		return this.x;
@@ -150,8 +131,7 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Checks to see if the Player can move up, if it can the Player moves up one 
-	 * space on the board. The Player would not be able to move if there was a wall in the way.
+	 * Checks to see if the Player can move up, if it can the Player moves up one  space on the board. The Player would not be able to move if there was a wall in the way.
 	 * @return true if the player can move, false if the player cannot move
 	 */
 	public boolean goUp(){
@@ -274,6 +254,12 @@ public class Player extends Character{
 		System.out.println("[Player Information] \nName: " + this.name + "\nHealth: " + this.health + "/100");
 	}
 
+	/**Returns the location of the player to the screen.
+	 */
+	public void getLocation(){
+		System.out.println("Location: " + this.x + "," + this.y);
+	}
+
 	/**
 	 * Prints the player's name, health(out of 100) and strength of the weapon the Player is using. 
 	 * @return player's name, health, and strength
@@ -294,25 +280,6 @@ public class Player extends Character{
 		pw.println(health);
 		pw.println(inventory.equippedWeapon.getStrength());
 		pw.println(inventory.equippedArmor.getStrength());
-
-		pw.println(inventory.equippedWeapon.getType());
-		pw.println(inventory.equippedWeapon.getName());
-		pw.println(inventory.equippedWeapon.getWeight());
-		pw.println(inventory.equippedWeapon.getValue());
-		pw.println(inventory.equippedWeapon.getStrength());
-		pw.println(inventory.equippedWeapon.getItemX());
-		pw.println(inventory.equippedWeapon.getItemY());
-		pw.println(inventory.equippedWeapon.getRoomNum());
-
-		pw.println(inventory.equippedArmor.getType());
-		pw.println(inventory.equippedArmor.getName());
-		pw.println(inventory.equippedArmor.getWeight());
-		pw.println(inventory.equippedArmor.getValue());
-		pw.println(inventory.equippedArmor.getStrength());
-		pw.println(inventory.equippedArmor.getItemX());
-		pw.println(inventory.equippedArmor.getItemY());
-		pw.println(inventory.equippedArmor.getRoomNum());
-		pw.println(".");
 	}
 
 	/**
@@ -328,31 +295,6 @@ public class Player extends Character{
 			this.health = a.nextInt();
 			this.weaponStrength = a.nextInt();
 			this.armorStrength = a.nextInt();
-			String blank = a.nextLine();
-			String typeItem = a.nextLine();
-
-			ItemType type = ItemType.valueOf(typeItem);
-			String name = a.nextLine();
-			int weight = a.nextInt();
-			int value = a.nextInt();
-			int stren = a.nextInt();
-			int x = a.nextInt();
-			int y = a.nextInt();
-			int roomNum = a.nextInt(); //added this
-			blank = a.nextLine();
-			Item w  = new Item(type, name, weight, value, stren, x, y, roomNum);
-			setEquippedWeapon(w);
-			String typeitemB = a.nextLine();
-			ItemType typeB = ItemType.valueOf(typeitemB);
-			String nameB = a.nextLine();
-			int weightB = a.nextInt();
-			int valueB = a.nextInt();
-			int strenB = a.nextInt();
-			int xB = a.nextInt();
-			int yB = a.nextInt();
-			int rN = a.nextInt();
-			Item r  = new Item(typeB, nameB, weightB, valueB, strenB, xB, yB, rN);
-			setEquippedArmor(r);
 		}
 
 		catch(Exception e){

@@ -1,7 +1,5 @@
 /**
- * A Enemy is a character in the game who's goal is to kill the players. They have a name, health
- * (out of 100), damage, and location. There are also many different types of monsters that have different 
- * stats. When a player and an enemy approach each other they fight. {@link Battles} 
+ * Enemy is a character in the game who's goal is to kill the players. They have a name, health (out of 100), damage, and location. There are also many different types of monsters that have different  stats. When a player and an enemy approach each other they fight. {@link Battles} 
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 
@@ -115,22 +113,6 @@ public class Enemy extends Character{
 	 */
 	public void setIsDead(boolean isDead){
 		this.isDead = isDead;
-	}
-
-	/**
-	 * Returns the x coordinate of the Enemy 
-	 * @return x coordinate
-	 */
-	public int getX(){
-		return this.x;
-	}
-
-	/**
-	 * Returns the y coordinate of the Enemy
-	 * @return y coordinate
-	 */
-	public int getY(){
-		return this.y;
 	}
 
 	/**

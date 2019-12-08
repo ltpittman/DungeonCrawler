@@ -1,6 +1,5 @@
 /**
- * A Character represents an individual on the game board. Each Character object 
- * has a name, health, strength, and location.   
+ * Character represents an individual on the game board. Each Character object has a name, health, strength, image, and location.   
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
@@ -75,13 +74,6 @@ public abstract class Character{
 	 */ 
 	public int getPositionY(){
 		return this.y;
-	}
-
-	/**
-	 * Prints the information about the location of the Character
-	 */
-	public void getLocation(){
-		System.out.println("Location: " + getPositionX() + "," + getPositionY());
 	}
 }
 

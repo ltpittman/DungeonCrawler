@@ -1,4 +1,4 @@
-/**This class creates a method that return a key. In order to put a key in a random place with little to no duplicates, there are a total of 10 keys being created. Each key below has the same name but differnt x and y coordinates. 
+/**KeyGenerator creates a method that return a key. In order to put a key in a random place with little to no duplicates, there are a total of 10 keys being created. Each key below has the same name but differnt x and y coordinates. 
  * @author Lauren Pittman, Tavion Britt, Grace Long.
  */
 

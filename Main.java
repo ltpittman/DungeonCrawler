@@ -196,7 +196,8 @@ public class Main{
 
 			switch(input){
 				case'H':
-					player.goUp();
+					player.goLeft();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -228,7 +229,6 @@ public class Main{
 						interact.interactCharacters(player,explorer);
 					}
 
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -259,7 +259,8 @@ public class Main{
 					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'L':
-					player.goDown();
+					player.goRight();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -290,7 +291,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -321,7 +321,8 @@ public class Main{
 					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'J':
-					player.goLeft();
+					player.goDown();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -352,7 +353,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -383,7 +383,8 @@ public class Main{
 					world.fillWorld(player, explorer, key1, key2, item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
 					break;
 				case'K':
-					player.goRight();
+					player.goUp();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -414,7 +415,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
