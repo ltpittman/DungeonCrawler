@@ -152,7 +152,7 @@ public class Interaction{
 					System.out.println(e);
 				}
 			}
-			else if(input == 5){
+			else if(input == 6){
 				running = false;
 				System.out.println();
 				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");

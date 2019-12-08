@@ -246,14 +246,5 @@ public class Room{
 		else if(player.y == enemy3.y && player.x == enemy3.x || player.y == enemy3.y && player.x == enemy3.x){
 			battle.attack(player,enemy3);
 		}
-
-		//Here is where the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
-		if(player.y - 1 == explorer.y - 1  && player.x - 1 == explorer.x - 1 || player.y + 1 == explorer.y + 1 && player.x + 1 == explorer.x + 1){
-			//here is wher the player will meet the explorer. The + or - 1 makes it so that the player and explorer are not on top of each other.
-			if(player.y == explorer.y && player.x == explorer.x){
-				interact.interactCharacters(player, explorer);
-			}
-		}
-
 	}
 }
