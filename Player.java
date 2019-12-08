@@ -41,23 +41,6 @@ public class Player extends Character{
 	}
 
 	/**
-	 * Restores the health to 100 when the Player drinks a health potion.
-	 * Returns the name of the Player.
-	 * @return name of the player
-	 */
-	String getName(){
-		return this.name;
-	}
-
-	/**
-	 * Returns the health of the Player out of 100.
-	 * @return the players health
-	 */
-	int getHealth(){
-		return this.health;
-	}
-
-	/**
 	 * Sets the health of the Player.
 	 * @param num the health of the player
 	 */
@@ -112,22 +95,6 @@ public class Player extends Character{
 	int getWeaponStrength(){
 		weaponStrength = equippedWeapon.getStrength();
 		return weaponStrength;
-	}
-
-	/**
-	 * Checks to see if the Player can move up, if it can the Player moves up one space on the board. The Player would not be able to move if there was a wall in the way.
-	 * @return Returns the x-coordinate of the Player.
-	 */
-	public int getPositionX(){
-		return this.x;
-	}
-
-	/**
-	 * Returns the y-coordinate of the Player.
-	 * @return y-coordinate
-	 */
-	public int getPositionY(){
-		return this.y;
 	}
 
 	/**
