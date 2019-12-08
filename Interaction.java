@@ -153,7 +153,10 @@ public class Interaction{
 				}
 			}
 			else if(input == 6){
+<<<<<<< HEAD
 			
+=======
+>>>>>>> 62ab99022a7d2449a5b374902de293852733ba0b
 				running = false;
 				System.out.println();
 				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");
