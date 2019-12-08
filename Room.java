@@ -135,13 +135,13 @@ public class Room{
 
 		//Monsters.
 		if(enemy1.getIsDead() == false){
-			grid[enemy1.getY()][enemy1.getX()] = enemy1.getCharacterImage();
+			grid[enemy1.y][enemy1.x] = enemy1.getCharacterImage();
 		}
 		if(enemy2.getIsDead() == false){
-			grid[enemy2.getY()][enemy2.getX()] = enemy2.getCharacterImage();
+			grid[enemy2.y][enemy2.x] = enemy2.getCharacterImage();
 		}
 		if(enemy3.getIsDead() == false){
-			grid[enemy3.getY()][enemy3.getX()] = enemy3.getCharacterImage();
+			grid[enemy3.y][enemy3.x] = enemy3.getCharacterImage();
 		}
 		//Player.
 		grid[player.y][player.x] = player.getCharacterImage();

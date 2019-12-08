@@ -197,6 +197,7 @@ public class Main{
 			switch(input){
 				case'H':
 					player.goLeft();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -228,7 +229,6 @@ public class Main{
 						interact.interactCharacters(player,explorer);
 					}
 
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -260,6 +260,7 @@ public class Main{
 					break;
 				case'L':
 					player.goRight();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -290,7 +291,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -322,6 +322,7 @@ public class Main{
 					break;
 				case'J':
 					player.goDown();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -352,7 +353,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}
@@ -384,6 +384,7 @@ public class Main{
 					break;
 				case'K':
 					player.goUp();
+					explorer.move();
 					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
@@ -414,7 +415,6 @@ public class Main{
 					else if(player.y == explorer.y && player.x == explorer.x){
 						interact.interactCharacters(player,explorer);
 					}
-					explorer.move();
 					if (enemy1.getIsDead() == false){
 						enemy1.move();
 					}

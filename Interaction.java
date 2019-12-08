@@ -19,6 +19,7 @@ public class Interaction{
 	public void interactCharacters(Player player, SideCharacter character){
 
 		String characterName = character.getName();
+		String playerName = player.getName();
 
 		System.out.println();
 
@@ -30,7 +31,8 @@ public class Interaction{
 			System.out.println("2. What are you doing down here? ");
 			System.out.println("3. Do you have any extra health potions that I can have? ");
 			System.out.println("4. Do you have any items I can borrow? ");
-			System.out.println("5. Cancel ");
+			System.out.println("5. Do you have any tips for killing these monsters?");
+			System.out.println("6. Goodbye.");
 			System.out.print("[Answer] ");
 
 			Scanner in = new Scanner(System.in);
@@ -87,10 +89,10 @@ public class Interaction{
 					System.out.println(e);
 				}
 
-				System.out.println("[" + characterName + "] If you need any more health potions, just let me know.");
+				System.out.println("[" + characterName + "] If you need any more health potions " + playerName + ", just let me know.");
 				System.out.println();
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -112,10 +114,39 @@ public class Interaction{
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
-				System.out.println("[" + characterName + "] Hopefully you can find use for this. If not, I'm sure I have something else if you need it...");
+				System.out.println("[" + characterName + "] Hopefully you can find use for this " + playerName + ". If not, I'm sure I have something else if you need it...");
+				System.out.println();
+				try{
+					Thread.sleep(3000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+			}
+			else if(input == 5){
+				System.out.println();
+				System.out.println("[" + characterName + "] Tips to kill a monster..? Hmm...");				
+				System.out.println();
+				try{
+					Thread.sleep(4000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println();
+				System.out.println("[" + characterName + "] Well... after all these years that I've been exploring, I can tell you this " + playerName + ".");			
 				System.out.println();
 				try{
 					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println();
+				System.out.println("[" + characterName + "] While looking around for armor and weapons, pick up items that are high in strength. The higher the strength, the better your chances of killing all the mother monsters and getting out of this dungeon alive.");
+				System.out.println();
+				try{
+					Thread.sleep(4000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -124,8 +155,14 @@ public class Interaction{
 			else if(input == 5){
 				running = false;
 				System.out.println();
-				System.out.println("[" + characterName + "] If you need anything, you know where to find me!");
+				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");
 				System.out.println();
+				try{
+					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
 				break;
 			}
 		}
