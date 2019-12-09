@@ -17,7 +17,6 @@ public class Enemy extends Character{
 	private MonsterType type;
 	private int damage;
 	private boolean isDead;
-	public World world;
 	public int x;
 	public int y;
 	public int roomNum;

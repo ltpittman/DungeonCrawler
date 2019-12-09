@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Interaction{
-	World world;
 	Player player;
 	Inventory inventory;
 	SideCharacter character;

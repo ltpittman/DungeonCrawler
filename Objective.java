@@ -3,8 +3,6 @@
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
 public class Objective{
-	Player player;
-	Inventory inventory;
 	
 	/**
 	 * This method prints the commands to the user.

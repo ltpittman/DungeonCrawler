@@ -18,7 +18,6 @@ public class Player extends Character{
 	Item equippedWeapon;
 	Item equippedArmor;
 	public Inventory inventory;
-	public World world;
 	public int x;
 	public int y;
 
