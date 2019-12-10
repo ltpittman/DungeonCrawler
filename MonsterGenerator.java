@@ -1,10 +1,10 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 /**
  * A MonsterGenerator is a random generator that picks a monster from an array list of monsters. Monster types include: Vampire, Ghoul, Werewolf, Zombie, and Ghost. These  monsters are then added to the board as enemies. {@link Enemy}
  * @author Lauren Pittman, Tavion Britt, and Grace Long
  */
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class MonsterGenerator{
 

@@ -1,13 +1,13 @@
-/**A SideCharacter is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
- * @author Lauren Pittman, Tavion Britt, Grace Long.
- */
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.PrintWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+/**A SideCharacter is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
 
 class SideCharacter extends Character{
 	//Private instance variables.

@@ -1,12 +1,12 @@
-/**
- *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.InputMismatchException;
+
+/**
+ *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
 
 public class Battles{
 	World world;

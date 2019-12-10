@@ -1,11 +1,12 @@
-/**
- * Room represents part of the board that the player can move around. Each room is filled with a player, side character, nine items, and three enemies. The player is able to move around the room and interact with the other objects in the room. 
- * @author Lauren Pittman, Tavion Britt, and Grace Long
- */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
+
+/**
+ * Room represents part of the board that the player can move around. Each room is filled with a player, side character, nine items, and three enemies. The player is able to move around the room and interact with the other objects in the room. 
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 
 public class Room{
 	//Private instance variables.
