@@ -66,8 +66,8 @@ public class Main{
 		item4.setRoomNum(1);
 		Item item5 = ItemGenerator.generate();
 		item5.setRoomNum(1);
-		
 		Item item6 = ItemGenerator.generate();
+
 		item6.setRoomNum(2);
 		Item item7 = ItemGenerator.generate();   
 		item7.setRoomNum(2);
