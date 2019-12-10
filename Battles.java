@@ -42,8 +42,10 @@ public class Battles{
 		healthEnemy = enemy.getHealth();
 		int strengthEnemy = enemy.getDamage();
 
+		System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
+		
 		while(healthEnemy > 0){
-			System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
+			//System.out.println("[Attention!] You just came cross a " + enemy.getName() + ". Prepare to fight!");
 			if(healthPlayer > 0){
 				System.out.println("What would you like to do?");
 				System.out.println("1. Attack the monster!");

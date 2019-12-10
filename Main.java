@@ -193,31 +193,31 @@ public class Main{
 			switch(input){
 				case'H':
 					player.goLeft();
-					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
+					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+					else if(player.y == enemy2.y && player.x == enemy2.x){
 						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+					else if(player.y == enemy3.y && player.x == enemy3.x){
 						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+					else if(player.y == enemy4.y && player.x == enemy4.x){
 						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+					else if(player.y == enemy5.y && player.x == enemy5.x){
 						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+					else if(player.y == enemy6.y && player.x == enemy6.x){
 						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+					else if(player.y == enemy7.y && player.x == enemy7.x){
 						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+					else if(player.y == enemy8.y && player.x == enemy8.x){
 						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+					else if(player.y == enemy9.y && player.x == enemy9.x){
 						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
@@ -255,31 +255,31 @@ public class Main{
 					break;
 				case'L':
 					player.goRight();
-					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
+					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+					else if(player.y == enemy2.y && player.x == enemy2.x){
 						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+					else if(player.y == enemy3.y && player.x == enemy3.x){
 						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+					else if(player.y == enemy4.y && player.x == enemy4.x){
 						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+					else if(player.y == enemy5.y && player.x == enemy5.x){
 						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+					else if(player.y == enemy6.y && player.x == enemy6.x){
 						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+					else if(player.y == enemy7.y && player.x == enemy7.x){
 						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+					else if(player.y == enemy8.y && player.x == enemy8.x){
 						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+					else if(player.y == enemy9.y && player.x == enemy9.x){
 						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
@@ -317,31 +317,31 @@ public class Main{
 					break;
 				case'J':
 					player.goDown();
-					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
+					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+					else if(player.y == enemy2.y && player.x == enemy2.x){
 						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+					else if(player.y == enemy3.y && player.x == enemy3.x){
 						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+					else if(player.y == enemy4.y && player.x == enemy4.x){
 						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+					else if(player.y == enemy5.y && player.x == enemy5.x){
 						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+					else if(player.y == enemy6.y && player.x == enemy6.x){
 						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+					else if(player.y == enemy7.y && player.x == enemy7.x){
 						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+					else if(player.y == enemy8.y && player.x == enemy8.x){
 						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+					else if(player.y == enemy9.y && player.x == enemy9.x){
 						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
@@ -379,31 +379,31 @@ public class Main{
 					break;
 				case'K':
 					player.goUp();
-					if(player.y == enemy1.y && player.x == enemy1.x && world.getCurrentRoom() == enemy1.roomNum){
+					if(player.y == enemy1.y && player.x == enemy1.x){
 						battle.attack(player,enemy1);
 					}
-					else if(player.y == enemy2.y && player.x == enemy2.x && world.getCurrentRoom() == enemy2.roomNum){
+					else if(player.y == enemy2.y && player.x == enemy2.x){
 						battle.attack(player,enemy2);
 					}
-					else if(player.y == enemy3.y && player.x == enemy3.x && world.getCurrentRoom() == enemy3.roomNum){
+					else if(player.y == enemy3.y && player.x == enemy3.x){
 						battle.attack(player,enemy3);
 					}
-					else if(player.y == enemy4.y && player.x == enemy4.x && world.getCurrentRoom() == enemy4.roomNum){
+					else if(player.y == enemy4.y && player.x == enemy4.x){
 						battle.attack(player,enemy4);
 					}
-					else if(player.y == enemy5.y && player.x == enemy5.x && world.getCurrentRoom() == enemy5.roomNum){
+					else if(player.y == enemy5.y && player.x == enemy5.x){
 						battle.attack(player,enemy5);
 					}
-					else if(player.y == enemy6.y && player.x == enemy6.x && world.getCurrentRoom() == enemy6.roomNum){
+					else if(player.y == enemy6.y && player.x == enemy6.x){
 						battle.attack(player,enemy6);
 					}
-					else if(player.y == enemy7.y && player.x == enemy7.x && world.getCurrentRoom() == enemy7.roomNum){
+					else if(player.y == enemy7.y && player.x == enemy7.x){
 						battle.attack(player,enemy7);
 					}
-					else if(player.y == enemy8.y && player.x == enemy8.x && world.getCurrentRoom() == enemy8.roomNum){
+					else if(player.y == enemy8.y && player.x == enemy8.x){
 						battle.attack(player,enemy8);
 					}
-					else if(player.y == enemy9.y && player.x == enemy9.x && world.getCurrentRoom() == enemy9.roomNum){
+					else if(player.y == enemy9.y && player.x == enemy9.x){
 						battle.attack(player,enemy9);
 					}
 					else if(player.y == explorer.y && player.x == explorer.x){
