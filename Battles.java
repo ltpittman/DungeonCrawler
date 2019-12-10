@@ -97,7 +97,6 @@ public class Battles{
 						player.move();
 						//Subtract one from the numberMonster variable. 
 						this.numberOfMonsters = numberOfMonsters - 1;
-						System.out.println("number of monsters = " + numberOfMonsters);
 						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
@@ -155,13 +154,9 @@ public class Battles{
 	 * In this method we determine if the player won the game. A player wins the game if there are no more monsters left on the board.
 	 */	
 	public void playerWins(){
-		if(numberOfMonsters == 0){
 			System.out.println("Woohoo! You were able to kill all monsters and won the game!!");
 			System.exit(1);
-		}
-		else{
 			return;
-		}
 	}
 
 

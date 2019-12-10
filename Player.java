@@ -48,6 +48,14 @@ public class Player extends Character{
 	}
 
 	/**
+	 * This method gets the health of the Player
+	 * @return the health of the player
+	 */
+	public int getHealth(){
+		return health;
+	}
+
+	/**
 	 * This method restores the health to 100 when the Player drinks a health potion.
 	 */
 	public void restoreHealth(){
