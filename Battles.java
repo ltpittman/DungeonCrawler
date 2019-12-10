@@ -1,12 +1,12 @@
-/**
- *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.InputMismatchException;
+
+/**
+ *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
 
 public class Battles{
 	World world;
@@ -97,7 +97,7 @@ public class Battles{
 						System.out.println("You have defeated the monster!");
 						player.move();
 						//Subtract one from the numberMonster variable. 
-						numberOfMonsters = numberOfMonsters - 1;
+						this.numberOfMonsters = numberOfMonsters - 1;
 						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
@@ -155,13 +155,9 @@ public class Battles{
 	 * In this method we determine if the player won the game. A player wins the game if there are no more monsters left on the board.
 	 */	
 	public void playerWins(){
-		if(numberOfMonsters == 0){
 			System.out.println("Woohoo! You were able to kill all monsters and won the game!!");
 			System.exit(1);
-		}
-		else{
 			return;
-		}
 	}
 
 

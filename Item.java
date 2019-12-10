@@ -1,13 +1,13 @@
-/**
- * A Item is a object on the board that helps the player in some way. The Item has a name, weight, value, strength, and x/ y coordinates. When moving around the board the player is able to pick up the item and add it their inventory to use. {@link Inventory} {@link World}
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileReader;
+
+/**
+ * A Item is a object on the board that helps the player in some way. The Item has a name, weight, value, strength, and x/ y coordinates. When moving around the board the player is able to pick up the item and add it their inventory to use. {@link Inventory} {@link World}
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
 
 public class Item{
 	//Instance variables.

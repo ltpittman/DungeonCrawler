@@ -1,14 +1,14 @@
-/**
- * Enemy is a character in the game who's goal is to kill the players. They have a name, health (out of 100), damage, and location. There are also many different types of monsters that have different  stats. When a player and an enemy approach each other they fight. {@link Battles} 
- * @author Lauren Pittman, Tavion Britt, and Grace Long
- */
-
 import java.util.Random;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileInputStream;
+
+/**
+ * Enemy is a character in the game who's goal is to kill the players. They have a name, health (out of 100), damage, and location. There are also many different types of monsters that have different  stats. When a player and an enemy approach each other they fight. {@link Battles} 
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 
 public class Enemy extends Character{
 	//Instance variables.

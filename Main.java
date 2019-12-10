@@ -1,18 +1,15 @@
-/**
- * Main class for the game. It creates a player, side character, items, monsters, and world. This class  is needed to play the game. Here the player is able to tell the program to move up, down, left, or right, print their inventory, add or drop items, fight monsters, restore their health with a health potion, and load/save a game. The items and monsters  created in this class are randomly generated. 
- * @throws InputMismatchException Throws this exception when the user enters the wrong input.
- * @throws FileNotFoundException Throws this exception when a file cannot be found to upload.
- * @author Lauren Pittman, Tavion Britt, Grace Long.
- */
-
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.FileInputStream;
+
+/**
+ * Main class for the game. It creates a player, side character, items, monsters, and world. This class  is needed to play the game. Here the player is able to tell the program to move up, down, left, or right, print their inventory, add or drop items, fight monsters, restore their health with a health potion, and load/save a game. The items and monsters  created in this class are randomly generated. 
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
 
 public class Main{
 
@@ -50,7 +47,7 @@ public class Main{
 		enemy8.setRoomNum(3);
 		Enemy enemy9 = MonsterGenerator.generateMonster();
 		enemy9.setRoomNum(3);
-
+		
 		//Creating the items.
 		Item item1 = ItemGenerator.generate();   
 		item1.setRoomNum(1);
@@ -62,7 +59,7 @@ public class Main{
 		item4.setRoomNum(1);
 		Item item5 = ItemGenerator.generate();
 		item5.setRoomNum(1);
-		
+	
 		Item item6 = ItemGenerator.generate();
 		item6.setRoomNum(2);
 		Item item7 = ItemGenerator.generate();   
@@ -84,7 +81,7 @@ public class Main{
 		item14.setRoomNum(3);
 		Item item15 = ItemGenerator.generate();   
 		item15.setRoomNum(3);
-		
+
 		Item key1 = KeyGenerator.generateKey();
 		Item key2 = KeyGenerator.generateKey();
 

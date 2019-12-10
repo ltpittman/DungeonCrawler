@@ -1,10 +1,10 @@
-/**Interaction is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
+
+/**Interaction is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
 
 public class Interaction{
 	Player player;
@@ -24,7 +24,7 @@ public class Interaction{
 
 		boolean running = false;
 
-		while(true){
+		while(running = true){
 
 			System.out.println("1. Who are you..? ");
 			System.out.println("2. What are you doing down here? ");
@@ -195,14 +195,6 @@ public class Interaction{
 			else if(input == 6){
 				running = false;
 				System.out.println();
-				System.out.println("[" + playerName + "] Goodbye!");
-				System.out.println();
-				try{
-					Thread.sleep(2000);
-				}
-				catch(InterruptedException e){
-					System.out.println(e);
-				}
 				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");
 				System.out.println();
 				try{

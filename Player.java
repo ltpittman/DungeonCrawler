@@ -1,13 +1,14 @@
-/**
- *A Player is a type of character that the user creates to go around the game. The player has a name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength) and an inventroy. The player is moved around the board through the control of the user. It can pick items up, add the items to the player's inventory, and equip the items to use in a battle. When the player comes across an enemy the player can choose to fight it.
- * @author Lauren Pittman, Tavion Britt, and Grace Long
- */
 import java.util.Random;
 import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+/**
+ *A Player is a type of character that the user creates to go around the game. The player has a name, health, equipped weapon (with a corresponding strenght), equipped armor (with a corresponding strength) and an inventroy. The player is moved around the board through the control of the user. It can pick items up, add the items to the player's inventory, and equip the items to use in a battle. When the player comes across an enemy the player can choose to fight it.
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 
 public class Player extends Character{
 	//Private instance variables.
@@ -44,6 +45,13 @@ public class Player extends Character{
 	 */
 	public void setHealth(int num){
 		this.health = num;
+	}
+
+	/**This method gets the health of the Player.
+	 * @return Returns the health of the player.
+	 */
+	public int getHealth(){
+		return health;
 	}
 
 	/**
