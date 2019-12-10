@@ -97,7 +97,10 @@ public class Battles{
 						System.out.println("You have defeated the monster!");
 						player.move();
 						//Subtract one from the numberMonster variable. 
-						this.numberOfMonsters = numberOfMonsters - 1;
+						numberOfMonsters = numberOfMonsters - 1;
+						if(numberOfMonsters == 0){
+							playerWins();
+						}
 						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
@@ -116,10 +119,6 @@ public class Battles{
 					if(healthPlayer < 1){
 						System.out.println("You have been defeated... Restart the game to play again!");
 						playerLoses();
-					}
-					//If there are no monsters left, then the player wins.
-					if(numberOfMonsters == 0){
-						playerWins();
 					}
 				}
 				else if(answer == 2){
