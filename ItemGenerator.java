@@ -5,10 +5,6 @@ import java.util.Random;
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 34eee9b0a6e49cb99f3d30d327b6bbf336626e38
 public class ItemGenerator{
 
 	/**
