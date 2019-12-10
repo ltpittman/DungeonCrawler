@@ -47,6 +47,13 @@ public class Player extends Character{
 		this.health = num;
 	}
 
+	/**This method gets the health of the Player.
+	 * @return Returns the health of the player.
+	 */
+	public int getHealth(){
+		return health;
+	}
+
 	/**
 	 * This method restores the health to 100 when the Player drinks a health potion.
 	 */
