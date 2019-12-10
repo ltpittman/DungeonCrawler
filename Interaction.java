@@ -24,7 +24,7 @@ public class Interaction{
 
 		boolean running = false;
 
-		while(true){
+		while(running = true){
 
 			System.out.println("1. Who are you..? ");
 			System.out.println("2. What are you doing down here? ");
@@ -195,14 +195,6 @@ public class Interaction{
 			else if(input == 6){
 				running = false;
 				System.out.println();
-				System.out.println("[" + playerName + "] Goodbye!");
-				System.out.println();
-				try{
-					Thread.sleep(2000);
-				}
-				catch(InterruptedException e){
-					System.out.println(e);
-				}
 				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");
 				System.out.println();
 				try{

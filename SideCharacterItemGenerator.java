@@ -5,7 +5,10 @@ import java.util.Random;
  * @author Lauren Pittman, Tavion Britt, Grace Long.
 */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34eee9b0a6e49cb99f3d30d327b6bbf336626e38
 public class SideCharacterItemGenerator{
 	/**This Static method creates 20 items and stores them into a array. A random index will be seleected to pick a item to give to the player when the player asks the side character for a item. Since the number is random, any item can be picked whether it is a weapon or piece of armor. Additionally, items can be given more than one.
 	 * @return poss[x] This returns one random item from the array. 

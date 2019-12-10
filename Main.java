@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.io.FileInputStream;
 
 /**
@@ -54,6 +53,7 @@ public class Main{
 	Enemy enemy9 = MonsterGenerator.generateMonster();
 	enemy9.setRoomNum(3);
 
+<<<<<<< HEAD
 	//Creating the items.
 	Item item1 = ItemGenerator.generate();   
 	item1.setRoomNum(1);
@@ -65,6 +65,30 @@ public class Main{
 	item4.setRoomNum(1);
 	Item item5 = ItemGenerator.generate();
 	item5.setRoomNum(1);
+=======
+		//Creating the items.
+		Item item1 = ItemGenerator.generate();   
+		item1.setRoomNum(1);
+		Item item2 = ItemGenerator.generate();
+		item2.setRoomNum(1);
+		Item item3 = ItemGenerator.generate();   
+		item3.setRoomNum(1);
+		Item item4 = ItemGenerator.generate();
+		item4.setRoomNum(1);
+		Item item5 = ItemGenerator.generate();
+		item5.setRoomNum(1);
+		Item item6 = ItemGenerator.generate();
+
+		item6.setRoomNum(2);
+		Item item7 = ItemGenerator.generate();   
+		item7.setRoomNum(2);
+		Item item8 = ItemGenerator.generate();   
+		item8.setRoomNum(2);
+		Item item9 = ItemGenerator.generate();   
+		item9.setRoomNum(2);
+		Item item10 = ItemGenerator.generate();   
+		item10.setRoomNum(2);
+>>>>>>> 34eee9b0a6e49cb99f3d30d327b6bbf336626e38
 
 	Item item6 = ItemGenerator.generate();
 	item6.setRoomNum(2);

@@ -4,7 +4,10 @@ import java.util.Random;
  * @author Lauren Pittman, Tavion Britt, Grace Long.
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 34eee9b0a6e49cb99f3d30d327b6bbf336626e38
 public class KeyGenerator{
 	/**This Static method gets a random number and uses that number to get a key from a list. There are multiple keys in the array, however, each key has a differnt x and y coordinate so there will be less duplicates iwhen the game generates. 
 	 * @return Returns the key located at the index of the random number.
