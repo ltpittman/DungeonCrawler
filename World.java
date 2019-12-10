@@ -1,7 +1,3 @@
-/**
- * World represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the  next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they please and fight any monsters, pick up any items, and converse with their side character.
- * @author Lauren Pittman, Tavion Britt, and Grace Long
- */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -9,10 +5,15 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.io.PrintWriter;
 
+/**
+ * World represents the entire domain that the characters can move around in. Each world has three rooms, the first room the player starts in and the  next two rooms require a key to enter. {@link Room} The player can find the keys on the board as items. The player can move around the board as they please and fight any monsters, pick up any items, and converse with their side character.
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
+
 public class World{
 	private Enemy enemy;
 	private Player player;
-	private int x,y;
+	public int x,y;
 	private Inventory inventory;
 	private SideCharacter explorer;
 	//Store all three rooms in a arraylist.
@@ -85,7 +86,7 @@ public class World{
 		if(currentRoom == 0){
 			room1.fillRoom(player, explorer, key1, key2, item1, item2, item3, item4, item5, enemy1, enemy2, enemy3);
 			//Here is where the player will enter the second room located on the top.
-			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0 && player.inventory.items.contains(key1)){
+			if(player.getPlayerX() == 1 && player.getPlayerY() == 6 && currentRoom == 0 && player.inventory.items.contains(key1)){
 				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room? Y/N");
 				System.out.print("[Answer] ");
 				String input = in.next().toUpperCase();
@@ -101,7 +102,7 @@ public class World{
 				}
 			}
 			//If the player does not have a key to open the door, the refuse entry.
-			if(player.getPositionX() == 1 && player.getPositionY() == 6 && currentRoom == 0 && !player.inventory.items.contains(key1)){
+			if(player.getPlayerX() == 1 && player.getPlayerY() == 6 && currentRoom == 0 && !player.inventory.items.contains(key1)){
 				if(player.inventory.items.contains(key2)){
 					System.out.println("It seems you have the wrong key. Go back to the area and look around for the other key to enter.");
 				}
@@ -110,7 +111,7 @@ public class World{
 				}
 			}
 			//Here is where the player will enter the third room (located on the right).
-			if(player.getPositionX() == 9 && player.getPositionY() == 28 && currentRoom == 0 && player.inventory.items.contains(key2)){
+			if(player.getPlayerX() == 9 && player.getPlayerY() == 28 && currentRoom == 0 && player.inventory.items.contains(key2)){
 				System.out.println("[Attention!] The door appears locked.\n You notice that one of the keys you found looks like it can unlock the door. Do you want to try and enter the room? Y/N");
 				System.out.print("[Answer] ");
 				String input = in.next().toUpperCase();
@@ -126,7 +127,7 @@ public class World{
 				}
 			}
 			//If the player does not have a key to open the door, the refuse entry.
-			if(player.getPositionX() == 9 && player.getPositionY() == 28 && currentRoom == 0 && !player.inventory.items.contains(key2)){
+			if(player.getPlayerX() == 9 && player.getPlayerY() == 28 && currentRoom == 0 && !player.inventory.items.contains(key2)){
 				if(player.inventory.items.contains(key1)){
 					System.out.println("It seems you have the wrong key. Go back to the area and look around for the other key to enter.");
 				}
@@ -145,7 +146,7 @@ public class World{
 		else if(currentRoom == 1){
 			room2.fillRoom(player, explorer, key1, key2, item6, item7, item8, item9, item10, enemy4, enemy5, enemy6);
 			//Here is where the player will enter the first room if they want to leave this room.
-			if(player.getPositionX() == 10 && player.getPositionY() == 6 && currentRoom == 1){
+			if(player.getPlayerX() == 10 && player.getPlayerY() == 6 && currentRoom == 1){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
 				System.out.print("\n[Answer] ");
 				String input = in.next().toUpperCase();
@@ -171,7 +172,7 @@ public class World{
 		//If the player is in the third room, then print Room3.
 		else if(currentRoom == 2){
 			room3.fillRoom(player, explorer, key1, key2, item11, item12, item13, item14, item15, enemy7, enemy8, enemy9);
-			if(player.getPositionX() == 9 && player.getPositionY() == 1 && currentRoom == 2){
+			if(player.getPlayerX() == 9 && player.getPlayerY() == 1 && currentRoom == 2){
 				System.out.print("\n[Attention!] You came across the door you entered in from earlier...\nDo you want to leave this room and head back to the first one? Y/N ");
 				System.out.print("\n[Answer] ");
 				String input = in.next().toUpperCase();
@@ -193,7 +194,8 @@ public class World{
 
 
 	/**
-	 * Gets the current room number
+	 * This method gets the current room number that the player is in.
+	 * @return Returns the current room numbe the player is in.
 	 */ 
 	public int getCurrentRoom(){
 		return currentRoom;
@@ -201,7 +203,7 @@ public class World{
 
 
 	/**
-	 * Prints the current room the main player is in to the screen.
+	 *  This method prints the current room the main player is in to the screen.
 	 */
 	public void printCurrentRoom(){
 		//We are calling the arraylist Rooms to GET the index of the current room the player is in to print it to the screen.
@@ -209,8 +211,8 @@ public class World{
 	}
 
 	/**
-	 * Saves the information about the current room the player is in to a file.
-	 * @param pw Print writer that types the information into a file.
+	 * This method saves the information about the current room the player is in to a file.
+	 * @param pw Print writer will type the information into a file.
 	 */
 	public void persist(PrintWriter pw){
 		pw.println(currentRoom);
@@ -218,8 +220,8 @@ public class World{
 	}
 
 	/**
-	 * Reads the information about the current room from a file. This they allows the user to continue with a previously saved game. 
-	 * @param a A scanner that reads the text in from a file.
+	 * This methodReads the information about the current room from a file. This they allows the user to continue with a previously saved game. 
+	 * @param a Scanner a that reads the text in from a file.
 	 */
 	public void restore(Scanner a){
 		try{

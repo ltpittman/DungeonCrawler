@@ -1,12 +1,13 @@
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileReader;
+import java.util.InputMismatchException;
+
 /**
  *Battles represents when the enemy and player attack each other. After the attack the player's health and the number of monsters left on the board is checked to see if the player won or lost the game.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
-import java.util.Scanner;
-import java.io.PrintWriter;
-import java.io.FileReader;
-import java.util.InputMismatchException;
 
 public class Battles{
 	World world;
@@ -21,12 +22,9 @@ public class Battles{
 	private int difference;
 
 	/**
-	 * In this method we compare the health and the strength of the enemy
-	 * and the player. Based on the strength of each we name a winner of
-	 * of the fight and modify the Health of both. If a monster is killed
-	 * the number of monsters on the board is decreased.
-	 * @param player the player that is fighting the enemy
-	 * @param enemy the enemy that is being attacked
+	 * In this method we compare the health and the strength of the enemy  and the player. Based on the strength of each we name a winner of the fight and modify the Health of both. If a monster is killed the number of monsters on the board is decreased.
+	 * @param player The player that is fighting the enemy.
+	 * @param enemy The enemy that is being attacked.
 	 *
 	 */
 	public void attack(Player player, Enemy enemy) throws InputMismatchException {
@@ -99,6 +97,7 @@ public class Battles{
 						player.move();
 						//Subtract one from the numberMonster variable. 
 						this.numberOfMonsters = numberOfMonsters - 1;
+						System.out.println("number of monsters = " + numberOfMonsters);
 						boolean dead = true;
 						enemy.setIsDead(dead);
 					}
@@ -136,16 +135,15 @@ public class Battles{
 		}
 	}
 	/**
-	 *In this method the health is updated. 
-	 * @return int  the updated health
+	 *In this method the health is updated for the enemy. 
+	 * @return Returns the updated health of the enemy.
 	 */
 	public static int getNewHealth(){
 		return healthEnemy;
 	}
 
 	/**
-	 *In this methd we determine if the player has lost the game. This is
-	 * concluded by looking at the player's health.
+	 *In this methd we determine if the player has lost the game. This is concluded by looking at the player's health. If the player's health is less than zero, then the player loses the game.
 	 */
 	public void playerLoses(){
 
@@ -154,8 +152,7 @@ public class Battles{
 	}
 
 	/**
-	 * In this method we determine if the player won the game. A player
-	 * wins the game if there are no more monsters left on the board.
+	 * In this method we determine if the player won the game. A player wins the game if there are no more monsters left on the board.
 	 */	
 	public void playerWins(){
 		if(numberOfMonsters == 0){

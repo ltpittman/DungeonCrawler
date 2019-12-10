@@ -1,19 +1,19 @@
+import java.util.Random;
+
 /**
  * SideCharacterItemGenerator is used to generate a random item for the player. These items are only given by the side character in the game. The Iteraction class uses this class.
  * @author Lauren Pittman, Tavion Britt, Grace Long.
 */
 
-import java.util.Random;
-
 public class SideCharacterItemGenerator{
-	/**This method creates 19 items and stores them into a array. A random index will be seleected to pick a item to give to the player when the player asks the side character for a item. Since the number is random, any item can be picked whether it is a weapon or piece of armor. Additionally, items can be given more than one.
+	/**This Static method creates 20 items and stores them into a array. A random index will be seleected to pick a item to give to the player when the player asks the side character for a item. Since the number is random, any item can be picked whether it is a weapon or piece of armor. Additionally, items can be given more than one.
 	 * @return poss[x] This returns one random item from the array. 
 	 */
 	public static Item generate(){
 
 		Random rng = new Random();
-		//Will get a random number between 0 and 19.
-		Item poss[] = new Item[20];
+		//Will get a random number between 0 and 26.
+		Item poss[] = new Item[21];
 
 		//Item type, Item name, weight, value, strength, x, and y.	
 		poss[0] = new Item(ItemType.Armor,"Hide Armor", 29, 146, 15, 5, 13, 1);
@@ -58,7 +58,7 @@ public class SideCharacterItemGenerator{
 		poss[19] = new Item(ItemType.Weapon,"Steel Staff", 83, 323, 19, 2, 17, 1);
 
 
-		int x = rng.nextInt(20);
+		int x = rng.nextInt(21);
 		//Returns a random item.
 		return poss[x];
 

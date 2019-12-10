@@ -1,13 +1,13 @@
-/**A SideCharacter is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
- * @author Lauren Pittman, Tavion Britt, Grace Long.
- */
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 import java.io.PrintWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+/**A SideCharacter is a type of character that moves around the board randomly. When the player encounters this character, they are able to get health potions, weapons, and armor from them. The side character has a name and health status. The side character is able to mvoe around the board freely.
+ * @author Lauren Pittman, Tavion Britt, Grace Long.
+ */
 
 class SideCharacter extends Character{
 	//Private instance variables.
@@ -36,7 +36,7 @@ class SideCharacter extends Character{
 		return '&';
 	}
 	
-	/**Moves the SideCharacter in a random direction.
+	/**This method moves the SideCharacter in a random direction.
 	 * @return Returns true if the player can move, else returns false if the player comes across a wall or goes out of bounds.
 	 */
 	public boolean move(){
@@ -75,13 +75,13 @@ class SideCharacter extends Character{
 			return false;
 		}
 	}
-	/**Prints the SideCharacter name.
+	/**This method prints the SideCharacter name.
 	 * @return Returns the side character's name.
 	 */
 	public String toString(){
 		return this.name;
 	}
-	/**Prints the information about the SideCharacter into a text file to save the game.
+	/**This method prints the information about the SideCharacter into a text file to save the game.
 	 * @param pw The print writer that types the inforamtion into the file.
 	 */
 	public void persist(PrintWriter pw){
@@ -90,7 +90,7 @@ class SideCharacter extends Character{
 		pw.println(health);
 		pw.println(".");
 	}
-	/**Restores the information from the text file. This information is saved from a previous game and allows the user to continue the game.
+	/**This method restores the information from the text file. This information is saved from a previous game and allows the user to continue the game.
 	 * @param a Scanner that reads from the file.
 	 */
 	public void restore (Scanner a){

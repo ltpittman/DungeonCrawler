@@ -1,11 +1,12 @@
-/**
- * Room represents part of the board that the player can move around. Each room is filled with a player, side character, nine items, and three enemies. The player is able to move around the room and interact with the other objects in the room. 
- * @author Lauren Pittman, Tavion Britt, and Grace Long
- */
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
+
+/**
+ * Room represents part of the board that the player can move around. Each room is filled with a player, side character, nine items, and three enemies. The player is able to move around the room and interact with the other objects in the room. 
+ * @author Lauren Pittman, Tavion Britt, and Grace Long
+ */
 
 public class Room{
 	//Private instance variables.
@@ -15,12 +16,11 @@ public class Room{
 	private Enemy enemy;
 	private Battles battle = new Battles();
 	private SideCharacter explorer;
-	private Interaction interact = new Interaction();
 
 	/**
-	 * Constructs a new Room that is empty. The rooms are saved onto a file that is read
+	 * Constructs a new Room that is empty. The rooms are saved onto a file that is read.
 	 * @param frame Takes in the file that will be used to upload a room. 
-	 * @throws FileNotFoundException if a file is not found for the room
+	 * @throws FileNotFoundException Throws exception if a file is not found for the room.
 	 */
 	public Room(String frame) throws FileNotFoundException {
 
@@ -56,21 +56,19 @@ public class Room{
 	}
 
 	/**
-	 * Added objects to the room including a player, a side character, two keys, seven items, and three
-	 * enemies. The characters in the room are able to move around the board and the other items are.
-	 * for the main player's benefit through out the game.
-	 * @param player the main player that is controlled by the user.
-	 * @param explorer a side character that helps the player pick up items.
-	 * @param key1 a key to open the door to another room.
-	 * @param key2 a key to otpen the door to another room.
-	 * @param item1 a random item the player can pick up.
-	 * @param item2 a random item the player can pick up.
-	 * @param item3 a random item the player can pick up.
-	 * @param item4 a randoom item the player can pick up.
-	 * @param item5 a random item the player can pick up.
-	 * @param enemy1 a random monster that the player must kill.
-	 * @param enemy2 a random monster that the player must kill.
-	 * @param enemy3 a random monster that the player must kill.
+	 * Added objects to the room including a player, a side character, two keys, five random items, and three enemies. The characters in the room are able to move around the board and the other items are for the main player's benefit through out the game.
+	 * @param player The main player that is controlled by the user.
+	 * @param explorer A side character that helps the player pick up items.
+	 * @param key1 A key to open the door to another room.
+	 * @param key2 A key to otpen the door to another room.
+	 * @param item1 A random item the player can pick up.
+	 * @param item2 A random item the player can pick up.
+	 * @param item3 A random item the player can pick up.
+	 * @param item4 A randoom item the player can pick up.
+	 * @param item5 A random item the player can pick up.
+	 * @param enemy1 A random monster that the player must kill.
+	 * @param enemy2 A random monster that the player must kill.
+	 * @param enemy3 A random monster that the player must kill.
 	 */
 	public void fillRoom(Player player, SideCharacter explorer, Item key1, Item key2, Item item1, Item item2, Item item3, Item item4, Item item5, Enemy enemy1, Enemy enemy2, Enemy enemy3){
 

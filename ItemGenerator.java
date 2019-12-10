@@ -1,16 +1,15 @@
+import java.util.Random;
+
 /**
  * ItemGenerator is a generator that produced a random time from an array of items. These items are placed on the board for the player to add to their inventory and use. Since it is a random generator, there can be multiple items of the same type in the game.
  * @author Lauren Pittman, Tavion Britt, Grace Long
  */
 
-import java.util.Random;
-
 public class ItemGenerator{
 
 	/**
-	 * Produce a random number that is used to pick a item from the array. This item will then me added to 
-	 * the game board.
-	 * @return random item
+	 * This Static method returns a  random number that is used to pick a item from the array. This item will then me added to  the game board.
+	 * @return Returns a random item from the array.
 	 */
 	public static Item generate(){
 		

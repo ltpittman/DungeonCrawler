@@ -1,18 +1,16 @@
-/**
- * A Item is a object on the board that helps the player in some way. The Item has a name, 
- * weight, value, strength, and x/ y coordinates. When moving around the board the player is able to pick 
- * up the item and add it their inventory to use. {@link Inventory} {@link World}
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileReader;
 
+/**
+ * A Item is a object on the board that helps the player in some way. The Item has a name, weight, value, strength, and x/ y coordinates. When moving around the board the player is able to pick up the item and add it their inventory to use. {@link Inventory} {@link World}
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
+
 public class Item{
-	//Create the instance variables.
+	//Instance variables.
 	private ItemType type;
 	private String name;
 	private int weight;
@@ -25,14 +23,14 @@ public class Item{
 	/** 
 	 * Constructs an Item with a type, name, weight, value, strength, x, y coordinates that are taken 
 	 * in as parameters
-	 * @param type either a weapon, armor, health potion, or other. 
-	 * @param name name of the object.
-	 * @param weight weight of the object. used in calculating the max weight of the inventory
-	 * @param value value of the object.
-	 * @param strength strength of the object. used in a battle against an enemy
-	 * @param x x coordinate of the object (where it will be placed on the map).
-	 * @param y y coordinate of the object (where it will be placed on the map).
-	 * @param roomNum the room number that the item is assigned to
+	 * @param type Either a weapon, armor, health potion, or other. 
+	 * @param name The name of the object.
+	 * @param weight The weight of the object. used in calculating the max weight of the inventory
+	 * @param value The value of the object.
+	 * @param strength The strength of the object. used in a battle against an enemy
+	 * @param x The x coordinate of the object (where it will be placed on the map).
+	 * @param y The y coordinate of the object (where it will be placed on the map).
+	 * @param roomNum The room number that the item is assigned to
 	 */
 	public Item(ItemType type, String name, int weight, int value, int strength, int x, int y, int roomNum){
 		this.type = type;
@@ -45,81 +43,79 @@ public class Item{
 		this.roomNum = roomNum;
 	}
 	
-	/**Sets the room number that the item is in. The item will be in either room 1,2 or 3.
+	/**This method sets the room number that the item is in. The item will be in either room 1,2 or 3.
 	 * @param roomNum Sets the room number as either 1, 2, or 3.
 	 */
 	public void setRoomNum(int roomNum){
 		this.roomNum = roomNum;
 	}
 
-	/**Returns the room number that the enemy is in.
-	 * @return The room number.
+	/**This method returns the room number that the item is in.
+	 * @return Returns the room number.
 	 */
 	public int getRoomNum(){
 		return this.roomNum;
 	}
 
 	/**
-	 * Returns the weight of the Item. Used when calculating the max weight of the Inventory {@link Inventory}
-	 * @return weight of the item 
+	 * This method returns the weight of the Item. Used when calculating the max weight of the Inventory {@link Inventory}
+	 * @return Returns the weight of the item .
 	 */
 	int getWeight(){
 		return this.weight;
 	}
 
 	/**
-	 * Returns the value of the Item.
-	 * @return value of the item.
+	 * This method returns the value of the Item.
+	 * @return Returns the value of the item.
 	 */
 	int getValue(){
 		return this.value;
 	}
 
 	/**
-	 * Returns the name of the Item.
-	 * @return name of the item.
+	 * This method returns the name of the Item.
+	 * @return Returns the name of the item.
 	 */
 	String getName(){
 		return this.name;
 	}
 
 	/**
-	 * Returns the type of the Item. There are four types of items: Weapon, Armor, 
-	 * Health Potion, and Other
-	 * @return type of the item (weapon, armor, health potion, or other)
+	 * This method returns the type of the Item. There are four types of items: Weapon, Armor,  Health Potion, and Other.
+	 * @return Returns type of the item (weapon, armor, health potion, or other).
 	 */
 	ItemType getType(){
 		return this.type;
 	}
 
 	/**
-	 * Returns the strength of Item. This is used in a battle when a player is attacking an enemy and 
-	 * using its equipped weapon or armor. {@link Battles}
-	 * @return strength of the item.
+	 * This method returns the strength of Item. This is used in a battle when a player is attacking an enemy and  using its equipped weapon or armor. {@link Battles}
+	 * @return Returns the strength of the item.
 	 */
 	int getStrength(){
 		return this.strength;
 	}
 
 	/**
-	 * Returns the x-coordinate of the Item.
-	 * @return x-coordinate of the item.
+	 * This method returns the x-coordinate of the Item.
+	 * @return Returns the x-coordinate of the item.
 	 */
 	public int getItemX(){
 		return this.x;
 	}
 
 	/**
-	 * Returns the y-coordinate of the Item.
-	 * @return y-coordinate of the item.
+	 * This method returns the y-coordinate of the Item.
+	 * @return Returns the y-coordinate of the item.
 	 */
 	public int getItemY(){
 		return this.y;
 	}
 
 	/**
-	 * Returns the symbol to represent the Item on the board
-	 * @return item's char image.
+	 * This method returns the symbol to represent the Item on the board.
+	 * @return Returns item's char image.
 	 */
 	public char getItemImage(){
 		if(type == ItemType.HealthPotion){
@@ -135,16 +131,16 @@ public class Item{
 	}
 
 	/** 
-	 * Return the infomation about the Item
-	 * @return itmes name, wright, value, and strength
+	 * This method returns the infomation about the Item.
+	 * @return Returns the item's name, wright, value, and strength.
 	 */
 	public String toString(){
 		return(this.name + ": " + this.weight + ", " + this.value + ", " + this.strength);
 	}
 
 	/**
-	 * Saves the information about the Item in a file
-	 * @param pw printwriter that will type the informatin into a file
+	 * This method saves the information about the Item in a file.
+	 * @param pw Printwriter pw will type the informatin into a file.
 	 */
 	public void persist (PrintWriter pw){
 		pw.println(type);
@@ -159,8 +155,8 @@ public class Item{
 	}
 
 	/**
-	 * Restores the information in a file that is saved from a previous game.
-	 * @param a scanner that will read the information from a file
+	 * This method restores the information in a file that is saved from a previous game.
+	 * @param a Scanner a will read the information from a file.
 	 */
 	public void restore (Scanner a){
 		try{
@@ -173,7 +169,7 @@ public class Item{
 			this.strength = a.nextInt();
 			this.x = a.nextInt();
 			this.y = a.nextInt();
-			this.roomNum = a.nextInt(); //added this
+			this.roomNum = a.nextInt();
 			String noth = a.nextLine();
 		} 
 		catch (Exception e){

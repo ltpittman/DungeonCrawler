@@ -1,13 +1,12 @@
-/**Interaction is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
- * @author Lauren Pittman, Tavion Britt, Grace Long
- */
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**Interaction is where the player and a side character will have a conversation with each other. Here the player will be able to ask the side characrer who they are, why they are down in the dungeon, and if they could have any health potions or a item (such as a weapon or piece of armor). 
+ * @author Lauren Pittman, Tavion Britt, Grace Long
+ */
+
 public class Interaction{
-	World world;
 	Player player;
 	Inventory inventory;
 	SideCharacter character;
@@ -41,11 +40,19 @@ public class Interaction{
 			if(input == 1){
 				
 				System.out.println();
+				System.out.println("[" + playerName + "] Who are you..? ");
+				System.out.println();
+				try{
+					Thread.sleep(2000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
 				System.out.println("[" + characterName + "] Hello, my fellow adventurer!\nMy name is " + characterName + "! It's funny running into another explorer down here. What can I do for you? ");
 				System.out.println();
 				running = true;
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -54,21 +61,30 @@ public class Interaction{
 			else if(input == 2){
 				
 				System.out.println();
-				System.out.println("[" + characterName + "] What am I doing down here? I could say the same thing about you!\nJust like yourself I love to explore. I have been doing this since I was a young kid with my father. Although time has passed and I am not as strong as I use to be, I still like to come down here and try to find anything that can prove to be useful...");
+				System.out.println("[" + playerName + "] What are you doing down here, " + characterName + "? ");
+				System.out.println();
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(4000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
-				System.out.println();				
+				System.out.println("[" + characterName + "] What am I doing down here? I could say the same thing about you!\nJust like yourself I love to explore. I have been doing this since I was a young kid with my father. Although time has passed and I am not as strong as I use to be, I still like to come down here and try to find anything that can prove to be useful...");
+				System.out.println();
+				try{
+					Thread.sleep(7000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println();
 				System.out.println("[" + characterName + "] In fact, I love to see new explorers like yourself taking on such strong monsters! If you happen to need anything, just let me know and I may have what you need!");
 				System.out.println();
 
 				running = true;
 				
 				try{
-					Thread.sleep(3000);
+					Thread.sleep(4000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -77,19 +93,29 @@ public class Interaction{
 			else if(input == 3){
 				
 				System.out.println();
+				System.out.println("[" + playerName + "] Do you have any extra health potions that I can have? ");
+				System.out.println();
+				try{
+					Thread.sleep(3000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
 				System.out.println("[" + characterName + "] I have a few health potions to spare. Here you can have one!");
-				Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0, 1);
-				player.inventory.addItem(healthPotion);
 				System.out.println();
 				running = true;
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
 
+				System.out.println();
 				System.out.println("[" + characterName + "] If you need any more health potions " + playerName + ", just let me know.");
+				Item healthPotion = new Item(ItemType.HealthPotion, "Health Potion", 2, 25, 100, 0, 0, 1);
+				System.out.println();
+				player.inventory.addItem(healthPotion);
 				System.out.println();
 				try{
 					Thread.sleep(3000);
@@ -101,20 +127,28 @@ public class Interaction{
 			}
 			else if(input == 4){
 
-				Item item = SideCharacterItemGenerator.generate();
 				System.out.println();
-				System.out.println("[" + characterName + "] I may have something that can be useful... I'm sure this can help!");
-				player.inventory.addItem(item);
+				System.out.println("[" + playerName + "] Do you have any items I can borrow? ");
 				System.out.println();
-				System.out.println();
-				running = true;
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
-				System.out.println("[" + characterName + "] Hopefully you can find use for this " + playerName + ". If not, I'm sure I have something else if you need it...");
+				System.out.println("[" + characterName + "] I may have something that can be useful... give me just a second.");
+				System.out.println();
+				running = true;
+				try{
+					Thread.sleep(4000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println("[" + characterName + "] Hopefully you can find use for this, " + playerName + ". If not I'm sure I have something else if you need it...");
+				System.out.println();
+				Item item = SideCharacterItemGenerator.generate();
+				player.inventory.addItem(item);
 				System.out.println();
 				try{
 					Thread.sleep(3000);
@@ -125,19 +159,25 @@ public class Interaction{
 			}
 			else if(input == 5){
 				System.out.println();
-				System.out.println("[" + characterName + "] Tips to kill a monster..? Hmm...");				
+				System.out.println("[" + playerName + "] Do you have any tips for killing these monsters, " + characterName + "?");
 				System.out.println();
 				try{
-					Thread.sleep(4000);
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
 				}
-				System.out.println();
-				System.out.println("[" + characterName + "] Well... after all these years that I've been exploring, I can tell you this " + playerName + ".");			
+				System.out.println("[" + characterName + "] Tips to kill a monster..? Hmm...");	
 				System.out.println();
 				try{
-					Thread.sleep(2000);
+					Thread.sleep(5000);
+				}
+				catch(InterruptedException e){
+					System.out.println(e);
+				}
+				System.out.println("[" + characterName + "] Well... after all these years that I've been exploring, I can tell you this, " + playerName + ".");	
+				try{
+					Thread.sleep(4000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -146,7 +186,7 @@ public class Interaction{
 				System.out.println("[" + characterName + "] While looking around for armor and weapons, pick up items that are high in strength. The higher the strength, the better your chances of killing all the mother monsters and getting out of this dungeon alive.");
 				System.out.println();
 				try{
-					Thread.sleep(4000);
+					Thread.sleep(7000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
@@ -157,14 +197,12 @@ public class Interaction{
 				System.out.println();
 				System.out.println("[" + characterName + "] Goodbye " + playerName + "! If you need anything, you know where to find me.");
 				System.out.println();
-				/*try{
-					Thread.sleep(2000);
-					input = 0;
-					break;
+				try{
+					Thread.sleep(3000);
 				}
 				catch(InterruptedException e){
 					System.out.println(e);
-				}*/
+				}
 				break;
 			}
 		}
